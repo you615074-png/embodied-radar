@@ -1,0 +1,216 @@
+{
+ "date": "2026-11-02",
+ "headline": "把真实机器人任务搬进仿真",
+ "title_en": "RoboSimStudio: Rebuild Real Robot Tasks in Simulation",
+ "tagline_en": "An open toolkit that turns a video or a sentence into an interactive physics simulation of a robot task.",
+ "summary_md": "**What it is:** RoboSimStudio is an open-source toolkit (Apache-2.0) for rebuilding real robot manipulation tasks in simulation. You can do it by hand or by prompting a coding agent like Codex or Claude Code. You give it a video (human, ego-centric, or robot), a task instruction, and a robot URDF file, and it helps you construct a physics-based scene that you can interact with. It is inspired by and built on Newton, Warp, MuJoCo Warp, and others, per the README.\n\n**Why it matters:** Real2Sim is a hot direction: if you can faithfully recreate a real task in simulation, you can train and test policies without wearing out hardware or risking damage. RoboSimStudio emphasizes interactivity and human-in-the-loop correction, which is practical because fully automatic reconstruction often gets physics wrong.\n\n**Can you try it without a robot?** Yes, the README says it runs on CPU-only machines and points to an installation guide and examples. The caveat: the full stack (Newton, Warp, MuJoCo Warp) may be heavy for a 16GB Mac, and the README is more news-style than benchmarked, so treat performance claims as unverified. Start with the small examples, then try a phone video reconstruction.",
+ "pick": {
+  "id": "gh:robosimstudio/robosimstudio",
+  "kind": "repo",
+  "title": "robosimstudio/robosimstudio",
+  "url": "https://github.com/robosimstudio/robosimstudio",
+  "authors": [],
+  "license": "Apache-2.0",
+  "code_url": "",
+  "signals": {
+   "stars": 292,
+   "daily_rate": 13.9
+  },
+  "topic": "世界模型与仿真",
+  "one_liner": "用视频或一句话把真实机器人任务重建成可交互的物理仿真场景",
+  "one_liner_en": "Rebuild real robot manipulation tasks as interactive physics simulations from video or a prompt",
+  "how_to_try": "按 examples/install.md 在 Mac 上装纯 CPU 版，先跑现成的小例子，再拍一段手机视频试着重建",
+  "how_to_try_en": "Follow examples/install.md for the CPU-only build on Mac, run bundled examples first, then rebuild a scene from your own phone video",
+  "reason": "仿真重建加物理参数推断是热门方向，CPU 可跑、代码开源、有教程，很适合新人；但细节需核实，别把宣传当结论。",
+  "red_flags": [
+   "作者机构和发布时间疑似占位或杜撰，arXiv 编号需核实",
+   "README 大量功能是新闻条目式宣传，缺具体评测数据",
+   "依赖 Newton、Warp、MuJoCo Warp 的 CPU 版在 16GB Mac 上性能存疑"
+  ],
+  "final": 7.61,
+  "topic_penalty": 0,
+  "significance": 8,
+  "explainability": 8,
+  "wow": 8,
+  "playable": 8,
+  "openness": 8,
+  "learning_value": 9,
+  "heat": 4.73
+ },
+ "top": [
+  {
+   "id": "gh:robosimstudio/robosimstudio",
+   "kind": "repo",
+   "title": "robosimstudio/robosimstudio",
+   "url": "https://github.com/robosimstudio/robosimstudio",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 292,
+    "daily_rate": 13.9
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "用视频或一句话把真实机器人任务重建成可交互的物理仿真场景",
+   "one_liner_en": "Rebuild real robot manipulation tasks as interactive physics simulations from video or a prompt",
+   "how_to_try": "按 examples/install.md 在 Mac 上装纯 CPU 版，先跑现成的小例子，再拍一段手机视频试着重建",
+   "how_to_try_en": "Follow examples/install.md for the CPU-only build on Mac, run bundled examples first, then rebuild a scene from your own phone video",
+   "reason": "仿真重建加物理参数推断是热门方向，CPU 可跑、代码开源、有教程，很适合新人；但细节需核实，别把宣传当结论。",
+   "red_flags": [
+    "作者机构和发布时间疑似占位或杜撰，arXiv 编号需核实",
+    "README 大量功能是新闻条目式宣传，缺具体评测数据",
+    "依赖 Newton、Warp、MuJoCo Warp 的 CPU 版在 16GB Mac 上性能存疑"
+   ],
+   "final": 7.61,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 8,
+   "wow": 8,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 9,
+   "heat": 4.73
+  },
+  {
+   "id": "hf-model:nvidia/MotionBricks",
+   "kind": "model",
+   "title": "nvidia/MotionBricks",
+   "url": "https://huggingface.co/nvidia/MotionBricks",
+   "authors": [],
+   "license": "",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 114,
+    "hf_likes": 116,
+    "downloads": 0
+   },
+   "topic": "人形与足式",
+   "one_liner": "给几个目标姿势，实时生成人形机器人的过渡动作",
+   "one_liner_en": "Generates real-time motion for humanoid robots by connecting given poses.",
+   "how_to_try": "官方 demo 需要 NVIDIA GPU 和 TensorRT，Mac 跑不动；可以读 GitHub 的 ONNX 导出工具，再查看项目页视频，理解原理",
+   "how_to_try_en": "Official demo needs NVIDIA GPU + TensorRT; on Mac just read the ONNX export tools and watch project-page videos.",
+   "reason": "大厂开放人形动作生成权重，学习价值高，但 Mac 上只能借助 ONNX 离线尝试，实机演示依赖 NVIDIA 显卡",
+   "red_flags": [
+    "无硬件不等于能直接运行：官方 demo 强依赖 NVIDIA GPU/TensorRT",
+    "只给动作，不给控制器，上真机还需安全校验",
+    "训练数据和训练流程未公开，只有推理权重"
+   ],
+   "final": 7.31,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 5,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 10
+  },
+  {
+   "id": "hf-dataset:lerobot/FineART",
+   "kind": "dataset",
+   "title": "lerobot/FineART",
+   "url": "https://huggingface.co/datasets/lerobot/FineART",
+   "authors": [],
+   "license": "cc-by-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 18,
+    "hf_likes": 33,
+    "downloads": 481434
+   },
+   "topic": "数据集",
+   "one_liner": "带逐步语言标注的双手操作机器人数据集，含4万条轨迹。",
+   "one_liner_en": "A bimanual robot dataset with step-by-step language labels, 40k episodes.",
+   "how_to_try": "在 Mac 上 pip 装 LeRobot，流式加载该数据集，看帧与子任务标注，试写小模型。",
+   "how_to_try_en": "pip install lerobot on your Mac, stream the dataset, inspect frames and subtask labels, then try a tiny model.",
+   "reason": "开放程度高、标注密集，是学习 VLA 与分层策略的好材料；但整库很难在 Mac 上完整训练，wow 感一般。",
+   "red_flags": [
+    "README 里有一个 TODO 占位链接，模型、代码的入口可能不完整",
+    "数据量大（185M 帧），新人很难完整下载，只能抽样或流式读取",
+    "所有数据都来自同一种机器人 Trossen，跨本体泛化有限",
+    "发布日期写的是 2026-10-12，比较可疑"
+   ],
+   "final": 7.19,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 7,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 6.38
+  },
+  {
+   "id": "arxiv:2610.40799",
+   "kind": "paper",
+   "title": "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents",
+   "url": "https://arxiv.org/abs/2610.40799",
+   "authors": [
+    "Yijia Fan",
+    "Xilin He",
+    "Yilei Jiang",
+    "Dongming Wu",
+    "Jiaxu Wang",
+    "Xiangyu Yue"
+   ],
+   "license": "",
+   "code_url": "https://github.com/waltstephen/CaPtain",
+   "signals": {
+    "hf_upvotes": 16,
+    "github_stars": 32
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "把机器人操作写成代码，用小模型训练出会写代码的机器人智能体",
+   "one_liner_en": "Trains a small open VLM to control robots by writing code, reaching 73.8% on LIBERO.",
+   "how_to_try": "在 LIBERO 仿真里跑它的代码；Mac 可跑 4B 模型推理，训练需云 GPU",
+   "how_to_try_en": "Run it in LIBERO sim; 4B inference fits a Mac, training needs cloud GPU.",
+   "reason": "开源完整含权重数据，思路清晰，适合学 VLA 与多轮 RL；但真实硬件门槛和部分声明待核实。",
+   "red_flags": [
+    "摘要称用了 GPT-6 Astra 生成数据，具体细节需核实",
+    "真实机器人实验需要仿真适配，无硬件者难以复现"
+   ],
+   "final": 7.05,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 7,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 6.14
+  },
+  {
+   "id": "hf-model:lerobot/smolvla_base",
+   "kind": "model",
+   "title": "lerobot/smolvla_base",
+   "url": "https://huggingface.co/lerobot/smolvla_base",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 7,
+    "hf_likes": 486,
+    "downloads": 174648
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "一个能在单张显卡上训练的小型视觉-语言-动作机器人模型",
+   "one_liner_en": "A tiny vision-language-action robot model trainable on a single GPU",
+   "how_to_try": "用 pip 装 lerobot[smolvla]，在 Mac 上加载模型和 libero 数据集跑 select_action，训练还是得云 GPU",
+   "how_to_try_en": "pip install lerobot[smolvla], load the model and libero dataset on Mac to run select_action; training needs cloud GPU",
+   "reason": "高下载高点赞的入门级开源 VLA，代码权重全开放，是学 VLA 概念的好材料；但 Mac 只能推理，讲的时候要强调这一点。",
+   "red_flags": [
+    "README 是通用模板，没有展示 smolvla 的实测效果",
+    "没有 NVIDIA 卡，训练基本不可行，只能做推理"
+   ],
+   "final": 6.95,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 6,
+   "openness": 9,
+   "learning_value": 9,
+   "heat": 4.51
+  }
+ ]
+}

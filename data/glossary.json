@@ -1,0 +1,107 @@
+{
+ "real2sim": {
+  "term": "Real2Sim",
+  "zh": "真转仿",
+  "explain": "把现实场景重建进仿真，免去手工搭建",
+  "first_seen": "2026-11-02",
+  "source": "gh:robosimstudio/robosimstudio"
+ },
+ "inverse physics": {
+  "term": "inverse physics",
+  "zh": "逆物理",
+  "explain": "反推物体的质量、摩擦等物理参数",
+  "first_seen": "2026-11-02",
+  "source": "gh:robosimstudio/robosimstudio"
+ },
+ "urdf": {
+  "term": "URDF",
+  "zh": "机器人描述文件",
+  "explain": "用文件描述机器人的关节、连杆和外形",
+  "first_seen": "2026-11-02",
+  "source": "gh:robosimstudio/robosimstudio"
+ },
+ "motion generation": {
+  "term": "Motion Generation",
+  "zh": "动作生成",
+  "explain": "模型根据目标姿势生成中间过渡动作，而不是直接操控电机",
+  "first_seen": "2026-11-02",
+  "source": "hf-model:nvidia/MotionBricks"
+ },
+ "pose-conditioned": {
+  "term": "Pose-conditioned",
+  "zh": "姿势条件",
+  "explain": "把目标姿势作为输入条件，让模型生成到达该姿势的动作",
+  "first_seen": "2026-11-02",
+  "source": "hf-model:nvidia/MotionBricks"
+ },
+ "tracking controller": {
+  "term": "Tracking Controller",
+  "zh": "跟踪控制器",
+  "explain": "把生成的动作变成真实机器人关节指令的独立控制模块",
+  "first_seen": "2026-11-02",
+  "source": "hf-model:nvidia/MotionBricks"
+ },
+ "subtask annotation": {
+  "term": "Subtask annotation",
+  "zh": "子任务标注",
+  "explain": "把一段操作拆成小步骤并写成文字描述。",
+  "first_seen": "2026-11-02",
+  "source": "hf-dataset:lerobot/FineART"
+ },
+ "hierarchical policy (system 1/2)": {
+  "term": "Hierarchical policy (System 1/2)",
+  "zh": "分层策略",
+  "explain": "高层用语言规划下一步，低层据此输出动作。",
+  "first_seen": "2026-11-02",
+  "source": "hf-dataset:lerobot/FineART"
+ },
+ "bimanual manipulation": {
+  "term": "Bimanual manipulation",
+  "zh": "双手操作",
+  "explain": "两条机械臂协同完成抓取、装配等任务。",
+  "first_seen": "2026-11-02",
+  "source": "hf-dataset:lerobot/FineART"
+ },
+ "code-as-policy": {
+  "term": "Code-as-Policy",
+  "zh": "代码即策略",
+  "explain": "让模型写调用机器人 API 的代码来控制机器人，而不是直接输出动作",
+  "first_seen": "2026-11-02",
+  "source": "arxiv:2610.40799"
+ },
+ "multi-turn rl": {
+  "term": "Multi-turn RL",
+  "zh": "多轮强化学习",
+  "explain": "模型与机器人多次交互后，按最终成败来调整每一步决策",
+  "first_seen": "2026-11-02",
+  "source": "arxiv:2610.40799"
+ },
+ "physical critic": {
+  "term": "Physical Critic",
+  "zh": "物理评判器",
+  "explain": "用仿真内部真值状态来给每一步请求打分，帮模型分清哪步有用",
+  "first_seen": "2026-11-02",
+  "source": "arxiv:2610.40799"
+ },
+ "vla": {
+  "term": "VLA",
+  "zh": "视觉语言动作模型",
+  "explain": "看图、听懂指令、直接输出机器人动作的大模型",
+  "first_seen": "2026-11-02",
+  "source": "hf-model:lerobot/smolvla_base"
+ },
+ "flow matching": {
+  "term": "flow matching",
+  "zh": "流匹配",
+  "explain": "一种生成连续动作的训练方法，比扩散模型更简单高效",
+  "first_seen": "2026-11-02",
+  "source": "hf-model:lerobot/smolvla_base"
+ },
+ "fine-tuning": {
+  "term": "fine-tuning",
+  "zh": "微调",
+  "explain": "在别人训好的基础模型上，用你自己的小数据继续训练",
+  "first_seen": "2026-11-02",
+  "source": "hf-model:lerobot/smolvla_base"
+ }
+}
