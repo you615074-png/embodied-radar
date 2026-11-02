@@ -6,6 +6,13 @@
    "title": "robosimstudio/robosimstudio",
    "topic": "世界模型与仿真",
    "final": 7.61
+  },
+  {
+   "date": "2026-11-03",
+   "id": "hf-dataset:lerobot/pusht",
+   "title": "lerobot/pusht",
+   "topic": "操作抓取",
+   "final": 6.86
   }
  ],
  "top": {
@@ -13,7 +20,12 @@
   "hf-model:nvidia/MotionBricks": "2026-11-02",
   "hf-dataset:lerobot/FineART": "2026-11-02",
   "arxiv:2610.40799": "2026-11-02",
-  "hf-model:lerobot/smolvla_base": "2026-11-02"
+  "hf-model:lerobot/smolvla_base": "2026-11-02",
+  "hf-dataset:lerobot/pusht": "2026-11-03",
+  "hf-model:allenai/MolmoAct2": "2026-11-03",
+  "gh:THUSI-Lab/GameScaling": "2026-11-03",
+  "hf-dataset:Crobotia/iUMI": "2026-11-03",
+  "arxiv:2610.40748": "2026-11-03"
  },
  "scores": {
   "arxiv:2610.40339": {
@@ -3358,6 +3370,385 @@
      "结论需要强算力复现，新人无法验证"
     ],
     "reason": "思路清晰（一步预测动作替代迭代生成）值得学，但完全闭源且需双臂硬件，新人只能读不能玩。"
+   }
+  },
+  "gh:cair-vinuni/roboworm": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "世界模型与仿真",
+    "one_liner": "给机器人视频世界模型做体检，看画面是否真符合物理，并测加速方法的代价",
+    "one_liner_en": "A physics audit benchmark for robot video world models, checking movement realism and the cost of speeding them up.",
+    "scores": {
+     "significance": 6,
+     "explainability": 6,
+     "wow": 5,
+     "playable": 6,
+     "openness": 8,
+     "learning_value": 8
+    },
+    "how_to_try": "看项目页的对比视频，再用 Mac 跑提供的指标脚本评估已有 rollout 视频",
+    "how_to_try_en": "Watch the project page rollouts, then run the metric scripts on precomputed rollout videos on your Mac.",
+    "concepts": [
+     {
+      "term": "Video World Model",
+      "zh": "视频世界模型",
+      "explain": "根据当前画面预测机器人动作后未来的视频"
+     },
+     {
+      "term": "Kinematic Tree",
+      "zh": "运动学树",
+      "explain": "机器人各关节连杆如何连接与运动的固定结构"
+     },
+     {
+      "term": "Inference Acceleration",
+      "zh": "推理加速",
+      "explain": "用缓存、稀疏注意力等方法让模型生成更快"
+     }
+    ],
+    "red_flags": [
+     "评测基准类工作，非新能力突破",
+     "仓库链接与作者信息不一致，需核实"
+    ],
+    "reason": "评测类基准，概念清晰、开源充分、适合入门理解世界模型；但非能力突破，演示有限，且仓库信息有疑点。"
+   }
+  },
+  "gh:roboninecom/STS32XX-Firmware": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "硬件与本体",
+    "one_liner": "给 SO-ARM 机械臂舵机重写固件，运动更顺滑、定位更准。",
+    "one_liner_en": "Custom servo firmware for SO-ARM robot arms, giving smoother, more accurate motion.",
+    "scores": {
+     "significance": 6,
+     "explainability": 7,
+     "wow": 5,
+     "playable": 2,
+     "openness": 9,
+     "learning_value": 6
+    },
+    "how_to_try": "必须有 STS3215 舵机和 SO-ARM100/101/102 机械臂才能刷固件，没硬件只能看文档和视频理解原理。",
+    "how_to_try_en": "You need real STS3215 servos and an SO-ARM arm to flash it; without hardware, just read the docs and videos.",
+    "concepts": [
+     {
+      "term": "S-curve motion profile",
+      "zh": "S 曲线运动规划",
+      "explain": "让加速和刹车更平缓，机械臂动作不顿挫、不抖动"
+     },
+     {
+      "term": "Gravity compensation",
+      "zh": "重力补偿",
+      "explain": "主机算出手臂自身重量往下拽的力，让舵机额外出力顶住"
+     },
+     {
+      "term": "Velocity feedforward",
+      "zh": "速度前馈",
+      "explain": "提前按规划速度给电机加力，比只靠误差反馈跟得更准、更稳"
+     }
+    ],
+    "red_flags": [
+     "没有硬件几乎无法验证效果，演示都是实物视频",
+     "作者/机构不明，固件刷写有变砖风险",
+     "只是把经典运动控制做好，不是新能力或新方向"
+    ],
+    "reason": "扎实的底层运动控制改进，开源友好，但对无硬件新人不可上手，也谈不上领域突破，适合当科普素材。"
+   }
+  },
+  "hf-model:allenai/MolmoAct2": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "VLA与基础模型",
+    "one_liner": "AI2开源的多机器人通用视觉语言动作大模型，训练后可控制真实机器人",
+    "one_liner_en": "AI2's open vision-language-action model that can be fine-tuned to control many robots",
+    "scores": {
+     "significance": 8,
+     "explainability": 7,
+     "wow": 6,
+     "playable": 7,
+     "openness": 8,
+     "learning_value": 8
+    },
+    "how_to_try": "用官方 MolmoAct2-LIBERO微调版，在LIBERO仿真里跑推理；需先看GitHub示例代码",
+    "how_to_try_en": "Use the MolmoAct2-LIBERO finetuned checkpoint to run inference in the LIBERO simulator; start from the GitHub example scripts.",
+    "concepts": [
+     {
+      "term": "VLA (Vision-Language-Action) model",
+      "zh": "视觉语言动作模型",
+      "explain": "看到画面和指令，直接输出机器人动作的大模型，像机器人版ChatGPT"
+     },
+     {
+      "term": "flow matching",
+      "zh": "流匹配",
+      "explain": "一种生成连续动作的方法，学一条从噪声到动作的平滑路径"
+     },
+     {
+      "term": "multi-embodiment",
+      "zh": "多本体",
+      "explain": "同一个模型能适配不同形状、关节的机器人，不必每种单训"
+     }
+    ],
+    "red_flags": [
+     "主checkpoint不含推理代码，只给微调用，新人易误以为开箱即用",
+     "未标注许可证，商用与再分发存疑",
+     "模型体量大，16GB内存的Mac本地跑推理可能吃力"
+    ],
+    "reason": "开源多本体VLA基座，生态完整有仿真版可试，但非开箱即用，需一定门槛"
+   }
+  },
+  "hf-model:nvidia/Alpamayo-1.5-10B": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "英伟达开源10B自动驾驶推理模型，边思考边预测未来6秒行驶轨迹。",
+    "one_liner_en": "NVIDIA's open 10B model reasons about driving scenes and predicts a 6-second trajectory.",
+    "scores": {
+     "significance": 7,
+     "explainability": 7,
+     "wow": 6,
+     "playable": 3,
+     "openness": 6,
+     "learning_value": 6
+    },
+    "how_to_try": "10B模型需大显存NVIDIA GPU，Mac基本跑不动；可先读GitHub推理代码和demo视频理解输入输出。",
+    "how_to_try_en": "10B weights need a big NVIDIA GPU; on a Mac, just read the GitHub inference code and demo videos.",
+    "concepts": [
+     {
+      "term": "VLA",
+      "zh": "视觉-语言-动作模型",
+      "explain": "看图像、读指令，直接输出动作的模型。"
+     },
+     {
+      "term": "chain-of-thought",
+      "zh": "思维链",
+      "explain": "模型先写出推理过程再给结论，便于看懂依据。"
+     },
+     {
+      "term": "diffusion decoder",
+      "zh": "扩散解码器",
+      "explain": "用逐步去噪的方式生成平滑的连续轨迹。"
+     }
+    ],
+    "red_flags": [
+     "10B权重加4相机多帧输入，普通硬件根本跑不动",
+     "权重许可证为非商用，商用需另申请",
+     "仅在其特定相机设置下训练和测试，通用性存疑"
+    ],
+    "reason": "开源权重加推理代码，思路清晰，但体量和硬件门槛让无硬件新人几乎无法亲手验证，更适合作为阅读理解素材。"
+   }
+  },
+  "arxiv:2610.35850": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "世界模型与仿真",
+    "one_liner": "把扩散式世界动作模型的去噪步数压到一步，动作生成快 3 倍",
+    "one_liner_en": "A world action model that generates robot actions in a single denoising step, 3x faster.",
+    "scores": {
+     "significance": 6,
+     "explainability": 5,
+     "wow": 4,
+     "playable": 3,
+     "openness": 4,
+     "learning_value": 6
+    },
+    "how_to_try": "结论是单卡 5090 上延迟 40ms，本机很难跑；只能看项目页演示、读论文理解一步扩散的思路。",
+    "how_to_try_en": "Needs an RTX 5090; on a Mac just read the paper and watch demos to grasp one-step diffusion.",
+    "concepts": [
+     {
+      "term": "World Action Model",
+      "zh": "世界动作模型",
+      "explain": "用对未来的想象来指导机器人或车辆输出动作的模型"
+     },
+     {
+      "term": "Diffusion denoising steps",
+      "zh": "扩散去噪步数",
+      "explain": "从纯噪声一步步擦出动作，步数越多越慢"
+     },
+     {
+      "term": "Imagination tokens",
+      "zh": "想象 token",
+      "explain": "用学到的动作先验替代随机噪声，作为去噪起点"
+     }
+    ],
+    "red_flags": [
+     "arXiv 编号和发布日期看着不像真实记录，需核实",
+     "只有论文和项目页，未明确开源代码或权重",
+     "需要 RTX 5090 才能复现速度结论"
+    ],
+    "reason": "把一步扩散用于动作生成是有用的效率改进，但偏工程优化，演示一般，无硬件新人只能读论文。"
+   }
+  },
+  "hf-dataset:jccj/test_multiview_3d_reconstruction": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "一个新手用 LeRobot 录的单次机械臂抓取数据集，含 757 帧双视角视频",
+    "one_liner_en": "A single-episode LeRobot demo dataset of an SO-100 arm with 757 frames and two camera views",
+    "scores": {
+     "significance": 1,
+     "explainability": 4,
+     "wow": 1,
+     "playable": 6,
+     "openness": 7,
+     "learning_value": 4
+    },
+    "how_to_try": "Mac 上装 LeRobot，用 lerobot 的 dataset 可视化脚本把这段 SO-100 数据读出来回放看，了解数据格式即可。",
+    "how_to_try_en": "Install LeRobot on Mac, load this SO-100 dataset with its visualize script to inspect the format and replay videos.",
+    "concepts": [
+     {
+      "term": "LeRobot dataset format",
+      "zh": "LeRobot 数据格式",
+      "explain": "Hugging Face 定的标准：parquet 存关节动作，mp4 存摄像头画面，按 episode 分块"
+     },
+     {
+      "term": "SO-100 follower",
+      "zh": "SO-100 从动臂",
+      "explain": "几百美元的开源小机械臂，常被用来低成本采数据"
+     },
+     {
+      "term": "imitation learning episode",
+      "zh": "模仿学习回合",
+      "explain": "一次完整的演示，从开始到结束的关节序列加视频"
+     }
+    ],
+    "red_flags": [
+     "只有一个 episode、一个任务，无说明无论文，像个测试上传",
+     "标题提多视角三维重建，内容只是双相机录像，名不符实",
+     "无任务描述，看不出采集场景"
+    ],
+    "reason": "典型新手测试数据集，单条轨迹无技术含量，只适合当 LeRobot 格式入门样例，不够当天精选。"
+   }
+  },
+  "hf-dataset:Crobotia/iUMI": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "真实家庭里双手夹爪叠衣服的第一视角示教数据集，1300小时。",
+    "one_liner_en": "A 1,300-hour dataset of handheld bimanual cloth-folding demos recorded in real homes.",
+    "scores": {
+     "significance": 7,
+     "explainability": 8,
+     "wow": 5,
+     "playable": 8,
+     "openness": 8,
+     "learning_value": 8
+    },
+    "how_to_try": "下载 part-00000.tar，用 LeRobot v3.0 读一条 episode，在 Mac 上可视化视频与轨迹。",
+    "how_to_try_en": "Download one tar shard, load an episode with LeRobot v3.0 on your Mac, and visualize videos with pose trajectories.",
+    "concepts": [
+     {
+      "term": "UMI (Universal Manipulation Interface)",
+      "zh": "通用操作接口",
+      "explain": "用人手持夹爪装置采集示教，再让机器人模仿，无需真机演示。"
+     },
+     {
+      "term": "Bimanual Manipulation",
+      "zh": "双臂操作",
+      "explain": "两只手协同完成叠衣等任务，比单手难在协调与时序。"
+     },
+     {
+      "term": "LeRobot Dataset Format",
+      "zh": "LeRobot 数据集格式",
+      "explain": "HuggingFace 机器人数据的标准格式，含视频、状态、动作与元数据。"
+     }
+    ],
+    "red_flags": [
+     "约 8.6TB 总量对 Mac 不友好，只能看单个 episode",
+     "发布日期 2026-10-24，晚于其他条目，需核实是否已放出",
+     "作者机构信息缺失，数据质量需看 qc 目录确认"
+    ],
+    "reason": "真实家庭双臂叠衣示教数据，规模大且开放，适合学习 UMI 与模仿学习；但总量巨大，Mac 用户只能读取单条 episode，且演示偏常规，惊喜感一般。",
+    "one_liner_en_checked": true
+   }
+  },
+  "gh:FlashCat-Jordan/Flashduck": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "硬件与本体",
+    "one_liner": "一台用六个舵机和ESP32做的桌面机器鸭，让AI直接控制每个关节来动",
+    "one_liner_en": "An open-source ESP32 desktop duck robot whose six joints are driven directly by an AI agent.",
+    "scores": {
+     "significance": 4,
+     "explainability": 7,
+     "wow": 6,
+     "playable": 1,
+     "openness": 6,
+     "learning_value": 6
+    },
+    "how_to_try": "需要六舵机套件、ESP32-S3和3D打印机，纯Mac无法复现；只能读固件代码和看视频了解架构。",
+    "how_to_try_en": "Needs six servos, an ESP32-S3 board and a 3D printer; with only a Mac you can just read the firmware and watch the demo.",
+    "concepts": [
+     {
+      "term": "Servo Sequence",
+      "zh": "舵机序列",
+      "explain": "把每个关节角度直接交给模型现场组合，不用预先写死动作函数"
+     },
+     {
+      "term": "Edge Agent",
+      "zh": "端侧智能体",
+      "explain": "模型和工具调用都跑在机器人芯片上，不依赖云端"
+     },
+     {
+      "term": "MCP Tools",
+      "zh": "MCP 工具调用",
+      "explain": "让大模型通过统一协议调用外部功能，比如查天气或控关节"
+     }
+    ],
+    "red_flags": [
+     "必须购买或已有特定六舵机套件，无硬件完全跑不起来",
+     "DuckClaw 部分为 CC BY-NC-SA，非商用限制",
+     "宣传色彩浓，缺少量化评测或对比数据",
+     "AI 控关节只是把角度开放给模型，未证明比预设动作更好"
+    ],
+    "reason": "DIY桌面机器人完成度不错，但门槛在硬件，对无设备新人几乎不可上手，学术价值有限。"
+   }
+  },
+  "arxiv:2610.37393": {
+   "date": "2026-11-03",
+   "v": 1,
+   "eval": {
+    "topic": "强化学习",
+    "one_liner": "让机器人按指定速度和平稳度完成抓取任务的可控策略",
+    "one_liner_en": "A robot policy you can dial for speed and smoothness, not just success.",
+    "scores": {
+     "significance": 6,
+     "explainability": 7,
+     "wow": 6,
+     "playable": 5,
+     "openness": 5,
+     "learning_value": 7
+    },
+    "how_to_try": "项目页有代码的话，Mac 上跑 Robomimic 仿真需先配 MuJoCo，纯 CPU 能跑但慢；先看项目页视频。",
+    "how_to_try_en": "If code is released, run Robomimic with MuJoCo on Mac CPU (slow but works); start with the project page videos.",
+    "concepts": [
+     {
+      "term": "Hindsight Relabeling",
+      "zh": "事后重标注",
+      "explain": "把已跑完的轨迹按实际表现重新打标签，再拿来训练。"
+     },
+     {
+      "term": "Quality-Controllable Policy",
+      "zh": "质量可控策略",
+      "explain": "推理时给一个速度或平滑度目标，策略照此执行。"
+     },
+     {
+      "term": "Robomimic",
+      "zh": "机器人模仿学习基准",
+      "explain": "公开的操作任务仿真测试集，常用来比模仿学习算法。"
+     }
+    ],
+    "red_flags": [
+     "仅 1 个 HF 赞、0 star，热度极低",
+     "arXiv 编号与日期可疑，可能为虚构或预印本",
+     "未标注许可证，代码开放程度不明"
+    ],
+    "reason": "想法实用——把“做得好不好”变成可控旋钮，仿真加真机验证；但热度低、开放度不明，适合当概念科普。"
    }
   }
  }

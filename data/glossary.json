@@ -103,5 +103,89 @@
   "explain": "在别人训好的基础模型上，用你自己的小数据继续训练",
   "first_seen": "2026-11-02",
   "source": "hf-model:lerobot/smolvla_base"
+ },
+ "diffusion policy": {
+  "term": "Diffusion Policy",
+  "zh": "扩散策略",
+  "explain": "把机器人动作生成当作去噪画画，逐步从噪声里“擦”出正确动作。",
+  "first_seen": "2026-11-03",
+  "source": "hf-dataset:lerobot/pusht"
+ },
+ "behavior cloning": {
+  "term": "Behavior Cloning",
+  "zh": "行为克隆",
+  "explain": "让模型直接模仿人类演示的输入到动作映射，是最基础的模仿学习。",
+  "first_seen": "2026-11-03",
+  "source": "hf-dataset:lerobot/pusht"
+ },
+ "lerobotdataset": {
+  "term": "LeRobotDataset",
+  "zh": "LeRobot 数据集格式",
+  "explain": "Hugging Face 统一的多相机视频加动作的机器人数据格式，一条命令就能下载。",
+  "first_seen": "2026-11-03",
+  "source": "hf-dataset:lerobot/pusht"
+ },
+ "vla (vision-language-action) model": {
+  "term": "VLA (Vision-Language-Action) model",
+  "zh": "视觉语言动作模型",
+  "explain": "看到画面和指令，直接输出机器人动作的大模型，像机器人版ChatGPT",
+  "first_seen": "2026-11-03",
+  "source": "hf-model:allenai/MolmoAct2"
+ },
+ "multi-embodiment": {
+  "term": "multi-embodiment",
+  "zh": "多本体",
+  "explain": "同一个模型能适配不同形状、关节的机器人，不必每种单训",
+  "first_seen": "2026-11-03",
+  "source": "hf-model:allenai/MolmoAct2"
+ },
+ "continued pre-training": {
+  "term": "Continued Pre-Training",
+  "zh": "继续预训练",
+  "explain": "在已有大模型上用新领域数据接着训练，让它熟悉这个领域。",
+  "first_seen": "2026-11-03",
+  "source": "gh:THUSI-Lab/GameScaling"
+ },
+ "action chunking": {
+  "term": "Action Chunking",
+  "zh": "动作分块",
+  "explain": "一次预测未来一小段连续动作，而不是每次只输出一步。",
+  "first_seen": "2026-11-03",
+  "source": "gh:THUSI-Lab/GameScaling"
+ },
+ "vision-language model": {
+  "term": "Vision-Language Model",
+  "zh": "视觉语言模型",
+  "explain": "能同时看懂图像和文字，并输出文字或动作的大模型。",
+  "first_seen": "2026-11-03",
+  "source": "gh:THUSI-Lab/GameScaling"
+ },
+ "umi (universal manipulation interface)": {
+  "term": "UMI (Universal Manipulation Interface)",
+  "zh": "通用操作接口",
+  "explain": "用人手持夹爪装置采集示教，再让机器人模仿，无需真机演示。",
+  "first_seen": "2026-11-03",
+  "source": "hf-dataset:Crobotia/iUMI"
+ },
+ "lerobot dataset format": {
+  "term": "LeRobot Dataset Format",
+  "zh": "LeRobot 数据集格式",
+  "explain": "HuggingFace 机器人数据的标准格式，含视频、状态、动作与元数据。",
+  "first_seen": "2026-11-03",
+  "source": "hf-dataset:Crobotia/iUMI"
+ },
+ "world action model": {
+  "term": "World Action Model",
+  "zh": "世界动作模型",
+  "explain": "先预测画面怎么变，再把画面变化翻译成机器人动作的模型",
+  "first_seen": "2026-11-03",
+  "source": "arxiv:2610.40748"
+ },
+ "inverse dynamics": {
+  "term": "Inverse Dynamics",
+  "zh": "逆动力学",
+  "explain": "看着前后两帧画面，反推中间机器人该做什么动作",
+  "first_seen": "2026-11-03",
+  "source": "arxiv:2610.40748"
  }
 }

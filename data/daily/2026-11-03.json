@@ -1,0 +1,218 @@
+{
+ "date": "2026-11-03",
+ "headline": "LeRobot 推方块数据集：无硬件入门首选",
+ "title_en": "lerobot/pusht: A Classic Push-T Dataset for Learning Robot Imitation",
+ "tagline_en": "A 206-episode dataset for training push-T policies from images; runs on Mac with LeRobot and Diffusion Policy.",
+ "summary_md": "This is the `lerobot/pusht` dataset on Hugging Face — a converted version of the classic Push-T demonstration data from the Diffusion Policy paper by Cheng Chi, Zhenjia Xu, Siyuan Feng, Eric Cousineau, Yilun Du, Benjamin Burchfiel, Russ Tedrake, and Shuran Song. It contains 206 episodes (25,650 frames at 10 fps) of a simulated 2D robot pushing a T-shaped block. Each frame has a 96x96 image, a 2D state (end-effector position), and a 2D action.\n\nWhy it matters: it's one of the smallest and cleanest benchmarks for learning visuomotor policies from demonstration. You can train a behavior cloning model like Diffusion Policy or ACT end-to-end on a laptop and see the full pipeline — data loading, training, rollout, and evaluation — without owning a robot. The dataset is packaged in LeRobotDataset format (v2.0), so it plugs directly into Hugging Face's LeRobot library.\n\nCan you try it without a robot? Yes. Install `lerobot` with pip, download the dataset via `LeRobotDataset(\"lerobot/pusht\")`, and train a small policy on Apple Silicon. The environment is 2D simulation, and rendering a rollout only needs the recorded images or a lightweight simulator. It's not a new release — the underlying paper is from 2023 — but it remains a practical starting point for imitation learning beginners.",
+ "pick": {
+  "id": "hf-dataset:lerobot/pusht",
+  "kind": "dataset",
+  "title": "lerobot/pusht",
+  "url": "https://huggingface.co/datasets/lerobot/pusht",
+  "authors": [],
+  "license": "mit",
+  "code_url": "",
+  "signals": {
+   "hf_trending": 3,
+   "hf_likes": 64,
+   "downloads": 26523
+  },
+  "topic": "操作抓取",
+  "one_liner": "经典的推方块示教数据集，教机器人从图像学会推T形块，共206条演示",
+  "one_liner_en": "The classic PushT demo dataset: 206 human demos teaching a robot to push a T-shaped block from images.",
+  "how_to_try": "用 pip 装 lerobot，下载这个数据集，在 Mac 上直接训练 Diffusion Policy 或 ACT 做行为克隆，再渲染回放验证。",
+  "how_to_try_en": "pip install lerobot, download this dataset, train Diffusion Policy or ACT behavior cloning on your Mac, then render rollouts to check.",
+  "reason": "不是新东西，但作为无硬件入门模仿学习的最佳练手数据，Mac 上能跑通全流程，教学价值高。",
+  "red_flags": [
+   "2D 仿真推方块，动作只有 2 维，不涉及真实机械臂复杂度",
+   "已有两三年，不是新进展"
+  ],
+  "final": 6.86,
+  "topic_penalty": 0,
+  "significance": 6,
+  "explainability": 9,
+  "wow": 5,
+  "playable": 9,
+  "openness": 8,
+  "learning_value": 9,
+  "heat": 3.0
+ },
+ "top": [
+  {
+   "id": "hf-dataset:lerobot/pusht",
+   "kind": "dataset",
+   "title": "lerobot/pusht",
+   "url": "https://huggingface.co/datasets/lerobot/pusht",
+   "authors": [],
+   "license": "mit",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 3,
+    "hf_likes": 64,
+    "downloads": 26523
+   },
+   "topic": "操作抓取",
+   "one_liner": "经典的推方块示教数据集，教机器人从图像学会推T形块，共206条演示",
+   "one_liner_en": "The classic PushT demo dataset: 206 human demos teaching a robot to push a T-shaped block from images.",
+   "how_to_try": "用 pip 装 lerobot，下载这个数据集，在 Mac 上直接训练 Diffusion Policy 或 ACT 做行为克隆，再渲染回放验证。",
+   "how_to_try_en": "pip install lerobot, download this dataset, train Diffusion Policy or ACT behavior cloning on your Mac, then render rollouts to check.",
+   "reason": "不是新东西，但作为无硬件入门模仿学习的最佳练手数据，Mac 上能跑通全流程，教学价值高。",
+   "red_flags": [
+    "2D 仿真推方块，动作只有 2 维，不涉及真实机械臂复杂度",
+    "已有两三年，不是新进展"
+   ],
+   "final": 6.86,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 9,
+   "wow": 5,
+   "playable": 9,
+   "openness": 8,
+   "learning_value": 9,
+   "heat": 3.0
+  },
+  {
+   "id": "hf-model:allenai/MolmoAct2",
+   "kind": "model",
+   "title": "allenai/MolmoAct2",
+   "url": "https://huggingface.co/allenai/MolmoAct2",
+   "authors": [],
+   "license": "",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 4,
+    "hf_likes": 33,
+    "downloads": 7636
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "AI2开源的多机器人通用视觉语言动作大模型，训练后可控制真实机器人",
+   "one_liner_en": "AI2's open vision-language-action model that can be fine-tuned to control many robots",
+   "how_to_try": "用官方 MolmoAct2-LIBERO微调版，在LIBERO仿真里跑推理；需先看GitHub示例代码",
+   "how_to_try_en": "Use the MolmoAct2-LIBERO finetuned checkpoint to run inference in the LIBERO simulator; start from the GitHub example scripts.",
+   "reason": "开源多本体VLA基座，生态完整有仿真版可试，但非开箱即用，需一定门槛",
+   "red_flags": [
+    "主checkpoint不含推理代码，只给微调用，新人易误以为开箱即用",
+    "未标注许可证，商用与再分发存疑",
+    "模型体量大，16GB内存的Mac本地跑推理可能吃力"
+   ],
+   "final": 6.77,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 7,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 3.49
+  },
+  {
+   "id": "gh:THUSI-Lab/GameScaling",
+   "kind": "repo",
+   "title": "THUSI-Lab/GameScaling",
+   "url": "https://github.com/THUSI-Lab/GameScaling",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 461,
+    "daily_rate": 20.0
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "用游戏键鼠操作数据继续预训练视觉语言模型，让它能边想边玩。",
+   "one_liner_en": "Continued pre-training of vision-language models on keyboard-and-mouse gameplay to act in games.",
+   "how_to_try": "用 Mac 跑 0.8B 权重接自己的游戏截图做推理；但没有游戏环境和训练代码，无法复现。",
+   "how_to_try_en": "Run the 0.8B checkpoint on your Mac, feed game screenshots and get keyboard/mouse actions; no training code or game harness.",
+   "reason": "大厂和清华合作的游戏智能体规模扩展研究，权重开放，适合学习 VLA 和动作分块；但缺训练代码，硬件门槛偏高。",
+   "red_flags": [
+    "只有推理客户端，没有训练代码和数据生成流程",
+    "游戏智能体能否算具身智能有争议",
+    "27B 权重需要 2 张 GPU，Mac 上跑不动"
+   ],
+   "final": 6.59,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 5.33
+  },
+  {
+   "id": "hf-dataset:Crobotia/iUMI",
+   "kind": "dataset",
+   "title": "Crobotia/iUMI",
+   "url": "https://huggingface.co/datasets/Crobotia/iUMI",
+   "authors": [],
+   "license": "cc-by-sa-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 2,
+    "downloads": 319
+   },
+   "topic": "数据集",
+   "one_liner": "真实家庭里双手夹爪叠衣服的第一视角示教数据集，1300小时。",
+   "one_liner_en": "A 1,300-hour dataset of handheld bimanual cloth-folding demos recorded in real homes.",
+   "how_to_try": "下载 part-00000.tar，用 LeRobot v3.0 读一条 episode，在 Mac 上可视化视频与轨迹。",
+   "how_to_try_en": "Download one tar shard, load an episode with LeRobot v3.0 on your Mac, and visualize videos with pose trajectories.",
+   "reason": "真实家庭双臂叠衣示教数据，规模大且开放，适合学习 UMI 与模仿学习；但总量巨大，Mac 用户只能读取单条 episode，且演示偏常规，惊喜感一般。",
+   "red_flags": [
+    "约 8.6TB 总量对 Mac 不友好，只能看单个 episode",
+    "发布日期 2026-10-24，晚于其他条目，需核实是否已放出",
+    "作者机构信息缺失，数据质量需看 qc 目录确认"
+   ],
+   "final": 6.58,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 2.38
+  },
+  {
+   "id": "arxiv:2610.40748",
+   "kind": "paper",
+   "title": "WorldBridge: Bridging Video and Action for Task Generalization in World Action Models",
+   "url": "https://arxiv.org/abs/2610.40748",
+   "authors": [
+    "Jun Cen",
+    "Yubo Guo",
+    "Hao Li",
+    "Liangkai Li",
+    "Yaoxu Lyu",
+    "Meng Wei",
+    "Zeqi Xiao",
+    "Sizhe Yang"
+   ],
+   "license": "",
+   "code_url": "https://worldbridge-jd.github.io/",
+   "signals": {
+    "hf_upvotes": 12,
+    "github_stars": 0
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "用视频预测当桥梁，让机器人学会没练过的新任务",
+   "one_liner_en": "Bridging video prediction and action to let robots generalize to unseen tasks.",
+   "how_to_try": "先在 Mac 上读论文和项目页看 RoboTwin 视频演示；自己复现训练需 NVIDIA 显卡，只能云 GPU 试试。",
+   "how_to_try_en": "Read the paper and project page demos on your Mac first; retraining needs a cloud GPU, not local.",
+   "reason": "思路清晰、有消融实验支撑视频监督的价值，适合学世界模型入门；但复现门槛高、演示不足。",
+   "red_flags": [
+    "arXiv 编号与日期不合常理，需核实真伪",
+    "未标注许可证，代码开放程度不明",
+    "无视频或可视化演示证据，惊喜感打折"
+   ],
+   "final": 6.02,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 4,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 5.56
+  }
+ ]
+}
