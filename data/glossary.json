@@ -187,5 +187,68 @@
   "explain": "看着前后两帧画面，反推中间机器人该做什么动作",
   "first_seen": "2026-11-03",
   "source": "arxiv:2610.40748"
+ },
+ "behavior cloning data": {
+  "term": "behavior cloning data",
+  "zh": "模仿学习数据",
+  "explain": "把人类遥控机器人的动作录下来，让模型学着照着做",
+  "first_seen": "2026-11-04",
+  "source": "hf-dataset:allenai/MolmoAct2-BimanualYAM-Dataset"
+ },
+ "vision-language-action (vla)": {
+  "term": "Vision-Language-Action (VLA)",
+  "zh": "视觉语言动作模型",
+  "explain": "把摄像头画面和文字指令直接翻译成机器人动作的大模型",
+  "first_seen": "2026-11-04",
+  "source": "hf-model:nvidia/GR00T-N1.7-3B"
+ },
+ "post-training": {
+  "term": "Post-training",
+  "zh": "后训练",
+  "explain": "在通用大模型基础上用自己机器人的数据再微调，让它会干具体任务",
+  "first_seen": "2026-11-04",
+  "source": "hf-model:nvidia/GR00T-N1.7-3B"
+ },
+ "foothold prediction": {
+  "term": "Foothold Prediction",
+  "zh": "落足点预测",
+  "explain": "让机器人先猜下一步脚踩哪里，再去看那块地形",
+  "first_seen": "2026-11-04",
+  "source": "gh:leggedrobotics/foothold-prediction-model"
+ },
+ "proprioception": {
+  "term": "Proprioception",
+  "zh": "本体感知",
+  "explain": "机器人靠关节角度和速度感知自己身体状态",
+  "first_seen": "2026-11-04",
+  "source": "gh:leggedrobotics/foothold-prediction-model"
+ },
+ "sim-to-real": {
+  "term": "Sim-to-Real",
+  "zh": "仿真到真机",
+  "explain": "在仿真里训练好策略，直接搬到真机上用",
+  "first_seen": "2026-11-04",
+  "source": "gh:leggedrobotics/foothold-prediction-model"
+ },
+ "robot-use agent": {
+  "term": "Robot-use Agent",
+  "zh": "机器人操作智能体",
+  "explain": "让大模型直接看着画面决定机器人怎么动，而不专门训练策略",
+  "first_seen": "2026-11-04",
+  "source": "arxiv:2611.01560"
+ },
+ "open-weight model": {
+  "term": "Open-weight Model",
+  "zh": "开放权重模型",
+  "explain": "权重能下载、也能自己继续训练的模型，比如 Qwen",
+  "first_seen": "2026-11-04",
+  "source": "arxiv:2611.01560"
+ },
+ "zero-shot manipulation": {
+  "term": "Zero-shot Manipulation",
+  "zh": "零样本操作",
+  "explain": "没在目标任务上训过，第一次上手就能抓取",
+  "first_seen": "2026-11-04",
+  "source": "arxiv:2611.01560"
  }
 }

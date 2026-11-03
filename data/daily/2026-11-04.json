@@ -1,0 +1,219 @@
+{
+ "date": "2026-11-04",
+ "headline": "AI2公开720小时双臂机器人示教数据",
+ "title_en": "AI2's 720-hour bimanual dataset, in LeRobot format",
+ "tagline_en": "A large open dataset of two-armed tabletop manipulation demos you can load with LeRobot.",
+ "summary_md": "**What it is.** The Allen Institute for AI (AI2) released the MolmoAct2-BimanualYAM Dataset, a collection of over 720 hours of two-armed tabletop manipulation demonstrations used to train their MolmoAct2 action model. Per the dataset card it holds 32,246 episodes, about 76 million frames at 30 fps, and 34 annotated task instructions. It is stored in the LeRobot v3.0 format and licensed Apache-2.0. The robot type is listed as `bi_yam_follower`.\n\n**Why it matters.** Open data in this size range for bimanual manipulation is still rare, and it comes already formatted for the LeRobot ecosystem, with per-episode language annotations in `meta/tasks_annotated.parquet`. That makes it a usable starting point for behavior-cloning experiments and for anyone learning how vision-language-action models get their training signal.\n\n**Can you try it without a robot?** Yes, in a limited way. You can browse episodes — camera streams, robot state, actions, language — in AI2's LeRobot Visualizer Space on Hugging Face, or pull a few episodes with the `lerobot` Python library on a laptop. You cannot reproduce MolmoAct2 training from a merged copy: the card says training used a custom multi-source dataloader, and the normalization stats are weighted approximations of per-source quantiles, which the authors acknowledge can introduce bias. The card also lists no homepage or paper link yet, apart from the citation to the MolmoAct2 paper.",
+ "pick": {
+  "id": "hf-dataset:allenai/MolmoAct2-BimanualYAM-Dataset",
+  "kind": "dataset",
+  "title": "allenai/MolmoAct2-BimanualYAM-Dataset",
+  "url": "https://huggingface.co/datasets/allenai/MolmoAct2-BimanualYAM-Dataset",
+  "authors": [],
+  "license": "apache-2.0",
+  "code_url": "",
+  "signals": {
+   "hf_trending": 2,
+   "hf_likes": 17,
+   "downloads": 42298
+  },
+  "topic": "数据集",
+  "one_liner": "AI2 公开的 720 小时双臂机器人操作示教数据集，用于训练机器人动作模型",
+  "one_liner_en": "AI2's 720-hour open dataset of two-arm robot manipulation demos for training action models.",
+  "how_to_try": "用 LeRobot 库加载少量 episode 看视频和动作，或在 HF 可视化 Space 里浏览，先建数据直觉",
+  "how_to_try_en": "Load a few episodes with LeRobot or browse the HF visualizer Space to inspect video, state, and actions.",
+  "reason": "规模大、许可宽松、格式标准，是入门 VLA 数据和 LeRobot 生态的好材料，但缺论文细节，惊喜感一般",
+  "red_flags": [
+   "仓库里只有数据集信息，论文和项目页都标着待补充",
+   "归一化统计用加权平均近似，作者自己承认有偏差",
+   "34 个任务、720 小时，但没说明任务多样性和真机效果"
+  ],
+  "final": 6.54,
+  "topic_penalty": 0,
+  "significance": 8,
+  "explainability": 8,
+  "wow": 5,
+  "playable": 6,
+  "openness": 9,
+  "learning_value": 8,
+  "heat": 2.38
+ },
+ "top": [
+  {
+   "id": "hf-dataset:allenai/MolmoAct2-BimanualYAM-Dataset",
+   "kind": "dataset",
+   "title": "allenai/MolmoAct2-BimanualYAM-Dataset",
+   "url": "https://huggingface.co/datasets/allenai/MolmoAct2-BimanualYAM-Dataset",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 17,
+    "downloads": 42298
+   },
+   "topic": "数据集",
+   "one_liner": "AI2 公开的 720 小时双臂机器人操作示教数据集，用于训练机器人动作模型",
+   "one_liner_en": "AI2's 720-hour open dataset of two-arm robot manipulation demos for training action models.",
+   "how_to_try": "用 LeRobot 库加载少量 episode 看视频和动作，或在 HF 可视化 Space 里浏览，先建数据直觉",
+   "how_to_try_en": "Load a few episodes with LeRobot or browse the HF visualizer Space to inspect video, state, and actions.",
+   "reason": "规模大、许可宽松、格式标准，是入门 VLA 数据和 LeRobot 生态的好材料，但缺论文细节，惊喜感一般",
+   "red_flags": [
+    "仓库里只有数据集信息，论文和项目页都标着待补充",
+    "归一化统计用加权平均近似，作者自己承认有偏差",
+    "34 个任务、720 小时，但没说明任务多样性和真机效果"
+   ],
+   "final": 6.54,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 6,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 2.38
+  },
+  {
+   "id": "hf-model:nvidia/GR00T-N1.7-3B",
+   "kind": "model",
+   "title": "nvidia/GR00T-N1.7-3B",
+   "url": "https://huggingface.co/nvidia/GR00T-N1.7-3B",
+   "authors": [],
+   "license": "",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 6,
+    "hf_likes": 182,
+    "downloads": 54825
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "英伟达开源的人形机器人通用大脑，看图听指令后输出动作",
+   "one_liner_en": "NVIDIA's open humanoid foundation model that turns images and language into robot actions",
+   "how_to_try": "3B权重可下载，但官方推理需GPU；Mac上只能读代码、跑LIBERO仿真评估勉强可行，纯CPU基本带不动",
+   "how_to_try_en": "Weights are downloadable but official inference needs a GPU; on Mac you can read the Isaac-GR00T repo and maybe run LIBERO sim eval, not full inference.",
+   "reason": "英伟达标志性VLA开源模型，四套后训练版本覆盖主流数据集，是学VLA和模仿学习的好教材；但需GPU、缺硬件，新人只能读代码看论文。",
+   "red_flags": [
+    "README是模型卡模板，未见专门为N1.7写的技术细节或新结果",
+    "许可证为企业版Open Model License，含商用限制条款",
+    "宣称人形通用，但演示与基准主要来自桌面操作数据集"
+   ],
+   "final": 6.52,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 7,
+   "learning_value": 9,
+   "heat": 4.22
+  },
+  {
+   "id": "hf-model:lerobot/pi05_base",
+   "kind": "model",
+   "title": "lerobot/pi05_base",
+   "url": "https://huggingface.co/lerobot/pi05_base",
+   "authors": [],
+   "license": "gemma",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 3,
+    "hf_likes": 115,
+    "downloads": 21305
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "开源视觉语言动作模型，能听懂指令在新环境里做长时间机器人任务",
+   "one_liner_en": "Open vision-language-action model that follows instructions to do long robot tasks in new places",
+   "how_to_try": "用 Mac 跑不动全量推理；可在 CPU 上加载检查点看接口，真跑需云 GPU 或本地仿真",
+   "how_to_try_en": "Too heavy for a Mac; load the checkpoint on CPU to inspect the API, or use cloud GPU/sim to actually run it.",
+   "reason": "π0.5 开放基础权重意义大，LeRobot 集成便于学习 VLA 与模仿学习，但半开源且无 GPU 难上手，适合讲解而非亲手跑。",
+   "red_flags": [
+    "只放了 flow-matching 动作头，子任务预测、动作分词、RL 均未开源",
+    "许可证为 gemma，商用需看条款",
+    "16GB Mac 显存不足，无法实际推理或微调"
+   ],
+   "final": 6.49,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 5,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 3.0
+  },
+  {
+   "id": "gh:leggedrobotics/foothold-prediction-model",
+   "kind": "repo",
+   "title": "leggedrobotics/foothold-prediction-model",
+   "url": "https://github.com/leggedrobotics/foothold-prediction-model",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 124,
+    "daily_rate": 6.2
+   },
+   "topic": "人形与足式",
+   "one_liner": "人形机器人先猜下一步踩哪，再只看脚下那块的感知图",
+   "one_liner_en": "A humanoid predicts its next footholds, then looks only at terrain patches around them",
+   "how_to_try": "需 Isaac Sim 5.1 + Isaac Lab 2.3，Mac 跑不动；可先看项目页的浏览器 demo 和视频",
+   "how_to_try_en": "Needs Isaac Sim 5.1 + Isaac Lab, not Mac-friendly; start with the browser demo and video on the project page",
+   "reason": "ETH 出品、思路干净（先预测落足再稀疏感知），代码权重齐全，是理解感知式步态的好教材，但门槛在 Isaac Sim。",
+   "red_flags": [
+    "播放依赖 Isaac Sim/Isaac Lab，16GB Mac 基本无法本地运行",
+    "只有仓库和论文，未见数据集公开"
+   ],
+   "final": 6.44,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 3.46
+  },
+  {
+   "id": "arxiv:2611.01560",
+   "kind": "paper",
+   "title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
+   "url": "https://arxiv.org/abs/2611.01560",
+   "authors": [
+    "Jiarui Yuan",
+    "Yuxin Zuo",
+    "Xiaoyu Huang",
+    "Wenbo Zhang",
+    "Kwanyoung Park",
+    "Junlin Yang",
+    "Tianxiang Zhang",
+    "Ruoqu Chen"
+   ],
+   "license": "",
+   "code_url": "https://github.com/Open-RUA/uni-robot-agent",
+   "signals": {
+    "hf_upvotes": 38,
+    "github_stars": 100
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "开放模型也能当机器人操作智能体，还赢过了顶级闭源模型",
+   "one_liner_en": "A unified harness lets open-weight models drive robots, beating a proprietary model on a benchmark.",
+   "how_to_try": "论文未标许可证，仓库只提到 harness；没有真机就跑不了，最多在 Mac 上读代码、看 demo。",
+   "how_to_try_en": "No license given and it needs a real robot; on Mac you can only read the repo and watch demos.",
+   "reason": "开放模型做机器人智能体的方向有意义，但条目信息可疑、缺实测细节、没有硬件几乎玩不了，只能当阅读材料。",
+   "red_flags": [
+    "arXiv 编号 2611 和 GPT-6 等名称可疑，真实性和出处无法核实",
+    "摘要提到 19 个真实任务成功，但没给成功率、也没给硬件清单",
+    "许可证未标注，权重和 harness 是否真开源不明"
+   ],
+   "final": 6.02,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 5,
+   "openness": 5,
+   "learning_value": 6,
+   "heat": 7.94
+  }
+ ]
+}
