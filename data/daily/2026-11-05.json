@@ -1,0 +1,234 @@
+{
+ "date": "2026-11-05",
+ "headline": "上百台真机器人分布式评测 VLA 模型",
+ "title_en": "RoboColosseum: a distributed benchmark for VLA policies on real robots",
+ "tagline_en": "124 sites, 4 robot types, 5,699 head-to-head trials: a living test of how well robot policies generalize.",
+ "summary_md": "**What it is.** RoboColosseum is a distributed evaluation framework from Tan Sang Nguyen, Yi Ru Wang, Shailesh Shailesh, Gang Yang, Jiamo Hu, Jianuo Jiang, Haoquan Fang and Zhongzheng Ren. Instead of everyone testing models on the same robot in one lab, it connects locally operated robots at many sites under a shared protocol. The first study covers five vision-language-action (VLA) policies and three frontier AI agents across four embodiments: SO-101, Franka, Bimanual-YAM, and the G1 humanoid. In the Open Track, models are compared blinded and head-to-head without task-specific tuning; the Fine-tune Track gives every policy the same 100 demonstrations per task across 20 tasks.\n\n**Why it matters.** Across 5,699 pairwise comparisons at 124 sites, the authors report that frontier agents come close to specialized VLA policies, that all systems still struggle on open-world tasks, and that ranking agreement across embodiment-specific task suites is weak (Kendall W = 0.24). Open Track rankings also poorly predict post-fine-tuning performance. On the G1 humanoid no policy finishes any of five tasks, yet measured partial progress ranges from 13.3% to 23.2%. In short: success rate alone hides a lot, and generalization across robots is still an open problem.\n\n**Can you try it without a robot?** Not really. Participation needs a real robot connected to the network. There is no public code or weight license listed yet. You can still read the project page and results charts to understand the findings.",
+ "pick": {
+  "id": "arxiv:2611.02497",
+  "kind": "paper",
+  "title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
+  "url": "https://arxiv.org/abs/2611.02497",
+  "authors": [
+   "Tan Sang Nguyen",
+   "Yi Ru Wang",
+   "Shailesh Shailesh",
+   "Gang Yang",
+   "Jiamo Hu",
+   "Jianuo Jiang",
+   "Haoquan Fang",
+   "Zhongzheng Ren"
+  ],
+  "license": "",
+  "code_url": "https://github.com/RoboColosseum/robocolosseum-client",
+  "signals": {
+   "hf_upvotes": 42,
+   "github_stars": 3
+  },
+  "topic": "VLA与基础模型",
+  "one_liner": "上百台真机器人在不同家庭里跑同一个测评，比谁的机器人模型更强",
+  "one_liner_en": "A distributed benchmark that runs VLA policies on real robots across many sites",
+  "how_to_try": "需要真实机器人入网参与，Mac 上做不了；只能看项目页的排行榜和结果图表来理解",
+  "how_to_try_en": "Requires real robots to join the network; on a Mac you can only read the leaderboard and plots on the project page.",
+  "reason": "用上百台真机器人做分布式评测，揭示 VLA 跨本体泛化差，方向有价值；但新人只能围观结果，无法上手。",
+  "red_flags": [
+   "没有代码或权重许可信息，复现门槛高",
+   "依赖真实机器人网络，个人无法参与",
+   "arXiv 编号与日期存疑，需核实真伪"
+  ],
+  "final": 6.88,
+  "topic_penalty": 0,
+  "significance": 8,
+  "explainability": 8,
+  "wow": 7,
+  "playable": 4,
+  "openness": 5,
+  "learning_value": 8,
+  "heat": 8.15
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.02497",
+   "kind": "paper",
+   "title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
+   "url": "https://arxiv.org/abs/2611.02497",
+   "authors": [
+    "Tan Sang Nguyen",
+    "Yi Ru Wang",
+    "Shailesh Shailesh",
+    "Gang Yang",
+    "Jiamo Hu",
+    "Jianuo Jiang",
+    "Haoquan Fang",
+    "Zhongzheng Ren"
+   ],
+   "license": "",
+   "code_url": "https://github.com/RoboColosseum/robocolosseum-client",
+   "signals": {
+    "hf_upvotes": 42,
+    "github_stars": 3
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "上百台真机器人在不同家庭里跑同一个测评，比谁的机器人模型更强",
+   "one_liner_en": "A distributed benchmark that runs VLA policies on real robots across many sites",
+   "how_to_try": "需要真实机器人入网参与，Mac 上做不了；只能看项目页的排行榜和结果图表来理解",
+   "how_to_try_en": "Requires real robots to join the network; on a Mac you can only read the leaderboard and plots on the project page.",
+   "reason": "用上百台真机器人做分布式评测，揭示 VLA 跨本体泛化差，方向有价值；但新人只能围观结果，无法上手。",
+   "red_flags": [
+    "没有代码或权重许可信息，复现门槛高",
+    "依赖真实机器人网络，个人无法参与",
+    "arXiv 编号与日期存疑，需核实真伪"
+   ],
+   "final": 6.88,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 4,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 8.15
+  },
+  {
+   "id": "arxiv:2611.05275",
+   "kind": "paper",
+   "title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
+   "url": "https://arxiv.org/abs/2611.05275",
+   "authors": [
+    "Pengfei Zhou",
+    "Yixing Ma",
+    "Hexin Wang",
+    "Weidong Tang",
+    "Zhenglin Wan",
+    "Wangbo Zhao",
+    "Yang You"
+   ],
+   "license": "",
+   "code_url": "https://github.com/InfRec-Cardinal/route-anything",
+   "signals": {
+    "hf_upvotes": 94,
+    "github_stars": 8
+   },
+   "topic": "其他",
+   "one_liner": "像调度中心一样为每个任务挑最合适的模型，效果更好还省算力",
+   "one_liner_en": "A router that picks the best model per task, beating any single model at lower cost.",
+   "how_to_try": "仓库若公开可用 Mac 直接跑路由打分脚本；否则只能读论文。机器人部分需云端 GPU 复现",
+   "how_to_try_en": "If the repo is public, run the router scripts on a Mac; otherwise read the paper. The robotics part needs cloud GPU.",
+   "reason": "把多模型编排做成可评测框架，思路清楚、有理论也有大数据，但偏通用 AI 基建，机器人含量低，新人可玩性一般。",
+   "red_flags": [
+    "偏系统工程与评测，不是机器人新能力",
+    "机器人部分只是众多基准之一，权重很小",
+    "代码未明确开源，且路由训练可能要大量算力"
+   ],
+   "final": 6.54,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 5,
+   "openness": 5,
+   "learning_value": 7,
+   "heat": 9.87
+  },
+  {
+   "id": "gh:opentac/opentac",
+   "kind": "repo",
+   "title": "opentac/opentac",
+   "url": "https://github.com/opentac/opentac",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 89,
+    "daily_rate": 5.6
+   },
+   "topic": "硬件与本体",
+   "one_liner": "开源工具：在浏览器里设计可测压力和剪切的柔性触觉皮肤，并能在电脑里仿真读数。",
+   "one_liner_en": "Open tools to design, simulate, and read flexible tactile skins for any robot surface.",
+   "how_to_try": "运行 `uv run opentac cad` 在浏览器里画传感器；再用 `opentac.sim` 仿真按压读数。只需 numpy，在 Mac 上就能跑。",
+   "how_to_try_en": "Run `uv run opentac cad` to design a sensor in the browser, then use `opentac.sim` to simulate pressing. Works on a Mac with just numpy.",
+   "reason": "把触觉皮肤的设计、读出、仿真连成开源流水线，仿真部分 Mac 可跑，但实物依赖自制硬件和 PCB 制造，新人难完整复现。",
+   "red_flags": [
+    "真实传感器读数需要专用的读出板硬件，没有硬件只能跑仿真",
+    "项目热度不高，缺乏第三方验证和同行评审"
+   ],
+   "final": 6.39,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 3.31
+  },
+  {
+   "id": "gh:tuotuoLyu/ForesightSafety-VLA",
+   "kind": "repo",
+   "title": "tuotuoLyu/ForesightSafety-VLA",
+   "url": "https://github.com/tuotuoLyu/ForesightSafety-VLA",
+   "authors": [],
+   "license": "NOASSERTION",
+   "code_url": "",
+   "signals": {
+    "stars": 87,
+    "daily_rate": 14.5
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "给机器人视觉语言动作模型做安全体检的测试基准",
+   "one_liner_en": "A safety test benchmark that checks whether robot VLA models behave safely",
+   "how_to_try": "在 Mac 上安装 RoboTwin 仿真（CPU 或 M 系列芯片即可），运行仓库里的 safe_* 场景评测脚本",
+   "how_to_try_en": "Install RoboTwin sim on Mac (CPU/M-series OK), run the repo's safe_* scenario eval scripts",
+   "reason": "安全评测方向有价值、分类体系清晰、适合学习入门，但依赖仿真环境，演示性一般，开放许可模糊。",
+   "red_flags": [
+    "许可证标注为 NOASSERTION，授权不明确",
+    "依赖 RoboTwin 仿真环境，配置较繁琐",
+    "只覆盖仿真，未验证真机安全性"
+   ],
+   "final": 6.28,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 6,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 4.8
+  },
+  {
+   "id": "hf-model:LightOriginsHQ/LightNav-0",
+   "kind": "model",
+   "title": "LightOriginsHQ/LightNav-0",
+   "url": "https://huggingface.co/LightOriginsHQ/LightNav-0",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 3,
+    "hf_likes": 36,
+    "downloads": 3218
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "用视觉语言模型看懂第一视角视频，直接输出机器人该怎么走的导航模型。",
+   "one_liner_en": "A vision-language model that watches first-person video and outputs robot navigation waypoints.",
+   "how_to_try": "需 NVIDIA 显卡跑 vLLM，Mac 上只能看 Habitat 仿真前先跑通 CPU 推理 demo。",
+   "how_to_try_en": "Needs an NVIDIA GPU to run vLLM; on a Mac you can only read the docs and try the CPU-slow prediction demo.",
+   "reason": "方向有价值，VLA 做导航是热点，模型和代码都开放；但它需要 GPU，新人难以亲手操作，机构信息也不透明，作为入门材料要谨慎。",
+   "red_flags": [
+    "机构与作者信息完全缺失，Hugging Face 组织名 LightOriginsHQ 无法核实",
+    "自称支持 Mac/无显卡，但推理依赖 vLLM 后端，实际需要 NVIDIA 显卡",
+    "发布日期 2026-08-28 为未来日期，真实性存疑",
+    "主打 open-vocabulary 导航，但只在仿真基准上评估，缺少真实机器人视频演示"
+   ],
+   "final": 5.94,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 4,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 3.0
+  }
+ ]
+}

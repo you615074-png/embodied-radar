@@ -250,5 +250,89 @@
   "explain": "没在目标任务上训过，第一次上手就能抓取",
   "first_seen": "2026-11-04",
   "source": "arxiv:2611.01560"
+ },
+ "vla policy": {
+  "term": "VLA policy",
+  "zh": "视觉-语言-动作模型",
+  "explain": "看画面、听指令，直接输出机器人动作的大模型",
+  "first_seen": "2026-11-05",
+  "source": "arxiv:2611.02497"
+ },
+ "embodiment": {
+  "term": "Embodiment",
+  "zh": "本体",
+  "explain": "机器人的身体形态，比如单臂、双臂、人形",
+  "first_seen": "2026-11-05",
+  "source": "arxiv:2611.02497"
+ },
+ "model routing": {
+  "term": "Model Routing",
+  "zh": "模型路由",
+  "explain": "按输入特点挑不同模型来处理，而不是全用一个",
+  "first_seen": "2026-11-05",
+  "source": "arxiv:2611.05275"
+ },
+ "oracle routing": {
+  "term": "Oracle Routing",
+  "zh": "上帝视角路由",
+  "explain": "假设事先知道哪个模型最好的理想上限，用来当标杆",
+  "first_seen": "2026-11-05",
+  "source": "arxiv:2611.05275"
+ },
+ "quality-cost trade-off": {
+  "term": "Quality-Cost Trade-off",
+  "zh": "质量与成本权衡",
+  "explain": "在效果和算力花销之间找平衡点",
+  "first_seen": "2026-11-05",
+  "source": "arxiv:2611.05275"
+ },
+ "tactile skin": {
+  "term": "Tactile skin",
+  "zh": "触觉皮肤",
+  "explain": "覆盖在机器人表面的柔性传感器阵列，能感知接触位置和力大小。",
+  "first_seen": "2026-11-05",
+  "source": "gh:opentac/opentac"
+ },
+ "taxel": {
+  "term": "Taxel",
+  "zh": "触觉像素",
+  "explain": "触觉皮肤上的一个感应点，像屏幕的一个像素，每个点测一处受力。",
+  "first_seen": "2026-11-05",
+  "source": "gh:opentac/opentac"
+ },
+ "flex-pcb": {
+  "term": "Flex-PCB",
+  "zh": "柔性电路板",
+  "explain": "可以弯折的电路板，用来把感应点做成贴合曲面的薄膜传感器。",
+  "first_seen": "2026-11-05",
+  "source": "gh:opentac/opentac"
+ },
+ "safety benchmark": {
+  "term": "Safety benchmark",
+  "zh": "安全基准",
+  "explain": "用预设的危险场景测试机器人会不会闯祸",
+  "first_seen": "2026-11-05",
+  "source": "gh:tuotuoLyu/ForesightSafety-VLA"
+ },
+ "sim-to-real / simulation eval": {
+  "term": "Sim-to-real / simulation eval",
+  "zh": "仿真评测",
+  "explain": "先在电脑虚拟环境里测试，省掉真机成本",
+  "first_seen": "2026-11-05",
+  "source": "gh:tuotuoLyu/ForesightSafety-VLA"
+ },
+ "residual vq action tokenizer": {
+  "term": "Residual VQ action tokenizer",
+  "zh": "残差向量量化动作分词器",
+  "explain": "把连续轨迹压缩成几个离散代码，像把话拆成单词。",
+  "first_seen": "2026-11-05",
+  "source": "hf-model:LightOriginsHQ/LightNav-0"
+ },
+ "vln-ce": {
+  "term": "VLN-CE",
+  "zh": "连续环境视觉语言导航",
+  "explain": "让机器人在仿真房子里按一句话找路。",
+  "first_seen": "2026-11-05",
+  "source": "hf-model:LightOriginsHQ/LightNav-0"
  }
 }

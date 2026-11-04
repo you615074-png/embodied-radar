@@ -20,6 +20,13 @@
    "title": "allenai/MolmoAct2-BimanualYAM-Dataset",
    "topic": "数据集",
    "final": 6.54
+  },
+  {
+   "date": "2026-11-05",
+   "id": "arxiv:2611.02497",
+   "title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
+   "topic": "VLA与基础模型",
+   "final": 6.88
   }
  ],
  "top": {
@@ -37,7 +44,12 @@
   "hf-model:nvidia/GR00T-N1.7-3B": "2026-11-04",
   "hf-model:lerobot/pi05_base": "2026-11-04",
   "gh:leggedrobotics/foothold-prediction-model": "2026-11-04",
-  "arxiv:2611.01560": "2026-11-04"
+  "arxiv:2611.01560": "2026-11-04",
+  "arxiv:2611.02497": "2026-11-05",
+  "arxiv:2611.05275": "2026-11-05",
+  "gh:opentac/opentac": "2026-11-05",
+  "gh:tuotuoLyu/ForesightSafety-VLA": "2026-11-05",
+  "hf-model:LightOriginsHQ/LightNav-0": "2026-11-05"
  },
  "scores": {
   "arxiv:2610.40339": {
@@ -5477,6 +5489,1384 @@
      "日期为 2026-11，需核实真实性"
     ],
     "reason": "方向有价值，用人类演示做全身移动操作，但完全不开源且需专用采集硬件，新人只能看视频学概念。"
+   }
+  },
+  "arxiv:2611.05377": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "VLA与基础模型",
+    "one_liner": "用视频生成模型从人类视频里提取通用的动作表示",
+    "one_liner_en": "Repurposes a video diffusion model to learn a universal latent action space from video",
+    "scores": {
+     "significance": 7,
+     "explainability": 6,
+     "wow": 7,
+     "playable": 4,
+     "openness": 4,
+     "learning_value": 7
+    },
+    "how_to_try": "项目页可能有 demo 视频；模型是视频扩散模型，16GB Mac 跑不动训练，只能看演示和读代码",
+    "how_to_try_en": "Watch the project-page demos; training needs a big GPU, so a 16GB Mac can only read code and watch videos",
+    "concepts": [
+     {
+      "term": "latent action",
+      "zh": "隐式动作",
+      "explain": "不用真实动作标签，从前后两帧画面的变化里反推“做了什么动作”"
+     },
+     {
+      "term": "video diffusion model",
+      "zh": "视频扩散模型",
+      "explain": "像 Sora 那样按文字生成视频的模型，这里借用它内部对运动的理解"
+     },
+     {
+      "term": "embodiment transfer",
+      "zh": "跨本体迁移",
+      "explain": "把人在视频里的动作迁移到不同形态的机器人身上执行"
+     }
+    ],
+    "red_flags": [
+     "只有摘要，未见具体量化对比和基线细节",
+     "视频扩散模型推理成本高，对个人设备不友好",
+     "许可证未标注，代码可用性存疑"
+    ],
+    "reason": "思路有价值，把视频扩散模型当作通用动作接口，跨本体零样本迁移的概念很吸引人；但门槛高、细节未公开，新手只能看不能玩。"
+   }
+  },
+  "arxiv:2611.05280": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "其他",
+    "one_liner": "多轮多模态对话数据集，让模型记住并更新对话状态",
+    "one_liner_en": "A large multi-turn multimodal dialogue dataset and benchmark for stateful interaction",
+    "scores": {
+     "significance": 6,
+     "explainability": 6,
+     "wow": 5,
+     "playable": 5,
+     "openness": 6,
+     "learning_value": 6
+    },
+    "how_to_try": "不是机器人内容；仅有 Mac 很难跑 BAGEL 微调，可先读 Benchmark 样例了解多轮状态跟踪",
+    "how_to_try_en": "Not robotics; on a Mac you can't fine-tune BAGEL easily. Read the benchmark examples to grasp multi-turn state tracking.",
+    "concepts": [
+     {
+      "term": "Unified Multimodal Model",
+      "zh": "统一多模态模型",
+      "explain": "一个模型同时理解和生成图片"
+     },
+     {
+      "term": "Stateful Interaction",
+      "zh": "状态化交互",
+      "explain": "模型要记住前几轮对话里改过什么"
+     },
+     {
+      "term": "Dialogue State",
+      "zh": "对话状态",
+      "explain": "多轮对话中累积、会被改写的上下文信息"
+     }
+    ],
+    "red_flags": [
+     "与具身智能、机器人关系很弱，更像通用多模态对话方向",
+     "未标注许可证，可用性不明",
+     "arXiv 编号与 2026-11 日期需核实真伪"
+    ],
+    "reason": "多轮状态跟踪有价值，但偏通用多模态，非机器人；Mac 只能读样例，不适合作为具身精选。"
+   }
+  },
+  "arxiv:2611.05275": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "其他",
+    "one_liner": "像调度中心一样为每个任务挑最合适的模型，效果更好还省算力",
+    "one_liner_en": "A router that picks the best model per task, beating any single model at lower cost.",
+    "scores": {
+     "significance": 6,
+     "explainability": 8,
+     "wow": 5,
+     "playable": 5,
+     "openness": 5,
+     "learning_value": 7
+    },
+    "how_to_try": "仓库若公开可用 Mac 直接跑路由打分脚本；否则只能读论文。机器人部分需云端 GPU 复现",
+    "how_to_try_en": "If the repo is public, run the router scripts on a Mac; otherwise read the paper. The robotics part needs cloud GPU.",
+    "concepts": [
+     {
+      "term": "Model Routing",
+      "zh": "模型路由",
+      "explain": "按输入特点挑不同模型来处理，而不是全用一个"
+     },
+     {
+      "term": "Oracle Routing",
+      "zh": "上帝视角路由",
+      "explain": "假设事先知道哪个模型最好的理想上限，用来当标杆"
+     },
+     {
+      "term": "Quality-Cost Trade-off",
+      "zh": "质量与成本权衡",
+      "explain": "在效果和算力花销之间找平衡点"
+     }
+    ],
+    "red_flags": [
+     "偏系统工程与评测，不是机器人新能力",
+     "机器人部分只是众多基准之一，权重很小",
+     "代码未明确开源，且路由训练可能要大量算力"
+    ],
+    "reason": "把多模型编排做成可评测框架，思路清楚、有理论也有大数据，但偏通用 AI 基建，机器人含量低，新人可玩性一般。"
+   }
+  },
+  "arxiv:2611.04870": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "世界模型与仿真",
+    "one_liner": "一个能听动作指令、多视角一致的机器人世界模型模拟器。",
+    "one_liner_en": "An action-conditioned, multi-view robot world model that acts as a simulator.",
+    "scores": {
+     "significance": 8,
+     "explainability": 7,
+     "wow": 8,
+     "playable": 5,
+     "openness": 8,
+     "learning_value": 9
+    },
+    "how_to_try": "权重和推理代码已开源，但视频生成模型在 Mac 16GB 上几乎跑不动，只能读代码、看 rollout 视频。",
+    "how_to_try_en": "Weights and inference code are open, but a video world model won't run on a 16GB Mac; watch rollouts and read the code.",
+    "concepts": [
+     {
+      "term": "World Model",
+      "zh": "世界模型",
+      "explain": "让模型学会预测'动作之后画面会变成什么样',相当于脑内小模拟器。"
+     },
+     {
+      "term": "Cross-Embodiment",
+      "zh": "跨本体",
+      "explain": "同一套方法同时适用于不同形态的机器人,比如机械臂和灵巧手。"
+     },
+     {
+      "term": "Autoregressive Rollout",
+      "zh": "自回归推演",
+      "explain": "把上一帧预测当作下一帧输入,一步步往后演,误差会累积。"
+     }
+    ],
+    "red_flags": [
+     "arXiv 编号与 2026-11 日期看起来像虚构条目,需核实真伪",
+     "没有本地算力就无法亲自复现推理"
+    ],
+    "reason": "方向重要、开源良心、适合学世界模型概念,但吃算力,新人只能看不能玩。"
+   }
+  },
+  "gh:twehrbein/ExMR": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "从一段手机视频里还原全身3D动作，包括手指和脚",
+    "one_liner_en": "Recover full-body 3D motion, including hands and feet, from a single phone video.",
+    "scores": {
+     "significance": 5,
+     "explainability": 8,
+     "wow": 7,
+     "playable": 8,
+     "openness": 6,
+     "learning_value": 7
+    },
+    "how_to_try": "直接打开 Hugging Face Space 在线 demo，上传一段短视频（≤20秒）即可看结果，无需安装。",
+    "how_to_try_en": "Just open the Hugging Face Space demo, upload a short clip (<=20s) and see the output; no install needed.",
+    "concepts": [
+     {
+      "term": "SMPL-X",
+      "zh": "全身参数化人体模型",
+      "explain": "用一组数字描述人体姿态和手部形状的通用模型"
+     },
+     {
+      "term": "Motion Retargeting",
+      "zh": "动作重定向",
+      "explain": "把人的动作搬到不同骨架的机器人身上"
+     },
+     {
+      "term": "World-grounded motion",
+      "zh": "世界坐标动作",
+      "explain": "动作放在固定地面坐标系里，而不是跟着镜头走"
+     }
+    ],
+    "red_flags": [
+     "只是用前作 FootMR 的延伸，属增量改进",
+     "许可证标记为 NOASSERTION，授权不明",
+     "本地运行需 NVIDIA GPU，且 SAM 3D Body 权重需审批"
+    ],
+    "reason": "手脚细节重估的思路清晰，有浏览器 demo 和机器人重定向导出，对新人友好，但属增量改进，非颠覆性工作。"
+   }
+  },
+  "hf-dataset:TacVerse/TacVerse": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "一个双手操作的触觉+视觉数据集，每帧含四路触觉图像",
+    "one_liner_en": "A bimanual manipulation dataset with four tactile image streams per frame plus camera views.",
+    "scores": {
+     "significance": 7,
+     "explainability": 7,
+     "wow": 6,
+     "playable": 5,
+     "openness": 8,
+     "learning_value": 8
+    },
+    "how_to_try": "在 Mac 上下载数据，用 LeRobot 加载几段回放；没有触觉硬件就看不直观。",
+    "how_to_try_en": "Download on Mac, load a few episodes with LeRobot and replay; tactile streams are hard to feel without hardware.",
+    "concepts": [
+     {
+      "term": "Visuo-tactile sensing",
+      "zh": "视触觉传感",
+      "explain": "用相机拍软垫变形，从而得到接触压力图像"
+     },
+     {
+      "term": "UMI gripper",
+      "zh": "UMI 手持夹爪",
+      "explain": "人手持它操作，同时记录轨迹，用来采集示教数据"
+     },
+     {
+      "term": "Bimanual manipulation",
+      "zh": "双手操作",
+      "explain": "两只手协同完成一个任务，比如一手扶一手拧"
+     }
+    ],
+    "red_flags": [
+     "作者与机构未知，数据采集质量与标注规范无法核实",
+     "发布时间标为 2026-09-01，日期可疑"
+    ],
+    "reason": "触觉双手数据是稀缺方向，格式贴近 LeRobot 因而具备学习价值；但作者不明、日期异常，可信度需要打折扣。"
+   }
+  },
+  "arxiv:2611.02782": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "世界模型与仿真",
+    "one_liner": "让视频世界模型记住镜头外的东西，物体再出现时保持前后一致。",
+    "one_liner_en": "A distillation method that helps video world models remember off-screen objects and keep them consistent when they reappear.",
+    "scores": {
+     "significance": 7,
+     "explainability": 6,
+     "wow": 6,
+     "playable": 4,
+     "openness": 5,
+     "learning_value": 7
+    },
+    "how_to_try": "需要GPU跑1.3B扩散模型推理，Mac 16GB基本跑不动；可先看项目页演示视频理解思路。",
+    "how_to_try_en": "Needs a GPU to run 1.3B diffusion inference; a 16GB Mac won't cut it. Watch the project-page demos instead.",
+    "concepts": [
+     {
+      "term": "Autoregressive video diffusion",
+      "zh": "自回归视频扩散",
+      "explain": "一段段往后生成视频，每段接着前一段继续。"
+     },
+     {
+      "term": "On-policy distillation",
+      "zh": "在策略蒸馏",
+      "explain": "让学生模型在自己的输出上向老师模型学习对齐。"
+     },
+     {
+      "term": "World model consistency",
+      "zh": "世界模型一致性",
+      "explain": "镜头转回来时物体还在原处，场景不跳变。"
+     }
+    ],
+    "red_flags": [
+     "只在1.3B小模型上验证，泛化性存疑",
+     "摘要术语密集，缺少直观演示说明",
+     "无许可证标注，开放程度不明"
+    ],
+    "reason": "抓住长视频世界模型“镜头外一致性”的真问题，方法清晰有增量；但偏工程蒸馏，无硬件新人难上手，演示也需更强的视觉冲击。"
+   }
+  },
+  "arxiv:2611.05163": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "把人类第一视角视频里的\"人\"换成机器人，生成训练数据",
+    "one_liner_en": "Turns human first-person videos into robot demos by swapping the human for a robot",
+    "scores": {
+     "significance": 8,
+     "explainability": 8,
+     "wow": 8,
+     "playable": 3,
+     "openness": 5,
+     "learning_value": 8
+    },
+    "how_to_try": "需大规模视频扩散模型和NVIDIA GPU，Mac基本跑不动；只能看项目页视频和论文，理解\"视频换主体\"思路",
+    "how_to_try_en": "Needs large video diffusion models and NVIDIA GPUs; Mac can't run it. Just watch the project page videos and read the paper for the idea.",
+    "concepts": [
+     {
+      "term": "Egocentric Video",
+      "zh": "第一视角视频",
+      "explain": "人戴摄像头拍下自己干活的画面，可当机器人示范素材"
+     },
+     {
+      "term": "Virtual Try-On",
+      "zh": "虚拟试衣",
+      "explain": "保留人、只换衣服；这里换成保留动作、只换成人形机器人"
+     },
+     {
+      "term": "Inverse Dynamics Model",
+      "zh": "逆动力学模型",
+      "explain": "看视频里画面怎么变，反推每个动作该发什么指令"
+     }
+    ],
+    "red_flags": [
+     "arXiv 编号 2611 与 2026-11 发布日期可疑，需核实真伪",
+     "无许可证标注，代码与权重开放程度不明",
+     "生成视频到真机迁移缺真机部署细节"
+    ],
+    "reason": "用视频生成把人类视频转成机器人示范，解决数据瓶颈，思路清晰；但算力门槛高，Mac 新人只能围观。"
+   }
+  },
+  "hf-model:lerobot/so101-tabletop-mujoco": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "世界模型与仿真",
+    "one_liner": "用 MuJoCo 搭了个 SO-101 机械臂抓积木进盒子的训练场",
+    "one_liner_en": "A MuJoCo tabletop sim where an SO-101 arm puts cubes in a box",
+    "scores": {
+     "significance": 4,
+     "explainability": 7,
+     "wow": 3,
+     "playable": 8,
+     "openness": 9,
+     "learning_value": 7
+    },
+    "how_to_try": "Mac 上 pip 装 LeRobot，直接用 make_env 起 MuJoCo 环境看机械臂动",
+    "how_to_try_en": "Install LeRobot on your Mac, then call make_env to spin up the MuJoCo scene locally",
+    "concepts": [
+     {
+      "term": "EnvHub",
+      "zh": "环境中心",
+      "explain": "LeRobot 里统一托管仿真环境的仓库，一行命令就能加载"
+     },
+     {
+      "term": "MuJoCo",
+      "zh": "物理仿真引擎",
+      "explain": "免费开源的物理模拟器，让机械臂在电脑里动起来"
+     },
+     {
+      "term": "VLA policy",
+      "zh": "视觉语言动作策略",
+      "explain": "看图读指令直接输出关节动作的模型，这里可拿来测"
+     }
+    ],
+    "red_flags": [
+     "只是标准仿真环境，没有新方法或新结果",
+     "标题不新且下载量为 0，热度很弱"
+    ],
+    "reason": "干净好用的标准仿真场景，适合新手练手，但本身无科研新意"
+   }
+  },
+  "hf-model:RickRain/smolvla0PercentMergedImperio100k": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "VLA与基础模型",
+    "one_liner": "一个社区微调的轻量视觉-语言-动作模型，可在消费级硬件上运行。",
+    "one_liner_en": "A community fine-tuned compact vision-language-action model that runs on consumer hardware.",
+    "scores": {
+     "significance": 3,
+     "explainability": 7,
+     "wow": 3,
+     "playable": 5,
+     "openness": 6,
+     "learning_value": 6
+    },
+    "how_to_try": "在 LeRobot 里用 SO-100 仿真或纯推理跑一下，Mac 上勉强能试，但没有实际机器人看不到效果。",
+    "how_to_try_en": "Try LeRobot inference on a simulated SO-100 arm; Mac CPU works but you need a robot to see real results.",
+    "concepts": [
+     {
+      "term": "VLA",
+      "zh": "视觉-语言-动作模型",
+      "explain": "看图、听指令、直接输出机器人动作的一个大模型。"
+     },
+     {
+      "term": "SmolVLA",
+      "zh": "轻量VLA",
+      "explain": "Hugging Face 做的小号 VLA，专为普通电脑部署设计。"
+     },
+     {
+      "term": "LeRobot",
+      "zh": "LeRobot框架",
+      "explain": "Hugging Face 的开源机器人学习工具库，管数据、训练、推理。"
+     }
+    ],
+    "red_flags": [
+     "模型卡是通用模板，看不到训练数据、任务和效果指标",
+     "标题含 0PercentMerged 之类字样，像随机实验产物，来路不明",
+     "只有 58 次下载，无真实演示，难以判断好坏"
+    ],
+    "reason": "只是 SmolVLA 的一次社区微调，卡片套模板，没有任务说明和演示，价值有限，最多当学习 LeRobot 的材料。"
+   }
+  },
+  "arxiv:2610.00854": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "VLA与基础模型",
+    "one_liner": "用一千道题考验大模型能不能当机器人管家",
+    "one_liner_en": "A 1,000-case benchmark testing whether frontier VLMs can act as robot generalists",
+    "scores": {
+     "significance": 7,
+     "explainability": 7,
+     "wow": 5,
+     "playable": 7,
+     "openness": 5,
+     "learning_value": 8
+    },
+    "how_to_try": "在Mac上阅读按仓库说明，用API调用10个模型在Arena题目上跑评测",
+    "how_to_try_en": "Read the repo and run the lightweight evaluation harness on Mac via model APIs; no robot needed",
+    "concepts": [
+     {
+      "term": "VLM agent",
+      "zh": "视觉语言模型智能体",
+      "explain": "能看图、读指令并决定下一步动作的大模型"
+     },
+     {
+      "term": "affordance",
+      "zh": "可供性",
+      "explain": "物体上真正适合抓或推的位置"
+     },
+     {
+      "term": "task planning",
+      "zh": "任务规划",
+      "explain": "把大目标拆成一步步可执行的动作"
+     }
+    ],
+    "red_flags": [
+     "只有arXiv编号和少量星标，代码质量与可复现性未验证",
+     "纯评测类工作，不提出新方法"
+    ],
+    "reason": "系统评测前沿VLM作为机器人通用智能体的短板，失败模式分析扎实；无硬件新人可用API跑轻量评测，学习价值高，但非突破性进展。"
+   }
+  },
+  "arxiv:2611.05372": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "操作抓取",
+    "one_liner": "用强化学习代替传统逆运动学，让机械臂毫米级精准到位",
+    "one_liner_en": "A reinforcement learning policy replaces classical inverse kinematics for millimeter-accurate robot arm reaching.",
+    "scores": {
+     "significance": 5,
+     "explainability": 6,
+     "wow": 4,
+     "playable": 6,
+     "openness": 7,
+     "learning_value": 7
+    },
+    "how_to_try": "仓库若带仿真环境，可在 Mac 上跑 MuJoCo 训练小规模 PPO 复现误差曲线；无 GPU 会很慢。",
+    "how_to_try_en": "If the repo includes a sim, run small-scale PPO in MuJoCo on Mac to reproduce the error curves; it's slow without a GPU.",
+    "concepts": [
+     {
+      "term": "Inverse Kinematics (IK)",
+      "zh": "逆运动学",
+      "explain": "已知手要到达的位置，反推每个关节该转多少度"
+     },
+     {
+      "term": "PPO",
+      "zh": "近端策略优化",
+      "explain": "一种常用的强化学习算法，边试边学把动作调得更好"
+     },
+     {
+      "term": "Sim-to-real",
+      "zh": "仿真到现实",
+      "explain": "先在模拟里练好，再搬到真机器人上使用"
+     }
+    ],
+    "red_flags": [
+     "只是用 RL 替代成熟 IK 求解器，属工程性改进",
+     "arXiv 编号与日期可疑，需核实真实性",
+     "依赖物理机械臂的实验部分新人无法复现"
+    ],
+    "reason": "把 RL 做精准 IK 的工程改进，思路清楚、有代码，但创新有限、演示不惊艳，适合学 sim-to-real 与 RL 基础。"
+   }
+  },
+  "arxiv:2611.05295": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "强化学习",
+    "one_liner": "给在线强化学习加一个几何距离惩罚，让机器人既能学新技能又不跑偏。",
+    "one_liner_en": "A geometric penalty that lets online RL improve a pretrained robot policy without drifting too far.",
+    "scores": {
+     "significance": 6,
+     "explainability": 5,
+     "wow": 4,
+     "playable": 5,
+     "openness": 6,
+     "learning_value": 7
+    },
+    "how_to_try": "需离线数据+真机/仿真训练，Mac 16GB 基本跑不动，只能读代码和项目页。",
+    "how_to_try_en": "Needs offline data plus GPU training; a 16GB Mac can't run it—read the code and project page instead.",
+    "concepts": [
+     {
+      "term": "RL regularizer",
+      "zh": "强化学习正则化",
+      "explain": "给学新动作加约束，防止跑偏或忘掉基础技能。"
+     },
+     {
+      "term": "base policy support",
+      "zh": "基础策略支撑集",
+      "explain": "预训练策略能做出哪些动作的范围。"
+     },
+     {
+      "term": "flow matching",
+      "zh": "流匹配",
+      "explain": "一种从噪声逐步生成动作的生成模型。"
+     }
+    ],
+    "red_flags": [
+     "只有论文摘要，缺少演示细节",
+     "需要大规模离线数据与 GPU 训练"
+    ],
+    "reason": "方法有想法、开放代码，但偏算法细节、演示感弱，新人最多读代码理解正则化思路。"
+   }
+  },
+  "arxiv:2611.05320": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "让写代码的 AI 智能体代替人做遥操作，在仿真里造出能直接训真机的数据",
+    "one_liner_en": "A coding agent replaces human teleoperators, building sim data good enough to train real robots",
+    "scores": {
+     "significance": 8,
+     "explainability": 7,
+     "wow": 8,
+     "playable": 4,
+     "openness": 7,
+     "learning_value": 8
+    },
+    "how_to_try": "先读项目页的流程和 arXiv 论文；完整跑通需要仿真环境和渲染视频模型（建议云端 GPU），Mac 只能看代码，做不了整条链路",
+    "how_to_try_en": "Read the project page first. Full pipeline needs a sim plus a video rendering model on cloud GPU; a Mac can only browse the code, not run it end to end.",
+    "concepts": [
+     {
+      "term": "Teleoperation",
+      "zh": "遥操作",
+      "explain": "人用手柄或动捕远程操控机器人，录下示范数据"
+     },
+     {
+      "term": "LLM Agent",
+      "zh": "大模型智能体",
+      "explain": "让大模型自己写代码、调工具、分步完成任务的程序"
+     },
+     {
+      "term": "Sim-to-Real",
+      "zh": "仿真到实机",
+      "explain": "在仿真里训练，再迁移到真机器人上干活"
+     }
+    ],
+    "red_flags": [
+     "arXiv 编号 2611 与 2026-11 日期可疑，无法核实真实性",
+     "摘要未说明视频渲染模型是否开源，复现门槛可能很高",
+     "未标注许可证，数据可用性存疑"
+    ],
+    "reason": "用智能体自动造真机可用数据，成本优于遥操作且鲁棒性更好，思路有价值；但依赖视频生成模型，纯 Mac 新人难以亲手复现。"
+   }
+  },
+  "hf-model:LightOriginsHQ/LightNav-0": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "用视觉语言模型看懂第一视角视频，直接输出机器人该怎么走的导航模型。",
+    "one_liner_en": "A vision-language model that watches first-person video and outputs robot navigation waypoints.",
+    "scores": {
+     "significance": 7,
+     "explainability": 7,
+     "wow": 6,
+     "playable": 4,
+     "openness": 8,
+     "learning_value": 8
+    },
+    "how_to_try": "需 NVIDIA 显卡跑 vLLM，Mac 上只能看 Habitat 仿真前先跑通 CPU 推理 demo。",
+    "how_to_try_en": "Needs an NVIDIA GPU to run vLLM; on a Mac you can only read the docs and try the CPU-slow prediction demo.",
+    "concepts": [
+     {
+      "term": "VLA",
+      "zh": "视觉语言动作模型",
+      "explain": "看图、读指令，直接输出动作的模型。"
+     },
+     {
+      "term": "Residual VQ action tokenizer",
+      "zh": "残差向量量化动作分词器",
+      "explain": "把连续轨迹压缩成几个离散代码，像把话拆成单词。"
+     },
+     {
+      "term": "VLN-CE",
+      "zh": "连续环境视觉语言导航",
+      "explain": "让机器人在仿真房子里按一句话找路。"
+     }
+    ],
+    "red_flags": [
+     "机构与作者信息完全缺失，Hugging Face 组织名 LightOriginsHQ 无法核实",
+     "自称支持 Mac/无显卡，但推理依赖 vLLM 后端，实际需要 NVIDIA 显卡",
+     "发布日期 2026-08-28 为未来日期，真实性存疑",
+     "主打 open-vocabulary 导航，但只在仿真基准上评估，缺少真实机器人视频演示"
+    ],
+    "reason": "方向有价值，VLA 做导航是热点，模型和代码都开放；但它需要 GPU，新人难以亲手操作，机构信息也不透明，作为入门材料要谨慎。"
+   }
+  },
+  "hf-dataset:lerobot/svla_so101_pickplace": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "50 段机械臂抓放任务的示范视频与关节数据，供训练模仿学习策略",
+    "one_liner_en": "50 demos of a robot arm picking and placing, for training imitation policies",
+    "scores": {
+     "significance": 5,
+     "explainability": 7,
+     "wow": 3,
+     "playable": 8,
+     "openness": 9,
+     "learning_value": 8
+    },
+    "how_to_try": "在 Mac 装 LeRobot，下载此数据集，用 ACT 或 Diffusion Policy 训练小模型；仅靠 CPU 虽然慢，但能够跑通",
+    "how_to_try_en": "Install LeRobot on Mac, download this dataset, train a small ACT policy in CPU mode; slow but works",
+    "concepts": [
+     {
+      "term": "imitation learning",
+      "zh": "模仿学习",
+      "explain": "让机器人看人类示范视频，照样学动作，就像跟着菜谱做菜"
+     },
+     {
+      "term": "ACT",
+      "zh": "动作分块Transformer",
+      "explain": "一次预测未来一小段动作序列的模仿学习模型"
+     },
+     {
+      "term": "SO-100",
+      "zh": "开源廉价机械臂",
+      "explain": "几百美元就能DIY的六轴小机械臂，LeRobot标配"
+     }
+    ],
+    "red_flags": [
+     "只有50条示范，单一任务，规模很小",
+     "没有说明采集者、真实机器人细节和效果基线",
+     "README几乎空白，无论文无说明"
+    ],
+    "reason": "标准 LeRobot 格式的小型示范数据集，是学习模仿学习的好入门材料，但规模小、无新意，只能算练习素材"
+   }
+  },
+  "arxiv:2611.05172": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "不用训练，凭建筑平面图就能算出机器人走到哪了",
+    "one_liner_en": "A training-free method that localizes a moving sensor using only a building floor plan.",
+    "scores": {
+     "significance": 6,
+     "explainability": 8,
+     "wow": 5,
+     "playable": 7,
+     "openness": 8,
+     "learning_value": 8
+    },
+    "how_to_try": "从 GitHub 克隆 padloc，用代码仓库自带的 Gibson 数据，在 Mac 上跑纯 CPU 后端的 demo；它不需要 GPU 训练。",
+    "how_to_try_en": "Clone padloc from GitHub, run its CPU-only sparse-matching backend on the included Gibson data on your Mac; no GPU training needed.",
+    "concepts": [
+     {
+      "term": "Floor-plan localization",
+      "zh": "平面图定位",
+      "explain": "拿建筑物的户型图当地图，反推传感器在楼里的位置。"
+     },
+     {
+      "term": "Sparse geometric matching",
+      "zh": "稀疏几何匹配",
+      "explain": "只用墙的主方向等少量几何线索缩小候选位置，不用逐格搜索。"
+     },
+     {
+      "term": "Bayes filter",
+      "zh": "贝叶斯滤波",
+      "explain": "根据上一刻位置加新观测，不断修正对当前位置的猜测。"
+     }
+    ],
+    "red_flags": [
+     "论文编号 arXiv 2611.05172 对应 2026 年 11 月，与当前时间不符，需核实是否真实存在",
+     "摘要称被 WACV 2027 接收，同样存疑"
+    ],
+    "reason": "方法朴素但有实用价值，免训练且模块化，Mac 能跑 CPU 后端；亮点不足，但很适合入门定位概念。"
+   }
+  },
+  "arxiv:2611.05058": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "VLA与基础模型",
+    "one_liner": "让机器人策略把场景几何转成文字符号来推理，减少反复看图",
+    "one_liner_en": "Turns robot scene geometry into text symbols so policies reason without re-reading images each step",
+    "scores": {
+     "significance": 5,
+     "explainability": 6,
+     "wow": 5,
+     "playable": 4,
+     "openness": 4,
+     "learning_value": 6
+    },
+    "how_to_try": "需校准 RGB-D 数据与机器人执行环境，Mac 上难以复现；只能读项目页和论文",
+    "how_to_try_en": "Needs calibrated RGB-D and robot execution; not reproducible on a Mac. Read the paper and project page only.",
+    "concepts": [
+     {
+      "term": "geometric abstraction",
+      "zh": "几何抽象",
+      "explain": "把三维场景压缩成带数值的文字符号，而不是图像"
+     },
+     {
+      "term": "symbolic grounding",
+      "zh": "符号接地",
+      "explain": "把文字符号对应到真实物体部位和尺寸"
+     },
+     {
+      "term": "multimodal policy",
+      "zh": "多模态策略",
+      "explain": "同时看图、文字、数值来决定下一步动作的模型"
+     }
+    ],
+    "red_flags": [
+     "仅 Workshop 论文，无许可证信息",
+     "依赖校准 RGB-D 与真机执行，新人无法复现"
+    ],
+    "reason": "想法有价值——用符号化几何替代每步重读图像，可省算力；但实验门槛高、开放度低，不适合无硬件新人上手。"
+   }
+  },
+  "arxiv:2611.05080": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "强化学习",
+    "one_liner": "机器人不重置场景也能持续强化学习，用仿真基准测试 VLA 模型。",
+    "one_liner_en": "A sim benchmark testing whether VLA robot models can keep learning RL without scene resets.",
+    "scores": {
+     "significance": 6,
+     "explainability": 7,
+     "wow": 5,
+     "playable": 6,
+     "openness": 5,
+     "learning_value": 8
+    },
+    "how_to_try": "项目页可能有仿真环境；但是让 VLA 微调仍需要多张 GPU，Mac 只能看代码和图表。",
+    "how_to_try_en": "Check the project page for sim env; fine-tuning VLAs still needs multi-GPU, so on a Mac just read code and plots.",
+    "concepts": [
+     {
+      "term": "Non-episodic RL",
+      "zh": "无回合强化学习",
+      "explain": "不重置场景、连续不断地学习，像不重开的游戏局。"
+     },
+     {
+      "term": "VLA",
+      "zh": "视觉语言动作模型",
+      "explain": "看图听指令直接输出机器人动作的大模型。"
+     },
+     {
+      "term": "Reset allocation",
+      "zh": "重置分配",
+      "explain": "决定什么时候、对哪些物体重新摆放以帮助学习。"
+     }
+    ],
+    "red_flags": [
+     "论文日期 2026-11 与 arXiv 编号可疑，可能是占位或伪造条目",
+     "无明确许可证，代码可用性存疑",
+     "只是基准测试，并非新方法突破"
+    ],
+    "reason": "选题切中真实痛点（无重置训练），但只是基准，且日期编号可疑，需先核实真伪。"
+   }
+  },
+  "arxiv:2611.05129": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "让机器人看懂网页地图的步行指引，再靠摄像头自己走完1.37公里城市路线",
+    "one_liner_en": "Turns web map walking directions into language commands a robot follows using only cameras, up to 1.37 km in real streets.",
+    "scores": {
+     "significance": 8,
+     "explainability": 8,
+     "wow": 8,
+     "playable": 4,
+     "openness": 5,
+     "learning_value": 7
+    },
+    "how_to_try": "真机部署门槛高，只能先在仿真里复现层级：VLM 拆指令，再用视觉轨迹预测控制，需查项目页有没有开源数据。",
+    "how_to_try_en": "Real robot needed; on Mac only study the pipeline: VLM command split plus visual trace prediction. Check project page for released code/data.",
+    "concepts": [
+     {
+      "term": "Vision-Language Navigation",
+      "zh": "视觉语言导航",
+      "explain": "机器人根据文字指令和摄像头画面自己找路走过去"
+     },
+     {
+      "term": "Hierarchical Policy",
+      "zh": "分层策略",
+      "explain": "大脑先拆成小指令，小脑再负责具体走位，分工完成长任务"
+     },
+     {
+      "term": "Trace Prediction",
+      "zh": "轨迹预测",
+      "explain": "在画面里画出该走的那条线，让底层控制去跟随"
+     }
+    ],
+    "red_flags": [
+     "许可与代码开放状态不明，仅称有项目页",
+     "需轮足机器人真机，Mac 无法直接复现",
+     "论文标注 Under Review，结果未经同行评审"
+    ],
+    "reason": "层级设计务实，真机长距离城市导航是硬结果，但不开源就难上手，适合讲思路不适合动手。"
+   }
+  },
+  "arxiv:2611.04392": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "用小型预测器加两步流匹配，让无人机在树丛里自主穿行",
+    "one_liner_en": "A lightweight predictor plus two-step flow matching lets a drone fly through forests on its own.",
+    "scores": {
+     "significance": 6,
+     "explainability": 7,
+     "wow": 6,
+     "playable": 6,
+     "openness": 9,
+     "learning_value": 8
+    },
+    "how_to_try": "在 Mac 上用 PX4 SITL + Gazebo 跑它的开源策略和基准数据集，复现成功率对比。",
+    "how_to_try_en": "Run its open policy and benchmark in PX4 SITL + Gazebo on Mac to reproduce the success-rate comparison.",
+    "concepts": [
+     {
+      "term": "Flow Matching",
+      "zh": "流匹配",
+      "explain": "学会把噪声一步步推成动作序列的生成方法，步数少所以快。"
+     },
+     {
+      "term": "JEPA",
+      "zh": "联合嵌入预测架构",
+      "explain": "不重建像素，只在抽象特征空间里预测下一状态。"
+     },
+     {
+      "term": "DAgger",
+      "zh": "数据集聚合模仿学习",
+      "explain": "让专家纠正自己犯错时的动作，边跑边补数据。"
+     }
+    ],
+    "red_flags": [
+     "纯仿真（PX4 SITL），无真机验证",
+     "单作者预印本，未经同行评审",
+     "绝对成功率仅 52%，超时率反而升到 23%"
+    ],
+    "reason": "工程完整、代码数据全开源、讲到因果混淆等真问题，但仅仿真且成功率一般，适合当入门拆解案例。"
+   }
+  },
+  "arxiv:2611.04839": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "人形与足式",
+    "one_liner": "先预演再执行：人形机器人动前先在脑内模拟结果，挑最好的动作",
+    "one_liner_en": "A humanoid robot mentally simulates each action before acting, picking the best one.",
+    "scores": {
+     "significance": 7,
+     "explainability": 8,
+     "wow": 7,
+     "playable": 3,
+     "openness": 3,
+     "learning_value": 7
+    },
+    "how_to_try": "需人形机器人或 SIMPLE 仿真环境，Mac 难以跑通；只能看项目页视频和论文理解思路",
+    "how_to_try_en": "Needs a humanoid or the SIMPLE sim; not feasible on a Mac. Watch the project page videos and read the paper.",
+    "concepts": [
+     {
+      "term": "World-Action Model",
+      "zh": "世界动作模型",
+      "explain": "能预测动作后果、并据此选动作的模型"
+     },
+     {
+      "term": "Latent Foresight",
+      "zh": "隐空间预演",
+      "explain": "在特征空间里先'想象'执行结果再决定"
+     },
+     {
+      "term": "Loco-Manipulation",
+      "zh": "移动操作",
+      "explain": "边走边用手操作物体，人形机器人常见任务"
+     }
+    ],
+    "red_flags": [
+     "arXiv 编号 2611 及 2026 年日期存疑，可能为虚构或未来占位",
+     "许可证未标注，代码开放程度不明",
+     "项目页链接需核实是否真实可访问"
+    ],
+    "reason": "预演式动作选择思路清晰、真机提升明显，但需人形硬件与仿真，新手几乎无法上手，且信息待核实。"
+   }
+  },
+  "arxiv:2611.04755": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "首个双内窥镜同步手术数据集，能真正检验三维感知方法的泛化能力",
+    "one_liner_en": "First synchronized dual-endoscope surgical dataset that tests true 3D generalization, not just interpolation.",
+    "scores": {
+     "significance": 7,
+     "explainability": 6,
+     "wow": 5,
+     "playable": 5,
+     "openness": 7,
+     "learning_value": 7
+    },
+    "how_to_try": "没有手术机器人就用不了；可在 Mac 上下载数据子集，跑开源的位姿估计或深度模型推理来感受任务",
+    "how_to_try_en": "No surgical rig means no data collection; download a subset and run open-source pose/depth models on Mac to feel the task.",
+    "concepts": [
+     {
+      "term": "Novel View Synthesis",
+      "zh": "新视角合成",
+      "explain": "根据已知几张图，生成没拍到的角度画面"
+     },
+     {
+      "term": "Photometric Supervision",
+      "zh": "光度监督",
+      "explain": "靠像素颜色对齐来训练，换个视角容易崩"
+     },
+     {
+      "term": "Held-out Endoscope",
+      "zh": "留出内窥镜",
+      "explain": "训练和测试用不同镜头，逼模型真懂几何"
+     }
+    ],
+    "red_flags": [
+     "需要手术机器人和离体/活体标本，普通开发者无法复现采集",
+     "与'没有实验室的具身智能新人'日常学习场景距离较远"
+    ],
+    "reason": "数据集设计有真问题意识，基准揭示光度法与几何法的差异；但采集门槛高、与通用机器人学习关联弱，适合作为感知评测概念的入门读物。"
+   }
+  },
+  "arxiv:2611.04352": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "用卫星图给车载摄像头兜底，摄像头坏了也能画出高精地图",
+    "one_liner_en": "Fuses satellite images with car cameras so HD maps still work when cameras fail.",
+    "scores": {
+     "significance": 6,
+     "explainability": 7,
+     "wow": 5,
+     "playable": 4,
+     "openness": 6,
+     "learning_value": 6
+    },
+    "how_to_try": "nuScenes高清地图仿真需要数据集和GPU，Mac可先看项目页demo，跑通需云GPU",
+    "how_to_try_en": "Needs nuScenes data and a GPU; on a Mac just watch the project-page demos, use cloud GPU to run.",
+    "concepts": [
+     {
+      "term": "BEV feature",
+      "zh": "鸟瞰图特征",
+      "explain": "把摄像头画面转换成从正上方看的二维特征图，便于融合"
+     },
+     {
+      "term": "HD map construction",
+      "zh": "高精地图构建",
+      "explain": "从传感器实时生成车道线、路沿等地图片段"
+     },
+     {
+      "term": "redundancy-aware fusion",
+      "zh": "冗余感知融合",
+      "explain": "一种模态失效时，用另一路信息顶上保证输出不断"
+     }
+    ],
+    "red_flags": [
+     "arXiv编号2611与2026年11月日期存疑，需核实真实性",
+     "依赖nuScenes和卫星图缓存，复现门槛对无硬件新人偏高"
+    ],
+    "reason": "思路实用但属增量改进，讲得清、开放代码，缺硬件新人只能看demo难上手。"
+   }
+  },
+  "arxiv:2611.04325": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "其他",
+    "one_liner": "用平方和优化算出机器人轨迹的「安全漏斗」，保证跟踪不跑偏",
+    "one_liner_en": "Uses sum-of-squares optimization to compute safety funnels that certify a robot tracks its planned path.",
+    "scores": {
+     "significance": 5,
+     "explainability": 4,
+     "wow": 3,
+     "playable": 6,
+     "openness": 6,
+     "learning_value": 6
+    },
+    "how_to_try": "Mac 上装 Python 和 SDP 求解器，跑 open-source 的 computeSOSFunnels 复现独轮车例子，无需 GPU。",
+    "how_to_try_en": "Install Python and an SDP solver on your Mac, then run computeSOSFunnels' unicycle example; no GPU needed.",
+    "concepts": [
+     {
+      "term": "Invariant Set",
+      "zh": "不变集",
+      "explain": "一旦进到这个范围里，系统就再也出不去的状态集合。"
+     },
+     {
+      "term": "Sum-of-Squares",
+      "zh": "平方和优化",
+      "explain": "把「保证非负」的多项式条件转成能交给求解器解的凸问题。"
+     },
+     {
+      "term": "Funnel",
+      "zh": "漏斗",
+      "explain": "围绕标称轨迹的一圈随时间变的安全包络，证明跟踪不会跑偏。"
+     }
+    ],
+    "red_flags": [
+     "经典控制理论课题，不是具身智能的新能力",
+     "作者只有一人，未见同行评审",
+     "无视频演示，惊喜感弱"
+    ],
+    "reason": "扎实的控制理论工程化工作，代码开放、Mac 可跑，但偏数学验证，与主流具身智能话题距离较远。"
+   }
+  },
+  "arxiv:2611.04080": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "VLA与基础模型",
+    "one_liner": "让语言模型现场查场景、反复确认，再指挥机器人搬东西",
+    "one_liner_en": "A language-model agent that grounds instructions on the fly before a robot acts",
+    "scores": {
+     "significance": 6,
+     "explainability": 8,
+     "wow": 6,
+     "playable": 2,
+     "openness": 4,
+     "learning_value": 7
+    },
+    "how_to_try": "需 Spot 机器人或团队内部仿真，Mac 上无法复现；只能看项目页视频和论文。",
+    "how_to_try_en": "Needs a Spot robot or their internal sim; not reproducible on a Mac. Watch the project-page videos and read the paper instead.",
+    "concepts": [
+     {
+      "term": "grounding",
+      "zh": "语义定位",
+      "explain": "把“玩具”这类词对应到画面里具体的东西"
+     },
+     {
+      "term": "affordance",
+      "zh": "可供性",
+      "explain": "这个东西能不能抓、能不能放进去"
+     },
+     {
+      "term": "task and motion planning",
+      "zh": "任务与运动规划",
+      "explain": "先定做什么，再算机器人怎么动过去"
+     }
+    ],
+    "red_flags": [
+     "代码与仿真环境未见公开，Spot 实验无法复现",
+     "许可证未标注",
+     "arXiv 编号与日期异常，需核实真实性"
+    ],
+    "reason": "思路扎实，用反复查询和物理校验弥补固定表示，但只有 Spot 实机结果，新人无法上手。"
+   }
+  },
+  "arxiv:2611.04083": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "硬件与本体",
+    "one_liner": "开源双臂移动机器人，8千美元零件，可用苹果头显远程操控。",
+    "one_liner_en": "An open-source mobile two-arm robot built for $8.1k, teleoperated with an Apple Vision Pro.",
+    "scores": {
+     "significance": 7,
+     "explainability": 8,
+     "wow": 6,
+     "playable": 2,
+     "openness": 6,
+     "learning_value": 6
+    },
+    "how_to_try": "基本没法上手：需要自购零件搭整机。可在项目页看遥操作视频和开源 URDF/控制代码。",
+    "how_to_try_en": "Not really hands-on: you'd have to build the ~$8.1k robot. Browse the project page for teleop videos and open URDF/controller code.",
+    "concepts": [
+     {
+      "term": "Teleoperation",
+      "zh": "遥操作",
+      "explain": "人用头显或手柄实时遥控机器人，顺便录下动作数据。"
+     },
+     {
+      "term": "Bimanual Manipulation",
+      "zh": "双臂操作",
+      "explain": "两只手配合干活，比单手能做的任务复杂得多。"
+     },
+     {
+      "term": "Imitation Learning",
+      "zh": "模仿学习",
+      "explain": "先录人示范，再训练策略让机器人照做。"
+     }
+    ],
+    "red_flags": [
+     "56 自由度平台搭建和调试门槛极高",
+     "8.1k 美元成本对个人仍是硬门槛",
+     "未见大规模数据或策略效果对比，学习结论偏弱"
+    ],
+    "reason": "低成本开源双臂移动平台有价值，但需自建硬件，无硬件新人难以上手，更适合作为硬件选型参考。"
+   }
+  },
+  "arxiv:2611.03940": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "用合成数据训练路边激光雷达3D检测器，靠改坐标系和NMS拿到比赛第一",
+    "one_liner_en": "Won a sim2real roadside LiDAR challenge by fixing coordinate frames and per-class NMS on synthetic data",
+    "scores": {
+     "significance": 3,
+     "explainability": 6,
+     "wow": 3,
+     "playable": 4,
+     "openness": 5,
+     "learning_value": 6
+    },
+    "how_to_try": "代码已开源，但需下载车路协同激光雷达数据集，Mac上只能读代码看流程，跑不动训练",
+    "how_to_try_en": "Code is open, but needs the V2X LiDAR dataset; on a Mac you can only read the pipeline, not train it",
+    "concepts": [
+     {
+      "term": "Sim2Real",
+      "zh": "仿真到现实",
+      "explain": "在模拟数据上训练，直接用到真实设备上"
+     },
+     {
+      "term": "NMS",
+      "zh": "非极大值抑制",
+      "explain": "去掉重复检测框的步骤，阈值太严会误删相邻行人"
+     },
+     {
+      "term": "Null Returns",
+      "zh": "空回波",
+      "explain": "激光没打到物体时返回的无效点，常被记成原点"
+     }
+    ],
+    "red_flags": [
+     "核心贡献全是评测调试技巧，方法本身无新意",
+     "依赖特定比赛数据集和Ouster雷达，复现门槛高",
+     "无演示视频，惊喜感不足"
+    ],
+    "reason": "比赛第一但赢在坐标系和NMS等调试细节，属工程经验分享，适合学sim2real踩坑，不适合当精选主角。"
+   }
+  },
+  "arxiv:2611.04424": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "人形与足式",
+    "one_liner": "给机器人装上毫秒级的触觉反射，让它在撞到东西之前先躲开",
+    "one_liner_en": "Adds millisecond tactile reflexes to a humanoid so it dodges impacts before they hit.",
+    "scores": {
+     "significance": 7,
+     "explainability": 8,
+     "wow": 7,
+     "playable": 2,
+     "openness": 4,
+     "learning_value": 6
+    },
+    "how_to_try": "需要 Unitree G1 和全身触觉皮肤，Mac 上无法复现；只能看项目页视频",
+    "how_to_try_en": "Requires a Unitree G1 and full-body tactile skin; not reproducible on a Mac. Watch the project page videos only.",
+    "concepts": [
+     {
+      "term": "Tactile Reflex",
+      "zh": "触觉反射",
+      "explain": "感觉到碰到东西就立刻缩回，像碰到烫的手会通过脊髓先缩回，再由大脑处理"
+     },
+     {
+      "term": "Control Frequency",
+      "zh": "控制频率",
+      "explain": "策略每秒算多少次动作，50Hz 就是每 20 毫秒才更新一次，反应会慢"
+     },
+     {
+      "term": "Sim-to-Real",
+      "zh": "仿真到真机",
+      "explain": "先在电脑仿真里训练策略，再搬到真实机器人上运行"
+     }
+    ],
+    "red_flags": [
+     "缺少真实触觉硬件就无法验证核心结论",
+     "未见代码与权重公开的具体说明",
+     "对比基线只是自己延迟 20ms 的版本，缺少与其它反射方法的比较"
+    ],
+    "reason": "触觉反射与学习策略分层结合的思路有价值，实验也扎实；但强依赖 G1 和触觉皮肤，无硬件的新人只能观看，可玩性很低。"
+   }
+  },
+  "arxiv:2611.03936": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "导航与自动驾驶",
+    "one_liner": "纯合成数据训练的路侧激光雷达检测器,靠几何修正和参数对齐拿了比赛第一",
+    "one_liner_en": "A roadside LiDAR detector trained only on synthetic data, winning a sim2real challenge via geometric fixes.",
+    "scores": {
+     "significance": 5,
+     "explainability": 6,
+     "wow": 4,
+     "playable": 5,
+     "openness": 5,
+     "learning_value": 7
+    },
+    "how_to_try": "数据集和代码未必完整公开;无硬件可在 Mac 上用 OpenPCDet 跑 PointPillars 小规模点云推理,先理解流程。",
+    "how_to_try_en": "Code is on GitHub but data access is unclear; on a Mac you can still run PointPillars inference on sample point clouds with OpenPCDet to learn the pipeline.",
+    "concepts": [
+     {
+      "term": "Sim2Real",
+      "zh": "仿真到现实",
+      "explain": "仿真里训练,直接用到真实场景,难点是两者差距。"
+     },
+     {
+      "term": "PointPillars",
+      "zh": "点柱体素",
+      "explain": "把点云切成柱子,快速做 3D 检测的经典方法。"
+     },
+     {
+      "term": "mAP",
+      "zh": "平均精度均值",
+      "explain": "检测任务常用的评分,越高说明框得越准。"
+     }
+    ],
+    "red_flags": [
+     "检测 mAP 仅 0.133,绝对性能很低",
+     "本质是工程调参与比赛报告,非新方法",
+     "数据集与许可证不明,可复现性存疑"
+    ],
+    "reason": "诚实的比赛报告,讲清 sim2real 诊断与评测方法,适合入门学习,但性能低、非新方法,惊喜有限。"
+   }
+  },
+  "arxiv:2611.03850": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "世界模型与仿真",
+    "one_liner": "把不同机器人仿真评测统一接口并加速几倍",
+    "one_liner_en": "One interface to run and speed up many robot simulation benchmarks",
+    "scores": {
+     "significance": 5,
+     "explainability": 6,
+     "wow": 3,
+     "playable": 5,
+     "openness": 6,
+     "learning_value": 5
+    },
+    "how_to_try": "需装仿真器和GPU；Mac没N卡只能用CPU跑小规模Demo，看项目页",
+    "how_to_try_en": "Needs simulators plus GPU; on a Mac only small CPU demos. Watch the project page videos.",
+    "concepts": [
+     {
+      "term": "Benchmark Adapter",
+      "zh": "基准适配器",
+      "explain": "包住原有评测器，不改规则只换外壳"
+     },
+     {
+      "term": "Policy Replica",
+      "zh": "策略副本",
+      "explain": "同一模型开多份并行算，GPU别闲着"
+     },
+     {
+      "term": "Action Chunking",
+      "zh": "动作分块",
+      "explain": "模型一次输出一小段动作，减少调用"
+     }
+    ],
+    "red_flags": [
+     "只在评测效率上提速，未提出新方法或新能力",
+     "无可复现的评测曲线对比细节，只有摘要数字",
+     "需多张GPU和仿真环境，Mac新人难以亲手验证"
+    ],
+    "reason": "工程加速工具，能省评测时间，但对领域推动有限，演示不亮眼，且吃GPU，新人只适合围观。"
+   }
+  },
+  "arxiv:2611.03825": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "其他",
+    "one_liner": "教程下篇：用雅可比矩阵控制软物体变成想要的形状",
+    "one_liner_en": "A tutorial on steering deformable objects to a target shape using an estimated Jacobian.",
+    "scores": {
+     "significance": 3,
+     "explainability": 6,
+     "wow": 3,
+     "playable": 7,
+     "openness": 7,
+     "learning_value": 7
+    },
+    "how_to_try": "打开项目页的交互式 demo 在浏览器里玩；想深入就在 Mac 上跑仓库里的 Python 仿真。",
+    "how_to_try_en": "Play the interactive demos on the project page in your browser; run the repo's Python simulation on your Mac to go deeper.",
+    "concepts": [
+     {
+      "term": "Shape Servoing",
+      "zh": "形状伺服",
+      "explain": "像捏橡皮泥一样，靠机器人推拉把软物体塑成目标形状。"
+     },
+     {
+      "term": "Deformation Jacobian",
+      "zh": "形变雅可比",
+      "explain": "一个小矩阵，描述机器人往哪动一点，物体形状会变多少。"
+     },
+     {
+      "term": "Observability / Controllability",
+      "zh": "可观性 / 可控性",
+      "explain": "看不清形状变化，或者怎么动都改不了形状，控制就会失效。"
+     }
+    ],
+    "red_flags": [
+     "教程性质，无新方法或新结果",
+     "需要真实可形变物体实验才有完整价值"
+    ],
+    "reason": "讲解扎实、有仿真 demo 和代码，适合入门形变物体操作，但属教程综述，创新有限。"
+   }
+  },
+  "arxiv:2611.03815": {
+   "date": "2026-11-05",
+   "v": 1,
+   "eval": {
+    "topic": "VLA与基础模型",
+    "one_liner": "只用人类手持夹爪录的数据，训练出能叠毛巾、分零件的双臂机器人模型",
+    "one_liner_en": "A bimanual robot policy trained only on 16,151 hours of handheld-gripper human demos, no robot data.",
+    "scores": {
+     "significance": 8,
+     "explainability": 7,
+     "wow": 8,
+     "playable": 2,
+     "openness": 7,
+     "learning_value": 8
+    },
+    "how_to_try": "跑不了：需 YUBI 夹爪硬件和 8 张 H200 后训练，Mac 只能看项目页视频和读数据格式",
+    "how_to_try_en": "Not runnable locally: needs the YUBI gripper and 8x H200 for post-training. On a Mac, just watch the demo videos and study the dataset format.",
+    "concepts": [
+     {
+      "term": "Cross-embodiment",
+      "zh": "跨本体",
+      "explain": "同一模型能装到不同机器人上干活，不用为每台机器重训"
+     },
+     {
+      "term": "Handheld gripper data",
+      "zh": "手持夹爪数据",
+      "explain": "人拿着带摄像头的夹爪做动作录像，不需要真机器人采集"
+     },
+     {
+      "term": "VLA model",
+      "zh": "视觉语言动作模型",
+      "explain": "看图、听指令、直接输出机器人动作的大模型"
+     }
+    ],
+    "red_flags": [
+     "后训练需要 8 张 H200，个人完全无法复现",
+     "必须有 YUBI 夹爪硬件才能采集或部署",
+     "许可证未标注",
+     "arXiv 编号与发布日期偏离常规，真实性待核实"
+    ],
+    "reason": "大规模纯人类手持数据训 VLA，思路和 78% vs 27% 的对比有说服力，数据权重开放；但硬件与算力门槛让新人只能看不能玩。"
    }
   }
  }
