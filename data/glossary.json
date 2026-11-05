@@ -334,5 +334,96 @@
   "explain": "让机器人在仿真房子里按一句话找路。",
   "first_seen": "2026-11-05",
   "source": "hf-model:LightOriginsHQ/LightNav-0"
+ },
+ "world model": {
+  "term": "World Model",
+  "zh": "世界模型",
+  "explain": "让模型学会预测'动作之后画面会变成什么样',相当于脑内小模拟器。",
+  "first_seen": "2026-11-06",
+  "source": "arxiv:2611.04870"
+ },
+ "cross-embodiment": {
+  "term": "Cross-Embodiment",
+  "zh": "跨本体",
+  "explain": "同一套方法同时适用于不同形态的机器人,比如机械臂和灵巧手。",
+  "first_seen": "2026-11-06",
+  "source": "arxiv:2611.04870"
+ },
+ "autoregressive rollout": {
+  "term": "Autoregressive Rollout",
+  "zh": "自回归推演",
+  "explain": "把上一帧预测当作下一帧输入,一步步往后演,误差会累积。",
+  "first_seen": "2026-11-06",
+  "source": "arxiv:2611.04870"
+ },
+ "ppo": {
+  "term": "PPO",
+  "zh": "近端策略优化",
+  "explain": "一种常用的强化学习算法，让策略小步改进、不容易崩",
+  "first_seen": "2026-11-06",
+  "source": "gh:suniique/assembly-nist"
+ },
+ "binary reward": {
+  "term": "Binary reward",
+  "zh": "二值奖励",
+  "explain": "只给成功或失败两种信号，不给中间引导，学起来更难",
+  "first_seen": "2026-11-06",
+  "source": "gh:suniique/assembly-nist"
+ },
+ "parallel environments": {
+  "term": "Parallel environments",
+  "zh": "并行环境",
+  "explain": "同时开上千个仿真副本收集经验，大幅加速训练",
+  "first_seen": "2026-11-06",
+  "source": "gh:suniique/assembly-nist"
+ },
+ "teleoperation": {
+  "term": "Teleoperation",
+  "zh": "遥操作",
+  "explain": "人用手柄或动捕远程操控机器人，录下示范数据",
+  "first_seen": "2026-11-06",
+  "source": "arxiv:2611.05320"
+ },
+ "llm agent": {
+  "term": "LLM Agent",
+  "zh": "大模型智能体",
+  "explain": "让大模型自己写代码、调工具、分步完成任务的程序",
+  "first_seen": "2026-11-06",
+  "source": "arxiv:2611.05320"
+ },
+ "differentiable world model": {
+  "term": "differentiable world model",
+  "zh": "可求导世界模型",
+  "explain": "用神经网络代替物理引擎预测下一步状态，且能反向传播求梯度",
+  "first_seen": "2026-11-06",
+  "source": "gh:NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real"
+ },
+ "motion imitation": {
+  "term": "motion imitation",
+  "zh": "动作模仿",
+  "explain": "让机器人跟着一段参考动作轨迹去学，像照着视频学跳舞",
+  "first_seen": "2026-11-06",
+  "source": "gh:NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real"
+ },
+ "sim2real": {
+  "term": "sim2real",
+  "zh": "仿真到真机",
+  "explain": "在仿真里训练的模型搬到真实机器人上还能用的迁移过程",
+  "first_seen": "2026-11-06",
+  "source": "gh:NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real"
+ },
+ "visuo-tactile sensing": {
+  "term": "Visuo-tactile sensing",
+  "zh": "视触觉传感",
+  "explain": "用相机拍软垫变形，从而得到接触压力图像",
+  "first_seen": "2026-11-06",
+  "source": "hf-dataset:TacVerse/TacVerse"
+ },
+ "umi gripper": {
+  "term": "UMI gripper",
+  "zh": "UMI 手持夹爪",
+  "explain": "人手持它操作，同时记录轨迹，用来采集示教数据",
+  "first_seen": "2026-11-06",
+  "source": "hf-dataset:TacVerse/TacVerse"
  }
 }

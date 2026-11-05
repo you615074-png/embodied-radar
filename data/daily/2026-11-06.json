@@ -1,0 +1,233 @@
+{
+ "date": "2026-11-06",
+ "headline": "世界模型当模拟器：动作听话、多视角一致",
+ "title_en": "PrimeSim: a multiview world-model simulator trained on 30k hours of robot demos",
+ "tagline_en": "An action-conditioned video world model that follows commanded actions and stays consistent across camera views, released with weights and code.",
+ "summary_md": "**What it is.** PrimeSim, a paper from Travis Davies, Wentao Ma, Lihao Guo and colleagues, is an action-conditioned, multiview *world model simulator*. You give it a robot's commanded actions and a camera setup, and it generates video of what should happen next, from several views at once. The team started from a pretrained video generator, midtrained on 30,110 hours of robot demonstrations across 22 platforms, then posttrained it into an autoregressive simulator that runs at about 10.1 FPS.\n\n**Why it matters.** A world model is only useful as a simulator if it obeys three rules: it follows the actions you command, it stays consistent between camera views, and it does not drift apart over long rollouts. The paper attacks each one: a unified cross-embodiment action representation with frame-aligned dual-path conditioning for action following, view-aware interleaved attention with explicit camera IDs for multiview consistency, and a \"fast-video, slow-memory\" posttraining scheme with hierarchical temporal memory to limit error accumulation. Per the paper, it stays stable on long-horizon rigid and deformable manipulation, adapts to held-out robot platforms in 100–200 gradient steps, leads four of five WorldSimProbe suites against five open-source action-conditioned world models, and its rollouts are good enough to run GRPO policy optimization on.\n\n**Can you try it without a robot?** The model weights, inference code and training code are released, so you can read everything. Running it is another matter: video generation of this size is not realistic on a Mac with 16GB of unified memory and no NVIDIA GPU. Realistically you can follow the code, watch released rollouts, and treat it as a map of how modern world models are built. Note: the arXiv ID and date in this entry look unusual, so verify the paper exists before citing it.",
+ "pick": {
+  "id": "arxiv:2611.04870",
+  "kind": "paper",
+  "title": "PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations",
+  "url": "https://arxiv.org/abs/2611.04870",
+  "authors": [
+   "Travis Davies",
+   "Wentao Ma",
+   "Lihao Guo",
+   "Tengfei Ma",
+   "Xiaowen Chang",
+   "Jiafeng Xu",
+   "Shilong Wang",
+   "Yiqi Deng"
+  ],
+  "license": "",
+  "code_url": "https://github.com/PrimebotTech/PrimeSim",
+  "signals": {
+   "hf_upvotes": 9,
+   "github_stars": 3
+  },
+  "topic": "世界模型与仿真",
+  "one_liner": "一个能听动作指令、多视角一致的机器人世界模型模拟器。",
+  "one_liner_en": "An action-conditioned, multi-view robot world model that acts as a simulator.",
+  "how_to_try": "权重和推理代码已开源，但视频生成模型在 Mac 16GB 上几乎跑不动，只能读代码、看 rollout 视频。",
+  "how_to_try_en": "Weights and inference code are open, but a video world model won't run on a 16GB Mac; watch rollouts and read the code.",
+  "reason": "方向重要、开源良心、适合学世界模型概念,但吃算力,新人只能看不能玩。",
+  "red_flags": [
+   "arXiv 编号与 2026-11 日期看起来像虚构条目,需核实真伪",
+   "没有本地算力就无法亲自复现推理"
+  ],
+  "final": 6.98,
+  "topic_penalty": 0,
+  "significance": 8,
+  "explainability": 7,
+  "wow": 8,
+  "playable": 5,
+  "openness": 8,
+  "learning_value": 9,
+  "heat": 4.99
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.04870",
+   "kind": "paper",
+   "title": "PrimeSim: A Generalist World Model Simulator from Large-Scale Cross-Embodiment Demonstrations",
+   "url": "https://arxiv.org/abs/2611.04870",
+   "authors": [
+    "Travis Davies",
+    "Wentao Ma",
+    "Lihao Guo",
+    "Tengfei Ma",
+    "Xiaowen Chang",
+    "Jiafeng Xu",
+    "Shilong Wang",
+    "Yiqi Deng"
+   ],
+   "license": "",
+   "code_url": "https://github.com/PrimebotTech/PrimeSim",
+   "signals": {
+    "hf_upvotes": 9,
+    "github_stars": 3
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "一个能听动作指令、多视角一致的机器人世界模型模拟器。",
+   "one_liner_en": "An action-conditioned, multi-view robot world model that acts as a simulator.",
+   "how_to_try": "权重和推理代码已开源，但视频生成模型在 Mac 16GB 上几乎跑不动，只能读代码、看 rollout 视频。",
+   "how_to_try_en": "Weights and inference code are open, but a video world model won't run on a 16GB Mac; watch rollouts and read the code.",
+   "reason": "方向重要、开源良心、适合学世界模型概念,但吃算力,新人只能看不能玩。",
+   "red_flags": [
+    "arXiv 编号与 2026-11 日期看起来像虚构条目,需核实真伪",
+    "没有本地算力就无法亲自复现推理"
+   ],
+   "final": 6.98,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 9,
+   "heat": 4.99
+  },
+  {
+   "id": "gh:suniique/assembly-nist",
+   "kind": "repo",
+   "title": "suniique/assembly-nist",
+   "url": "https://github.com/suniique/assembly-nist",
+   "authors": [],
+   "license": "NOASSERTION",
+   "code_url": "",
+   "signals": {
+    "stars": 79,
+    "daily_rate": 5.6
+   },
+   "topic": "强化学习",
+   "one_liner": "用强化学习让仿真 Franka 机械臂把 20 种零件装到一起",
+   "one_liner_en": "A single PPO policy that assembles 20 NIST parts with a simulated Franka arm",
+   "how_to_try": "在 Mac 上安装 MuJoCo，用仓库自带的预训练模型跑 demo 视频；训练需要多核 CPU，起步很慢。",
+   "how_to_try_en": "On a Mac, install MuJoCo and render the demo with provided checkpoints; full training needs many CPU cores and is slow.",
+   "reason": "一个干净的开源 PPO 装配复现，有预训练模型和视频，适合学习强化学习，但无法复现原论文结果，且训练门槛高。",
+   "red_flags": [
+    "独立复现 AlphaNIST，作者不保证与原论文一致（不同仿真器、资产和起始分布），对比不严谨",
+    "许可证为 NOASSERTION，使用前需确认授权",
+    "构建插件要求 x86-64，Apple Silicon 上可能需要额外处理",
+    "全流程训练需 8192 个并行环境，Mac 上基本跑不动完整训练"
+   ],
+   "final": 6.28,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 6,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 3.31
+  },
+  {
+   "id": "arxiv:2611.05320",
+   "kind": "paper",
+   "title": "PyRUA-DataFarm: LLM Agent as a Cost-Efficient Teleoperator for Real-Ready Robot Data",
+   "url": "https://arxiv.org/abs/2611.05320",
+   "authors": [
+    "Kewei Zhang",
+    "Juncheng Ma",
+    "Guodong Lv",
+    "Duomin Wang",
+    "Feixiang Ruan",
+    "Ruiyang Si",
+    "Chuanrui Zhang",
+    "Yuxuan Chen"
+   ],
+   "license": "",
+   "code_url": "https://dagroup-pku.github.io/PyRUA-Lean/DataFarm/",
+   "signals": {
+    "hf_upvotes": 22,
+    "github_stars": 0
+   },
+   "topic": "数据集",
+   "one_liner": "让写代码的 AI 智能体代替人做遥操作，在仿真里造出能直接训真机的数据",
+   "one_liner_en": "A coding agent replaces human teleoperators, building sim data good enough to train real robots",
+   "how_to_try": "先读项目页的流程和 arXiv 论文；完整跑通需要仿真环境和渲染视频模型（建议云端 GPU），Mac 只能看代码，做不了整条链路",
+   "how_to_try_en": "Read the project page first. Full pipeline needs a sim plus a video rendering model on cloud GPU; a Mac can only browse the code, not run it end to end.",
+   "reason": "用智能体自动造真机可用数据，成本优于遥操作且鲁棒性更好，思路有价值；但依赖视频生成模型，纯 Mac 新人难以亲手复现。",
+   "red_flags": [
+    "arXiv 编号 2611 与 2026-11 日期可疑，无法核实真实性",
+    "摘要未说明视频渲染模型是否开源，复现门槛可能很高",
+    "未标注许可证，数据可用性存疑"
+   ],
+   "final": 6.27,
+   "topic_penalty": 0.6,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 4,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 6.79
+  },
+  {
+   "id": "gh:NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "kind": "repo",
+   "title": "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "url": "https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 78,
+    "daily_rate": 7.1
+   },
+   "topic": "人形与足式",
+   "one_liner": "用可求导的神经网络模拟器训练人形机器人模仿人类跳舞，并在真机上跳完46秒",
+   "one_liner_en": "Trains a humanoid to imitate human dance using a differentiable neural world model as the simulator, deployed on a real G1.",
+   "how_to_try": "仅用Mac跑不了训练，但可下载Release的ONNX和LAFAN1数据，在Mujoco里跑play脚本看回放",
+   "how_to_try_en": "Mac can't train (needs NVIDIA GPU). Download the LAFAN1 dataset and try the play/render scripts in MuJoCo to watch imitation rollouts.",
+   "reason": "真机舞蹈demo有说服力，教程与文档扎实，适合学世界模型与模仿学习；但训练要N卡，Mac只能看回放。",
+   "red_flags": [
+    "训练需Linux+NVIDIA显卡，Mac新人无法亲手跑",
+    "非官方复现，论文关键细节自定，LAFAN1得分低于论文(0.56 vs 0.82)",
+    "真机部署危险，需吊架与急停，不适合新手"
+   ],
+   "final": 6.06,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 4,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 3.67
+  },
+  {
+   "id": "hf-dataset:TacVerse/TacVerse",
+   "kind": "dataset",
+   "title": "TacVerse/TacVerse",
+   "url": "https://huggingface.co/datasets/TacVerse/TacVerse",
+   "authors": [],
+   "license": "cc-by-sa-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 16,
+    "hf_likes": 21,
+    "downloads": 1637
+   },
+   "topic": "数据集",
+   "one_liner": "一个双手操作的触觉+视觉数据集，每帧含四路触觉图像",
+   "one_liner_en": "A bimanual manipulation dataset with four tactile image streams per frame plus camera views.",
+   "how_to_try": "在 Mac 上下载数据，用 LeRobot 加载几段回放；没有触觉硬件就看不直观。",
+   "how_to_try_en": "Download on Mac, load a few episodes with LeRobot and replay; tactile streams are hard to feel without hardware.",
+   "reason": "触觉双手数据是稀缺方向，格式贴近 LeRobot 因而具备学习价值；但作者不明、日期异常，可信度需要打折扣。",
+   "red_flags": [
+    "作者与机构未知，数据采集质量与标注规范无法核实",
+    "发布时间标为 2026-09-01，日期可疑"
+   ],
+   "final": 5.99,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 6.14
+  }
+ ]
+}
