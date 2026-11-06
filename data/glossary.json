@@ -425,5 +425,96 @@
   "explain": "人手持它操作，同时记录轨迹，用来采集示教数据",
   "first_seen": "2026-11-06",
   "source": "hf-dataset:TacVerse/TacVerse"
+ },
+ "vlm agent": {
+  "term": "VLM agent",
+  "zh": "视觉语言模型智能体",
+  "explain": "能看图、读指令并决定下一步动作的大模型",
+  "first_seen": "2026-11-07",
+  "source": "arxiv:2610.00854"
+ },
+ "affordance": {
+  "term": "affordance",
+  "zh": "可供性",
+  "explain": "物体上真正适合抓或推的位置",
+  "first_seen": "2026-11-07",
+  "source": "arxiv:2610.00854"
+ },
+ "task planning": {
+  "term": "task planning",
+  "zh": "任务规划",
+  "explain": "把大目标拆成一步步可执行的动作",
+  "first_seen": "2026-11-07",
+  "source": "arxiv:2610.00854"
+ },
+ "egocentric video": {
+  "term": "Egocentric video",
+  "zh": "第一视角视频",
+  "explain": "戴在头上拍的手部操作视频，用来学人类怎么动手",
+  "first_seen": "2026-11-07",
+  "source": "arxiv:2611.06817"
+ },
+ "world-action model": {
+  "term": "World-Action Model",
+  "zh": "世界-动作模型",
+  "explain": "既预测画面怎么变、又输出动作的模型",
+  "first_seen": "2026-11-07",
+  "source": "arxiv:2611.06817"
+ },
+ "scaling law": {
+  "term": "Scaling law",
+  "zh": "规模定律",
+  "explain": "数据越多效果越好，且能用公式预测提升幅度",
+  "first_seen": "2026-11-07",
+  "source": "arxiv:2611.06817"
+ },
+ "foc (field-oriented control)": {
+  "term": "FOC (Field-Oriented Control)",
+  "zh": "磁场定向控制",
+  "explain": "让无刷电机转得又稳又准的控制方法",
+  "first_seen": "2026-11-07",
+  "source": "gh:yzytz17/1.5-joint-module"
+ },
+ "reduction gearbox": {
+  "term": "Reduction gearbox",
+  "zh": "减速齿轮箱",
+  "explain": "用齿轮把电机转速降下来、力气放大的机构",
+  "first_seen": "2026-11-07",
+  "source": "gh:yzytz17/1.5-joint-module"
+ },
+ "gerber": {
+  "term": "Gerber",
+  "zh": "PCB制造文件",
+  "explain": "给工厂下单做电路板用的标准图纸文件",
+  "first_seen": "2026-11-07",
+  "source": "gh:yzytz17/1.5-joint-module"
+ },
+ "benchmark": {
+  "term": "Benchmark",
+  "zh": "评测基准",
+  "explain": "一套统一的题目和打分规则，用来公平比较不同机器人AI的水平。",
+  "first_seen": "2026-11-07",
+  "source": "gh:AetherLabsAI/RobotAgentBench"
+ },
+ "open-ended task": {
+  "term": "Open-ended task",
+  "zh": "开放式任务",
+  "explain": "只给一句模糊指令，比如收拾一下，让AI自己判断要做什么。",
+  "first_seen": "2026-11-07",
+  "source": "gh:AetherLabsAI/RobotAgentBench"
+ },
+ "imitation learning": {
+  "term": "Imitation Learning",
+  "zh": "模仿学习",
+  "explain": "让机器人从人类示范中学会动作，而不是靠试错",
+  "first_seen": "2026-11-07",
+  "source": "hf-dataset:LingYu-Robotics/lingyu-realworld-robotics-dataset"
+ },
+ "lerobot format": {
+  "term": "LeRobot format",
+  "zh": "LeRobot 数据格式",
+  "explain": "Hugging Face 定义的统一机器人数据集格式，方便直接训练",
+  "first_seen": "2026-11-07",
+  "source": "hf-dataset:LingYu-Robotics/lingyu-realworld-robotics-dataset"
  }
 }

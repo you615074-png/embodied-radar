@@ -1,0 +1,236 @@
+{
+ "date": "2026-11-07",
+ "headline": "千题考大模型：能当机器人管家吗",
+ "title_en": "Embodied Agent Arena: Can Frontier VLMs Be Robot Generalists?",
+ "tagline_en": "A 1,000-case benchmark testing ten vision-language agents on geometry, planning, affordance and manipulation.",
+ "summary_md": "**What it is.** A paper from Haojian Huang, Pukun Zhao, Zexi Li and colleagues introducing *Embodied Agent Arena*, a benchmark for asking a blunt question: can today's best vision-language models act as general-purpose robot agents? The Arena collects 1,000 test cases across five areas — geometry, spatial reasoning, affordance, task planning, and manipulation. 32 existing sources are combined with GeoProbe, the authors' own 168-case set for camera, motion, depth and scale estimation. A deliberately minimal harness hands task decisions to the model through each source's native interface. Ten VLM agents were evaluated.\n\n**Why it matters.** Closed-weight models lead in all five domains. Open-weight VLMs do show useful spatial reasoning, but their planning and manipulation success is much lower. The more interesting part is the failure analysis. Models that look equally wrong on geometry can be failing for different reasons — one distorted by scale, another by shape. Estimating a valid region does not mean the model can pick a usable action point. Agents hit early subgoals, then lose control of the object, attach an action to the wrong receiving region, or stop before the required physical state is reached. More compute does not fix this evenly: code repair can restore execution without finishing the task, and self-review can flip a correct judgment into a wrong one.\n\n**Can you try it without a robot?** Partly. The evaluation is API-based, so a laptop can call models on Arena items. Whether a runnable harness is actually released is not clear from the abstract — check the repository before planning anything around it.",
+ "pick": {
+  "id": "arxiv:2610.00854",
+  "kind": "paper",
+  "title": "Are Frontier VLM Agents Ready to Be Robot Generalists? An Empirical Study with the Embodied Agent Arena",
+  "url": "https://arxiv.org/abs/2610.00854",
+  "authors": [
+   "Haojian Huang",
+   "Pukun Zhao",
+   "Zexi Li",
+   "Yehang Zhang",
+   "Yangkai Wei",
+   "Wenqian Li",
+   "Han Yang",
+   "Kaiwen Zhou"
+  ],
+  "license": "",
+  "code_url": "https://github.com/embodied-agent-arena/embodied-agent-arena",
+  "signals": {
+   "hf_upvotes": 104,
+   "github_stars": 26
+  },
+  "topic": "VLA与基础模型",
+  "one_liner": "用一千道题考验大模型能不能当机器人管家",
+  "one_liner_en": "A 1,000-case benchmark testing whether frontier VLMs can act as robot generalists",
+  "how_to_try": "在Mac上阅读按仓库说明，用API调用10个模型在Arena题目上跑评测",
+  "how_to_try_en": "Read the repo and run the lightweight evaluation harness on Mac via model APIs; no robot needed",
+  "reason": "系统评测前沿VLM作为机器人通用智能体的短板，失败模式分析扎实；无硬件新人可用API跑轻量评测，学习价值高，但非突破性进展。",
+  "red_flags": [
+   "只有arXiv编号和少量星标，代码质量与可复现性未验证",
+   "纯评测类工作，不提出新方法"
+  ],
+  "final": 6.51,
+  "topic_penalty": 0.6,
+  "significance": 7,
+  "explainability": 7,
+  "wow": 5,
+  "playable": 7,
+  "openness": 5,
+  "learning_value": 8,
+  "heat": 10
+ },
+ "top": [
+  {
+   "id": "arxiv:2610.00854",
+   "kind": "paper",
+   "title": "Are Frontier VLM Agents Ready to Be Robot Generalists? An Empirical Study with the Embodied Agent Arena",
+   "url": "https://arxiv.org/abs/2610.00854",
+   "authors": [
+    "Haojian Huang",
+    "Pukun Zhao",
+    "Zexi Li",
+    "Yehang Zhang",
+    "Yangkai Wei",
+    "Wenqian Li",
+    "Han Yang",
+    "Kaiwen Zhou"
+   ],
+   "license": "",
+   "code_url": "https://github.com/embodied-agent-arena/embodied-agent-arena",
+   "signals": {
+    "hf_upvotes": 104,
+    "github_stars": 26
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "用一千道题考验大模型能不能当机器人管家",
+   "one_liner_en": "A 1,000-case benchmark testing whether frontier VLMs can act as robot generalists",
+   "how_to_try": "在Mac上阅读按仓库说明，用API调用10个模型在Arena题目上跑评测",
+   "how_to_try_en": "Read the repo and run the lightweight evaluation harness on Mac via model APIs; no robot needed",
+   "reason": "系统评测前沿VLM作为机器人通用智能体的短板，失败模式分析扎实；无硬件新人可用API跑轻量评测，学习价值高，但非突破性进展。",
+   "red_flags": [
+    "只有arXiv编号和少量星标，代码质量与可复现性未验证",
+    "纯评测类工作，不提出新方法"
+   ],
+   "final": 6.51,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 7,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 10
+  },
+  {
+   "id": "arxiv:2611.06817",
+   "kind": "paper",
+   "title": "Open-HumanScale: An Open Recipe for Scaling Human and Robot Experience for Embodied Foundation Models",
+   "url": "https://arxiv.org/abs/2611.06817",
+   "authors": [
+    "Juncheng Ma",
+    "Jiaxin Li",
+    "Jiankai Tu",
+    "Bo Liang",
+    "Guodong Lv",
+    "Yufan Deng",
+    "Junzhe Tang",
+    "Liangzhu Yang"
+   ],
+   "license": "",
+   "code_url": "https://dagroup-pku.github.io/open-humanwam/",
+   "signals": {
+    "hf_upvotes": 14,
+    "github_stars": 0
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "用5万小时人类第一视角视频预训练机器人大模型",
+   "one_liner_en": "Pretrains robot foundation models on 50,000 hours of egocentric human video",
+   "how_to_try": "Mac 只能看论文和项目页；真跑需几十 GB 数据和 GPU，建议先读数据管线、在 RoboTwin 仿真里跑小规模推理",
+   "how_to_try_en": "On Mac: read the paper/pipeline only; full runs need GPU. Try small inference in the RoboTwin sim.",
+   "reason": "开放数据+管线+权重，给出人类视频预训练的规模定律，学习价值高；但复现门槛在 GPU 与数据量，Mac 基本只能看。",
+   "red_flags": [
+    "论文未标注许可证",
+    "50K 小时数据规模巨大，普通人难以复现预训练",
+    "arxiv 编号与日期存疑，需核实"
+   ],
+   "final": 6.19,
+   "topic_penalty": 0.6,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 5,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 5.87
+  },
+  {
+   "id": "gh:yzytz17/1.5-joint-module",
+   "kind": "repo",
+   "title": "yzytz17/1.5-joint-module",
+   "url": "https://github.com/yzytz17/1.5-joint-module",
+   "authors": [],
+   "license": "CERN-OHL-W-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 162,
+    "daily_rate": 40.5
+   },
+   "topic": "硬件与本体",
+   "one_liner": "用1.5美元的驱动板和3D打印齿轮，做出一个超便宜的机器人关节",
+   "one_liner_en": "A super-cheap robot joint: $1.5 driver board plus 3D-printed gearbox inside a small gimbal motor",
+   "how_to_try": "没有硬件基本玩不了：只能看GitHub上的PCB和STL文件，或自己打样焊接。想在Mac上学FOC可先用仿真。",
+   "how_to_try_en": "Hardware required. On a Mac you can only browse Gerbers/STLs; try a FOC simulator to learn the control idea.",
+   "reason": "低成本关节很有工程价值，讲得也清楚，但纯硬件、半成品、必须先有实体设备，对新人和无硬件账号可玩性极低。",
+   "red_flags": [
+    "仓库标为work in progress，多处TODO、占位数值未验证",
+    "视频放在百度网盘，海外不易访问",
+    "核心是机械与PCB设计，无硬件者无法复现",
+    "摘要称FOC板$1.5但固件只提供open-loop驱动，闭环能力存疑"
+   ],
+   "final": 5.9,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 3,
+   "openness": 7,
+   "learning_value": 6,
+   "heat": 6.53
+  },
+  {
+   "id": "gh:AetherLabsAI/RobotAgentBench",
+   "kind": "repo",
+   "title": "AetherLabsAI/RobotAgentBench",
+   "url": "https://github.com/AetherLabsAI/RobotAgentBench",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 165,
+    "daily_rate": 15.0
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "家庭机器人开放式任务仿真评测基准，含50个房间布局",
+   "one_liner_en": "A simulation benchmark for household robot agents across 50 room layouts",
+   "how_to_try": "可先装pip包查任务目录；跑仿真需Isaac Sim和GPU，Mac 16GB基本跑不动，可先用云GPU或只看官网demo。",
+   "how_to_try_en": "You can pip install and browse the task catalog on Mac, but running the sim needs Isaac Sim plus a GPU, so use a cloud GPU or just watch the demos.",
+   "reason": "家庭开放式任务的评测基准，侧重任务发现与失败恢复，方向有价值且Apache开源；但需Isaac Sim和GPU，新人只能看；作者信息缺失也存疑。",
+   "red_flags": [
+    "作者与机构标为未知，可信度待核实",
+    "发布日期为未来时间2026-10-24，可疑",
+    "仿真需Isaac Sim与GPU，Mac新人难亲自跑",
+    "仅83星，跟进者少"
+   ],
+   "final": 5.9,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 4,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 4.86
+  },
+  {
+   "id": "hf-dataset:LingYu-Robotics/lingyu-realworld-robotics-dataset",
+   "kind": "dataset",
+   "title": "LingYu-Robotics/lingyu-realworld-robotics-dataset",
+   "url": "https://huggingface.co/datasets/LingYu-Robotics/lingyu-realworld-robotics-dataset",
+   "authors": [],
+   "license": "cc-by-nc-sa-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 6,
+    "hf_likes": 8,
+    "downloads": 4840
+   },
+   "topic": "数据集",
+   "one_liner": "开源139小时双臂机器人第一视角遥操作数据，可训练模仿学习策略",
+   "one_liner_en": "Open-sourced 139 hours of bimanual first-person teleoperation data for imitation learning.",
+   "how_to_try": "Mac 上装 LeRobot，下载一个子集，用小模型跑通训练和可视化",
+   "how_to_try_en": "Install LeRobot on your Mac, download one subset, and run a small training job with visualization.",
+   "reason": "规模大，格式规范，是模仿学习入门的好材料，但体量巨大且非商用，实际可玩性受限。",
+   "red_flags": [
+    "9.16TB 体量，Mac 只能下小子集",
+    "CC BY-NC-SA 禁止商用",
+    "另有超市零售数据需申请且未公开",
+    "依赖特定机器人 LingYu TA2，跨本体迁移未知"
+   ],
+   "final": 5.66,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 6,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 4.22
+  }
+ ]
+}
