@@ -1,0 +1,207 @@
+{
+ "date": "2026-11-08",
+ "headline": "手机视频一键重建全身动作",
+ "title_en": "ExMR: Full-Body Motion Capture from a Phone Video",
+ "tagline_en": "Reconstructs 3D body, hand, and foot motion from a single video, with exports for Blender and robots.",
+ "summary_md": "**What it is:** ExMR is the official code for a paper by Tom Wehrbein and Bodo Rosenhahn (arXiv 2610.26213, a journal extension of FootMR from 3DV 2026). It takes one ordinary monocular video and reconstructs the 3D motion of the person in it, including the body, hands, and feet, represented as SMPL-X. The pipeline first estimates whole-body motion with a temporal estimator, then two refinement modules, FootMR and HandMR, go back and look at local image evidence to predict residual joint rotations for the extremities.\n\n**Why it matters:** Hands and feet are usually the worst part of monocular motion capture. ExMR is not a new foundation model; it is a careful refinement step on top of an existing estimator, and the authors are upfront that evaluation and training code are still to come. The useful part for practitioners is the output side: results are exported in a world-grounded frame, as an AMASS SMPL-X file for Blender, as BVH, as FBX via Blender for Unity and Unreal, and retargeted to humanoid robots with GMR. That makes a phone clip usable in an animation or robotics pipeline.\n\n**Can you try it without a robot?** Yes. There is an online demo on Hugging Face Spaces that runs on up to 20 seconds of video in the default mode, with no installation. Local runs are tested on Linux with an NVIDIA GPU (around 8 GB VRAM), and the SAM 3D Body weights are gated on Hugging Face and approved manually, so local setup is not instant. The repo currently ships demo code only. License is marked NOASSERTION on GitHub, so check the terms before reusing anything.",
+ "pick": {
+  "id": "gh:twehrbein/ExMR",
+  "kind": "repo",
+  "title": "twehrbein/ExMR",
+  "url": "https://github.com/twehrbein/ExMR",
+  "authors": [],
+  "license": "NOASSERTION",
+  "code_url": "",
+  "signals": {
+   "stars": 85,
+   "daily_rate": 7.0
+  },
+  "topic": "数据集",
+  "one_liner": "从一段手机视频里还原全身3D动作，包括手指和脚",
+  "one_liner_en": "Recover full-body 3D motion, including hands and feet, from a single phone video.",
+  "how_to_try": "直接打开 Hugging Face Space 在线 demo，上传一段短视频（≤20秒）即可看结果，无需安装。",
+  "how_to_try_en": "Just open the Hugging Face Space demo, upload a short clip (<=20s) and see the output; no install needed.",
+  "reason": "手脚细节重估的思路清晰，有浏览器 demo 和机器人重定向导出，对新人友好，但属增量改进，非颠覆性工作。",
+  "red_flags": [
+   "只是用前作 FootMR 的延伸，属增量改进",
+   "许可证标记为 NOASSERTION，授权不明",
+   "本地运行需 NVIDIA GPU，且 SAM 3D Body 权重需审批"
+  ],
+  "final": 6.27,
+  "topic_penalty": 0,
+  "significance": 5,
+  "explainability": 8,
+  "wow": 7,
+  "playable": 8,
+  "openness": 6,
+  "learning_value": 7,
+  "heat": 3.64
+ },
+ "top": [
+  {
+   "id": "gh:twehrbein/ExMR",
+   "kind": "repo",
+   "title": "twehrbein/ExMR",
+   "url": "https://github.com/twehrbein/ExMR",
+   "authors": [],
+   "license": "NOASSERTION",
+   "code_url": "",
+   "signals": {
+    "stars": 85,
+    "daily_rate": 7.0
+   },
+   "topic": "数据集",
+   "one_liner": "从一段手机视频里还原全身3D动作，包括手指和脚",
+   "one_liner_en": "Recover full-body 3D motion, including hands and feet, from a single phone video.",
+   "how_to_try": "直接打开 Hugging Face Space 在线 demo，上传一段短视频（≤20秒）即可看结果，无需安装。",
+   "how_to_try_en": "Just open the Hugging Face Space demo, upload a short clip (<=20s) and see the output; no install needed.",
+   "reason": "手脚细节重估的思路清晰，有浏览器 demo 和机器人重定向导出，对新人友好，但属增量改进，非颠覆性工作。",
+   "red_flags": [
+    "只是用前作 FootMR 的延伸，属增量改进",
+    "许可证标记为 NOASSERTION，授权不明",
+    "本地运行需 NVIDIA GPU，且 SAM 3D Body 权重需审批"
+   ],
+   "final": 6.27,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 8,
+   "openness": 6,
+   "learning_value": 7,
+   "heat": 3.64
+  },
+  {
+   "id": "gh:P90-RushB/robopaint-bench",
+   "kind": "repo",
+   "title": "P90-RushB/robopaint-bench",
+   "url": "https://github.com/P90-RushB/robopaint-bench",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 52,
+    "daily_rate": 2.6
+   },
+   "topic": "其他",
+   "one_liner": "让多模态大模型用机械臂在仿真里画画，并对比11个模型的作品",
+   "one_liner_en": "A benchmark where multimodal LLMs paint with a simulated robot arm, comparing 11 models' canvases.",
+   "how_to_try": "打开 Golden Gate 或 Pelican 的 Colab，选 T4 GPU 直接 Run all 回放；想自己画画需自备模型 API key",
+   "how_to_try_en": "Open the Golden Gate or Pelican Colab, pick T4 GPU and Run all to replay; new paintings need your own model API key.",
+   "reason": "创意直观、Colab 可回放、开源友好，但任务小众、非主流基准，领域推动力有限，适合当入门演示。",
+   "red_flags": [
+    "只验证了仿真中的绘画任务，通用性存疑",
+    "自建 AgentArk 生态，与主流具身基准可比性不足",
+    "作者与机构信息未知，属于个人项目"
+   ],
+   "final": 6.26,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 2.24
+  },
+  {
+   "id": "hf-model:open-gigaai/GigaBrain-WBC-0.5",
+   "kind": "model",
+   "title": "open-gigaai/GigaBrain-WBC-0.5",
+   "url": "https://huggingface.co/open-gigaai/GigaBrain-WBC-0.5",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 4,
+    "hf_likes": 4,
+    "downloads": 0
+   },
+   "topic": "人形与足式",
+   "one_liner": "一个统一策略，让人形机器人既能跟踪动作、摔倒后自己爬起来，也能走复杂地形",
+   "one_liner_en": "One policy lets a humanoid track motions, recover from falls, and walk rough terrain.",
+   "how_to_try": "可以在 Mac 上查看 ONNX 策略和项目页视频，但实际仿真和训练需要 NVIDIA 显卡或云 GPU；没有硬件的新人只能读代码和配置。",
+   "how_to_try_en": "Inspect the ONNX policies and project page on your Mac, but running sim/training needs an NVIDIA GPU or cloud; no-hardware users can only read code.",
+   "reason": "开源权重和 Apache 许可最好，统一策略覆盖跟踪、摔倒恢复与地形是亮点；但需要 NVIDIA 显卡和特定人形，新人只能读代码和看视频，可玩性一般。",
+   "red_flags": [
+    "只有模型卡和权重，摘要里看不出具体量化结果，需要看论文核实",
+    "实际部署和评测依赖特定人形（Unitree G1 / Maker L01），没有硬件很难验证"
+   ],
+   "final": 6.25,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 4,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 3.49
+  },
+  {
+   "id": "hf-dataset:allenai/toyblocks-data",
+   "kind": "dataset",
+   "title": "allenai/toyblocks-data",
+   "url": "https://huggingface.co/datasets/allenai/toyblocks-data",
+   "authors": [],
+   "license": "odc-by",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 2,
+    "downloads": 826
+   },
+   "topic": "数据集",
+   "one_liner": "AI 在仿真里自动生成机器人叠积木的演示数据，不用人遥控采集",
+   "one_liner_en": "A simulated Franka dataset of 83k auto-generated block-stacking demos, no teleoperation needed",
+   "how_to_try": "Mac 上装 LeRobot 下载该数据集做可视化或训个小策略；跑仿真需云 GPU",
+   "how_to_try_en": "On Mac, use LeRobot to download and visualize episodes; training the sim needs cloud GPU.",
+   "reason": "数据量大、全开源、可演示自动生成数据替代遥操作，但领域窄且纯仿真，属扎实但非突破性工作。",
+   "red_flags": [
+    "只有叠积木这一窄领域，泛化有限",
+    "数据来自仿真、未经真机验证",
+    "日期 2026-11 疑似未来时间戳，信息可疑"
+   ],
+   "final": 6.16,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 5,
+   "openness": 9,
+   "learning_value": 7,
+   "heat": 2.38
+  },
+  {
+   "id": "arxiv:2611.08144",
+   "kind": "paper",
+   "title": "Detecting Silent Faults at the Environment-Trainer Boundary in Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2611.08144",
+   "authors": [
+    "Zuo Gou",
+    "Chenhao Lu"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "强化学习",
+   "one_liner": "发现强化学习训练中环境与训练器之间悄悄出错却不报错的问题，并提出对账方法",
+   "one_liner_en": "Finds silent faults between RL environments and trainers, and proposes a step-ledger check that catches them",
+   "how_to_try": "在 Mac 上可以安装 MuJoCo 和 Gymnasium；在这些环境中跑 Pendulum 时，在两端都记录步数，然后逐步核对。",
+   "how_to_try_en": "Install MuJoCo+Gymnasium on Mac, add a step ledger on both the env and trainer sides for Pendulum, then diff step by step.",
+   "reason": "切入点扎实但偏工程审计，概念清晰、代码开放、Mac 可复现，适合教 sim 环境与训练器解耦这一课。",
+   "red_flags": [
+    "论文标题摘要中的年份与常见 arXiv 编号格式不符，需要核实真实性",
+    "主要结论是工程规范层面的建议，缺少新的学习算法"
+   ],
+   "final": 5.99,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 7,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 2.0
+  }
+ ]
+}

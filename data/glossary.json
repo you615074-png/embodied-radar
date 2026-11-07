@@ -516,5 +516,96 @@
   "explain": "Hugging Face 定义的统一机器人数据集格式，方便直接训练",
   "first_seen": "2026-11-07",
   "source": "hf-dataset:LingYu-Robotics/lingyu-realworld-robotics-dataset"
+ },
+ "smpl-x": {
+  "term": "SMPL-X",
+  "zh": "全身参数化人体模型",
+  "explain": "用一组数字描述人体姿态和手部形状的通用模型",
+  "first_seen": "2026-11-08",
+  "source": "gh:twehrbein/ExMR"
+ },
+ "motion retargeting": {
+  "term": "Motion Retargeting",
+  "zh": "动作重定向",
+  "explain": "把人的动作搬到不同骨架的机器人身上",
+  "first_seen": "2026-11-08",
+  "source": "gh:twehrbein/ExMR"
+ },
+ "world-grounded motion": {
+  "term": "World-grounded motion",
+  "zh": "世界坐标动作",
+  "explain": "动作放在固定地面坐标系里，而不是跟着镜头走",
+  "first_seen": "2026-11-08",
+  "source": "gh:twehrbein/ExMR"
+ },
+ "multimodal llm agent": {
+  "term": "Multimodal LLM Agent",
+  "zh": "多模态智能体",
+  "explain": "能看图、读文字并决定下一步动作的大模型",
+  "first_seen": "2026-11-08",
+  "source": "gh:P90-RushB/robopaint-bench"
+ },
+ "in-context learning (icl)": {
+  "term": "In-Context Learning (ICL)",
+  "zh": "上下文学习",
+  "explain": "不改权重，靠历史对话让模型越做越顺",
+  "first_seen": "2026-11-08",
+  "source": "gh:P90-RushB/robopaint-bench"
+ },
+ "simulation benchmark": {
+  "term": "Simulation Benchmark",
+  "zh": "仿真基准",
+  "explain": "在虚拟环境里统一条件比较不同模型表现",
+  "first_seen": "2026-11-08",
+  "source": "gh:P90-RushB/robopaint-bench"
+ },
+ "whole-body control (wbc)": {
+  "term": "Whole-Body Control (WBC)",
+  "zh": "全身控制",
+  "explain": "同时协调人形机器人的手臂、腿和腰，而不是分别控制每个关节",
+  "first_seen": "2026-11-08",
+  "source": "hf-model:open-gigaai/GigaBrain-WBC-0.5"
+ },
+ "behavior world model": {
+  "term": "Behavior World Model",
+  "zh": "行为世界模型",
+  "explain": "让模型预测动作后环境会怎样变化，从而提前规划怎么动",
+  "first_seen": "2026-11-08",
+  "source": "hf-model:open-gigaai/GigaBrain-WBC-0.5"
+ },
+ "motion tracking": {
+  "term": "Motion Tracking",
+  "zh": "动作跟踪",
+  "explain": "让机器人模仿参考动作片段里的姿势和节奏",
+  "first_seen": "2026-11-08",
+  "source": "hf-model:open-gigaai/GigaBrain-WBC-0.5"
+ },
+ "pddl": {
+  "term": "PDDL",
+  "zh": "规划领域定义语言",
+  "explain": "用符号描述“世界有哪些状态、动作能怎么改”，让程序自动规划任务步骤",
+  "first_seen": "2026-11-08",
+  "source": "hf-dataset:allenai/toyblocks-data"
+ },
+ "silent fault": {
+  "term": "silent fault",
+  "zh": "静默故障",
+  "explain": "数据传错了却不报错，训练照常进行，只是结果悄悄变差",
+  "first_seen": "2026-11-08",
+  "source": "arxiv:2611.08144"
+ },
+ "wire protocol": {
+  "term": "wire protocol",
+  "zh": "通信协议",
+  "explain": "环境和训练器之间传数据时约定的格式和规则",
+  "first_seen": "2026-11-08",
+  "source": "arxiv:2611.08144"
+ },
+ "step ledger": {
+  "term": "step ledger",
+  "zh": "步数对账",
+  "explain": "两端各记一本步数账，逐步比对，一旦不一致就能定位错误",
+  "first_seen": "2026-11-08",
+  "source": "arxiv:2611.08144"
  }
 }
