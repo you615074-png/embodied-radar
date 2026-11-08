@@ -48,6 +48,13 @@
    "title": "twehrbein/ExMR",
    "topic": "数据集",
    "final": 6.27
+  },
+  {
+   "date": "2026-11-09",
+   "id": "gh:robotmabel/open_mabel",
+   "title": "robotmabel/open_mabel",
+   "topic": "硬件与本体",
+   "final": 6.38
   }
  ],
  "top": {
@@ -85,7 +92,12 @@
   "gh:P90-RushB/robopaint-bench": "2026-11-08",
   "hf-model:open-gigaai/GigaBrain-WBC-0.5": "2026-11-08",
   "hf-dataset:allenai/toyblocks-data": "2026-11-08",
-  "arxiv:2611.08144": "2026-11-08"
+  "arxiv:2611.08144": "2026-11-08",
+  "gh:robotmabel/open_mabel": "2026-11-09",
+  "arxiv:2611.08407": "2026-11-09",
+  "gh:eust-w/opengeniemaster": "2026-11-09",
+  "arxiv:2611.08318": "2026-11-09",
+  "hf-dataset:lerobot/svla_so101_pickplace": "2026-11-09"
  },
  "scores": {
   "arxiv:2610.40339": {
@@ -9705,6 +9717,300 @@
      "作者机构和发表渠道信息薄弱，需核实来源"
     ],
     "reason": "问题真实但属小范围工程改进，只在仿真验证、无代码，新人无法上手，作为精选内容偏弱。"
+   }
+  },
+  "gh:zigansh1n/imnotarobot": {
+   "date": "2026-11-09",
+   "v": 1,
+   "eval": {
+    "topic": "其他",
+    "one_liner": "一个能自动破解网页验证码的Mac工具，不涉及机器人技术",
+    "one_liner_en": "A macOS tool that automatically solves web captchas; not robotics.",
+    "scores": {
+     "significance": 2,
+     "explainability": 5,
+     "wow": 3,
+     "playable": 3,
+     "openness": 4,
+     "learning_value": 1
+    },
+    "how_to_try": "别试。它不是具身智能内容，且破解验证码违反网站条款，有法律与道德风险。",
+    "how_to_try_en": "Skip it: not embodied AI, and captcha bypass violates site terms and carries legal/ethical risk.",
+    "concepts": [
+     {
+      "term": "CAPTCHA",
+      "zh": "验证码",
+      "explain": "网站用来区分人和自动程序的小测试，比如勾选框、拼图"
+     },
+     {
+      "term": "MCP server",
+      "zh": "模型上下文协议服务",
+      "explain": "让AI助手调用外部工具的一种接口标准"
+     },
+     {
+      "term": "VLM",
+      "zh": "视觉语言模型",
+      "explain": "能看图并回答问题的AI模型，比如Gemini、GPT"
+     }
+    ],
+    "red_flags": [
+     "绕过验证码，属于规避网站安全机制",
+     "与具身智能、机器人完全无关",
+     "未签名安装包，安全性不明",
+     "只有48星，热度低"
+    ],
+    "reason": "这是绕过网站验证码的工具，和机器人、具身智能没有任何关系，还涉及规避安全机制，不适合推荐。"
+   }
+  },
+  "gh:mbzuai-nlp/ChemLab-Assets": {
+   "date": "2026-11-09",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "203台化学实验仪器的可仿真3D模型，机器人或AI能上手操作",
+    "one_liner_en": "203 simulation-ready chemistry lab instruments that robots or AI agents can operate",
+    "scores": {
+     "significance": 7,
+     "explainability": 8,
+     "wow": 6,
+     "playable": 4,
+     "openness": 8,
+     "learning_value": 7
+    },
+    "how_to_try": "浏览器打开HF Space Explorer看3D模型；动手操作需Linux的Python跑chemlab命令行，Mac上仅在浏览器查看，完整仿真需Isaac Sim",
+    "how_to_try_en": "Browse the HF Space 3D explorer in a browser; run chemlab CLI on Linux Python, full sim needs Isaac Sim",
+    "concepts": [
+     {
+      "term": "URDF",
+      "zh": "机器人描述格式",
+      "explain": "用文件描述模型零件和关节怎么连接转动"
+     },
+     {
+      "term": "Digital Twin",
+      "zh": "数字孪生",
+      "explain": "把真实设备的行为复刻进仿真里"
+     },
+     {
+      "term": "Affordance",
+      "zh": "可操作性/抓取点",
+      "explain": "标出机器人该抓哪里按哪里"
+     }
+    ],
+    "red_flags": [
+     "仓库许可证为NOASSERTION，具体条款不明",
+     "几十MB级3D资源约1.9GB，且完整仿真依赖NVIDIA Isaac Sim",
+     "纯资产数据集无新算法，只服务下游任务"
+    ],
+    "reason": "少见的大规模实验室仪器数字孪生资产，对实验室自动化有铺垫价值，但无新方法且重仿真依赖，Mac新人只能看看。"
+   }
+  },
+  "gh:robotmabel/open_mabel": {
+   "date": "2026-11-09",
+   "v": 1,
+   "eval": {
+    "topic": "硬件与本体",
+    "one_liner": "开源的全套移动双臂人形机器人，附仿真和模仿学习流程",
+    "one_liner_en": "Open-source 56-DOF mobile bimanual robot with sim, teleop and learning pipeline",
+    "scores": {
+     "significance": 6,
+     "explainability": 7,
+     "wow": 7,
+     "playable": 6,
+     "openness": 9,
+     "learning_value": 8
+    },
+    "how_to_try": "在 Mac 上装 MuJoCo，跑 server/run.sh 进仿真，用浏览器看机器人；训练策略需 NVIDIA 显卡。",
+    "how_to_try_en": "Install MuJoCo on Mac, run server/run.sh to drive the simulated robot in browser; policy training needs an NVIDIA GPU.",
+    "concepts": [
+     {
+      "term": "whole-body teleoperation",
+      "zh": "全身遥操作",
+      "explain": "用头显或手柄实时控制机器人全身关节，边操作边录数据"
+     },
+     {
+      "term": "imitation learning",
+      "zh": "模仿学习",
+      "explain": "让机器人从人类示范的动作数据里学做同样的任务"
+     },
+     {
+      "term": "bimanual manipulation",
+      "zh": "双臂操作",
+      "explain": "两只手配合完成搬、拧、递等任务，比单手难很多"
+     }
+    ],
+    "red_flags": [
+     "作者与机构未知，无同期论文或第三方验证",
+     "亮点 Vision Pro 遥操作需要昂贵设备，新人难复现",
+     "star 数很低，社区验证不足"
+    ],
+    "reason": "开源程度高、流程完整，仿真可玩，但缺论文背书且遥操作门槛高，适合当学习地图而非今日精选。"
+   }
+  },
+  "hf-dataset:unitreerobotics/G1_WBT_SMPL_Inspire_Pick_Vegetables": {
+   "date": "2026-11-09",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "宇树G1人形机器人摘蔬菜的遥操作数据集，同时记录人体动捕与机器人状态",
+    "one_liner_en": "A LeRobot dataset of a Unitree G1 humanoid picking vegetables, with SMPL motion capture and robot states.",
+    "scores": {
+     "significance": 5,
+     "explainability": 6,
+     "wow": 4,
+     "playable": 6,
+     "openness": 8,
+     "learning_value": 6
+    },
+    "how_to_try": "在Mac装LeRobot库，用HF的dataset viewer和可视化脚本读数据、画关节轨迹，不用真机也能学数据格式",
+    "how_to_try_en": "Install LeRobot on Mac, load the dataset from HF, visualize joint trajectories and inspect the format—no robot needed.",
+    "concepts": [
+     {
+      "term": "Whole-Body Teleoperation",
+      "zh": "全身遥操作",
+      "explain": "人做动作，整套动作被同步映射到人形机器人全身。"
+     },
+     {
+      "term": "SMPL Skeleton",
+      "zh": "SMPL人体骨架",
+      "explain": "一种标准的三维人体关节点模型，用来记录人的动作。"
+     },
+     {
+      "term": "LeRobot Dataset Format",
+      "zh": "LeRobot数据格式",
+      "explain": "Hugging Face定的机器人数据标准，统一存观测和动作。"
+     }
+    ],
+    "red_flags": [
+     "介绍几乎只有字段说明，没有任务规模和成功率信息",
+     "采集设备、场景、数据量都未交代，作者信息缺失"
+    ],
+    "reason": "格式规范、许可证宽松、能在Mac上读，但缺少规模和效果信息，作为入门练手数据合格，谈不上领域突破。"
+   }
+  },
+  "hf-dataset:unitreerobotics/G1_WBT_SMPL_Brainco_Pick_Vegetables": {
+   "date": "2026-11-09",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "宇树人形机器人摘蔬菜的遥操作数据集，含关节和手部状态",
+    "one_liner_en": "A Unitree humanoid teleoperation dataset of picking vegetables, with joint and hand states",
+    "scores": {
+     "significance": 4,
+     "explainability": 6,
+     "wow": 4,
+     "playable": 3,
+     "openness": 7,
+     "learning_value": 6
+    },
+    "how_to_try": "需宇树G1真机或仿真环境，Mac上只能浏览LeRobot格式数据，无法直接复现",
+    "how_to_try_en": "Needs a Unitree G1 or sim setup; on a Mac you can only inspect the LeRobot-format data, not reproduce it",
+    "concepts": [
+     {
+      "term": "LeRobot format",
+      "zh": "LeRobot数据格式",
+      "explain": "HuggingFace统一机器人数据格式，方便直接训练策略"
+     },
+     {
+      "term": "SMPL skeleton",
+      "zh": "SMPL人体骨架",
+      "explain": "标准的24关节人体模型，用来表示人类动作"
+     },
+     {
+      "term": "whole-body teleoperation",
+      "zh": "全身遥操作",
+      "explain": "人穿戴设备动，机器人跟着全身动来采集数据"
+     }
+    ],
+    "red_flags": [
+     "README只列数据结构，没有任务描述、采集方式或效果说明",
+     "作者与具体用途不明，发布日2026-11-06疑为未来日期",
+     "下载量和点赞极低，无演示视频"
+    ],
+    "reason": "只是宇树G1的格式说明型数据集，缺任务与效果说明，对无硬件新人几乎不可玩，学习价值一般。"
+   }
+  },
+  "gh:Tinaliu0123/PolicyIK": {
+   "date": "2026-11-09",
+   "v": 1,
+   "eval": {
+    "topic": "操作抓取",
+    "one_liner": "用强化学习训练机械臂做逆运动学，把末端位姿误差压到 1 毫米内。",
+    "one_liner_en": "An RL policy for robot arm inverse kinematics that hits end-effector poses within 1 mm.",
+    "scores": {
+     "significance": 5,
+     "explainability": 7,
+     "wow": 5,
+     "playable": 5,
+     "openness": 8,
+     "learning_value": 6
+    },
+    "how_to_try": "需要 NVIDIA 显卡跑 Isaac Lab 仿真；Mac 上只能读代码和查看已发布 checkpoint，无法训练。",
+    "how_to_try_en": "Needs an NVIDIA GPU for Isaac Lab simulation; on a Mac you can only read code and inspect the released checkpoints.",
+    "concepts": [
+     {
+      "term": "Inverse Kinematics (IK)",
+      "zh": "逆运动学",
+      "explain": "已知手要到达的位置，反推各关节该转到什么角度。"
+     },
+     {
+      "term": "Goal-conditioned RL",
+      "zh": "目标条件强化学习",
+      "explain": "把目标位姿当作输入，训练策略学会朝任意目标动作。"
+     },
+     {
+      "term": "HER",
+      "zh": "事后经验回放",
+      "explain": "把没达成目标的过程改标成达成另一个目标来学习。"
+     }
+    ],
+    "red_flags": [
+     "发布日期为 2026 年，与当前时间不符，疑为数据错误",
+     "实机部分依赖特定 OpenArm 硬件，无硬件者无法复现",
+     "作者与机构信息有限，未见同行评审或论文链接"
+    ],
+    "reason": "把 RL 用在经典 IK 问题上，结果扎实但属增量改进；代码数据齐全，可惜 Isaac Lab 需要 NVIDIA 显卡，Mac 新人只能读代码。"
+   }
+  },
+  "hf-dataset:geonmin-kim/SO101-lv4-3color-cube-mat-to-mat-no-human-reset-v1": {
+   "date": "2026-11-09",
+   "v": 1,
+   "eval": {
+    "topic": "数据集",
+    "one_liner": "一个用 SO-101 机械臂抓方块的小数据集，共 246 条操作记录",
+    "one_liner_en": "A small LeRobot dataset of 246 SO-101 arm pick-and-place episodes with cubes",
+    "scores": {
+     "significance": 3,
+     "explainability": 6,
+     "wow": 3,
+     "playable": 7,
+     "openness": 7,
+     "learning_value": 7
+    },
+    "how_to_try": "在 Mac 上装 LeRobot，用浏览器数据集可视化工具看轨迹，再用 ACT 小模型离线跑训练",
+    "how_to_try_en": "Install LeRobot on Mac, browse episodes with the visualizer space, then train a small ACT policy offline",
+    "concepts": [
+     {
+      "term": "LeRobot dataset format",
+      "zh": "LeRobot 数据格式",
+      "explain": "Hugging Face 定好的标准格式，把相机视频、关节动作和任务描述打包成一份可以直接训练的数据"
+     },
+     {
+      "term": "Imitation Learning / ACT",
+      "zh": "模仿学习",
+      "explain": "让机器人照着人示范的动作去学，看画面就直接输出下一步关节该怎么动"
+     },
+     {
+      "term": "SO-101",
+      "zh": "SO-101 机械臂",
+      "explain": "一款便宜的开源桌面小机械臂，常被用来入门做抓取实验"
+     }
+    ],
+    "red_flags": [
+     "个人上传的小规模数据集，没有论文，也没有 benchmark 结果",
+     "描述几乎为空，缺少采集设置和成功率说明",
+     "246 条单一场景数据，参考价值有限"
+    ],
+    "reason": "数据规范、许可证宽松，适合在 Mac 上入门 LeRobot 的数据流和模仿学习；但规模小、没有论文支撑，重要性一般。"
    }
   }
  }

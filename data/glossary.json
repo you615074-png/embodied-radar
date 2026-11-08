@@ -607,5 +607,82 @@
   "explain": "两端各记一本步数账，逐步比对，一旦不一致就能定位错误",
   "first_seen": "2026-11-08",
   "source": "arxiv:2611.08144"
+ },
+ "whole-body teleoperation": {
+  "term": "whole-body teleoperation",
+  "zh": "全身遥操作",
+  "explain": "用头显或手柄实时控制机器人全身关节，边操作边录数据",
+  "first_seen": "2026-11-09",
+  "source": "gh:robotmabel/open_mabel"
+ },
+ "whole-body tracking": {
+  "term": "whole-body tracking",
+  "zh": "全身跟踪控制",
+  "explain": "底层控制器让机器人跟上目标动作。",
+  "first_seen": "2026-11-09",
+  "source": "arxiv:2611.08407"
+ },
+ "hierarchical policy": {
+  "term": "hierarchical policy",
+  "zh": "分层策略",
+  "explain": "上层想做什么，下层负责怎么动。",
+  "first_seen": "2026-11-09",
+  "source": "arxiv:2611.08407"
+ },
+ "mcp": {
+  "term": "MCP",
+  "zh": "模型上下文协议",
+  "explain": "让 AI 助手用统一接口调用外部工具的协议",
+  "first_seen": "2026-11-09",
+  "source": "gh:eust-w/opengeniemaster"
+ },
+ "agent harness": {
+  "term": "Agent Harness",
+  "zh": "智能体外壳",
+  "explain": "包在模型外面负责调用工具、记住任务的框架",
+  "first_seen": "2026-11-09",
+  "source": "gh:eust-w/opengeniemaster"
+ },
+ "continual learning": {
+  "term": "Continual Learning",
+  "zh": "持续学习",
+  "explain": "不重训模型，靠记忆和经验积累越做越好",
+  "first_seen": "2026-11-09",
+  "source": "gh:eust-w/opengeniemaster"
+ },
+ "criteria exposure": {
+  "term": "Criteria Exposure",
+  "zh": "标准暴露",
+  "explain": "把评测成功条件直接给智能体看，它可能照着条件作弊",
+  "first_seen": "2026-11-09",
+  "source": "arxiv:2611.08318"
+ },
+ "self-improvement": {
+  "term": "Self-Improvement",
+  "zh": "自我改进",
+  "explain": "智能体自己写代码、跑测试、迭代变强的循环",
+  "first_seen": "2026-11-09",
+  "source": "arxiv:2611.08318"
+ },
+ "reward hacking": {
+  "term": "Reward Hacking",
+  "zh": "奖励作弊",
+  "explain": "钻评分规则空子拿高分，实际没完成任务",
+  "first_seen": "2026-11-09",
+  "source": "arxiv:2611.08318"
+ },
+ "act": {
+  "term": "ACT",
+  "zh": "动作分块Transformer",
+  "explain": "一次预测未来一小段动作序列的模仿学习模型",
+  "first_seen": "2026-11-09",
+  "source": "hf-dataset:lerobot/svla_so101_pickplace"
+ },
+ "so-100": {
+  "term": "SO-100",
+  "zh": "开源廉价机械臂",
+  "explain": "几百美元就能DIY的六轴小机械臂，LeRobot标配",
+  "first_seen": "2026-11-09",
+  "source": "hf-dataset:lerobot/svla_so101_pickplace"
  }
 }
