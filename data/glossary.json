@@ -684,5 +684,26 @@
   "explain": "几百美元就能DIY的六轴小机械臂，LeRobot标配",
   "first_seen": "2026-11-09",
   "source": "hf-dataset:lerobot/svla_so101_pickplace"
+ },
+ "motion primitives": {
+  "term": "Motion Primitives",
+  "zh": "动作基元",
+  "explain": "把动作拆成小块可复用的基本单元，组合出新动作。",
+  "first_seen": "2026-11-10",
+  "source": "hf-model:nvidia/MotionBricks"
+ },
+ "agent-native primitives": {
+  "term": "Agent-Native Primitives",
+  "zh": "智能体原生原语",
+  "explain": "每个给工具配一个常驻小助手，让它能自己会用这个工具",
+  "first_seen": "2026-11-10",
+  "source": "arxiv:2611.07461"
+ },
+ "harness": {
+  "term": "Harness",
+  "zh": "台架/执行框架",
+  "explain": "套在大模型外面、负责调工具和流程的那层脚手架",
+  "first_seen": "2026-11-10",
+  "source": "arxiv:2611.07461"
  }
 }
