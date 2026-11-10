@@ -1,0 +1,234 @@
+{
+ "date": "2026-11-11",
+ "headline": "让机器人靠“摸”变灵巧的触觉模型",
+ "title_en": "LingBot-Touch: One Tactile Representation for Many Sensors",
+ "tagline_en": "A tactile foundation model that unifies representations from piezoresistive, magnetic, and visuotactile sensors for dexterous manipulation.",
+ "summary_md": "## What it is\n\nA new paper (arXiv:2611.12806) by Bing Han, Yichuan Peng, Haoyu Dong, and colleagues introduces **LingBot-Touch**, a tactile foundation model. Its core idea is to learn a *unified representation* across different tactile sensors — piezoresistive, magnetic, and visuotactile — so that a robot policy can use tactile data without caring which sensor produced it.\n\n## Why it matters\n\nToday's tactile sensors are all different: each has its own physics, its own noise, its own data format. That makes it hard to pool tactile data across robots and hardware. If a single model can turn any of them into a common \"tactile token\", then tactile learning can scale the way vision did. Per the paper, these tokens are plug-and-play: they can be dropped into diffusion policies and into VLA models like π0.5 and LingBot-VLA, and consistently improve manipulation dexterity in both simulation and real-robot experiments.\n\n## Can you try it without a robot?\n\nHonestly, not really. The method depends on real dexterous hands with tactile sensors. The paper does mention simulation experiments, but the code and weights' openness is unclear (no license is listed), and reproducing it without hardware is out of reach for most people. For now, the practical option is to read the paper and watch any project-page videos.",
+ "pick": {
+  "id": "arxiv:2611.12806",
+  "kind": "paper",
+  "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+  "url": "https://arxiv.org/abs/2611.12806",
+  "authors": [
+   "Bing Han",
+   "Yichuan Peng",
+   "Haoyu Dong",
+   "Yuanmeng Hu",
+   "Yongyi Jia",
+   "Fangjing Wang",
+   "Kecheng Zheng",
+   "Yiming Zhang"
+  ],
+  "license": "",
+  "code_url": "https://github.com/Robbyant/lingbot-touch",
+  "signals": {
+   "hf_upvotes": 92,
+   "github_stars": 66
+  },
+  "topic": "操作抓取",
+  "one_liner": "统一不同触觉传感器的表征，让机器人靠摸东西更灵巧",
+  "one_liner_en": "A tactile foundation model that unifies signals from different touch sensors for dexterous robot hands.",
+  "how_to_try": "需要灵巧手和触觉传感器，Mac 上只能读论文和项目页视频，无法亲手复现；可先看仿真部分了解思路。",
+  "how_to_try_en": "Needs a dexterous hand with tactile sensors; on a Mac you can only read the paper and watch demos, not reproduce it.",
+  "reason": "方向有价值：跨传感器触觉统一表征是难题目，还能接入 VLA。但强依赖硬件，新人在 Mac 上只能看，实际作用有限。",
+  "red_flags": [
+   "未标注许可证，代码与权重开放程度不明确",
+   "核心依赖多种真实触觉传感器硬件，新人几乎无法复现",
+   "尚无同行评审，跨传感器泛化效果需独立验证"
+  ],
+  "final": 6.28,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 7,
+  "wow": 6,
+  "playable": 3,
+  "openness": 5,
+  "learning_value": 6,
+  "heat": 9.82
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.12806",
+   "kind": "paper",
+   "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+   "url": "https://arxiv.org/abs/2611.12806",
+   "authors": [
+    "Bing Han",
+    "Yichuan Peng",
+    "Haoyu Dong",
+    "Yuanmeng Hu",
+    "Yongyi Jia",
+    "Fangjing Wang",
+    "Kecheng Zheng",
+    "Yiming Zhang"
+   ],
+   "license": "",
+   "code_url": "https://github.com/Robbyant/lingbot-touch",
+   "signals": {
+    "hf_upvotes": 92,
+    "github_stars": 66
+   },
+   "topic": "操作抓取",
+   "one_liner": "统一不同触觉传感器的表征，让机器人靠摸东西更灵巧",
+   "one_liner_en": "A tactile foundation model that unifies signals from different touch sensors for dexterous robot hands.",
+   "how_to_try": "需要灵巧手和触觉传感器，Mac 上只能读论文和项目页视频，无法亲手复现；可先看仿真部分了解思路。",
+   "how_to_try_en": "Needs a dexterous hand with tactile sensors; on a Mac you can only read the paper and watch demos, not reproduce it.",
+   "reason": "方向有价值：跨传感器触觉统一表征是难题目，还能接入 VLA。但强依赖硬件，新人在 Mac 上只能看，实际作用有限。",
+   "red_flags": [
+    "未标注许可证，代码与权重开放程度不明确",
+    "核心依赖多种真实触觉传感器硬件，新人几乎无法复现",
+    "尚无同行评审，跨传感器泛化效果需独立验证"
+   ],
+   "final": 6.28,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 3,
+   "openness": 5,
+   "learning_value": 6,
+   "heat": 9.82
+  },
+  {
+   "id": "arxiv:2611.10771",
+   "kind": "paper",
+   "title": "WorldFoundry: Towards Unified Infrastructure for World Intelligence",
+   "url": "https://arxiv.org/abs/2611.10771",
+   "authors": [
+    "Juanxi Tian",
+    "Jiadong Hou",
+    "Baiang Li",
+    "Xin Lin",
+    "Zhengbo Jiao",
+    "Weijia Zhang",
+    "Yeying Jin",
+    "Truong Nguyen"
+   ],
+   "license": "",
+   "code_url": "https://github.com/OpenEnvision/WorldFoundry",
+   "signals": {
+    "hf_upvotes": 51,
+    "github_stars": 336
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "一套统一的开源平台，把世界模型的发现、运行、评测和可视化都装进一个地方。",
+   "one_liner_en": "An open-source platform to discover, run, and evaluate generative world models in one place.",
+   "how_to_try": "Mac 上可浏览它的模型目录和 demo，跑真实模型推理多半需云 GPU。",
+   "how_to_try_en": "Browse the catalog/demos on your Mac; actually running models likely needs cloud GPUs.",
+   "reason": "定位清晰的评测基础设施，工程价值高但非突破；无硬件新人可当学习地图，实际跑模型仍需算力。",
+   "red_flags": [
+    "偏基础设施/资源目录，创新在工程整合而非新方法",
+    "论文未标许可证，需确认权重与数据是否真开放",
+    "平台本身不产生新的世界模型结果，演示说服力有限"
+   ],
+   "final": 6.21,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 5,
+   "wow": 4,
+   "playable": 6,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 8.56
+  },
+  {
+   "id": "hf-dataset:Crobotia/iUMI",
+   "kind": "dataset",
+   "title": "Crobotia/iUMI",
+   "url": "https://huggingface.co/datasets/Crobotia/iUMI",
+   "authors": [],
+   "license": "cc-by-sa-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 3,
+    "hf_likes": 7,
+    "downloads": 16763
+   },
+   "topic": "数据集",
+   "one_liner": "用双手持握设备在真实家庭录制的叠衣服演示数据集",
+   "one_liner_en": "A 1300-hour handheld dual-gripper dataset of clothes folding in real homes",
+   "how_to_try": "Mac 上用 pip 装 lerobot 和 av，只下载 3GB 分片和解压单个 episode，可视化夹爪轨迹",
+   "how_to_try_en": "On Mac, pip install lerobot + av, download one ~3GiB shard, extract a single episode and visualize gripper trajectories",
+   "reason": "规模大、真实家庭双臂衣物数据稀缺，格式规范可单集上手；但缺基线模型、体量过大，新人只能看数据不能训策略。",
+   "red_flags": [
+    "8.6TB 总量很大，普通硬盘和带宽难以全量使用",
+    "仅有手持演示数据，没有配套的策略训练基线或机器人硬件",
+    "作者与来源机构信息不明，数据质量需自行抽查"
+   ],
+   "final": 5.97,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 3.0
+  },
+  {
+   "id": "hf-model:lerobot/so101-tabletop-mujoco",
+   "kind": "model",
+   "title": "lerobot/so101-tabletop-mujoco",
+   "url": "https://huggingface.co/lerobot/so101-tabletop-mujoco",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 6,
+    "hf_likes": 12,
+    "downloads": 0
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "用 MuJoCo 搭了个 SO-101 机械臂抓积木进盒子的训练场",
+   "one_liner_en": "A MuJoCo tabletop sim where an SO-101 arm puts cubes in a box",
+   "how_to_try": "Mac 上 pip 装 LeRobot，直接用 make_env 起 MuJoCo 环境看机械臂动",
+   "how_to_try_en": "Install LeRobot on your Mac, then call make_env to spin up the MuJoCo scene locally",
+   "reason": "干净好用的标准仿真场景，适合新手练手，但本身无科研新意",
+   "red_flags": [
+    "只是标准仿真环境，没有新方法或新结果",
+    "标题不新且下载量为 0，热度很弱"
+   ],
+   "final": 5.82,
+   "topic_penalty": 0,
+   "significance": 4,
+   "explainability": 7,
+   "wow": 3,
+   "playable": 8,
+   "openness": 9,
+   "learning_value": 7,
+   "heat": 4.22
+  },
+  {
+   "id": "gh:openrobokit/graspkit",
+   "kind": "repo",
+   "title": "openrobokit/graspkit",
+   "url": "https://github.com/openrobokit/graspkit",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 24,
+    "daily_rate": 3.0
+   },
+   "topic": "操作抓取",
+   "one_liner": "一个把抓取规划、仿真训练和实机部署串起来的开源工具箱",
+   "one_liner_en": "An open toolkit that chains grasp planning, simulation training and real-robot deployment.",
+   "how_to_try": "装 pip 包后用 ManiSkill 仿真跑抓取规划，GPU 环节可在 Mac 上降规模试；先看交互式抓取画廊。",
+   "how_to_try_en": "Install via pip, run grasp optimization in ManiSkill sim; shrink GPU-heavy steps on Mac. Start with the interactive grasp gallery.",
+   "reason": "抓取全流程工具链，文档和示例齐全、MIT 宽松，适合入门学抓取与 sim-to-real；但新鲜度与硬件门槛略打折。",
+   "red_flags": [
+    "作者与机构信息缺失，仓库较新、star 少，成熟度未知",
+    "完整流程依赖 ManiSkill 和 spconv，需 GPU 支持，Mac 上可能受限"
+   ],
+   "final": 5.81,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 2.43
+  }
+ ]
+}

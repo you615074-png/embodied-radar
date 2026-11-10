@@ -705,5 +705,61 @@
   "explain": "套在大模型外面、负责调工具和流程的那层脚手架",
   "first_seen": "2026-11-10",
   "source": "arxiv:2611.07461"
+ },
+ "tactile sensing": {
+  "term": "tactile sensing",
+  "zh": "触觉感知",
+  "explain": "机器人手指上的压力、形变传感器，让它在看不见时也能感知接触。",
+  "first_seen": "2026-11-11",
+  "source": "arxiv:2611.12806"
+ },
+ "unified representation": {
+  "term": "unified representation",
+  "zh": "统一表征",
+  "explain": "把不同传感器各有差异的信号翻译成同一种通用向量。",
+  "first_seen": "2026-11-11",
+  "source": "arxiv:2611.12806"
+ },
+ "persistent state": {
+  "term": "Persistent State",
+  "zh": "持久状态",
+  "explain": "模型对环境的记忆，让前后画面不矛盾、不跳变。",
+  "first_seen": "2026-11-11",
+  "source": "arxiv:2611.10771"
+ },
+ "counterfactual intervention": {
+  "term": "Counterfactual Intervention",
+  "zh": "反事实干预",
+  "explain": "问模型'如果我做别的动作会怎样'并给出预测。",
+  "first_seen": "2026-11-11",
+  "source": "arxiv:2611.10771"
+ },
+ "envhub": {
+  "term": "EnvHub",
+  "zh": "环境中心",
+  "explain": "LeRobot 里统一托管仿真环境的仓库，一行命令就能加载",
+  "first_seen": "2026-11-11",
+  "source": "hf-model:lerobot/so101-tabletop-mujoco"
+ },
+ "mujoco": {
+  "term": "MuJoCo",
+  "zh": "物理仿真引擎",
+  "explain": "免费开源的物理模拟器，让机械臂在电脑里动起来",
+  "first_seen": "2026-11-11",
+  "source": "hf-model:lerobot/so101-tabletop-mujoco"
+ },
+ "grasp planning": {
+  "term": "Grasp Planning",
+  "zh": "抓取规划",
+  "explain": "算出手该怎么放、怎么合拢才能稳稳夹住物体",
+  "first_seen": "2026-11-11",
+  "source": "gh:openrobokit/graspkit"
+ },
+ "point cloud policy": {
+  "term": "Point Cloud Policy",
+  "zh": "点云策略",
+  "explain": "让模型看一团三维点，直接输出抓取动作",
+  "first_seen": "2026-11-11",
+  "source": "gh:openrobokit/graspkit"
  }
 }
