@@ -1,0 +1,218 @@
+{
+ "date": "2026-11-12",
+ "headline": "先猜落脚点，再只扫那一小块地形",
+ "title_en": "Watch Your Step: Foothold Prediction for Humanoid Locomotion",
+ "tagline_en": "ETH Zurich's code trains a humanoid to predict its next two footholds, then look only at the terrain around them.",
+ "summary_md": "**What it is.** This is the training and evaluation code for *Watch Your Step: Anticipated Perception for Humanoid Locomotion* by Matthias Heyrman, Chenhao Li, Ioannis Dadiotis, and Marco Hutter at ETH Zurich's Robotic Systems Lab and ETH AI Center. The system trains a Unitree G1 humanoid in Isaac Lab with two parts learned together: a foothold prediction model (FPM) that guesses the next two footholds from proprioception and the velocity command, and a locomotion policy that reads the elevation map only in 7x7 patches around those predicted footholds.\n\n**Why it matters.** Most perceptive locomotion policies look at a wide swath of terrain every step, which costs compute and can be noisy. This work asks the robot to look where it is about to step instead. The policy transfers zero-shot to the real robot, per the project page.\n\n**Can you try it without a robot?** The repo needs Isaac Sim 5.1, Isaac Lab 2.3.0, and rsl-rl-lib 3.3.0, so it won't run on a typical Mac. The project page links a video and a version of the policy that runs in the browser, though the repo itself does not include a web demo, so check the project page for what is actually live.",
+ "pick": {
+  "id": "gh:leggedrobotics/foothold-prediction-model",
+  "kind": "repo",
+  "title": "leggedrobotics/foothold-prediction-model",
+  "url": "https://github.com/leggedrobotics/foothold-prediction-model",
+  "authors": [],
+  "license": "MIT",
+  "code_url": "",
+  "signals": {
+   "stars": 145,
+   "daily_rate": 5.2
+  },
+  "topic": "人形与足式",
+  "one_liner": "先预测下一步踩哪里，再只看那一小块地形，让人形机器人走得更稳",
+  "one_liner_en": "A model predicts a humanoid's next footholds, so the policy only looks at terrain near where it will step",
+  "how_to_try": "需要 Isaac Sim 5.1 + Isaac Lab，Mac 上基本跑不动，建议先看项目页的浏览器 demo 和视频",
+  "how_to_try_en": "Needs Isaac Sim 5.1 + Isaac Lab, impractical on a Mac. Start with the browser demo and video on the project page.",
+  "reason": "思路清晰、开源完整、有真机与浏览器演示，是讲“感知该看哪里”的好例子；但重仿真栈对无硬件新人上手困难，适合精读。",
+  "red_flags": [
+   "正文提到浏览器可跑的策略版本，但仓库需要 Isaac Sim，Mac 本地难以复现，是否真有网页版需核实",
+   "依赖链很重（Isaac Sim 5.1 + Isaac Lab 2.3.0），新人安装门槛高"
+  ],
+  "final": 6.4,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 8,
+  "wow": 7,
+  "playable": 5,
+  "openness": 8,
+  "learning_value": 8,
+  "heat": 3.2
+ },
+ "top": [
+  {
+   "id": "gh:leggedrobotics/foothold-prediction-model",
+   "kind": "repo",
+   "title": "leggedrobotics/foothold-prediction-model",
+   "url": "https://github.com/leggedrobotics/foothold-prediction-model",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 145,
+    "daily_rate": 5.2
+   },
+   "topic": "人形与足式",
+   "one_liner": "先预测下一步踩哪里，再只看那一小块地形，让人形机器人走得更稳",
+   "one_liner_en": "A model predicts a humanoid's next footholds, so the policy only looks at terrain near where it will step",
+   "how_to_try": "需要 Isaac Sim 5.1 + Isaac Lab，Mac 上基本跑不动，建议先看项目页的浏览器 demo 和视频",
+   "how_to_try_en": "Needs Isaac Sim 5.1 + Isaac Lab, impractical on a Mac. Start with the browser demo and video on the project page.",
+   "reason": "思路清晰、开源完整、有真机与浏览器演示，是讲“感知该看哪里”的好例子；但重仿真栈对无硬件新人上手困难，适合精读。",
+   "red_flags": [
+    "正文提到浏览器可跑的策略版本，但仓库需要 Isaac Sim，Mac 本地难以复现，是否真有网页版需核实",
+    "依赖链很重（Isaac Sim 5.1 + Isaac Lab 2.3.0），新人安装门槛高"
+   ],
+   "final": 6.4,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 3.2
+  },
+  {
+   "id": "arxiv:2611.12885",
+   "kind": "paper",
+   "title": "World In-Context Learning for Agentic Robot Manipulation",
+   "url": "https://arxiv.org/abs/2611.12885",
+   "authors": [
+    "Heng Fang",
+    "Zehui Guo",
+    "Yuehan Zhang",
+    "Mingyang Du",
+    "Dingkang Liang",
+    "Xiang Bai"
+   ],
+   "license": "",
+   "code_url": "https://github.com/ArcheOne-AI/RoboScript",
+   "signals": {
+    "hf_upvotes": 61,
+    "github_stars": 47
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "冻结的大模型在仿真里排练一次演示，把经验写进上下文而非权重，就能操作机器人",
+   "one_liner_en": "A frozen model rehearses one demo in simulation, stores the experience in context rather than weights, then manipulates.",
+   "how_to_try": "RoboTwin 2.0 仿真需要较强的 GPU 环境，Mac 上只能读代码、看项目页 demo，或用云端跑推理",
+   "how_to_try_en": "RoboTwin 2.0 sim needs a strong GPU; on a Mac just read the code and project demos, or rent cloud inference.",
+   "reason": "思路新颖，用上下文替代权重学习，开放代码且入门概念清晰；但复现门槛高、真实性待核实。",
+   "red_flags": [
+    "arXiv 编号 2611 与 2026-11 日期可疑，需核实是否真实存在",
+    "未标注许可证，代码可用性待确认",
+    "核心依赖仿真器排练，Mac 无 GPU 难以复现"
+   ],
+   "final": 6.31,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 8.94
+  },
+  {
+   "id": "arxiv:2611.12324",
+   "kind": "paper",
+   "title": "How Many Exposures Does a World Model Need? Learning Unseen Game Mechanics at Test Time",
+   "url": "https://arxiv.org/abs/2611.12324",
+   "authors": [
+    "Ku Onoda",
+    "Haruto Kawano",
+    "Shota Takashiro",
+    "Kohei Hayashi"
+   ],
+   "license": "",
+   "code_url": "https://github.com/third-intelligence/WARC",
+   "signals": {
+    "hf_upvotes": 15,
+    "github_stars": 3
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "研究世界模型要看几次就能学会游戏里的新规则",
+   "one_liner_en": "Studies how many observations a world model needs to learn a new game's rules",
+   "how_to_try": "先看 ARC-AGI-3 的网页交互 demo，再在 Mac 上跑 35M 小模型的测试时训练，不用显卡",
+   "how_to_try_en": "Try the ARC-AGI-3 web demo first, then run the 35M test-time-training model on Mac; no GPU needed",
+   "reason": "问题提得好、指标清晰，适合学世界模型和测试时训练，但没有涉及真实机器人，也查不到代码。",
+   "red_flags": [
+    "arXiv 编号与 2026-11 日期可疑，需核实真伪",
+    "没在机器人上验证，只在网格游戏里做",
+    "代码链接未给出，许可证不明"
+   ],
+   "final": 6.23,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 6,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 6.01
+  },
+  {
+   "id": "hf-model:nvidia/Alpamayo2-Edge",
+   "kind": "model",
+   "title": "nvidia/Alpamayo2-Edge",
+   "url": "https://huggingface.co/nvidia/Alpamayo2-Edge",
+   "authors": [],
+   "license": "openmdw-1.1",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 25,
+    "hf_likes": 28,
+    "downloads": 545
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "英伟达2B参数的车载模型，看路况直接输出驾驶轨迹和推理说明。",
+   "one_liner_en": "NVIDIA's 2B-parameter in-car model turns camera views into driving trajectories plus explanations.",
+   "how_to_try": "需真实多相机驾驶数据和DRIVE Thor级算力；Mac上只能读代码、看仓库附带的推理样例。",
+   "how_to_try_en": "Needs multi-camera driving data and DRIVE Thor-class compute; on a Mac you can only read the repo and sample inference scripts.",
+   "reason": "模型有特色（推理+轨迹，体积小），开源程度尚可，但对没有硬件的新人几乎无法上手，学习价值主要停留在代码阅读。",
+   "red_flags": [
+    "输入要求六个相机、22帧图像和20个历史位姿，单机几乎无法复现",
+    "面向DRIVE AGX Thor部署，Mac只能读代码，跑不起来",
+    "发布与许可证信息有出入（页面日期与许可证版本）"
+   ],
+   "final": 6.05,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 3,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 7.06
+  },
+  {
+   "id": "gh:CuboiLeo/SuperMimic-Reproduced",
+   "kind": "repo",
+   "title": "CuboiLeo/SuperMimic-Reproduced",
+   "url": "https://github.com/CuboiLeo/SuperMimic-Reproduced",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 457,
+    "daily_rate": 21.8
+   },
+   "topic": "人形与足式",
+   "one_liner": "一个人独立复现了人形机器人全身控制论文，用可微世界模型让 Unitree G1 在仿真里模仿各种动作。",
+   "one_liner_en": "A solo from-scratch reproduction of a humanoid whole-body control paper using a differentiable world model on Unitree G1 in simulation.",
+   "how_to_try": "训练需 4 张 RTX 5090，Mac 跑不动训练；可用 mjlab 在 MuJoCo 里加载官方 checkpoint 看回放，或先看作者仓库的展示视频。",
+   "how_to_try_en": "Training needs 4x RTX 5090, impossible on a Mac. Only load the released checkpoint in mjlab/MuJoCo to replay, or watch the demo videos.",
+   "reason": "高质量独立复现，诚实报告失败与观测缺陷，学习价值高；但训练门槛极高，无硬件新人只能看视频和回放。",
+   "red_flags": [
+    "核心训练需多张顶级 GPU，单机 Mac 无法复现",
+    "仅是他人复现记录、官方代码已发布，该仓库不再维护",
+    "观测设计缺陷导致长片段漂移，结论有前提条件"
+   ],
+   "final": 6.02,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 6,
+   "wow": 7,
+   "playable": 3,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 5.48
+  }
+ ]
+}

@@ -761,5 +761,68 @@
   "explain": "让模型看一团三维点，直接输出抓取动作",
   "first_seen": "2026-11-11",
   "source": "gh:openrobokit/graspkit"
+ },
+ "zero-shot sim2real": {
+  "term": "Zero-shot Sim2Real",
+  "zh": "零样本仿真到现实",
+  "explain": "仿真里训好的策略不额外调，直接上真机",
+  "first_seen": "2026-11-12",
+  "source": "gh:leggedrobotics/foothold-prediction-model"
+ },
+ "in-context learning": {
+  "term": "In-Context Learning",
+  "zh": "上下文学习",
+  "explain": "不修改模型参数，只把示范和反馈放进提示里让它现学现用",
+  "first_seen": "2026-11-12",
+  "source": "arxiv:2611.12885"
+ },
+ "task memory": {
+  "term": "Task Memory",
+  "zh": "任务记忆",
+  "explain": "把仿真里排练得到的经验冻结保存成一段可复用的上下文",
+  "first_seen": "2026-11-12",
+  "source": "arxiv:2611.12885"
+ },
+ "test-time training": {
+  "term": "Test-time Training",
+  "zh": "测试时训练",
+  "explain": "遇到新环境时当场继续训练模型，而不是只用固定权重",
+  "first_seen": "2026-11-12",
+  "source": "arxiv:2611.12324"
+ },
+ "exposure": {
+  "term": "Exposure",
+  "zh": "曝光次数",
+  "explain": "模型见过某个新规则多少次，用来衡量学得有多快",
+  "first_seen": "2026-11-12",
+  "source": "arxiv:2611.12324"
+ },
+ "vla (vision-language-action)": {
+  "term": "VLA (Vision-Language-Action)",
+  "zh": "视觉语言动作模型",
+  "explain": "看图、读文字指令，直接输出动作的模型。",
+  "first_seen": "2026-11-12",
+  "source": "hf-model:nvidia/Alpamayo2-Edge"
+ },
+ "diffusion action decoder": {
+  "term": "Diffusion Action Decoder",
+  "zh": "扩散动作解码器",
+  "explain": "用去噪的方式一步步生成平滑的轨迹。",
+  "first_seen": "2026-11-12",
+  "source": "hf-model:nvidia/Alpamayo2-Edge"
+ },
+ "chain-of-causation": {
+  "term": "Chain-of-Causation",
+  "zh": "因果推理链",
+  "explain": "模型先讲清为什么这样开，再给出轨迹。",
+  "first_seen": "2026-11-12",
+  "source": "hf-model:nvidia/Alpamayo2-Edge"
+ },
+ "bptt": {
+  "term": "BPTT",
+  "zh": "随时间反向传播",
+  "explain": "把误差沿时间倒着传回去，训练多步的序列策略",
+  "first_seen": "2026-11-12",
+  "source": "gh:CuboiLeo/SuperMimic-Reproduced"
  }
 }
