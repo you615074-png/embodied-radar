@@ -824,5 +824,61 @@
   "explain": "把误差沿时间倒着传回去，训练多步的序列策略",
   "first_seen": "2026-11-12",
   "source": "gh:CuboiLeo/SuperMimic-Reproduced"
+ },
+ "coding agent": {
+  "term": "coding agent",
+  "zh": "编程智能体",
+  "explain": "会自己写代码、调工具并执行任务的 AI 程序",
+  "first_seen": "2026-11-13",
+  "source": "arxiv:2611.12177"
+ },
+ "agent-native benchmark": {
+  "term": "agent-native benchmark",
+  "zh": "智能体原生评测",
+  "explain": "专门为 AI 智能体自主决策设计的考试，而非固定策略",
+  "first_seen": "2026-11-13",
+  "source": "arxiv:2611.12177"
+ },
+ "sim-to-sim": {
+  "term": "sim-to-sim",
+  "zh": "仿真间迁移",
+  "explain": "把一套仿真里练好的本事搬到另一套仿真里验证",
+  "first_seen": "2026-11-13",
+  "source": "arxiv:2611.12177"
+ },
+ "flex pcb": {
+  "term": "flex PCB",
+  "zh": "柔性电路板",
+  "explain": "可以弯折的印刷电路板，用来做贴合曲面的传感器",
+  "first_seen": "2026-11-13",
+  "source": "gh:opentac/opentac"
+ },
+ "human mesh recovery (hmr)": {
+  "term": "Human Mesh Recovery (HMR)",
+  "zh": "人体网格重建",
+  "explain": "从照片估计出带几千个顶点的人体3D模型",
+  "first_seen": "2026-11-13",
+  "source": "arxiv:2611.09195"
+ },
+ "parametric body model": {
+  "term": "Parametric Body Model",
+  "zh": "参数化人体模型",
+  "explain": "用少量姿态和体型参数描述整个人体形状",
+  "first_seen": "2026-11-13",
+  "source": "arxiv:2611.09195"
+ },
+ "pa-mpjpe": {
+  "term": "PA-MPJPE",
+  "zh": "对齐后关节误差",
+  "explain": "先把预测骨架对齐再算关节点平均偏差，越小越准",
+  "first_seen": "2026-11-13",
+  "source": "arxiv:2611.09195"
+ },
+ "whole-body control": {
+  "term": "whole-body control",
+  "zh": "全身控制",
+  "explain": "同时协调手脚和躯干所有关节完成任务",
+  "first_seen": "2026-11-13",
+  "source": "hf-model:andrew-cartwheel/cartwheel-control"
  }
 }

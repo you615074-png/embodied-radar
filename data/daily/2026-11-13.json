@@ -1,0 +1,221 @@
+{
+ "date": "2026-11-13",
+ "headline": "带触觉的双臂操作数据集T-Rex，约50小时",
+ "title_en": "T-Rex: A Bimanual Tactile Dataset in LeRobot Format",
+ "tagline_en": "50 hours of teleoperated bimanual manipulation with fingertip tactile and force data, in LeRobotDataset v3.0 format.",
+ "summary_md": "**What it is.** T-Rex is a large-scale teleoperation dataset from the T-Rex project (Zhuoyang Liu et al.; paper on arXiv). It was collected on a Dexmate Vega-1 dual-arm robot fitted with two Sharpa Wave dexterous hands. The data covers 5,464 episodes, about 50 hours at 30 fps, 22 motor primitives and 207 objects, with 5,370 language-annotated trajectories. Each frame has three RGB views (head plus two wrists), 10 raw tactile images and 10 deformation maps per hand, 6-axis fingertip wrenches, and 58-dim joint states and targets. It ships as a LeRobotDataset v3.0.\n\n**Why it matters.** Most open manipulation datasets have parallel-jaw grippers and no touch. T-Rex pairs dexterous multi-finger hands with fingertip tactile and force readings, which is exactly the sensing that grasping and in-hand manipulation research needs. The hardware and teleoperation stack are also open-sourced, and there is a Colab notebook for loading the data.\n\n**Can you try it without a robot?** Partly. You can load the dataset with LeRobot on any machine and replay videos and tactile signals in the notebook. Training a policy that transfers is not realistic here: the action space is 58-dimensional, the hands are special hardware, and the dataset is new, so community baselines are not yet established. Per the dataset card, watch first, train later.",
+ "pick": {
+  "id": "hf-dataset:zekaiwang/trex_dataset",
+  "kind": "dataset",
+  "title": "zekaiwang/trex_dataset",
+  "url": "https://huggingface.co/datasets/zekaiwang/trex_dataset",
+  "authors": [],
+  "license": "mit",
+  "code_url": "",
+  "signals": {
+   "hf_trending": 2,
+   "hf_likes": 33,
+   "downloads": 52925
+  },
+  "topic": "数据集",
+  "one_liner": "一双灵巧手带触觉的双臂操作数据集，约50小时人类遥操作演示。",
+  "one_liner_en": "A 50-hour bimanual dexterous manipulation dataset with fingertip tactile sensing, collected by teleoperation.",
+  "how_to_try": "用官方 Colab notebook 加载 LeRobot 数据集，浏览回放视频和触觉信号；别指望真机复现。",
+  "how_to_try_en": "Open the official Colab notebook to load the LeRobot dataset and explore videos plus tactile signals. No robot needed.",
+  "reason": "规模大、模态全（含触觉与力）、开源彻底、有Colab，是本领域高质量数据；但硬件特殊，新人只能看数据不能复现训练。",
+  "red_flags": [
+   "触觉、灵巧手硬件极特殊，动作空间58维，模型基本无法在Mac上有意义地训练",
+   "论文与发布日期较新，社区复现与基准结果尚未验证"
+  ],
+  "final": 7.01,
+  "topic_penalty": 0,
+  "significance": 8,
+  "explainability": 7,
+  "wow": 7,
+  "playable": 8,
+  "openness": 9,
+  "learning_value": 8,
+  "heat": 2.38
+ },
+ "top": [
+  {
+   "id": "hf-dataset:zekaiwang/trex_dataset",
+   "kind": "dataset",
+   "title": "zekaiwang/trex_dataset",
+   "url": "https://huggingface.co/datasets/zekaiwang/trex_dataset",
+   "authors": [],
+   "license": "mit",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 33,
+    "downloads": 52925
+   },
+   "topic": "数据集",
+   "one_liner": "一双灵巧手带触觉的双臂操作数据集，约50小时人类遥操作演示。",
+   "one_liner_en": "A 50-hour bimanual dexterous manipulation dataset with fingertip tactile sensing, collected by teleoperation.",
+   "how_to_try": "用官方 Colab notebook 加载 LeRobot 数据集，浏览回放视频和触觉信号；别指望真机复现。",
+   "how_to_try_en": "Open the official Colab notebook to load the LeRobot dataset and explore videos plus tactile signals. No robot needed.",
+   "reason": "规模大、模态全（含触觉与力）、开源彻底、有Colab，是本领域高质量数据；但硬件特殊，新人只能看数据不能复现训练。",
+   "red_flags": [
+    "触觉、灵巧手硬件极特殊，动作空间58维，模型基本无法在Mac上有意义地训练",
+    "论文与发布日期较新，社区复现与基准结果尚未验证"
+   ],
+   "final": 7.01,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 8,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 2.38
+  },
+  {
+   "id": "arxiv:2611.12177",
+   "kind": "paper",
+   "title": "Embodied First Exam",
+   "url": "https://arxiv.org/abs/2611.12177",
+   "authors": [
+    "Kangrui Wang",
+    "Qineng Wang",
+    "Changhe Chen",
+    "Pingyue Zhang",
+    "Chi Gui",
+    "Feishi Wang",
+    "Canyu Chen",
+    "Wenli Xiao"
+   ],
+   "license": "",
+   "code_url": "https://github.com/mll-lab-nu/embodied-first-exam",
+   "signals": {
+    "hf_upvotes": 27,
+    "github_stars": 266
+   },
+   "topic": "其他",
+   "one_liner": "给编程智能体出的机器人操作统一考试，最强智能体只考了 34 分",
+   "one_liner_en": "A unified exam that tests coding agents on 1,156 robot tasks; the best agent scores only 34%.",
+   "how_to_try": "需按项目页搭建仿真环境并接入 GPT-6 等 API，无 GPU 的 Mac 只能先看失败分析。",
+   "how_to_try_en": "You would set up the sim suite and call an LLM API; on a Mac with no GPU, just read the failure breakdown.",
+   "reason": "覆盖面广、评测视角新，是理解智能体控制机器人的好材料；但无代码、无 GPU 难以亲手尝试。",
+   "red_flags": [
+    "论文发表于 2026-11，目前只是一个预印本",
+    "还没有代码和许可证信息，热度极低",
+    "34% 成功率只是智能体的基线，尚不能说明方法的优劣"
+   ],
+   "final": 6.4,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 4,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 7.22
+  },
+  {
+   "id": "gh:opentac/opentac",
+   "kind": "repo",
+   "title": "opentac/opentac",
+   "url": "https://github.com/opentac/opentac",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 97,
+    "daily_rate": 4.0
+   },
+   "topic": "硬件与本体",
+   "one_liner": "开源工具让你在电脑上设计、仿真和读取柔性触觉传感器皮肤",
+   "one_liner_en": "Open toolkit to design, simulate and read flexible tactile sensor skins for any robot.",
+   "how_to_try": "运行 uv run opentac cad，在本地浏览器里画个形状，自动生成传感器板；再用 opentac.sim 做按压仿真，不需要机器人",
+   "how_to_try_en": "Run 'uv run opentac cad' to design a sensor in your browser locally, then use opentac.sim to simulate presses—no robot needed.",
+   "reason": "开放度高、概念清晰，仿真和 CAD 部分 Mac 可玩，适合入门触觉感知；但需硬件才能真机验证，影响力中等",
+   "red_flags": [
+    "仓库信息很少、作者机构未知，热度低（97 星）",
+    "真正感知需要专用读出板硬件，纯软件只能仿真",
+    "发布与许可证信息需核实"
+   ],
+   "final": 6.23,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 7,
+   "openness": 9,
+   "learning_value": 7,
+   "heat": 2.82
+  },
+  {
+   "id": "arxiv:2611.09195",
+   "kind": "paper",
+   "title": "InstantHMR : Real-Time Human Mesh Recovery on Your Phone",
+   "url": "https://arxiv.org/abs/2611.09195",
+   "authors": [
+    "Mohamed Adjel",
+    "Kahina Chalabi",
+    "Vincent Bonnet"
+   ],
+   "license": "",
+   "code_url": "https://github.com/Naturalpad-studio/InstantHMR",
+   "signals": {
+    "hf_upvotes": 2,
+    "github_stars": 381
+   },
+   "topic": "其他",
+   "one_liner": "手机上一张照片毫秒级重建出3D人体网格",
+   "one_liner_en": "Rebuilds a full 3D human mesh from one photo in milliseconds on a phone",
+   "how_to_try": "Mac 上 clone 仓库跑单图推理；手机 NPU 加速需要安卓设备，没有就只看 demo",
+   "how_to_try_en": "Clone the repo and run single-image inference on your Mac; phone NPU speed needs an Android device, otherwise just watch the demo.",
+   "reason": "工程扎实、速度快，但属感知侧小改进，与机器人本体和操作关系弱，适合当3D视觉入门。",
+   "red_flags": [
+    "偏移动端工程优化，对具身智能本身推动有限",
+    "许可证未标注",
+    "与机器人控制/操作无直接关系"
+   ],
+   "final": 6.12,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 7,
+   "openness": 7,
+   "learning_value": 6,
+   "heat": 2.38
+  },
+  {
+   "id": "hf-model:andrew-cartwheel/cartwheel-control",
+   "kind": "model",
+   "title": "andrew-cartwheel/cartwheel-control",
+   "url": "https://huggingface.co/andrew-cartwheel/cartwheel-control",
+   "authors": [],
+   "license": "other",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 6,
+    "hf_likes": 7,
+    "downloads": 0
+   },
+   "topic": "人形与足式",
+   "one_liner": "让人形机器人在仿真里跟着参考动作做全身运动跟踪",
+   "one_liner_en": "Humanoid robots learn to mimic reference whole-body motions in simulation.",
+   "how_to_try": "用 Mac 装 uv，clone 仓库跑 cartwheel-play 看 MuJoCo 回放，改 motions 试新动作",
+   "how_to_try_en": "Install uv on your Mac, clone the repo, run cartwheel-play to watch MuJoCo playback, then swap motions.",
+   "reason": "仿真版人形动作跟踪，仓库结构清晰、Mac 可跑，很适合入门学习；但未上真机、影响有限。",
+   "red_flags": [
+    "仅仿真，没上过真实机器人",
+    "许可证是自定义的 Cartwheel 协议，非标准开源",
+    "作者机构未知，热度低"
+   ],
+   "final": 5.82,
+   "topic_penalty": 0.6,
+   "significance": 5,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 8,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 4.22
+  }
+ ]
+}
