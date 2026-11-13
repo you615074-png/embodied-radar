@@ -17,6 +17,7 @@ h1{font-size:28px;margin:0 0 4px;line-height:1.3}.sub{color:var(--muted);margin:
 .card h3{margin:0 0 6px;font-size:18px}.meta{color:var(--muted);font-size:14px}
 .tag{display:inline-block;font-size:12px;padding:1px 8px;border:1px solid var(--line);border-radius:99px;margin-right:6px}
 .try{border-left:3px solid var(--accent);padding:4px 12px;margin:12px 0}
+.hot{border-color:#f59e0b}.hot h2{margin:0 0 4px;font-size:20px}
 """
 
 KIND_EN = {"paper": "Paper", "repo": "Repo", "dataset": "Dataset", "model": "Model"}
@@ -52,6 +53,17 @@ def page(title: str, body: str) -> str:
             f'<title>{e(title)}</title><style>{CSS}</style></head><body><main>{body}</main></body></html>')
 
 
+def trend_card(t: dict | None, title: str) -> str:
+    if not t:
+        return ""
+    streak = f' · #1 for {t["streak"]} days running' if t.get("streak", 1) > 1 else ""
+    ev = "".join(f'<li><a href="{e(x["url"])}">{e(x["title"])}</a> <span class="meta">'
+                 f'({e(KIND_EN.get(x["kind"], x["kind"]))})</span></li>' for x in t["evidence"])
+    return (f'<div class="card hot"><div class="meta">🔥 {e(title)}{streak}</div>'
+            f'<h2>{e(t["name_en"])}</h2><div>{e(t["one_liner_en"])}</div>'
+            f'<div class="meta" style="margin-top:8px">Why we think so:</div><ul>{ev}</ul></div>')
+
+
 def daily_page(d: dict) -> str:
     p = d["pick"]
     top = "".join(
@@ -64,15 +76,17 @@ def daily_page(d: dict) -> str:
             f'<p class="sub">{tags(p)}<a href="{e(p["url"])}">{e(p["title"])}</a></p>'
             f'<div class="card">{md(d["summary_md"])}'
             f'<div class="try"><b>Try it without a robot:</b> {e(p["how_to_try_en"])}</div></div>'
+            + trend_card(d.get("trend"), "Hottest technique this day") +
             f'<h2>Today\'s top {len(d["top"])}</h2>{top}')
     return page(f'{d["title_en"] or p["title"]} · Embodied Radar', body)
 
 
 def build():
     (config.SITE / "daily").mkdir(parents=True, exist_ok=True)
-    cards = []
+    cards, latest_trend = [], None
     for f in sorted((config.DATA / "daily").glob("*.json"), reverse=True):
         d = json.loads(f.read_text())
+        latest_trend = latest_trend or d.get("trend")
         (config.SITE / "daily" / f"{d['date']}.html").write_text(daily_page(d))
         p = d["pick"]
         cards.append(
@@ -84,6 +98,7 @@ def build():
     body = ('<h1>🤖 Embodied Radar</h1><p class="sub">One new thing in embodied AI each day, explained by someone '
             'learning the field from scratch, with no lab and no robot. Each pick says whether you can try it '
             f'on a laptop. Picked from arXiv, Hugging Face and GitHub by an automated pipeline.{follow}</p>'
+            + trend_card(latest_trend, "Hottest technique right now")
             + ("".join(cards) or '<p class="meta">Nothing yet</p>'))
     (config.SITE / "index.html").write_text(page("Embodied Radar", body))
     (config.SITE / ".nojekyll").write_text("")

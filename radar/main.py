@@ -6,7 +6,7 @@ import traceback
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 
-from . import collect, config, filters, generate, llm, mailer, offpeak, score, site
+from . import collect, config, filters, generate, llm, mailer, offpeak, score, site, trend
 
 
 def public_item(it: dict) -> dict:
@@ -77,10 +77,17 @@ def run(args) -> None:
               f"[{t['eval'].get('topic')}] {t['eval'].get('one_liner')}")
     pick = top[0]
 
+    try:
+        hot = trend.find_trend(ranked, history, today)
+    except Exception as err:  # 热门技术只是附加栏目，出错不影响日报
+        print(f"[热门技术] 失败：{err}")
+        hot = None
+
     content = generate.write_content(pick, top[1:])
     daily = {"date": ts, "headline": content["headline"], "title_en": content["title_en"],
              "tagline_en": content["tagline_en"], "summary_md": content["summary_md"],
-             "pick": public_item(pick), "top": [public_item(t) for t in top]}
+             "pick": public_item(pick), "top": [public_item(t) for t in top],
+             "trend": {k: v for k, v in hot.items() if k != "explainer_md"} if hot else None}
     (config.DATA / "daily").mkdir(parents=True, exist_ok=True)
     (config.DATA / "daily" / f"{ts}.json").write_text(json.dumps(daily, ensure_ascii=False, indent=1))
 
@@ -97,7 +104,8 @@ def run(args) -> None:
     tweet = content["tweet"]
     tweet = tweet.replace("{LINK}", link) if "{LINK}" in tweet else (f"{tweet}\n\n{link}" if tweet else "")
     private = {"tweet": tweet, "thread": content["thread"], "link": link,
-               "explainer_md": content["explainer_md"], "new_terms": new_terms}
+               "explainer_md": content["explainer_md"], "new_terms": new_terms,
+               "trend_md": hot["explainer_md"] if hot else ""}
     stats = {"sources": "，".join(f"{k} {v}" for k, v in source_stats.items()),
              "filtered": len(cands), "scored": len(ranked),
              "dropped": "，".join(f"{k} {v}" for k, v in dropped.items()) or "无",

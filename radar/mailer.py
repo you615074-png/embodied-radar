@@ -34,11 +34,23 @@ def build_email(d: dict, private: dict, stats: dict) -> tuple[str, str]:
                         f' <small style="color:#78716c">({len(t)})</small></li>' for t in private["thread"])
         thread = f'<h4>🧵 Thread 草稿</h4><ol style="{BOX};padding-left:36px">{items}</ol>'
     flags = "；".join(p.get("red_flags") or []) or "无"
+    hot = ""
+    if t := d.get("trend"):
+        streak = f" · 连续 {t['streak']} 天" if t.get("streak", 1) > 1 else ""
+        ev = "".join(f'<li>[{e(KIND_ZH.get(x["kind"], x["kind"]))}] <a href="{e(x["url"])}">{e(x["title"])}</a></li>'
+                     for x in t["evidence"])
+        ups = "；".join(f'{e(r["name_zh"])}（{e(r["why"])}）' for r in t["runner_ups"]) or "无"
+        hot = (f'<h3>🔥 现在最热的技术：{e(t["name_zh"])}</h3>'
+               f'<p style="color:#78716c;margin-top:0">{e(t["name_en"])} · {e(t["momentum"])}{streak}</p>'
+               f'<p><b>{e(t["one_liner"])}</b></p>'
+               f'<div style="{BOX};background:#fff7ed">{md(private.get("trend_md", ""))}'
+               f'<p><b>依据</b></p><ul>{ev}</ul><p><small>其次：{ups}</small></p></div>')
     body = f"""<div style="{STYLE}">
 <h2 style="margin-bottom:4px">🤖 {e(d['headline'] or p['title'])}</h2>
 <p style="color:#78716c;margin-top:0">{e(KIND_ZH[p['kind']])} · {e(p['topic'])} ·
 <a href="{e(p['url'])}">{e(p['title'])}</a></p>
 <p><b>{e(p['one_liner'])}</b><br>🛠 没有硬件怎么玩：{e(p['how_to_try'])}<br>⚠️ 疑问：{e(flags)}</p>
+{hot}
 <h3>📝 学习笔记</h3>
 <div style="{BOX};background:#fafaf9">{md(private['explainer_md'])}</div>
 {terms}
