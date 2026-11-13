@@ -22,8 +22,7 @@ LLM_CONCURRENCY = int(os.getenv("LLM_CONCURRENCY", "8"))
 
 # DeepSeek 谷时价（美元 / 百万 token），只用于邮件里的成本估算；峰时 ×2
 PRICE = {"hit": 0.003, "miss": 0.15, "out": 0.6}
-# 峰时：周一到周五 UTC 01:00-04:00、06:00-10:00（北京 09-12 点、14-18 点）
-PEAK_HOURS_UTC = [(1, 4), (6, 10)]
+# 峰时定义和谷时检查在 offpeak.py
 
 # ---- GitHub / 网站 / 邮件 ----
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")

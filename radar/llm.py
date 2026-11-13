@@ -1,13 +1,13 @@
 """大模型调用：OpenAI 兼容接口（默认 DeepSeek），附带 token 统计和峰谷判断。"""
 import json
+import os
 import re
 import subprocess
 import tempfile
 import threading
 import time
-from datetime import datetime, timezone
 
-from . import config
+from . import config, offpeak
 
 
 class Usage:
@@ -47,11 +47,7 @@ class Usage:
 usage = Usage()
 
 
-def is_peak(now: datetime | None = None) -> bool:
-    now = now or datetime.now(timezone.utc)
-    if now.weekday() >= 5:
-        return False
-    return any(a <= now.hour < b for a, b in config.PEAK_HOURS_UTC)
+is_peak = offpeak.is_peak
 
 
 _client = None
@@ -68,6 +64,9 @@ def _get_client():
 
 
 def chat(messages, model, *, json_mode=False, thinking=False, max_tokens=8000) -> str:
+    # 兜底：DeepSeek 峰时一律不调用，宁可这次失败也不花全价
+    if config.LLM_BACKEND == "api" and is_peak() and not os.getenv("ALLOW_PEAK"):
+        raise RuntimeError("现在是 DeepSeek 峰时，已拒绝调用（设 ALLOW_PEAK=1 可强制）")
     if config.LLM_BACKEND == "dsh":
         return _chat_dsh(messages, json_mode)
     kwargs = dict(model=model, messages=messages, max_tokens=max_tokens)

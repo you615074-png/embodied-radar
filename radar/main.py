@@ -1,11 +1,12 @@
 """每日流程入口：python -m radar.main [--dry-run] [--limit N] [--skip-if-done]"""
 import argparse
 import json
+import os
 import traceback
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta
 
-from . import collect, config, filters, generate, llm, mailer, score, site
+from . import collect, config, filters, generate, llm, mailer, offpeak, score, site
 
 
 def public_item(it: dict) -> dict:
@@ -44,6 +45,10 @@ def run(args) -> None:
     print(f"[开始] {ts}，{peak_note}，后端 {config.LLM_BACKEND}")
     if args.skip_if_done and (config.DATA / "daily" / f"{ts}.json").exists():
         print(f"[跳过] {ts} 的日报已经生成过了")
+        return
+    ok, why = offpeak.can_start(window=args.skip_if_done)
+    if config.LLM_BACKEND == "api" and not ok and not os.getenv("ALLOW_PEAK"):
+        print(f"[跳过] {why}")
         return
 
     history = filters.load_history()
