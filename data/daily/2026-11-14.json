@@ -1,0 +1,279 @@
+{
+ "date": "2026-11-14",
+ "headline": "Mac 可跑的多材料物理引擎 Alloy",
+ "title_en": "Alloy: a multi-material physics engine that runs on your Mac",
+ "tagline_en": "Open-source engine for robots, cloth, liquids and sand in one scene — CPU on Mac, GPU for speed.",
+ "summary_md": "**What it is:** Alloy is an open-source (Apache-2.0) physics engine for robot learning from Argon Robotics. It is built on Newton, MuJoCo Warp and Warp, and it puts rigid robots, cloth, soft bodies, liquids and granular material in the same scene. Each object is described once as a YAML *card*, and a router sends it to the right solver: MuJoCo Warp for rigid bodies, VBD for cloth, MPM for sand, and Alloy's own DFSPH for liquids.\n\n**Why it matters:** Most robot-learning sims are good at rigid bodies and awkward with fluids or cloth. Alloy aims to let one scene contain a robot arm pouring water, folding a towel, or dragging a cable through sand. It also runs in parallel worlds — thousands for free rigid bodies, up to 4,096 for a robot arm on one GPU — which is the kind of throughput RL wants. There is also an `alloy mcp` server, so an AI agent can build and step scenes as tools.\n\n**Can you try it without a robot?** Yes, on a Mac with Apple silicon. `pip install alloy-engine` inside a Python 3.11/3.12 virtual environment, then run the ready-made `Pour-v0` (move a bowl under a stream) or `ClothFold-v0` (experimental). No NVIDIA GPU means CPU only and slow stepping, and this is an early 0.x release, so expect API changes.",
+ "pick": {
+  "id": "gh:argonrobotics-ai/alloy",
+  "kind": "repo",
+  "title": "argonrobotics-ai/alloy",
+  "url": "https://github.com/argonrobotics-ai/alloy",
+  "authors": [],
+  "license": "Apache-2.0",
+  "code_url": "",
+  "signals": {
+   "stars": 34,
+   "daily_rate": 11.3
+  },
+  "topic": "世界模型与仿真",
+  "one_liner": "一个能在Mac上跑的物理引擎，让机器人同时玩水、布料和沙子。",
+  "one_liner_en": "A physics engine that simulates robots with cloth, liquids and sand, even on a Mac CPU.",
+  "how_to_try": "在Mac上用Python 3.12装alloy-engine，跑Pour-v0或布料折叠环境看效果，速度慢但能玩。",
+  "how_to_try_en": "On your Mac, create a Python 3.12 venv, pip install alloy-engine, then run the Pour-v0 or cloth-fold env. CPU is slow but works.",
+  "reason": "多材料并行物理引擎，Apache开源、Mac可装，是学仿真入门的好材料，但早期版本且热度有限。",
+  "red_flags": [
+   "刚发布0.x早期版本，API会变",
+   "34星热度偏低，社区验证少",
+   "有GPU才快，Mac上只能慢跑CPU"
+  ],
+  "final": 7.09,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 7,
+  "wow": 7,
+  "playable": 8,
+  "openness": 9,
+  "learning_value": 8,
+  "heat": 4.4
+ },
+ "top": [
+  {
+   "id": "gh:argonrobotics-ai/alloy",
+   "kind": "repo",
+   "title": "argonrobotics-ai/alloy",
+   "url": "https://github.com/argonrobotics-ai/alloy",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 34,
+    "daily_rate": 11.3
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "一个能在Mac上跑的物理引擎，让机器人同时玩水、布料和沙子。",
+   "one_liner_en": "A physics engine that simulates robots with cloth, liquids and sand, even on a Mac CPU.",
+   "how_to_try": "在Mac上用Python 3.12装alloy-engine，跑Pour-v0或布料折叠环境看效果，速度慢但能玩。",
+   "how_to_try_en": "On your Mac, create a Python 3.12 venv, pip install alloy-engine, then run the Pour-v0 or cloth-fold env. CPU is slow but works.",
+   "reason": "多材料并行物理引擎，Apache开源、Mac可装，是学仿真入门的好材料，但早期版本且热度有限。",
+   "red_flags": [
+    "刚发布0.x早期版本，API会变",
+    "34星热度偏低，社区验证少",
+    "有GPU才快，Mac上只能慢跑CPU"
+   ],
+   "final": 7.09,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 8,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 4.4
+  },
+  {
+   "id": "gh:jushengzhang/robot-weight-debugging",
+   "kind": "repo",
+   "title": "jushengzhang/robot-weight-debugging",
+   "url": "https://github.com/jushengzhang/robot-weight-debugging",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 71,
+    "daily_rate": 49.0
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "让大模型直接改机器人策略的权重，修好它听不懂的指令",
+   "one_liner_en": "An LLM edits a robot policy's weights to fix instructions it mis-obeys",
+   "how_to_try": "需要 π₀.₅ 权重和 GPU 跑 LIBERO 仿真；Mac 只能读 16 份实验日志和视频，复现需云 GPU",
+   "how_to_try_en": "Needs π₀.₅ weights and GPU for LIBERO sim; on a Mac just read the 16 transcripts and videos, rerun needs cloud GPU",
+   "reason": "思路新颖：用 LLM 直接编辑权重修指令理解，实验日志透明；但闭源编辑器和 GPU 门槛让新人难上手",
+   "red_flags": [
+    "GPT-6 Astra 是闭源模型，编辑过程无法复现",
+    "结果较初步，v1 只做了仿真、真机待定",
+    "仅 765 条 held-out 评测，样本有限"
+   ],
+   "final": 6.89,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 8,
+   "playable": 4,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 6.85
+  },
+  {
+   "id": "arxiv:2611.14815",
+   "kind": "paper",
+   "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+   "url": "https://arxiv.org/abs/2611.14815",
+   "authors": [
+    "Junyoung Seo",
+    "Jaewoo Seo",
+    "Seungryong Kim",
+    "Laura Leal-Taixé",
+    "Xiuming Zhang",
+    "Seung Wook Kim"
+   ],
+   "license": "",
+   "code_url": "https://research.nvidia.com/labs/sil/projects/birddreams/",
+   "signals": {
+    "hf_upvotes": 46,
+    "github_stars": 0
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "同时生成驾驶员视角和俯视小车图，可预测开车时周围车辆怎么动",
+   "one_liner_en": "A driving world model that generates both a driver's-view video and a top-down map of surrounding cars",
+   "how_to_try": "需要多路摄像头的大规模驾驶数据训练视频扩散模型，单台 Mac 跑不动；只能看项目页 demo 视频",
+   "how_to_try_en": "Needs large multi-camera driving data and video diffusion training — far beyond a 16GB Mac. Watch the demo videos instead.",
+   "reason": "把 BEV 与透视视频联合生成，让布局成为预测的一部分，思路清晰有亮点；但无法上手、未见开源，更适合作为世界模型概念科普素材。",
+   "red_flags": [
+    "未见代码或权重链接，仅有项目页",
+    "训练依赖大规模带标注驾驶数据，无硬件新人几乎无法复现",
+    "arXiv 编号 2611 与 2026-11 日期需核实"
+   ],
+   "final": 6.31,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 3,
+   "openness": 4,
+   "learning_value": 7,
+   "heat": 8.34
+  },
+  {
+   "id": "hf-model:lerobot/pi05_base",
+   "kind": "model",
+   "title": "lerobot/pi05_base",
+   "url": "https://huggingface.co/lerobot/pi05_base",
+   "authors": [],
+   "license": "gemma",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 4,
+    "hf_likes": 119,
+    "downloads": 22073
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "开源视觉-语言-动作基础大模型，可微调成你的机器人大脑。",
+   "one_liner_en": "Open vision-language-action base model you can fine-tune into a robot brain.",
+   "how_to_try": "Mac 可读代码跑通推理接口，但真正跑 VLA 需 NVIDIA 显卡或云 GPU，无法训练",
+   "how_to_try_en": "Mac can run the inference code path, but real VLA inference/training needs an NVIDIA GPU or cloud.",
+   "reason": "π0.5 是 VLA 领域里程碑，LeRobot 移植降低门槛，但无显卡新人只能读代码不能真正跑，适合学概念。",
+   "red_flags": [
+    "仅发布 flow-matching 动作头，子任务预测、动作 tokenize、RL 未开源",
+    "训练需 cuda 与 bfloat16，Mac 无法完整跑",
+    "gemma 许可证有使用限制"
+   ],
+   "final": 6.25,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 4,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 3.49
+  },
+  {
+   "id": "arxiv:2611.13028",
+   "kind": "paper",
+   "title": "GTAGym: AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2611.13028",
+   "authors": [
+    "Jiajun Chen",
+    "Shicheng Fang",
+    "Jiahao Lu",
+    "Yuxin Wang",
+    "Xipeng Qiu"
+   ],
+   "license": "",
+   "code_url": "https://github.com/ljbro/GTAGym",
+   "signals": {
+    "hf_upvotes": 11,
+    "github_stars": 11
+   },
+   "topic": "强化学习",
+   "one_liner": "在 GTA V 游戏里搭了一套任务环境，用来测试和训练 AI 智能体",
+   "one_liner_en": "A GTA V environment for testing and training AI agents on game missions",
+   "how_to_try": "官方说网页服务器能跑，但需要 GTA V 正版和联网环境，Mac 上没有 Windows/显卡基本跑不动，只能看论文和 demo",
+   "how_to_try_en": "Needs GTA V plus a web server; on a Mac with no GPU you can only read the paper and watch demos",
+   "reason": "用 3A 游戏做评测和 RL 训练环境挺有意思，但需要游戏本体和算力，新人只能看不能玩，开放程度也一般。",
+   "red_flags": [
+    "依赖 GTA V 商业游戏本体，无 NVIDIA 显卡的新人难以复现",
+    "许可证未标注，代码与环境的开放条款不清",
+    "评测靠游戏引擎状态自动判定，任务覆盖是否公平存疑"
+   ],
+   "final": 6.01,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 5,
+   "openness": 5,
+   "learning_value": 6,
+   "heat": 5.38
+  }
+ ],
+ "trend": {
+  "name_en": "VLA Post-training via Reinforcement Learning",
+  "name_zh": "VLA 强化学习后训练",
+  "one_liner": "在冻结的大模型外加小网络，用强化学习微调它，让机器人动作更准、更安全。",
+  "one_liner_en": "Adding a small trainable layer on top of a frozen robot model and tuning it with reinforcement learning to make actions more accurate and safer.",
+  "momentum": "新出现",
+  "evidence": [
+   {
+    "kind": "repo",
+    "title": "tuotuoLyu/FPO",
+    "url": "https://github.com/tuotuoLyu/FPO",
+    "one_liner_en": "A small actor on top of frozen pi0, fine-tuned with PPO-style RL to improve grasping."
+   },
+   {
+    "kind": "model",
+    "title": "lerobot/pi05_base",
+    "url": "https://huggingface.co/lerobot/pi05_base",
+    "one_liner_en": "Open vision-language-action base model you can fine-tune into a robot brain."
+   },
+   {
+    "kind": "repo",
+    "title": "jushengzhang/robot-weight-debugging",
+    "url": "https://github.com/jushengzhang/robot-weight-debugging",
+    "one_liner_en": "An LLM edits a robot policy's weights to fix instructions it mis-obeys"
+   },
+   {
+    "kind": "repo",
+    "title": "tuotuoLyu/ForesightSafety-VLA",
+    "url": "https://github.com/tuotuoLyu/ForesightSafety-VLA",
+    "one_liner_en": "A simulation benchmark that tests whether vision-language-action robot models behave safely"
+   },
+   {
+    "kind": "paper",
+    "title": "Scaling VLA Serving Under Robotic Execution Constraints",
+    "url": "https://arxiv.org/abs/2611.14969",
+    "one_liner_en": "A serving system that lets hundreds of robots share GPUs for VLA inference more efficiently."
+   },
+   {
+    "kind": "paper",
+    "title": "Low-Cost Mobile Bimanual Manipulation for Long-Horizon Toilet Cleaning",
+    "url": "https://arxiv.org/abs/2611.15381",
+    "one_liner_en": "A low-cost wheeled dual-arm robot cleans toilets; four VLA models compared on 250 demos."
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "触觉表征基础模型",
+    "name_en": "Tactile Representation Foundation Model",
+    "why": "lingbot-touch 系列两条独立模型同时做统一多传感器触觉编码。"
+   },
+   {
+    "name_zh": "多材料物理仿真",
+    "name_en": "Multi-material Physics Simulation",
+    "why": "Alloy 引擎及相关工作同时推进刚性、布料、液体同场仿真。"
+   }
+  ],
+  "streak": 1
+ }
+}

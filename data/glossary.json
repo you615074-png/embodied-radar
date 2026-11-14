@@ -880,5 +880,61 @@
   "explain": "同时协调手脚和躯干所有关节完成任务",
   "first_seen": "2026-11-13",
   "source": "hf-model:andrew-cartwheel/cartwheel-control"
+ },
+ "mujoco warp": {
+  "term": "MuJoCo Warp",
+  "zh": "MuJoCo并行版",
+  "explain": "把MuJoCo物理引擎搬到GPU上，同时跑几千个场景。",
+  "first_seen": "2026-11-14",
+  "source": "gh:argonrobotics-ai/alloy"
+ },
+ "mpm/dfsph": {
+  "term": "MPM/DFSPH",
+  "zh": "颗粒与流体算法",
+  "explain": "两种物理算法，分别模拟沙子和水这类材料。",
+  "first_seen": "2026-11-14",
+  "source": "gh:argonrobotics-ai/alloy"
+ },
+ "weight-space editing": {
+  "term": "Weight-space editing",
+  "zh": "权重空间编辑",
+  "explain": "不改训练数据，直接改模型里存的数字来改行为",
+  "first_seen": "2026-11-14",
+  "source": "gh:jushengzhang/robot-weight-debugging"
+ },
+ "token embedding": {
+  "term": "Token embedding",
+  "zh": "词元嵌入",
+  "explain": "模型把每个词变成的一串数字，改它等于改理解",
+  "first_seen": "2026-11-14",
+  "source": "gh:jushengzhang/robot-weight-debugging"
+ },
+ "bev": {
+  "term": "BEV",
+  "zh": "鸟瞰图",
+  "explain": "从正上方往下看的简图，只画车和路的形状与位置",
+  "first_seen": "2026-11-14",
+  "source": "arxiv:2611.14815"
+ },
+ "autoregressive video diffusion": {
+  "term": "Autoregressive Video Diffusion",
+  "zh": "自回归视频扩散",
+  "explain": "一帧接一帧地生成视频，每帧都参考前面已生成的内容",
+  "first_seen": "2026-11-14",
+  "source": "arxiv:2611.14815"
+ },
+ "reinforcement learning": {
+  "term": "Reinforcement Learning",
+  "zh": "强化学习",
+  "explain": "让 AI 靠试错和奖励信号自己学会玩游戏任务",
+  "first_seen": "2026-11-14",
+  "source": "arxiv:2611.13028"
+ },
+ "lora rl": {
+  "term": "LoRA RL",
+  "zh": "低秩微调强化学习",
+  "explain": "只训练一小部分参数，用强化学习微调大模型，省显存",
+  "first_seen": "2026-11-14",
+  "source": "arxiv:2611.13028"
  }
 }
