@@ -2,14 +2,15 @@ name: embodied-radar
 
 on:
   schedule:
-    # 主触发不靠这里：外部定时服务每天 UTC 10:30 左右（北京 18:30，太平洋凌晨）准点调用 workflow_dispatch，
-    # 并带上 skip_if_done=true。下面是补跑：GitHub 自带的定时任务实测会晚 7-8 小时、而且大部分会被丢掉，
-    # 只用来在主触发失败时兜底。开不开跑由 radar/offpeak.py 决定：只在 DeepSeek 谷时，且这一期还没生成。
-    - cron: "37 10-15 * * *"
+    # 只用 GitHub 自带的定时任务，不依赖第三方。实测它会晚 7-8 小时，而且大部分触发会被丢掉，
+    # 一天只真正跑一两次，所以每小时都设一个触发点，尽量多几次机会。
+    # 开不开跑由 radar/offpeak.py 决定：只在 DeepSeek 谷时，且这一期还没生成（一期从 UTC 10:00 算起）。
+    # 跳过的那次只花半分钟，不装依赖、不调模型。
+    - cron: "37 * * * *"
   workflow_dispatch:
     inputs:
       skip_if_done:
-        description: "这一期已生成就跳过（外部定时触发时用）"
+        description: "这一期已生成就跳过"
         type: boolean
         default: false
       dry_run:
