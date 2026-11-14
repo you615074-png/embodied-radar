@@ -46,7 +46,7 @@ def run(args) -> None:
     if args.skip_if_done and (config.DATA / "daily" / f"{ts}.json").exists():
         print(f"[跳过] {ts} 的日报已经生成过了")
         return
-    ok, why = offpeak.can_start(window=args.skip_if_done)
+    ok, why = offpeak.can_start()
     if config.LLM_BACKEND == "api" and not ok and not os.getenv("ALLOW_PEAK"):
         print(f"[跳过] {why}")
         return

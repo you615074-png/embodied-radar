@@ -17,9 +17,6 @@ PEAK_HOURS_UTC = [(1, 4), (6, 10)]
 BJ = timezone(timedelta(hours=8))
 # 开跑时要保证这段时间内都不会进入峰时（实际一次运行 1-15 分钟）
 RUN_MARGIN = timedelta(minutes=40)
-# 定时运行只在 UTC 00:00-15:00（北京 08:00-23:00）开跑：
-# 日报日期按北京时间算，不会跨天；最晚的一次也能在太平洋时间早上 7 点前送达
-RUN_WINDOW_UTC = (0, 15)
 
 
 def is_peak(now: datetime | None = None) -> bool:
@@ -29,11 +26,9 @@ def is_peak(now: datetime | None = None) -> bool:
     return any(a <= now.hour < b for a, b in PEAK_HOURS_UTC)
 
 
-def can_start(now: datetime | None = None, *, window: bool = True) -> tuple[bool, str]:
-    """现在开跑是否安全：整个运行期间都在谷时，定时运行还要在每日窗口内。"""
+def can_start(now: datetime | None = None) -> tuple[bool, str]:
+    """现在开跑是否安全：整个运行期间都在谷时。"""
     now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
-    if window and not RUN_WINDOW_UTC[0] <= now.hour < RUN_WINDOW_UTC[1]:
-        return False, f"UTC {now:%H:%M} 不在每日运行窗口（UTC {RUN_WINDOW_UTC[0]:02d}-{RUN_WINDOW_UTC[1]:02d} 点）"
     t = now
     while t <= now + RUN_MARGIN:
         if is_peak(t):
@@ -47,7 +42,7 @@ def main():
     ap.add_argument("--event", default="schedule")
     args = ap.parse_args()
     scheduled = args.event == "schedule"
-    ok, why = can_start(window=scheduled)
+    ok, why = can_start()
     if ok and scheduled:
         ts = datetime.now(BJ).date().isoformat()
         if (Path(__file__).resolve().parent.parent / "data" / "daily" / f"{ts}.json").exists():
