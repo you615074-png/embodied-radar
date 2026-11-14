@@ -2,12 +2,16 @@ name: embodied-radar
 
 on:
   schedule:
-    # GitHub 定时任务实测会延迟 7-8 小时，而且大部分触发会被丢掉，一天只真正跑一两次，所以多设几个触发点。
-    # 真正开不开跑由 radar/offpeak.py 决定：只在 DeepSeek 谷时开跑，当天（北京时间）日报已生成就跳过。
-    # 跳过的那次只花半分钟，不装依赖、不调模型。送达时间取决于 GitHub 实际什么时候触发。
-    - cron: "37 0-14 * * *"
+    # 主触发不靠这里：外部定时服务每天 UTC 10:30 左右（北京 18:30，太平洋凌晨）准点调用 workflow_dispatch，
+    # 并带上 skip_if_done=true。下面是补跑：GitHub 自带的定时任务实测会晚 7-8 小时、而且大部分会被丢掉，
+    # 只用来在主触发失败时兜底。开不开跑由 radar/offpeak.py 决定：只在 DeepSeek 谷时，且这一期还没生成。
+    - cron: "37 10-15 * * *"
   workflow_dispatch:
     inputs:
+      skip_if_done:
+        description: "这一期已生成就跳过（外部定时触发时用）"
+        type: boolean
+        default: false
       dry_run:
         description: "只跑流程，不发邮件"
         type: boolean
@@ -43,8 +47,8 @@ jobs:
       - name: 检查是否在 DeepSeek 谷时
         id: gate
         env:
-          EVENT: ${{ github.event_name }}
-        run: python radar/offpeak.py --event "$EVENT"
+          SKIP: ${{ github.event_name == 'schedule' || inputs.skip_if_done }}
+        run: python radar/offpeak.py $([ "$SKIP" = "true" ] && echo --skip-if-done)
 
       - name: 安装依赖
         if: steps.gate.outputs.run == 'true'
@@ -62,9 +66,10 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run }}
           LIMIT: ${{ inputs.limit }}
           EVENT: ${{ github.event_name }}
+          SKIP_IF_DONE: ${{ inputs.skip_if_done }}
         run: |
           args=""
-          if [ "$EVENT" = "schedule" ]; then args="$args --skip-if-done"; fi
+          if [ "$EVENT" = "schedule" ] || [ "$SKIP_IF_DONE" = "true" ]; then args="$args --skip-if-done"; fi
           if [ "$DRY_RUN" = "true" ]; then args="$args --dry-run"; fi
           if [[ "$LIMIT" =~ ^[0-9]+$ ]]; then args="$args --limit $LIMIT"; fi
           python -m radar.main $args
@@ -76,7 +81,7 @@ jobs:
           git config user.email "embodied-radar[bot]@users.noreply.github.com"
           git add data site
           git diff --cached --quiet && exit 0
-          git commit -m "radar: $(TZ=Asia/Shanghai date +%F)"
+          git commit -m "radar: $(python radar/offpeak.py --print-date)"
           git pull --rebase
           git push
 

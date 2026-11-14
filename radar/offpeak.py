@@ -4,17 +4,21 @@
 来源：https://api-docs.deepseek.com/quick_start/pricing（2026-11 核对）。
 中国法定节假日官方也算谷时，这里不判断，按峰时处理，宁可少跑一次也不多花钱。
 
-用法（工作流里）：python radar/offpeak.py --event schedule
+用法（工作流里）：python radar/offpeak.py [--skip-if-done]
 在 $GITHUB_OUTPUT 里写 run=true/false，并打印原因。
 """
 import argparse
 import os
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 PEAK_HOURS_UTC = [(1, 4), (6, 10)]
-BJ = timezone(timedelta(hours=8))
+# 日报的"一天"从 UTC 10:00（北京 18:00，DeepSeek 峰时结束）开始算，而不是北京时间零点。
+# 主触发在 UTC 10:30 左右，GitHub 自带定时任务的补跑大多落在之后十几个小时里，都算同一期，
+# 不会出现补跑抢先生成"明天"那一期、导致第二天主触发被跳过的情况。
+# 期号日期 = 主触发那一刻的北京日期 = 太平洋时间当天早上收到的那一期。
+EDITION_START_UTC = 10
 # 开跑时要保证这段时间内都不会进入峰时（实际一次运行 1-15 分钟）
 RUN_MARGIN = timedelta(minutes=40)
 
@@ -24,6 +28,11 @@ def is_peak(now: datetime | None = None) -> bool:
     if now.weekday() >= 5:
         return False
     return any(a <= now.hour < b for a, b in PEAK_HOURS_UTC)
+
+
+def edition_date(now: datetime | None = None) -> date:
+    now = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    return (now - timedelta(hours=EDITION_START_UTC)).date()
 
 
 def can_start(now: datetime | None = None) -> tuple[bool, str]:
@@ -39,14 +48,17 @@ def can_start(now: datetime | None = None) -> tuple[bool, str]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--event", default="schedule")
+    ap.add_argument("--skip-if-done", action="store_true", help="这一期日报已生成就跳过")
+    ap.add_argument("--print-date", action="store_true", help="只打印当前期号日期")
     args = ap.parse_args()
-    scheduled = args.event == "schedule"
+    ts = edition_date().isoformat()
+    if args.print_date:
+        print(ts)
+        return
     ok, why = can_start()
-    if ok and scheduled:
-        ts = datetime.now(BJ).date().isoformat()
+    if ok and args.skip_if_done:
         if (Path(__file__).resolve().parent.parent / "data" / "daily" / f"{ts}.json").exists():
-            ok, why = False, f"{ts} 的日报已经生成过了"
+            ok, why = False, f"{ts} 这一期已经生成过了"
     print(f"[{'开跑' if ok else '跳过'}] {why}")
     out = os.getenv("GITHUB_OUTPUT")
     if out:
