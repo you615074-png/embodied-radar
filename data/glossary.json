@@ -936,5 +936,54 @@
   "explain": "只训练一小部分参数，用强化学习微调大模型，省显存",
   "first_seen": "2026-11-14",
   "source": "arxiv:2611.13028"
+ },
+ "vla model": {
+  "term": "VLA model",
+  "zh": "视觉-语言-动作模型",
+  "explain": "看图、听指令、直接输出机器人动作的大模型",
+  "first_seen": "2026-11-15",
+  "source": "gh:tuotuoLyu/ForesightSafety-VLA"
+ },
+ "mcap": {
+  "term": "MCAP",
+  "zh": "多模态日志格式",
+  "explain": "一种把视频、传感器数据按时间打包存的文件格式",
+  "first_seen": "2026-11-15",
+  "source": "hf-dataset:Hubdata/HubEgo-100K"
+ },
+ "latent world model": {
+  "term": "Latent World Model",
+  "zh": "潜空间世界模型",
+  "explain": "模型在压缩后的特征空间里学习预测场景如何演变，而不是逐像素重建画面。",
+  "first_seen": "2026-11-15",
+  "source": "hf-model:AutowareFoundation/latent_drive"
+ },
+ "end-to-end planning": {
+  "term": "End-to-End Planning",
+  "zh": "端到端规划",
+  "explain": "从摄像头画面直接输出行驶轨迹，中间不做检测、跟踪等人工拆分的步骤。",
+  "first_seen": "2026-11-15",
+  "source": "hf-model:AutowareFoundation/latent_drive"
+ },
+ "v-jepa": {
+  "term": "V-JEPA",
+  "zh": "视频联合嵌入预测架构",
+  "explain": "自监督预训练方法，通过预测视频中被遮挡部分的潜特征来学习场景理解。",
+  "first_seen": "2026-11-15",
+  "source": "hf-model:AutowareFoundation/latent_drive"
+ },
+ "neuro-symbolic": {
+  "term": "Neuro-Symbolic",
+  "zh": "神经符号结合",
+  "explain": "模型负责理解场景做判断，规则求解器负责严谨地算步骤",
+  "first_seen": "2026-11-15",
+  "source": "arxiv:2611.16671"
+ },
+ "division of labor": {
+  "term": "Division of Labor",
+  "zh": "分工",
+  "explain": "把任务拆给各自擅长的部件：视觉模型和确定性求解器",
+  "first_seen": "2026-11-15",
+  "source": "arxiv:2611.16671"
  }
 }

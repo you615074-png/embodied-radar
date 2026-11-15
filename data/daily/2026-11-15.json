@@ -1,0 +1,263 @@
+{
+ "date": "2026-11-15",
+ "headline": "给 VLA 模型做安全体检的仿真基准",
+ "title_en": "ForesightSafety-VLA: a safety benchmark for robot VLA models",
+ "tagline_en": "A diagnostic benchmark that scores VLA policies step by step: safe success, unsafe success, and risk over time.",
+ "summary_md": "**What it is.** ForesightSafety-VLA is a simulation benchmark for safety-checking vision-language-action (VLA) robot policies, from the Brain-inspired Cognitive AI Lab at the Chinese Academy of Sciences. It is built on RoboTwin and is described in the authors' IROS 2026 paper. The repo ships 66 base scenarios (`envs/safe_*.py`) with hazards injected, constraints tightened, and time preconditions added, organized into a 13-category safety taxonomy covering physical interaction, language instructions, and visual perception.\n\n**Why it matters.** Most VLA evaluations only ask \"did the task succeed?\" This one asks \"did it succeed without breaking something?\" A per-step dual-threshold monitor labels each episode as safe success, unsafe success, safe failure, or unsafe failure, and reports cumulative safety cost, risk exposure time, and a safety-adjusted success rate. One-factor sweeps over scene structure, language phrasing, and vision conditions show which input dimension degrades safety.\n\n**Can you try it without a robot?** Partly. The scenarios are designed to run in the RoboTwin simulator, so a robot is not strictly required, but the README is thin on setup steps. You would need to install RoboTwin, run the `safe_*.py` evaluation scripts, and bring your own VLA model weights plus enough compute to run them. The repo does not appear to include weights. Also, the paper date and license need checking before you rely on it.",
+ "pick": {
+  "id": "gh:tuotuoLyu/ForesightSafety-VLA",
+  "kind": "repo",
+  "title": "tuotuoLyu/ForesightSafety-VLA",
+  "url": "https://github.com/tuotuoLyu/ForesightSafety-VLA",
+  "authors": [],
+  "license": "NOASSERTION",
+  "code_url": "",
+  "signals": {
+   "stars": 85,
+   "daily_rate": 5.0
+  },
+  "topic": "VLA与基础模型",
+  "one_liner": "给机器人视觉-语言-动作模型做安全体检的仿真评测基准",
+  "one_liner_en": "A simulation benchmark that tests whether vision-language-action robot models behave safely",
+  "how_to_try": "需要先在 Mac 上装好 RoboTwin 仿真环境，然后跑仓库里 safe_*.py 的评测脚本，但模型权重和算力仍是难点。",
+  "how_to_try_en": "Install RoboTwin sim on your Mac, then run the safe_*.py eval scripts; expect friction on model weights/compute.",
+  "reason": "选题安全评测方向有价值、学习性强，但非新能力突破，且真伪与开源条款需核实。",
+  "red_flags": [
+   "发布时间2026-10-29、arXiv编号2606，日期可疑，需核实真伪",
+   "许可证为NOASSERTION，使用条款不明确",
+   "只评安全不改进模型，对新人更像检验而非学习工具"
+  ],
+  "final": 5.86,
+  "topic_penalty": 0,
+  "significance": 6,
+  "explainability": 7,
+  "wow": 5,
+  "playable": 7,
+  "openness": 5,
+  "learning_value": 8,
+  "heat": 3.14
+ },
+ "top": [
+  {
+   "id": "gh:tuotuoLyu/ForesightSafety-VLA",
+   "kind": "repo",
+   "title": "tuotuoLyu/ForesightSafety-VLA",
+   "url": "https://github.com/tuotuoLyu/ForesightSafety-VLA",
+   "authors": [],
+   "license": "NOASSERTION",
+   "code_url": "",
+   "signals": {
+    "stars": 85,
+    "daily_rate": 5.0
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "给机器人视觉-语言-动作模型做安全体检的仿真评测基准",
+   "one_liner_en": "A simulation benchmark that tests whether vision-language-action robot models behave safely",
+   "how_to_try": "需要先在 Mac 上装好 RoboTwin 仿真环境，然后跑仓库里 safe_*.py 的评测脚本，但模型权重和算力仍是难点。",
+   "how_to_try_en": "Install RoboTwin sim on your Mac, then run the safe_*.py eval scripts; expect friction on model weights/compute.",
+   "reason": "选题安全评测方向有价值、学习性强，但非新能力突破，且真伪与开源条款需核实。",
+   "red_flags": [
+    "发布时间2026-10-29、arXiv编号2606，日期可疑，需核实真伪",
+    "许可证为NOASSERTION，使用条款不明确",
+    "只评安全不改进模型，对新人更像检验而非学习工具"
+   ],
+   "final": 5.86,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 7,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 3.14
+  },
+  {
+   "id": "hf-dataset:Hubdata/HubEgo-100K",
+   "kind": "dataset",
+   "title": "Hubdata/HubEgo-100K",
+   "url": "https://huggingface.co/datasets/Hubdata/HubEgo-100K",
+   "authors": [],
+   "license": "cc-by-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 5,
+    "downloads": 247
+   },
+   "topic": "数据集",
+   "one_liner": "十万小时第一人称干活视频，首批一万小时可训练机器人",
+   "one_liner_en": "A 100K-hour first-person video dataset of real manual work, first 10K hours released.",
+   "how_to_try": "用 LeRobot 加载一小段 MCAP 子集，在 Mac 上做可视化或训练小模仿学习模型；全量太大，别下。",
+   "how_to_try_en": "Load a small MCAP subset with LeRobot on your Mac for visualization or a tiny imitation model; skip the full download.",
+   "reason": "规模罕见的真实第一人称操作视频，开放且适配 LeRobot，但缺标注、来源不明，作为精选需谨慎。",
+   "red_flags": [
+    "作者与机构未知，数据来源和采集质量难核实",
+    "十万小时声称规模极大，首批仅一万小时，后续能否兑现存疑",
+    "野外自拍视频缺少动作标注和机器人可执行动作，能否直接用于训练存疑"
+   ],
+   "final": 5.86,
+   "topic_penalty": 0.6,
+   "significance": 8,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 6,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 2.38
+  },
+  {
+   "id": "gh:suniique/assembly-nist",
+   "kind": "repo",
+   "title": "suniique/assembly-nist",
+   "url": "https://github.com/suniique/assembly-nist",
+   "authors": [],
+   "license": "NOASSERTION",
+   "code_url": "",
+   "signals": {
+    "stars": 86,
+    "daily_rate": 3.6
+   },
+   "topic": "操作抓取",
+   "one_liner": "Franka 机械臂用 PPO 强化学习在 MuJoCo 里拼装 20 种零件",
+   "one_liner_en": "A Franka arm learns to assemble 20 NIST parts with PPO in MuJoCo",
+   "how_to_try": "在 Mac 上安装 MuJoCo，先 build 插件，再运行 viz.demo 加载预训练权重，导出自己的 demo 视频",
+   "how_to_try_en": "On Mac: pip install, run plugin/build.sh, then viz.demo with the pretrained checkpoint to render your own assembly video.",
+   "reason": "独立的复现工作做得不错，预训练权重和训练代码齐全，很适合用来练习 RL 和组装任务，但本质上是复现，且与原论文的对比并不公平。",
+   "red_flags": [
+    "AlphaNIST 原论文未开源代码，因此所用的基线不及原论文，与原文的对比不成立",
+    "评测协议要求复现 SGS 的 25K 迭代，但当前数据可能没有对齐",
+    "许可证为 NOASSERTION，需要额外确认是否可商用",
+    "构建插件依赖 g++，在 Apple Silicon 上的兼容性尚未验证"
+   ],
+   "final": 5.79,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 7,
+   "openness": 6,
+   "learning_value": 8,
+   "heat": 2.67
+  },
+  {
+   "id": "hf-model:AutowareFoundation/latent_drive",
+   "kind": "model",
+   "title": "AutowareFoundation/latent_drive",
+   "url": "https://huggingface.co/AutowareFoundation/latent_drive",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 8,
+    "hf_likes": 8,
+    "downloads": 304
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "自动驾驶车只看前方摄像头视频就能直接规划未来4秒的行驶轨迹",
+   "one_liner_en": "An autonomous driving model plans a 4-second trajectory directly from front-camera video.",
+   "how_to_try": "需NVIDIA显卡跑TensorRT，仅有ONNX和C++ ROS2库；Mac上只能看replay视频，或用云GPU试推理。",
+   "how_to_try_en": "Needs an NVIDIA GPU with TensorRT; on a Mac you can only watch replay.mp4 or rent cloud GPU to run inference.",
+   "reason": "端到端潜空间世界模型规划方向有价值，但部署重、缺训练细节，无硬件新人难以上手，适合看demo和读文档。",
+   "red_flags": [
+    "只有ONNX权重和C++/ROS2部署库，无训练代码、数据与Python推理示例",
+    "需要NVIDIA GPU和TensorRT，Mac新人无法本地运行",
+    "开源复现难度高，学习门槛偏工程化"
+   ],
+   "final": 5.48,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 3,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 4.76
+  },
+  {
+   "id": "arxiv:2611.16671",
+   "kind": "paper",
+   "title": "NSDL: Neuro-Symbolic Division of Labor for Multi-Robot Task Planning",
+   "url": "https://arxiv.org/abs/2611.16671",
+   "authors": [
+    "Xincheng Tan",
+    "Ke Wang",
+    "Yining Di",
+    "Minfeng Zhu"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "其他",
+   "one_liner": "让小模型判断任务目标、用求解器算步骤的多机器人任务规划方法",
+   "one_liner_en": "Small VLM judges goals, a solver computes steps, for multi-robot task planning.",
+   "how_to_try": "没有多机器人硬件就跑不了实机，只能看仓库 demo；可下载 LOCUS-Bench 离线分析，模型推理在 Mac 上用较大模型够呛。",
+   "how_to_try_en": "No multi-robot hardware to run it for real. Browse the repo demo and inspect LOCUS-Bench offline; model inference is rough on a Mac.",
+   "reason": "思路清晰、代码权重数据全开源，是神经符号分工的好教材；但多机器人场景偏窄、无实机演示，新人只能读代码看数据。",
+   "red_flags": [
+    "多机器人任务规划相对冷门，缺少实机或视频演示，惊喜感有限",
+    "arXiv 编号与提交 ICRA 2027 时间存疑，需核实真实性"
+   ],
+   "final": 5.43,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 6,
+   "heat": 2.0
+  }
+ ],
+ "trend": {
+  "name_en": "Learnable Differentiable-World-Model Policy Gradients for Robot Control",
+  "name_zh": "可微世界模型策略优化",
+  "one_liner": "用能反向传播的世界模型当仿真器，直接对策略做梯度优化，机器人学动作更快。",
+  "one_liner_en": "Use a differentiable world model as a fast simulator and backpropagate through it to optimize robot policies.",
+  "momentum": "新出现",
+  "evidence": [
+   {
+    "kind": "repo",
+    "title": "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+    "url": "https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+    "one_liner_en": "A differentiable world model replaces the physics sim so a humanoid can learn to dance like a human."
+   },
+   {
+    "kind": "repo",
+    "title": "RoboticsResearchHubVN/InstantAMP",
+    "url": "https://github.com/RoboticsResearchHubVN/InstantAMP",
+    "one_liner_en": "Trains a humanoid walking and get-up policy in 30 minutes via a differentiable world model"
+   },
+   {
+    "kind": "repo",
+    "title": "emoPointer/supermimic_manipulation",
+    "url": "https://github.com/emoPointer/supermimic_manipulation",
+    "one_liner_en": "Trains a simulated robot arm by backpropagating through a learned world model."
+   },
+   {
+    "kind": "repo",
+    "title": "tuotuoLyu/FPO",
+    "url": "https://github.com/tuotuoLyu/FPO",
+    "one_liner_en": "A small actor on top of frozen pi0, fine-tuned with PPO-style RL to improve grasping."
+   },
+   {
+    "kind": "repo",
+    "title": "suniique/assembly-nist",
+    "url": "https://github.com/suniique/assembly-nist",
+    "one_liner_en": "A Franka arm learns to assemble 20 NIST parts with PPO in MuJoCo"
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "第一人称人类视频跨本体预训练",
+    "name_en": "Egocentric Human-Video Cross-Embodiment Pretraining",
+    "why": "SALA、EgoX、HubEgo-100K、Ropedia 多条独立工作在做"
+   },
+   {
+    "name_zh": "异构触觉表征基础模型",
+    "name_en": "Unified Tactile Representation Foundation Model",
+    "why": "lingbot-touch 两个模型同时把多种触觉传感器编码到同一潜空间"
+   }
+  ],
+  "streak": 1
+ }
+}
