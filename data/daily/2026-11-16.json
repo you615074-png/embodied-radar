@@ -1,0 +1,275 @@
+{
+ "date": "2026-11-16",
+ "headline": "随机延迟一秒，机器人交接不再认生",
+ "title_en": "Hidden Start-Delay Randomization Makes Self-Play Handover Robust",
+ "tagline_en": "A one-line random start delay on the learned partner lifts handover success with unseen partners from 31% to 80% in simulation.",
+ "summary_md": "**What it is:** A paper (CoRL 2026 HumanRLI Workshop) by Mohammad Khoshnazar, Mike Degany, Deyuan Qu, Qing Yang and Matyas Szanto. They train a Unitree G1 humanoid and a learned \"giver\" to hand over a parcel using alternating PPO self-play in physics simulation. The problem: the giver always offers the parcel immediately, so the receiver only learns one fixed rendezvous. When a partner it has never met starts a second later, success drops from 95% to 6%. Their fix, hidden start-delay randomization (HSD), adds a random delay to the learned partner's start — a one-line rule the receiver never observes. After 300 more updates, success with unseen scripted partners rises from 31% to 80%, with high-force contacts cut three- to five-fold.\n\n**Why it matters:** Self-play is a cheap way to learn interaction without human demonstrations, but policies can quietly overfit to their training partner. HSD is a small, interpretable change that targets that exact failure, and the paper's paired interventions make the cause-and-effect clear.\n\n**Can you try it without a robot?** Yes, in simulation only. The authors released code at github.com/mkhoshnam/Selfplay-PPO-handover. Training PPO self-play for a G1 will be slow on a 16GB Apple Silicon Mac, so a cloud GPU is the realistic option; reading the reward and randomization code is a good first step. Note: the paper reports simulation results only, with no real-robot experiments.",
+ "pick": {
+  "id": "arxiv:2611.18491",
+  "kind": "paper",
+  "title": "When Will You Hand It Over? A Hidden Start Delay Makes Self-Play Handover Robust to Unfamiliar Partners",
+  "url": "https://arxiv.org/abs/2611.18491",
+  "authors": [
+   "Mohammad Khoshnazar",
+   "Mike Degany",
+   "Deyuan Qu",
+   "Qing Yang",
+   "Matyas Szanto"
+  ],
+  "license": "",
+  "code_url": "",
+  "signals": {},
+  "topic": "强化学习",
+  "one_liner": "让学出来的机器人伙伴随机延迟出手，人形机器人就能和陌生伙伴顺利交接物品",
+  "one_liner_en": "Randomly delaying the training partner's handoff makes a humanoid hand over objects reliably to unfamiliar partners.",
+  "how_to_try": "用仓库里的 Isaac/IsaacLab 或 MuJoCo 版 PPO 自博弈来训练一个虚拟 G1 接手物品；Mac 上跑仿真会比较慢，建议用云 GPU 跑；做不到时可以先读代码理解奖励设计。",
+  "how_to_try_en": "Train the PPO self-play G1 handover in the repo's Isaac/MuJoCo sim; Mac is slow, use cloud GPU or just read the reward code first.",
+  "reason": "用一行随机延迟规则修复自博弈策略对伙伴过拟合的问题，思路简单、对比实验做得扎实，很适合新人学习自博弈与泛化。",
+  "red_flags": [
+   "arXiv 编号 2611 与 2026-11 日期可疑，疑似占位或虚构条目",
+   "仅仿真验证，没有真机实验",
+   "属于会议 workshop 论文，规模有限"
+  ],
+  "final": 6.3,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 8,
+  "wow": 7,
+  "playable": 6,
+  "openness": 7,
+  "learning_value": 8,
+  "heat": 2.0
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.18491",
+   "kind": "paper",
+   "title": "When Will You Hand It Over? A Hidden Start Delay Makes Self-Play Handover Robust to Unfamiliar Partners",
+   "url": "https://arxiv.org/abs/2611.18491",
+   "authors": [
+    "Mohammad Khoshnazar",
+    "Mike Degany",
+    "Deyuan Qu",
+    "Qing Yang",
+    "Matyas Szanto"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "强化学习",
+   "one_liner": "让学出来的机器人伙伴随机延迟出手，人形机器人就能和陌生伙伴顺利交接物品",
+   "one_liner_en": "Randomly delaying the training partner's handoff makes a humanoid hand over objects reliably to unfamiliar partners.",
+   "how_to_try": "用仓库里的 Isaac/IsaacLab 或 MuJoCo 版 PPO 自博弈来训练一个虚拟 G1 接手物品；Mac 上跑仿真会比较慢，建议用云 GPU 跑；做不到时可以先读代码理解奖励设计。",
+   "how_to_try_en": "Train the PPO self-play G1 handover in the repo's Isaac/MuJoCo sim; Mac is slow, use cloud GPU or just read the reward code first.",
+   "reason": "用一行随机延迟规则修复自博弈策略对伙伴过拟合的问题，思路简单、对比实验做得扎实，很适合新人学习自博弈与泛化。",
+   "red_flags": [
+    "arXiv 编号 2611 与 2026-11 日期可疑，疑似占位或虚构条目",
+    "仅仿真验证，没有真机实验",
+    "属于会议 workshop 论文，规模有限"
+   ],
+   "final": 6.3,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 6,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 2.0
+  },
+  {
+   "id": "gh:NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "kind": "repo",
+   "title": "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "url": "https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 99,
+    "daily_rate": 4.5
+   },
+   "topic": "人形与足式",
+   "one_liner": "用可求导的世界模型替代物理仿真器，教人形机器人学会跳人的舞蹈",
+   "one_liner_en": "A differentiable world model replaces the physics sim so a humanoid can learn to dance like a human.",
+   "how_to_try": "训练需 NVIDIA 显卡，Mac 只能读代码和看视频；可先跑 CPU 测试、看渲染 mp4。",
+   "how_to_try_en": "Training needs an NVIDIA GPU; on Mac read the code, run the CPU tests, and watch the rendered mp4 demos.",
+   "reason": "开源完整、有真机跳舞视频、可学世界模型与 sim2real，但训练要 NVIDIA 显卡，且为非官方复现，复现数字与论文有差距。",
+   "red_flags": [
+    "非官方复现，严格按论文设置时分数明显低于论文",
+    "作者与机构信息缺失",
+    "真机部署有摔机风险，Mac 无法复现核心训练"
+   ],
+   "final": 6.24,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 5,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 2.99
+  },
+  {
+   "id": "hf-model:nvidia/SOMA-X",
+   "kind": "model",
+   "title": "nvidia/SOMA-X",
+   "url": "https://huggingface.co/nvidia/SOMA-X",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 4,
+    "hf_likes": 40,
+    "downloads": 0
+   },
+   "topic": "其他",
+   "one_liner": "把多种人体参数化模型统一到一套姿势和骨架接口上",
+   "one_liner_en": "Unifies several parametric human body models under one pose and skeleton interface",
+   "how_to_try": "Mac 上装 Python 和 PyTorch 跑 demo，换个身份参数看同一段动作驱动不同体型；Mac 上无法只用 GPU 快速推理，只能降级用 CPU 慢慢跑",
+   "how_to_try_en": "Install PyTorch on Mac, run the repo demo and drive the same motion with different identity coefficients; CPU-only means slow but workable.",
+   "reason": "SOMA-X 是扎实的图形学人体模型统一工作，开放且 Mac 可跑，但对具身智能新进展展示价值有限，惊喜感弱。",
+   "red_flags": [
+    "本质属于计算机图形学的人体建模工具，不是具身智能进展",
+    "超过 7000 网格/秒的吞吐只在 NVIDIA A100 上成立，与无显卡定位冲突"
+   ],
+   "final": 6.07,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 4,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 6,
+   "heat": 3.49
+  },
+  {
+   "id": "hf-model:GetCartwheelInc/cartwheel-control",
+   "kind": "model",
+   "title": "GetCartwheelInc/cartwheel-control",
+   "url": "https://huggingface.co/GetCartwheelInc/cartwheel-control",
+   "authors": [],
+   "license": "other",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 6,
+    "hf_likes": 7,
+    "downloads": 0
+   },
+   "topic": "人形与足式",
+   "one_liner": "给出参考动作，人形机器人仿真里跟着做全身动作",
+   "one_liner_en": "Humanoid policies that mimic reference motions in simulation",
+   "how_to_try": "Mac 上克隆仓库，uv sync 后跑 cartwheel-play 在 MuJoCo 看机器人跟动作",
+   "how_to_try_en": "Clone the repo on Mac, run uv sync, then cartwheel-play to watch humanoids track motions in MuJoCo",
+   "reason": "多机型人形动作跟踪，Mac 可跑 MuJoCo 演示，适合入门；但仅仿真、来源可疑，分量有限。",
+   "red_flags": [
+    "发布日期在 2026 年，与当前时间不符，真实性存疑",
+    "只有仿真、从未上过真机，演示视频说服力有限",
+    "作者机构不明，模型权重许可证是自定义条款"
+   ],
+   "final": 6.05,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 7,
+   "openness": 6,
+   "learning_value": 7,
+   "heat": 4.22
+  },
+  {
+   "id": "arxiv:2611.18397",
+   "kind": "paper",
+   "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+   "url": "https://arxiv.org/abs/2611.18397",
+   "authors": [
+    "Run Luo",
+    "Kuan Zhang",
+    "Qi Deng",
+    "Yukun Chen",
+    "Zhihao Yang",
+    "Yufei Zhang",
+    "Renrong Hu",
+    "Yi Zhang"
+   ],
+   "license": "",
+   "code_url": "https://github.com/RainBowLuoCS/Gamer",
+   "signals": {
+    "hf_upvotes": 64,
+    "github_stars": 124
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "一个用键鼠轨迹训练、能玩3D游戏的通用视觉-语言-动作模型",
+   "one_liner_en": "A generalist vision-language-action model trained on keyboard-mouse data that plays long 3D games.",
+   "how_to_try": "需云GPU和游戏环境，Mac本地几乎跑不动；可先看项目页demo和推理代码",
+   "how_to_try_en": "Needs cloud GPUs and a game env; Mac can't run it. Watch demos and read the inference code instead.",
+   "reason": "数据规模与3D游戏泛化有看点，但偏游戏域、无显卡难上手，对机器人入门是间接参考。",
+   "red_flags": [
+    "以打游戏为主，和真实机器人操作有距离",
+    "未标注许可证，训练规模大、无硬件难复现",
+    "arXiv编号与日期可疑，需核实真实性"
+   ],
+   "final": 5.91,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 3,
+   "openness": 5,
+   "learning_value": 7,
+   "heat": 9.05
+  }
+ ],
+ "trend": {
+  "name_en": "Differentiable World-Model Policy Gradients",
+  "name_zh": "可微世界模型策略优化",
+  "one_liner": "用一个能在内部反向传播的神经网络模拟器代替物理引擎，直接训练机器人控制策略。",
+  "one_liner_en": "Replace physics simulators with differentiable neural world models and train robot policies by backpropagating through them.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "repo",
+    "title": "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+    "url": "https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+    "one_liner_en": "A differentiable world model replaces the physics sim so a humanoid can learn to dance like a human."
+   },
+   {
+    "kind": "repo",
+    "title": "RoboticsResearchHubVN/InstantAMP",
+    "url": "https://github.com/RoboticsResearchHubVN/InstantAMP",
+    "one_liner_en": "Trains a humanoid walking and get-up policy in 30 minutes via a differentiable world model"
+   },
+   {
+    "kind": "repo",
+    "title": "emoPointer/supermimic_manipulation",
+    "url": "https://github.com/emoPointer/supermimic_manipulation",
+    "one_liner_en": "Trains a simulated robot arm by backpropagating through a learned world model."
+   },
+   {
+    "kind": "paper",
+    "title": "Heavy Metal Acrobatics: Learning Dynamic Control for Skid-Steer Loaders",
+    "url": "https://arxiv.org/abs/2611.18365",
+    "one_liner_en": "RL in simulation teaches a 5-ton skid-steer loader to balance and drive on two wheels."
+   },
+   {
+    "kind": "paper",
+    "title": "When Will You Hand It Over? A Hidden Start Delay Makes Self-Play Handover Robust to Unfamiliar Partners",
+    "url": "https://arxiv.org/abs/2611.18491",
+    "one_liner_en": "Randomly delaying the training partner's handoff makes a humanoid hand over objects reliably to unfamiliar partners."
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "VLA 强化学习后训练",
+    "name_en": "VLA Post-training via Reinforcement Learning",
+    "why": "FPO 给冻结 pi0 加 RL 微调、ESI 自我迭代、Gamer 长程 RL 多条支撑。"
+   },
+   {
+    "name_zh": "触觉表征基础模型",
+    "name_en": "Unified Tactile Representation Models",
+    "why": "lingbot-touch-small/tiny 两个统一多传感器触觉编码模型同日出。"
+   }
+  ],
+  "streak": 1
+ }
+}

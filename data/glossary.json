@@ -985,5 +985,68 @@
   "explain": "把任务拆给各自擅长的部件：视觉模型和确定性求解器",
   "first_seen": "2026-11-15",
   "source": "arxiv:2611.16671"
+ },
+ "self-play": {
+  "term": "Self-play",
+  "zh": "自博弈",
+  "explain": "让两个自己训练的机器人互相对练，不需要人类示范数据",
+  "first_seen": "2026-11-16",
+  "source": "arxiv:2611.18491"
+ },
+ "domain randomization": {
+  "term": "Domain Randomization",
+  "zh": "域随机化",
+  "explain": "训练时随机改变条件，让策略面对变化时依然稳定",
+  "first_seen": "2026-11-16",
+  "source": "arxiv:2611.18491"
+ },
+ "parametric human body model": {
+  "term": "Parametric Human Body Model",
+  "zh": "参数化人体模型",
+  "explain": "用少量数字描述人的身材和姿势，能生成 3D 人体网格",
+  "first_seen": "2026-11-16",
+  "source": "hf-model:nvidia/SOMA-X"
+ },
+ "linear blend skinning": {
+  "term": "Linear Blend Skinning",
+  "zh": "线性混合蒙皮",
+  "explain": "让骨架动起来时，皮肤跟着自然弯曲变形的经典算法",
+  "first_seen": "2026-11-16",
+  "source": "hf-model:nvidia/SOMA-X"
+ },
+ "barycentric mesh transfer": {
+  "term": "Barycentric Mesh Transfer",
+  "zh": "重心坐标网格迁移",
+  "explain": "把网格 A 的顶点按三角面对应关系搬到网格 B 上的方法",
+  "first_seen": "2026-11-16",
+  "source": "hf-model:nvidia/SOMA-X"
+ },
+ "mjcf": {
+  "term": "MJCF",
+  "zh": "MuJoCo 模型格式",
+  "explain": "MuJoCo 仿真器描述机器人结构和关节的文件",
+  "first_seen": "2026-11-16",
+  "source": "hf-model:GetCartwheelInc/cartwheel-control"
+ },
+ "vision-language-action model": {
+  "term": "Vision-Language-Action model",
+  "zh": "视觉-语言-动作模型",
+  "explain": "看到画面、听懂指令，直接输出动作的基础模型",
+  "first_seen": "2026-11-16",
+  "source": "arxiv:2611.18397"
+ },
+ "long-horizon rl": {
+  "term": "Long-horizon RL",
+  "zh": "长程强化学习",
+  "explain": "让智能体在几十上百步里保持目标、不跑偏的训练方法",
+  "first_seen": "2026-11-16",
+  "source": "arxiv:2611.18397"
+ },
+ "sparse-thinking": {
+  "term": "Sparse-thinking",
+  "zh": "稀疏思考",
+  "explain": "不每一步都长篇推理，省算力只在该想时才想",
+  "first_seen": "2026-11-16",
+  "source": "arxiv:2611.18397"
  }
 }
