@@ -1,0 +1,275 @@
+{
+ "date": "2026-11-17",
+ "headline": "十万小时第一人称干活视频集",
+ "title_en": "HubEgo-100K: 10,000 Hours of First-Person Work Video, Now on Hugging Face",
+ "tagline_en": "The first release of a planned 100k-hour dataset of real people doing manual work, in LeRobot and MCAP formats.",
+ "summary_md": "**What it is:** HubEgo-100K is a Hugging Face dataset of first-person (egocentric) video showing people doing skilled manual work in real workplaces — construction sites, workshops, salons, kitchens, shops, warehouses, and homes. This first release contains 10,124 hours of RGB video plus IMU data from 12,227 contributors, published in LeRobot and MCAP formats under CC-BY-4.0. The full plan is 100,000 hours, released in stages.\n\n**Why it matters:** Robot learning needs lots of human demonstration data that looks like what a robot would see and do. Egocentric video is a cheap way to collect that at scale — no teleoperation, no robot hardware, just people filming their own work. If the data is clean and well-formatted, it can be used for imitation learning and pretraining vision-language-action (VLA) models. The fact that it ships in LeRobot format means it plugs into an existing open-source training stack.\n\n**Can you try it without a robot?** Yes. You can load a small slice with the LeRobot library on Hugging Face and visualize the video and IMU streams. You won't train a full policy on a laptop, but you can inspect the format and run a small experiment.\n\nCaveats: the authors/organization behind it are not clearly stated, and the dataset page lists a future release date, so treat this as an early, partial release until verified.",
+ "pick": {
+  "id": "hf-dataset:HubLabs/HubEgo-100K",
+  "kind": "dataset",
+  "title": "HubLabs/HubEgo-100K",
+  "url": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
+  "authors": [],
+  "license": "cc-by-4.0",
+  "code_url": "",
+  "signals": {
+   "hf_trending": 26,
+   "hf_likes": 29,
+   "downloads": 2471
+  },
+  "topic": "数据集",
+  "one_liner": "10万小时第一人称干活视频，教机器人看人怎么动手做事",
+  "one_liner_en": "A 100,000-hour dataset of first-person videos of people doing real manual work.",
+  "how_to_try": "在 Hugging Face 上用 LeRobot 库加载一个小片段，看看视频和 IMU 数据长什么样，再跑个可视化",
+  "how_to_try_en": "Load a small clip from Hugging Face with the LeRobot library, inspect the video and IMU data, and visualize it on your Mac.",
+  "reason": "真实场景第一人称操作视频，规模大、格式标准、可直接入手，对VLA预训练很有价值，但机构不明是隐患",
+  "red_flags": [
+   "作者和机构未知，数据质量和采集规范没法核实",
+   "发布日期是未来时间，可能是占位或预告",
+   "10万小时只放出1万小时，完整数据还没到位"
+  ],
+  "final": 7.6,
+  "topic_penalty": 0,
+  "significance": 8,
+  "explainability": 9,
+  "wow": 7,
+  "playable": 7,
+  "openness": 8,
+  "learning_value": 7,
+  "heat": 7.14
+ },
+ "top": [
+  {
+   "id": "hf-dataset:HubLabs/HubEgo-100K",
+   "kind": "dataset",
+   "title": "HubLabs/HubEgo-100K",
+   "url": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
+   "authors": [],
+   "license": "cc-by-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 26,
+    "hf_likes": 29,
+    "downloads": 2471
+   },
+   "topic": "数据集",
+   "one_liner": "10万小时第一人称干活视频，教机器人看人怎么动手做事",
+   "one_liner_en": "A 100,000-hour dataset of first-person videos of people doing real manual work.",
+   "how_to_try": "在 Hugging Face 上用 LeRobot 库加载一个小片段，看看视频和 IMU 数据长什么样，再跑个可视化",
+   "how_to_try_en": "Load a small clip from Hugging Face with the LeRobot library, inspect the video and IMU data, and visualize it on your Mac.",
+   "reason": "真实场景第一人称操作视频，规模大、格式标准、可直接入手，对VLA预训练很有价值，但机构不明是隐患",
+   "red_flags": [
+    "作者和机构未知，数据质量和采集规范没法核实",
+    "发布日期是未来时间，可能是占位或预告",
+    "10万小时只放出1万小时，完整数据还没到位"
+   ],
+   "final": 7.6,
+   "topic_penalty": 0,
+   "significance": 8,
+   "explainability": 9,
+   "wow": 7,
+   "playable": 7,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 7.14
+  },
+  {
+   "id": "hf-model:racineai/Jevol-0.9B",
+   "kind": "model",
+   "title": "racineai/Jevol-0.9B",
+   "url": "https://huggingface.co/racineai/Jevol-0.9B",
+   "authors": [],
+   "license": "other",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 5,
+    "hf_likes": 5,
+    "downloads": 0
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "一个小模型看一帧画面和一句指令，就能直接给出无人机飞行动作。",
+   "one_liner_en": "A small model turns one camera image plus a sentence into a drone flight command.",
+   "how_to_try": "用作者 GitHub 里的仿真器跑，或直接在 HF Space 里零样本换指令试 0.6B 版；Mac 可本地推理 0.6B。",
+   "how_to_try_en": "Run the author's simulator or try the 0.6B Space in-browser with your own commands; 0.6B also runs locally on Mac.",
+   "reason": "小 VLA 直出无人机动作，思路清晰、浏览器可玩、对比大模型有看点；但团队与许可不明，真机未验证，先当教学案例介绍。",
+   "red_flags": [
+    "作者和机构不明确，'other' 许可证限制不清",
+    "榜单引用的 Gemini/Claude 版本号与日期存疑",
+    "真实无人机部署未验证，仅仿真闭环"
+   ],
+   "final": 6.85,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 9,
+   "wow": 7,
+   "playable": 8,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 3.88
+  },
+  {
+   "id": "hf-model:racineai/Jevol-2B",
+   "kind": "model",
+   "title": "racineai/Jevol-2B",
+   "url": "https://huggingface.co/racineai/Jevol-2B",
+   "authors": [],
+   "license": "other",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 5,
+    "hf_likes": 5,
+    "downloads": 0
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "给无人机装一个会看画面听指路指令就直接飞的小模型",
+   "one_liner_en": "A small vision-language model that turns one camera image plus a sentence into a drone flight command.",
+   "how_to_try": "用 Mac 跑 GitHub 里的仿真环境，加载 0.6B 版，或直接在浏览器 Space 里试",
+   "how_to_try_en": "Run the GitHub simulator on your Mac with the 0.6B model, or just try the browser Space demo.",
+   "reason": "小模型在无人机导航上跑赢大模型，演示直观、Mac 可跑仿真，很适合入门讲 VLA，但数据封闭、评测自建，需保留怀疑。",
+   "red_flags": [
+    "机构与作者信息缺失，论文与基准未公开",
+    "训练数据只有 11 个真实场景，泛化能力存疑",
+    "许可证为 other，商用和再分发条件不明"
+   ],
+   "final": 6.67,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 9,
+   "wow": 7,
+   "playable": 7,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 3.88
+  },
+  {
+   "id": "gh:eust-w/opengeniemaster",
+   "kind": "repo",
+   "title": "eust-w/opengeniemaster",
+   "url": "https://github.com/eust-w/opengeniemaster",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 467,
+    "daily_rate": 22.2
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "把机器人操作包装成编码 Agent 可调用的工具，靠执行反馈和记忆自我改进",
+   "one_liner_en": "An open harness that exposes robot skills as MCP tools so coding agents can run and improve tasks",
+   "how_to_try": "在 Mac 上 clone 仓库，装 Python≥3.10，运行 ogm demo 和 ogm bench，纯标准库仿真，无需 GPU",
+   "how_to_try_en": "Clone the repo on your Mac, run 'ogm demo' and 'ogm bench' in the built-in simulator; pure Python, no GPU needed.",
+   "reason": "把 VLA 时代的 Agent 框架讲清楚了，Mac 上零依赖可跑仿真，适合入门；但仅是复刻，实验为自建仿真，天花板有限。",
+   "red_flags": [
+    "是第三方复刻，官方代码未发布，协议与官方不兼容",
+    "全部结果为自建语义仿真，非真机，仿真参数是自设假设",
+    "机器人能力实为模拟，未接入真实本体"
+   ],
+   "final": 6.31,
+   "topic_penalty": 0.6,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 9,
+   "openness": 7,
+   "learning_value": 8,
+   "heat": 5.51
+  },
+  {
+   "id": "arxiv:2611.19998",
+   "kind": "paper",
+   "title": "MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams",
+   "url": "https://arxiv.org/abs/2611.19998",
+   "authors": [
+    "Yimin Han",
+    "Jiahui Zhang",
+    "Wanyue Li",
+    "Zeren Luo",
+    "Yeke Chen",
+    "Liu Zhao",
+    "Peizhuo Li",
+    "Xiaoyu Ji"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "人形与足式",
+   "one_liner": "用普通摄像头拍人，人形机器人就能实时模仿全身动作",
+   "one_liner_en": "A plain camera watches you move and a humanoid robot copies your whole body in real time.",
+   "how_to_try": "必须用实际人形机器人才能复现；新人只能在项目页看演示视频，读论文理解运动重定向思路",
+   "how_to_try_en": "Needs real humanoid hardware; newcomers can only watch the project-page videos and read the paper on motion retargeting.",
+   "reason": "无穿戴单目视频驱动人形全身控制，演示直观、概念清晰，但依赖专用硬件，新人只能看不能玩。",
+   "red_flags": [
+    "论文未标注许可证，代码是否宽松开源不明",
+    "需要实际人形机器人硬件，新人无法亲手验证",
+    "arXiv 编号 2611 与 2026-11 发布日期和常见编号规则对不上，真实性存疑"
+   ],
+   "final": 5.99,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 9,
+   "wow": 8,
+   "playable": 4,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 2.0
+  }
+ ],
+ "trend": {
+  "name_en": "Egocentric-Video Cross-Embodiment Policy Pretraining",
+  "name_zh": "第一人称视频跨本体预训练",
+  "one_liner": "用人类第一视角干活视频学机器人动作，不必雇人遥操作采集",
+  "one_liner_en": "Learning robot policies from human first-person videos, so you don't need expensive teleoperation data",
+  "momentum": "新出现",
+  "evidence": [
+   {
+    "kind": "dataset",
+    "title": "HubLabs/HubEgo-100K",
+    "url": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
+    "one_liner_en": "A 100,000-hour dataset of first-person videos of people doing real manual work."
+   },
+   {
+    "kind": "paper",
+    "title": "SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models",
+    "url": "https://arxiv.org/abs/2611.17110",
+    "one_liner_en": "Aligns human and robot video latent actions via language, letting human videos train robot policies."
+   },
+   {
+    "kind": "paper",
+    "title": "Ego Guidance: Enhancing Robot Policy Learning with Action-Free Human Egocentric Videos",
+    "url": "https://arxiv.org/abs/2611.13685",
+    "one_liner_en": "Uses action-free human first-person videos to improve robot policy learning with a VLM backbone"
+   },
+   {
+    "kind": "paper",
+    "title": "Lift, See, Act: Hierarchical Robot Policy Pretraining with 3D Foundation Models",
+    "url": "https://arxiv.org/abs/2611.20481",
+    "one_liner_en": "Uses dense 3D cues from human videos to pretrain a robot manipulation policy."
+   },
+   {
+    "kind": "paper",
+    "title": "EgoSwarm: Learning Decentralized Robot Swarm Intelligence from Human Swarm Demonstrations",
+    "url": "https://arxiv.org/abs/2611.20100",
+    "one_liner_en": "Learns decentralized robot swarm coordination from multi-person egocentric videos."
+   },
+   {
+    "kind": "paper",
+    "title": "WinDEX: Metric 3D Hand Motion Reconstruction in the Wild for Dexterous Teleoperation and Policy Learning",
+    "url": "https://arxiv.org/abs/2611.21143",
+    "one_liner_en": "Reconstructs metric 3D hand motion from in-the-wild fisheye stereo video at scale"
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "VLA 强化学习后训练",
+    "name_en": "VLA Post-training via Reinforcement Learning",
+    "why": "FPO 给冻结 pi0 加 RL 微调，与之前的路线延续"
+   },
+   {
+    "name_zh": "触觉跨传感器统一表征",
+    "name_en": "Cross-Sensor Tactile Representation",
+    "why": "TaF-Foundation、WiTac 两篇同指力觉/触觉表征"
+   }
+  ],
+  "streak": 1
+ }
+}

@@ -1048,5 +1048,54 @@
   "explain": "不每一步都长篇推理，省算力只在该想时才想",
   "first_seen": "2026-11-16",
   "source": "arxiv:2611.18397"
+ },
+ "lerobot": {
+  "term": "LeRobot",
+  "zh": "LeRobot 格式",
+  "explain": "Hugging Face 推出的机器人数据标准格式，方便直接训练模型",
+  "first_seen": "2026-11-17",
+  "source": "hf-dataset:HubLabs/HubEgo-100K"
+ },
+ "closed-loop evaluation": {
+  "term": "Closed-loop evaluation",
+  "zh": "闭环评测",
+  "explain": "让模型边看边飞、动作影响下一帧，而不是对着固定数据打分。",
+  "first_seen": "2026-11-17",
+  "source": "hf-model:racineai/Jevol-0.9B"
+ },
+ "sentence head": {
+  "term": "Sentence head",
+  "zh": "句子分类头",
+  "explain": "不生成文字，而是从固定选项里挑一个答案，保证动作合法。",
+  "first_seen": "2026-11-17",
+  "source": "hf-model:racineai/Jevol-0.9B"
+ },
+ "multiple-choice action head": {
+  "term": "Multiple-choice action head",
+  "zh": "多选动作头",
+  "explain": "把飞行动作拆成几个离散选项，让模型像做选择题一样挑",
+  "first_seen": "2026-11-17",
+  "source": "hf-model:racineai/Jevol-2B"
+ },
+ "mcp (model context protocol)": {
+  "term": "MCP (Model Context Protocol)",
+  "zh": "模型上下文协议",
+  "explain": "让大模型以统一接口调用外部工具的协议",
+  "first_seen": "2026-11-17",
+  "source": "gh:eust-w/opengeniemaster"
+ },
+ "behavior foundation model": {
+  "term": "Behavior Foundation Model",
+  "zh": "行为基础模型",
+  "explain": "先在大量动作上预训练、再微调成具体任务的通用控制策略",
+  "first_seen": "2026-11-17",
+  "source": "arxiv:2611.19998"
+ },
+ "monocular reconstruction": {
+  "term": "Monocular Reconstruction",
+  "zh": "单目重建",
+  "explain": "只用一台普通摄像头估计出人的三维姿态",
+  "first_seen": "2026-11-17",
+  "source": "arxiv:2611.19998"
  }
 }
