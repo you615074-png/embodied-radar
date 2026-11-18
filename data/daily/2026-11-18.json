@@ -1,0 +1,268 @@
+{
+ "date": "2026-11-18",
+ "headline": "小模型开无人机：Jevol-0.6B 用浏览器就能试",
+ "title_en": "Jevol-0.6B: a 0.6B VLA that flies a drone from one image and one sentence",
+ "tagline_en": "A small vision-language-action model turns a camera frame and an English command into drone flight commands every 0.4 s.",
+ "summary_md": "**What it is:** Jevol-0.6B is a small vision-language-action (VLA) model released on Hugging Face by Racine.ai. It takes one camera image (672×504) and one English sentence, and in a single forward pass picks three multiple-choice answers — forward/back speed with turn rate, vertical speed, and sideways motion — to form a flight command. It runs every 0.4 s. There is no memory, map, or past-decision record: each command comes only from what the camera sees now. Two larger siblings, Jevol-0.9B and Jevol-2B, are also released.\n\n**Why it matters:** The authors report closed-loop flight results on a bench of eleven real places captured in 3D (places absent from training). A flight passes if the mission is completed without a collision. Per the model card, Jevol-0.6B passes 44.2% of flights, compared with 49.6% for Gemini 3.8 Flash (low thinking) and 45.9% for Claude Opus 5.5 (medium) on 135 flights each, while deciding in about 0.1 s versus seconds for the API models. The 0.6B model also runs in the browser via a Hugging Face Space, which is unusual for robotics models.\n\n**Can you try it without a robot?** Yes, in a limited way. The Space lets you try the model on your own images from a browser. The authors also link a GitHub repository with code and a simulator, so you can run flights on a Mac in simulation — though per the card, training and full closed-loop evaluation likely need more compute than a laptop. The model card says the checkpoints carry no language-model head; a sentence head is used instead. Note that author/institution details are sparse, the license is 'other', and the release date shown is in the future — check before commercial use.",
+ "pick": {
+  "id": "hf-model:racineai/Jevol-0.6B",
+  "kind": "model",
+  "title": "racineai/Jevol-0.6B",
+  "url": "https://huggingface.co/racineai/Jevol-0.6B",
+  "authors": [],
+  "license": "other",
+  "code_url": "",
+  "signals": {
+   "hf_trending": 6,
+   "hf_likes": 6,
+   "downloads": 40
+  },
+  "topic": "导航与自动驾驶",
+  "one_liner": "一个0.6B小模型看摄像头画面和一句指令，直接输出无人机飞行指令",
+  "one_liner_en": "A tiny 0.6B model that turns one camera image plus a text order into drone flight commands.",
+  "how_to_try": "先用 Hugging Face Space 在浏览器里试；再按 GitHub 仓库跑仿真",
+  "how_to_try_en": "Try the HF Space in your browser first, then run the GitHub simulator locally on your Mac.",
+  "reason": "小模型对标大模型做无人机闭环导航，有浏览器 demo 和仿真，新人易上手，但来源可信度和许可需留意。",
+  "red_flags": [
+   "作者和机构信息不明，发布日期为未来时间",
+   "许可证为 other，商用和再分发条件不清",
+   "无记忆、无地图，长任务能力有限"
+  ],
+  "final": 6.67,
+  "topic_penalty": 0,
+  "significance": 6,
+  "explainability": 8,
+  "wow": 7,
+  "playable": 8,
+  "openness": 7,
+  "learning_value": 7,
+  "heat": 4.22
+ },
+ "top": [
+  {
+   "id": "hf-model:racineai/Jevol-0.6B",
+   "kind": "model",
+   "title": "racineai/Jevol-0.6B",
+   "url": "https://huggingface.co/racineai/Jevol-0.6B",
+   "authors": [],
+   "license": "other",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 6,
+    "hf_likes": 6,
+    "downloads": 40
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "一个0.6B小模型看摄像头画面和一句指令，直接输出无人机飞行指令",
+   "one_liner_en": "A tiny 0.6B model that turns one camera image plus a text order into drone flight commands.",
+   "how_to_try": "先用 Hugging Face Space 在浏览器里试；再按 GitHub 仓库跑仿真",
+   "how_to_try_en": "Try the HF Space in your browser first, then run the GitHub simulator locally on your Mac.",
+   "reason": "小模型对标大模型做无人机闭环导航，有浏览器 demo 和仿真，新人易上手，但来源可信度和许可需留意。",
+   "red_flags": [
+    "作者和机构信息不明，发布日期为未来时间",
+    "许可证为 other，商用和再分发条件不清",
+    "无记忆、无地图，长任务能力有限"
+   ],
+   "final": 6.67,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 7,
+   "playable": 8,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 4.22
+  },
+  {
+   "id": "arxiv:2611.23118",
+   "kind": "paper",
+   "title": "Auditing a Learned Simulator for Legged Robots: The Robotic World Model on ANYmal D",
+   "url": "https://arxiv.org/abs/2611.23118",
+   "authors": [
+    "Joyjeet Singh"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "世界模型与仿真",
+   "one_liner": "作者拆解检验一个四足机器人学习仿真器，发现一步预测准并不代表能教会机器人走路",
+   "one_liner_en": "A no-GPU audit of a learned quadruped simulator: one-step accuracy fails to predict real walking ability.",
+   "how_to_try": "克隆 GitHub 仓库，用 Mac 跑 MuJoCo 版 ANYmal D 复现评估脚本，无需 GPU",
+   "how_to_try_en": "Clone the GitHub repo and run its MuJoCo ANYmal D eval scripts on your Mac; no GPU needed.",
+   "reason": "罕见的批判性复现审计，揭示一步预测好却教不会走路，对入门者理解世界模型与评估陷阱很有价值，Mac 可跑。",
+   "red_flags": [
+    "仅一个机器人一种步态、纯仿真无硬件验证，结论外推有限",
+    "arXiv 编号和日期可疑，需核实真实性",
+    "作者自述撤回九条结论，说明结果不够稳固"
+   ],
+   "final": 6.61,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 9,
+   "heat": 2.0
+  },
+  {
+   "id": "gh:google-deepmind/robotics-antigravity-plugin",
+   "kind": "repo",
+   "title": "google-deepmind/robotics-antigravity-plugin",
+   "url": "https://github.com/google-deepmind/robotics-antigravity-plugin",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 57,
+    "daily_rate": 28.5
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "让 AI 代理自己写机器人控制器，先在 MuJoCo 仿真里测试再上真机",
+   "one_liner_en": "An agentic plugin where Gemini writes robot controllers, tests them in MuJoCo, then runs on real arms.",
+   "how_to_try": "装 Antigravity 加插件，用纯仿真提示词让它在 MuJoCo 里生成 SO-101 抓取任务；需 GEMINI_API_KEY。",
+   "how_to_try_en": "Install Antigravity + plugin, use a simulation-only prompt to generate a MuJoCo SO-101 pick task; needs GEMINI_API_KEY.",
+   "reason": "方向有趣、仿真部分 Mac 可玩，但更像工具封装与宣传，硬核进展有限。",
+   "red_flags": [
+    "README 只有提示词示例，缺实际演示视频和技术细节",
+    "依赖 Google Antigravity 与 Gemini，非纯开源可复现",
+    "真机部分需特定机械臂，演示真实性无法独立验证"
+   ],
+   "final": 6.34,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 8,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 5.93
+  },
+  {
+   "id": "arxiv:2611.23143",
+   "kind": "paper",
+   "title": "TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation",
+   "url": "https://arxiv.org/abs/2611.23143",
+   "authors": [
+    "Haosong Peng",
+    "Xiangyang Liu",
+    "Zhengshen Zhang",
+    "Yunfeng Fan",
+    "Tianyu Qi",
+    "Xin Xia",
+    "Yufeng Zhan",
+    "Wenchao Xu"
+   ],
+   "license": "",
+   "code_url": "https://github.com/Livioni/TCP4D",
+   "signals": {
+    "hf_upvotes": 23,
+    "github_stars": 7
+   },
+   "topic": "操作抓取",
+   "one_liner": "从普通视频里还原机器人夹爪轨迹，还能生成新的抓取动作",
+   "one_liner_en": "Recovers robot gripper trajectories from plain videos and generates new manipulation motions",
+   "how_to_try": "项目页看演示视频；代码若放出可在 Mac 上试单目视频推理，但训练需 NVIDIA 显卡",
+   "how_to_try_en": "Watch demos on the project page; if code is released, try single-video inference on Mac, but training needs an NVIDIA GPU",
+   "reason": "用统一 4D 表示同时做轨迹追踪与生成，跨本体增强有实用价值，但代码开放度与真实性待核实，新人只能看演示。",
+   "red_flags": [
+    "arXiv 编号 2611 与 2026-11 日期可疑，需核实真实性",
+    "代码和模型权重尚未确认公开，许可证未标注"
+   ],
+   "final": 6.3,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 5,
+   "learning_value": 7,
+   "heat": 6.89
+  },
+  {
+   "id": "gh:llros007/leneo",
+   "kind": "repo",
+   "title": "llros007/leneo",
+   "url": "https://github.com/llros007/leneo",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 59,
+    "daily_rate": 4.9
+   },
+   "topic": "硬件与本体",
+   "one_liner": "超低价开源轮式升降双臂机器人，含3D文件和仿真场景",
+   "one_liner_en": "Low-cost open-source wheeled lifting dual-arm robot with CAD files and sim scenes",
+   "how_to_try": "在 Mac 上装 MuJoCo，跑仓库里的仿真场景看它搬橙子；实机部分暂时做不了。",
+   "how_to_try_en": "Install MuJoCo on your Mac and run the repo's sim scene (pick orange to counter). Real hardware is out of reach for now.",
+   "reason": "低价开源本体设计有传播价值，仿真可跑，但关键文档缺失、实机验证不足，属于半成品。",
+   "red_flags": [
+    "装配说明和BOM还没上传，实机无法复现",
+    "仿真是辅助夹持，难度被简化",
+    "作者和机构不明，无实机运行视频佐证"
+   ],
+   "final": 5.75,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 5,
+   "openness": 7,
+   "learning_value": 6,
+   "heat": 3.11
+  }
+ ],
+ "trend": {
+  "name_en": "Human Egocentric Video Pretraining for Robot Policies",
+  "name_zh": "人类第一人称视频预训练机器人策略",
+  "one_liner": "用普通人戴摄像头拍的第一人称视频教机器人学动作，不需要动作标注。",
+  "one_liner_en": "Use ordinary human first-person videos to teach robots actions without action labels.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "paper",
+    "title": "SALA: Semantically Aligned Latent Actions Enable Dual-Axis Scaling of Embodied Foundation Models",
+    "url": "https://arxiv.org/abs/2611.17110",
+    "one_liner_en": "Aligns human and robot video latent actions via language, letting human videos train robot policies."
+   },
+   {
+    "kind": "paper",
+    "title": "Ego Guidance: Enhancing Robot Policy Learning with Action-Free Human Egocentric Videos",
+    "url": "https://arxiv.org/abs/2611.13685",
+    "one_liner_en": "Uses action-free human first-person videos to improve robot policy learning with a VLM backbone"
+   },
+   {
+    "kind": "paper",
+    "title": "WinDEX: Metric 3D Hand Motion Reconstruction in the Wild for Dexterous Teleoperation and Policy Learning",
+    "url": "https://arxiv.org/abs/2611.21143",
+    "one_liner_en": "Reconstructs metric 3D hand motion from in-the-wild fisheye stereo video at scale"
+   },
+   {
+    "kind": "paper",
+    "title": "TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation",
+    "url": "https://arxiv.org/abs/2611.23143",
+    "one_liner_en": "Recovers robot gripper trajectories from plain videos and generates new manipulation motions"
+   },
+   {
+    "kind": "paper",
+    "title": "HandUMI: A Modular Hand-Worn Parallel-Jaw Interface for Robot-Free Bimanual Data Capture",
+    "url": "https://arxiv.org/abs/2611.22146",
+    "one_liner_en": "A wearable gripper glove that captures bimanual robot demos without a robot"
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "可微世界模型策略优化",
+    "name_en": "Differentiable World-Model Policy Gradients",
+    "why": "instantTrack、supermimic、InstantAMP 等多仓库用可微世界模型快速训练全身动作。"
+   },
+   {
+    "name_zh": "世界-动作模型",
+    "name_en": "World-Action Models",
+    "why": "ResWAM、ThinkWAM、Distilling World Action Models 等多篇论文同时探索预测未来画面来辅助动作生成。"
+   }
+  ],
+  "streak": 1
+ }
+}

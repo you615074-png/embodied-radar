@@ -1097,5 +1097,89 @@
   "explain": "只用一台普通摄像头估计出人的三维姿态",
   "first_seen": "2026-11-17",
   "source": "arxiv:2611.19998"
+ },
+ "closed-loop flight": {
+  "term": "Closed-loop flight",
+  "zh": "闭环飞行",
+  "explain": "模型每步根据新画面决策，而非播放预设轨迹",
+  "first_seen": "2026-11-18",
+  "source": "hf-model:racineai/Jevol-0.6B"
+ },
+ "pass rate": {
+  "term": "Pass rate",
+  "zh": "任务通过率",
+  "explain": "完成任务且不撞到东西的飞行占比",
+  "first_seen": "2026-11-18",
+  "source": "hf-model:racineai/Jevol-0.6B"
+ },
+ "learned simulator / world model": {
+  "term": "learned simulator / world model",
+  "zh": "学习型仿真器",
+  "explain": "用神经网络代替物理引擎预测机器人下一步状态",
+  "first_seen": "2026-11-18",
+  "source": "arxiv:2611.23118"
+ },
+ "rollout error": {
+  "term": "rollout error",
+  "zh": "多步滚动误差",
+  "explain": "让模型自己预测自己输入，连推多步后误差累积多大",
+  "first_seen": "2026-11-18",
+  "source": "arxiv:2611.23118"
+ },
+ "calibration / ensemble disagreement": {
+  "term": "calibration / ensemble disagreement",
+  "zh": "不确定性校准",
+  "explain": "模型说有几成把握，实际就该有几成发生",
+  "first_seen": "2026-11-18",
+  "source": "arxiv:2611.23118"
+ },
+ "agentic workflow": {
+  "term": "agentic workflow",
+  "zh": "智能体工作流",
+  "explain": "让大模型自己写代码、跑测试、看结果再改，循环完成任务",
+  "first_seen": "2026-11-18",
+  "source": "gh:google-deepmind/robotics-antigravity-plugin"
+ },
+ "closed-loop control": {
+  "term": "closed-loop control",
+  "zh": "闭环控制",
+  "explain": "机器人看着结果实时调整动作，而不是死板执行预设",
+  "first_seen": "2026-11-18",
+  "source": "gh:google-deepmind/robotics-antigravity-plugin"
+ },
+ "tcp (tool center point)": {
+  "term": "TCP (Tool Center Point)",
+  "zh": "工具中心点",
+  "explain": "机器人末端执行器工作点的位置和朝向，用它描述动作能跨不同机器人",
+  "first_seen": "2026-11-18",
+  "source": "arxiv:2611.23143"
+ },
+ "se(3)": {
+  "term": "SE(3)",
+  "zh": "三维刚体变换",
+  "explain": "描述物体在空间中旋转加平移的数学表示，共 6 个自由度",
+  "first_seen": "2026-11-18",
+  "source": "arxiv:2611.23143"
+ },
+ "cross-embodiment retargeting": {
+  "term": "Cross-embodiment Retargeting",
+  "zh": "跨本体动作重定向",
+  "explain": "把一种机器人的动作换算成另一种机器人能执行的等价动作",
+  "first_seen": "2026-11-18",
+  "source": "arxiv:2611.23143"
+ },
+ "bom": {
+  "term": "BOM",
+  "zh": "物料清单",
+  "explain": "造这台机器人要买的所有零件和价格的清单。",
+  "first_seen": "2026-11-18",
+  "source": "gh:llros007/leneo"
+ },
+ "step file": {
+  "term": "STEP file",
+  "zh": "三维装配文件",
+  "explain": "机械结构的标准3D文件，可导入软件查看或改设计。",
+  "first_seen": "2026-11-18",
+  "source": "gh:llros007/leneo"
  }
 }
