@@ -1181,5 +1181,54 @@
   "explain": "机械结构的标准3D文件，可导入软件查看或改设计。",
   "first_seen": "2026-11-18",
   "source": "gh:llros007/leneo"
+ },
+ "force feedback / force primitives": {
+  "term": "force feedback / force primitives",
+  "zh": "力反馈原语",
+  "explain": "让机械手感知并主动控制接触力的小闭环动作块",
+  "first_seen": "2026-11-19",
+  "source": "arxiv:2611.21099"
+ },
+ "physics translation layer": {
+  "term": "physics translation layer",
+  "zh": "物理翻译层",
+  "explain": "把原始力信号翻译成模型能读懂的量，如刚度、摩擦",
+  "first_seen": "2026-11-19",
+  "source": "arxiv:2611.21099"
+ },
+ "zero-shot frozen model": {
+  "term": "zero-shot frozen model",
+  "zh": "冻结模型零样本",
+  "explain": "不改模型参数、不训练，直接让大模型指挥机器人",
+  "first_seen": "2026-11-19",
+  "source": "arxiv:2611.21099"
+ },
+ "libero": {
+  "term": "LIBERO",
+  "zh": "LIBERO 仿真基准",
+  "explain": "测机器人操作策略的标准仿真任务集",
+  "first_seen": "2026-11-19",
+  "source": "hf-model:HuggingFaceVLA/smolvla_libero"
+ },
+ "scene rigidity": {
+  "term": "scene rigidity",
+  "zh": "场景刚性",
+  "explain": "相机移动时物体形状不该被拉伸变形。",
+  "first_seen": "2026-11-19",
+  "source": "arxiv:2611.24408"
+ },
+ "action consistency": {
+  "term": "action consistency",
+  "zh": "动作一致性",
+  "explain": "同一个指令每次走出的距离和效果应保持稳定。",
+  "first_seen": "2026-11-19",
+  "source": "arxiv:2611.24408"
+ },
+ "sim-to-real / mujoco warp": {
+  "term": "sim-to-real / MuJoCo Warp",
+  "zh": "仿真训练",
+  "explain": "在 GPU 加速的物理仿真器里训练，再迁移到真机",
+  "first_seen": "2026-11-19",
+  "source": "gh:Huy-Quang-Dao/instantTrack"
  }
 }

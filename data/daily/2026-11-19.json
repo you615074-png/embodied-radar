@@ -1,0 +1,287 @@
+{
+ "date": "2026-11-19",
+ "headline": "给冻结大模型外挂力觉，零训练搞定接触操作",
+ "title_en": "ForceHarness: Force Feedback for Frozen Frontier Models Without Training",
+ "tagline_en": "A harness that lets API-only frozen multimodal models use force feedback zero-shot, no demos or finetuning.",
+ "summary_md": "ForceHarness is a paper by Ke Sun, Kevin Yuchen Ma, Yike Zhang, Yanzhe Chen, and Mike Zheng Shou about giving frozen, API-only multimodal models a sense of touch. Frontier models can already control robots zero-shot from images, but many manipulation tasks depend on contact forces that cameras cannot see. The paper identifies two problems: contact dynamics evolve much faster than an API model can respond, and a frozen model cannot interpret raw force streams. ForceHarness solves the first with self-terminating force primitives that regulate force locally and return at contact events, and the second with a physics translation layer that converts each force trace into physical quantities with uncertainty as the tool result. The authors also build HiddenPhys, a seven-task MuJoCo benchmark with hidden physical variables, and report that on a real arm without a wrist force sensor, zero-shot success of GPT-6 Astra rises from 3.3% to 90.0%. In simulation it adds 17.5 points on ForceBench and 34.3 points on HiddenPhys. A key takeaway from ablations: smaller models make better decisions when given physical quantities rather than raw force values. Note: the abstract mentions GPT-6 Astra and an arXiv ID that appear beyond current reality, so verify authenticity. No license is stated; code availability is unclear. Real-arm experiments need a specific arm and force sensor, so newcomers cannot reproduce them.",
+ "pick": {
+  "id": "arxiv:2611.21099",
+  "kind": "paper",
+  "title": "ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models",
+  "url": "https://arxiv.org/abs/2611.21099",
+  "authors": [
+   "Ke Sun",
+   "Kevin Yuchen Ma",
+   "Yike Zhang",
+   "Yanzhe Chen",
+   "Mike Zheng Shou"
+  ],
+  "license": "",
+  "code_url": "https://github.com/showlab/ForceHarness",
+  "signals": {
+   "hf_upvotes": 40,
+   "github_stars": 38
+  },
+  "topic": "VLA与基础模型",
+  "one_liner": "给冻结的多模态大模型外挂力觉闭环，不用训练就能完成接触类操作",
+  "one_liner_en": "A harness that lets frozen multimodal models use force feedback for contact-rich manipulation without fine-tuning.",
+  "how_to_try": "在 MuJoCo 里跑 HiddenPhys / ForceBench 仿真复现；真机实验没硬件做不了。Mac 上可跑小规模仿真，但大模型 API 需自备。",
+  "how_to_try_en": "Run HiddenPhys/ForceBench in MuJoCo on your Mac to reproduce sim results; real-arm experiments need hardware you don't have.",
+  "reason": "问题实在（图像看不到接触力），思路清晰可迁移；但热度与真实性信号弱，真机部分门槛高，适合讲概念不适合上手。",
+  "red_flags": [
+   "摘要提到 GPT-6 Astra、arXiv 编号 2611 等超出当前现实的信息，需核实真实性",
+   "许可证未标注，代码开放程度存疑",
+   "真机实验依赖特定机械臂与力传感器，新人无法复现"
+  ],
+  "final": 6.88,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 7,
+  "wow": 7,
+  "playable": 6,
+  "openness": 5,
+  "learning_value": 8,
+  "heat": 8.05
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.21099",
+   "kind": "paper",
+   "title": "ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models",
+   "url": "https://arxiv.org/abs/2611.21099",
+   "authors": [
+    "Ke Sun",
+    "Kevin Yuchen Ma",
+    "Yike Zhang",
+    "Yanzhe Chen",
+    "Mike Zheng Shou"
+   ],
+   "license": "",
+   "code_url": "https://github.com/showlab/ForceHarness",
+   "signals": {
+    "hf_upvotes": 40,
+    "github_stars": 38
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "给冻结的多模态大模型外挂力觉闭环，不用训练就能完成接触类操作",
+   "one_liner_en": "A harness that lets frozen multimodal models use force feedback for contact-rich manipulation without fine-tuning.",
+   "how_to_try": "在 MuJoCo 里跑 HiddenPhys / ForceBench 仿真复现；真机实验没硬件做不了。Mac 上可跑小规模仿真，但大模型 API 需自备。",
+   "how_to_try_en": "Run HiddenPhys/ForceBench in MuJoCo on your Mac to reproduce sim results; real-arm experiments need hardware you don't have.",
+   "reason": "问题实在（图像看不到接触力），思路清晰可迁移；但热度与真实性信号弱，真机部分门槛高，适合讲概念不适合上手。",
+   "red_flags": [
+    "摘要提到 GPT-6 Astra、arXiv 编号 2611 等超出当前现实的信息，需核实真实性",
+    "许可证未标注，代码开放程度存疑",
+    "真机实验依赖特定机械臂与力传感器，新人无法复现"
+   ],
+   "final": 6.88,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 6,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 8.05
+  },
+  {
+   "id": "hf-model:HuggingFaceVLA/smolvla_libero",
+   "kind": "model",
+   "title": "HuggingFaceVLA/smolvla_libero",
+   "url": "https://huggingface.co/HuggingFaceVLA/smolvla_libero",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 24,
+    "downloads": 25703
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "一个小巧的视觉-语言-动作模型，在普通电脑上就能跑起来操控机器人。",
+   "one_liner_en": "A compact vision-language-action model that can run on consumer hardware.",
+   "how_to_try": "用 LeRobot 在 Mac 上加载该权重，接 LIBERO 仿真跑推理；没有真机也能看策略输出",
+   "how_to_try_en": "Load the weights with LeRobot on Mac, run inference in LIBERO sim; works without a real robot.",
+   "reason": "SmolVLA 官方权重，Apache 开源、下载量大，是入门 VLA 与 LeRobot 的好材料；但缺演示，需自己搭仿真。",
+   "red_flags": [
+    "README 训练示例仍写 policy.type=act，与实际 smolvla 权重不一致",
+    "Mac 上跑仿真推理需装 MuJoCo/LIBERO，16GB 内存可能吃紧",
+    "只给权重卡，缺演示视频与具体评测数字"
+   ],
+   "final": 6.42,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 6,
+   "openness": 9,
+   "learning_value": 9,
+   "heat": 2.38
+  },
+  {
+   "id": "arxiv:2611.24408",
+   "kind": "paper",
+   "title": "StrideWorld: Benchmarking Scene Rigidity and Action Consistency in Interactive Video World Model",
+   "url": "https://arxiv.org/abs/2611.24408",
+   "authors": [
+    "Chuang Wang",
+    "Rui Nie",
+    "Jie Song",
+    "Junyuan Gao",
+    "Jiahe Song",
+    "Haitao Zhou",
+    "Boyu Zhu",
+    "Xing Li"
+   ],
+   "license": "",
+   "code_url": "https://github.com/chuangwang123/strideworld",
+   "signals": {
+    "hf_upvotes": 9,
+    "github_stars": 2
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "新基准测试视频世界模型生成场景是否稳固、动作是否连贯",
+   "one_liner_en": "A new benchmark testing whether video world models keep scenes rigid and actions consistent",
+   "how_to_try": "用GitHub上公开的评测代码和数据，在Mac上给已有开源模型生成的视频打分，无需训练。",
+   "how_to_try_en": "Run the public eval code on released generated videos on your Mac; no training or GPU needed.",
+   "reason": "评测视角新颖，能揭示现有视频世界模型的场景变形问题，代码数据公开且Mac可跑评测，但贡献限于基准本身。",
+   "red_flags": [
+    "只有评测基准，无新模型或新方法",
+    "arXiv编号与日期可疑，需核实真实性"
+   ],
+   "final": 6.24,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 7,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 4.99
+  },
+  {
+   "id": "gh:yzytz17/1.5-joint-module",
+   "kind": "repo",
+   "title": "yzytz17/1.5-joint-module",
+   "url": "https://github.com/yzytz17/1.5-joint-module",
+   "authors": [],
+   "license": "CERN-OHL-W-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 209,
+    "daily_rate": 12.3
+   },
+   "topic": "硬件与本体",
+   "one_liner": "用1.5美元电路板加3D打印齿轮，做出便宜到极点的机器人关节",
+   "one_liner_en": "A $1.5 FOC board plus a 3D-printed gearbox makes a super-cheap robot joint",
+   "how_to_try": "需3D打印、买1503电机和打样PCB；Mac只能看CAD与固件，无仿真可跑",
+   "how_to_try_en": "Needs 3D printing, a 1503 motor and a fabricated PCB; on a Mac you can only read the CAD and firmware, no sim.",
+   "reason": "低成本关节方向有价值且全开源，但半成品、缺闭环验证、需硬件才能玩，对无设备新人只能当读物。",
+   "red_flags": [
+    "仓库自认未完成，多处TODO和占位数据",
+    "视频只在百度网盘，海外难访问",
+    "只有开环驱动固件，闭环精度未验证",
+    "无NVIDIA或机器人者几乎无法亲手复现"
+   ],
+   "final": 5.7,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 3,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 4.53
+  },
+  {
+   "id": "gh:Huy-Quang-Dao/instantTrack",
+   "kind": "repo",
+   "title": "Huy-Quang-Dao/instantTrack",
+   "url": "https://github.com/Huy-Quang-Dao/instantTrack",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 215,
+    "daily_rate": 10.2
+   },
+   "topic": "强化学习",
+   "one_liner": "用可微分世界模型让机器人3分钟学会全部40段全身动作",
+   "one_liner_en": "Trains a Unitree G1 whole-body motion-tracking policy in ~3 minutes on one GPU via differentiable world model",
+   "how_to_try": "需 NVIDIA 显卡跑 mjlab/MuJoCo Warp 训练，Mac 上跑不了；可先看仓库 media 里的对比视频理解。",
+   "how_to_try_en": "Training needs an NVIDIA GPU via mjlab/MuJoCo Warp, so a Mac can't run it; start by watching the comparison videos in media/.",
+   "reason": "训练加速有真进步、代码 MIT 全开源、学习价值高；但对无硬件新人难以亲手复现，仅能看视频。",
+   "red_flags": [
+    "需 RTX 5090 级别 GPU，Mac 16GB 无法跑训练",
+    "作者匿名、论文未发表，性能数字为自测",
+    "RTX 5090 型号疑为笔误，时间数字有自我更正"
+   ],
+   "final": 5.68,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 3,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 4.23
+  }
+ ],
+ "trend": {
+  "name_en": "Differentiable World-Model Policy Gradients",
+  "name_zh": "可微世界模型策略优化",
+  "one_liner": "把世界模型写成可求导的程序，让梯度直接穿过物理仿真训练机器人动作。",
+  "one_liner_en": "Writing the world model as a differentiable simulator so gradients flow straight through physics to train robot policies.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "repo",
+    "title": "Huy-Quang-Dao/instantTrack",
+    "url": "https://github.com/Huy-Quang-Dao/instantTrack",
+    "one_liner_en": "Trains a Unitree G1 whole-body motion-tracking policy in ~3 minutes on one GPU via differentiable world model"
+   },
+   {
+    "kind": "repo",
+    "title": "RoboticsResearchHubVN/InstantAMP",
+    "url": "https://github.com/RoboticsResearchHubVN/InstantAMP",
+    "one_liner_en": "Trains a humanoid walking and get-up policy in 30 minutes via a differentiable world model"
+   },
+   {
+    "kind": "repo",
+    "title": "emoPointer/supermimic_manipulation",
+    "url": "https://github.com/emoPointer/supermimic_manipulation",
+    "one_liner_en": "Trains a simulated robot arm by backpropagating task reward through a learned world model"
+   },
+   {
+    "kind": "paper",
+    "title": "JEPA4R: Embodied JEPA World Models with 4D Point Planning",
+    "url": "https://arxiv.org/abs/2611.19771",
+    "one_liner_en": "A world model that predicts future 3D point clouds instead of pixels, then plans robot actions in that latent space."
+   },
+   {
+    "kind": "repo",
+    "title": "Tinaliu0123/PolicyIK",
+    "url": "https://github.com/Tinaliu0123/PolicyIK",
+    "one_liner_en": "Reinforcement-learning inverse kinematics for robot arms reaching 1mm pose accuracy"
+   },
+   {
+    "kind": "paper",
+    "title": "ForceHarness: Turning Force into Action and Physics for Frozen Frontier Models",
+    "url": "https://arxiv.org/abs/2611.21099",
+    "one_liner_en": "A harness that lets frozen multimodal models use force feedback for contact-rich manipulation without fine-tuning."
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "世界动作模型预测",
+    "name_en": "World-Action Model Predictive Learning",
+    "why": "HINT-WAM、ResWAM、Phoenix、TrajWAM 等多条同时出现，预测未来再决策成主流范式。"
+   },
+   {
+    "name_zh": "第一人称视频预训练",
+    "name_en": "Egocentric Video Policy Pretraining",
+    "why": "HubEgo-100K、SALA、Ego Guidance、SHAPE 持续支撑，但今天热度偏低。"
+   }
+  ],
+  "streak": 1
+ }
+}
