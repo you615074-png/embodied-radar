@@ -1,0 +1,283 @@
+{
+ "date": "2026-11-20",
+ "headline": "LocoMuJoCo：Mac 可跑的全身动作模仿基准",
+ "title_en": "LocoMuJoCo: An Open Benchmark for Whole-Body Motion Imitation",
+ "tagline_en": "An open-source MuJoCo benchmark for training humanoid, quadruped, and skeletal robots to imitate mocap motion.",
+ "summary_md": "**What it is.** LocoMuJoCo is an open-source benchmark from Firas Al-Hafez, Davide Tateo, Oleg Kaidanov, Aditya Bhatt, Artur Zelik, Zhengyi Luo, and Jan Peters for imitation learning and reinforcement learning on whole-body control. Per the paper, it puts MuJoCo (CPU) and the MJX / MjWarp GPU backends under one API, and ships 9 humanoid, 3 (musculo-)skeletal, and 4 quadruped embodiments. Each humanoid comes with a curated native motion-capture dataset, and the library can also retarget AMASS and LAFAN1 motions onto its robots.\n\n**Why it matters.** Whole-body imitation work is scattered across papers, each with its own robot model, motion set, and training code, which makes results hard to compare. LocoMuJoCo tries to fix that with a modular plug-in design: observations, rewards, control modes, terrains, and domain randomization are interchangeable, and compact JAX implementations of several RL and IL algorithms give JIT-compiled end-to-end training. A companion repo, loco-mujoco-real, covers sim-to-real deployment. It is MIT-licensed.\n\n**Can you try it without a robot?** Yes, partly. MuJoCo's CPU backend runs on a Mac, so you can run the bundled examples and train a small policy on a quadruped or humanoid in simulation. The GPU-accelerated MJX / MjWarp path expects an NVIDIA setup and is best skipped on an Apple Silicon machine.",
+ "pick": {
+  "id": "arxiv:2611.26293",
+  "kind": "paper",
+  "title": "LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control",
+  "url": "https://arxiv.org/abs/2611.26293",
+  "authors": [
+   "Firas Al-Hafez",
+   "Davide Tateo",
+   "Oleg Kaidanov",
+   "Aditya Bhatt",
+   "Artur Zelik",
+   "Zhengyi Luo",
+   "Jan Peters"
+  ],
+  "license": "",
+  "code_url": "",
+  "signals": {},
+  "topic": "强化学习",
+  "one_liner": "一个开源基准库，让你在电脑模拟里训练人形、四足、骨骼机器人学全身动作模仿",
+  "one_liner_en": "An open-source benchmark library for training humanoid, quadruped and skeletal robots to imitate whole-body motion in simulation.",
+  "how_to_try": "Mac 上装好 MuJoCo CPU 后端，跑仓库自带示例，让四足或人形机器人学着模仿捕捉的动作数据；GPU 加速部分跳过。",
+  "how_to_try_en": "On Mac, install MuJoCo CPU backend and run the repo's example scripts to make a quadruped or humanoid imitate mocap data; skip the GPU backend.",
+  "reason": "多本体、MIT 开源、Mac 可跑，是入门强化学习与模仿学习的好教材，但属于工程整合型基准，突破性有限。",
+  "red_flags": [
+   "发布时间和 arXiv 编号看起来异常，需核对真伪",
+   "主要价值是基准平台而非新方法，缺乏亮眼结果"
+  ],
+  "final": 6.84,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 8,
+  "wow": 6,
+  "playable": 8,
+  "openness": 9,
+  "learning_value": 9,
+  "heat": 2.0
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.26293",
+   "kind": "paper",
+   "title": "LocoMuJoCo: A Comprehensive Imitation Learning Benchmark for Whole-Body Control",
+   "url": "https://arxiv.org/abs/2611.26293",
+   "authors": [
+    "Firas Al-Hafez",
+    "Davide Tateo",
+    "Oleg Kaidanov",
+    "Aditya Bhatt",
+    "Artur Zelik",
+    "Zhengyi Luo",
+    "Jan Peters"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "强化学习",
+   "one_liner": "一个开源基准库，让你在电脑模拟里训练人形、四足、骨骼机器人学全身动作模仿",
+   "one_liner_en": "An open-source benchmark library for training humanoid, quadruped and skeletal robots to imitate whole-body motion in simulation.",
+   "how_to_try": "Mac 上装好 MuJoCo CPU 后端，跑仓库自带示例，让四足或人形机器人学着模仿捕捉的动作数据；GPU 加速部分跳过。",
+   "how_to_try_en": "On Mac, install MuJoCo CPU backend and run the repo's example scripts to make a quadruped or humanoid imitate mocap data; skip the GPU backend.",
+   "reason": "多本体、MIT 开源、Mac 可跑，是入门强化学习与模仿学习的好教材，但属于工程整合型基准，突破性有限。",
+   "red_flags": [
+    "发布时间和 arXiv 编号看起来异常，需核对真伪",
+    "主要价值是基准平台而非新方法，缺乏亮眼结果"
+   ],
+   "final": 6.84,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 8,
+   "openness": 9,
+   "learning_value": 9,
+   "heat": 2.0
+  },
+  {
+   "id": "arxiv:2611.26444",
+   "kind": "paper",
+   "title": "Mind2Act World: A Diagnostic Benchmark for Embodied Mind, Physical Action, and Mind-Action Composition in Robotic Manipulation",
+   "url": "https://arxiv.org/abs/2611.26444",
+   "authors": [
+    "Yuzhi Huang",
+    "Jie Wu",
+    "Fanding Huang",
+    "Junchao Lin",
+    "Weichen Zhang",
+    "Ziyi Xiong",
+    "Yang Li",
+    "Zhengwei Xie"
+   ],
+   "license": "",
+   "code_url": "https://github.com/Mind2Act/Mind2Act_World",
+   "signals": {
+    "hf_upvotes": 41,
+    "github_stars": 21
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "一个新仿真基准，拆开测机器人的思考、操作和两者配合。",
+   "one_liner_en": "A new simulated benchmark that separately tests robot thinking, acting, and combining both.",
+   "how_to_try": "先去看论文的 profile card（诊断卡片）和任务配置；要动手运行，需要装好仿真环境，具体方式取决于官方仓库和代码。",
+   "how_to_try_en": "Read the profile cards and task configs first; running it on a Mac depends on the repo's sim setup, so check the code before trying.",
+   "reason": "把思考、执行和组合分开诊断，思路有价值；但只有仿真和诊断工具，开放程度一般，适合作为学习材料。",
+   "red_flags": [
+    "纯仿真基准，没有真实机器人验证",
+    "只公布部分结果和诊断工具，缺乏可复现的细节",
+    "论文编号和发布日期可疑，刊发真实性无法确认"
+   ],
+   "final": 6.78,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 6,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 8.1
+  },
+  {
+   "id": "hf-model:nvidia/Alpamayo2-Edge",
+   "kind": "model",
+   "title": "nvidia/Alpamayo2-Edge",
+   "url": "https://huggingface.co/nvidia/Alpamayo2-Edge",
+   "authors": [],
+   "license": "openmdw-1.1",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 22,
+    "hf_likes": 129,
+    "downloads": 3556
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "英伟达2B参数视觉语言动作模型，看车载摄像头画面直接输出驾驶轨迹和推理说明",
+   "one_liner_en": "NVIDIA's 2B vision-language-action model that turns camera images into driving trajectories plus reasoning",
+   "how_to_try": "Mac 跑不动，因为 BF16 需要约 5GB 显存，而且多相机输入要专门处理。可以看仓库里的 demo 和推理脚本，或者用云 GPU 跑单帧。",
+   "how_to_try_en": "Mac can't run 2B BF16 multimodality; read inference code and demos, use cloud GPU for single-frame tests.",
+   "reason": "前沿 VLA 用于自动驾驶，权重和代码都开放，且配有推理说明；作为学习 VLA 与轨迹生成的范例很有价值，但普通 Mac 跑不动，输入格式也比较难啃。",
+   "red_flags": [
+    "多相机和自车运动历史输入复杂，单人极难复现",
+    "需要 NVIDIA DRIVE 平台才有完整部署体验",
+    "发布日期与 README 不一致，信息可疑"
+   ],
+   "final": 5.91,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 4,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 6.79
+  },
+  {
+   "id": "hf-dataset:lerobot/droid_1.0.1",
+   "kind": "dataset",
+   "title": "lerobot/droid_1.0.1",
+   "url": "https://huggingface.co/datasets/lerobot/droid_1.0.1",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 1,
+    "hf_likes": 25,
+    "downloads": 41975
+   },
+   "topic": "数据集",
+   "one_liner": "近10万条真实机械臂抓取操作视频与动作记录，开源可下载",
+   "one_liner_en": "Nearly 100k real robot arm manipulation episodes with video, open and downloadable",
+   "how_to_try": "Mac 上用 LeRobot 只下载小部分 episode，先可视化视频与动作，再试小模型训练；全量太大别下",
+   "how_to_try_en": "On Mac, use LeRobot to download a few episodes only, visualize video+actions, then try a small training run; skip full dataset",
+   "reason": "DROID 是真实场景大规模操作数据集，开放且生态好，适合入门模仿学习；但体量大，只能抽样玩。",
+   "red_flags": [
+    "约2700万帧全量数据极大，16GB Mac 无法完整容纳",
+    "无对应论文，动作质量与采集多样性需自行核实"
+   ],
+   "final": 5.9,
+   "topic_penalty": 0.6,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 6,
+   "openness": 9,
+   "learning_value": 9,
+   "heat": 1.5
+  },
+  {
+   "id": "gh:emoPointer/supermimic_manipulation",
+   "kind": "repo",
+   "title": "emoPointer/supermimic_manipulation",
+   "url": "https://github.com/emoPointer/supermimic_manipulation",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 114,
+    "daily_rate": 4.4
+   },
+   "topic": "强化学习",
+   "one_liner": "用可微世界模型把任务回报反传，训练机械臂完成抓取放置任务",
+   "one_liner_en": "Trains a simulated robot arm by backpropagating task reward through a learned world model",
+   "how_to_try": "需要 NVIDIA GPU 跑 mjlab（MuJoCo Warp）；Mac 上只能读代码和看视频，难训练",
+   "how_to_try_en": "Needs an NVIDIA GPU for mjlab (MuJoCo Warp); on a Mac you can only read the code and watch clips, not train.",
+   "reason": "方法清晰、代码许可证宽松、任务视频直观，是理解世界模型+RL 的好材料，但纯仿真且需 GPU，新人只能读不能玩。",
+   "red_flags": [
+    "仅在仿真、低维状态输入，没有真实机器人验证",
+    "训练需 GPU 和数小时到十几小时，无硬件新人难复现",
+    "Drawer 任务不同 checkpoint 成功率波动大（24%~90%）"
+   ],
+   "final": 5.89,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 2.95
+  }
+ ],
+ "trend": {
+  "name_en": "World Action Models for VLA Post-training",
+  "name_zh": "世界动作模型后训练",
+  "one_liner": "用可预测未来的世界模型当老师，代替仿真器来训练和纠错机器人动作策略",
+  "one_liner_en": "Using a learned world model that predicts the future as a stand-in for a simulator to train and correct robot policies.",
+  "momentum": "新出现",
+  "evidence": [
+   {
+    "kind": "paper",
+    "title": "WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation",
+    "url": "https://arxiv.org/abs/2611.25251",
+    "one_liner_en": "Post-trains a humanoid whole-body VLA with RL inside a video world model instead of a simulator"
+   },
+   {
+    "kind": "paper",
+    "title": "HINT-WAM: Hindsight-Informed Training for World Action Models",
+    "url": "https://arxiv.org/abs/2611.24789",
+    "one_liner_en": "A robot policy teaches itself actions by peeking at future video as a teacher."
+   },
+   {
+    "kind": "paper",
+    "title": "ResWAM: Learning What Changes, Not What Stays, for World-Action Models",
+    "url": "https://arxiv.org/abs/2611.19559",
+    "one_liner_en": "A robot policy that predicts only what changes in the scene, cutting compute while improving success."
+   },
+   {
+    "kind": "paper",
+    "title": "WAM-Policy: World Action Models with On-Policy Distillation for Quadrupedal Loco-Manipulation",
+    "url": "https://arxiv.org/abs/2611.24011",
+    "one_liner_en": "Turns an arm robot model into a language-guided quadruped that manipulates with one front leg"
+   },
+   {
+    "kind": "repo",
+    "title": "emoPointer/supermimic_manipulation",
+    "url": "https://github.com/emoPointer/supermimic_manipulation",
+    "one_liner_en": "Trains a simulated robot arm by backpropagating task reward through a learned world model"
+   },
+   {
+    "kind": "repo",
+    "title": "RoboticsResearchHubVN/InstantAMP",
+    "url": "https://github.com/RoboticsResearchHubVN/InstantAMP",
+    "one_liner_en": "Trains a humanoid walking and get-up policy in 30 minutes via a differentiable world model"
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "第一人称视频跨本体预训练",
+    "name_en": "Egocentric Video Cross-Embodiment Pretraining",
+    "why": "HubEgo-100K、HumanCOIN、Awaken-HI 三条大规模人类视频数据同时支撑。"
+   },
+   {
+    "name_zh": "流匹配策略的强化学习微调",
+    "name_en": "RL Fine-tuning of Flow-Matching Policies",
+    "why": "FPO 仓库、HINT-WAM、WAM-Policy 都涉及对 flow matching 策略做 RL 后训练。"
+   }
+  ],
+  "streak": 1
+ }
+}

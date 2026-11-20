@@ -1230,5 +1230,33 @@
   "explain": "在 GPU 加速的物理仿真器里训练，再迁移到真机",
   "first_seen": "2026-11-19",
   "source": "gh:Huy-Quang-Dao/instantTrack"
+ },
+ "vla (vision-language-action model)": {
+  "term": "VLA (Vision-Language-Action model)",
+  "zh": "视觉语言动作模型",
+  "explain": "输入画面和指令，直接输出机器人动作的大模型。",
+  "first_seen": "2026-11-20",
+  "source": "arxiv:2611.26444"
+ },
+ "closed-loop composition": {
+  "term": "Closed-loop composition",
+  "zh": "闭环组合",
+  "explain": "动作结果反馈回来，影响下一步决策。",
+  "first_seen": "2026-11-20",
+  "source": "arxiv:2611.26444"
+ },
+ "language_instruction": {
+  "term": "language_instruction",
+  "zh": "语言指令",
+  "explain": "每条操作配一句英文任务描述，用来训 VLA 模型",
+  "first_seen": "2026-11-20",
+  "source": "hf-dataset:lerobot/droid_1.0.1"
+ },
+ "policy optimization": {
+  "term": "Policy Optimization",
+  "zh": "策略优化",
+  "explain": "直接调整机器人的动作策略，让它拿到更高回报",
+  "first_seen": "2026-11-20",
+  "source": "gh:emoPointer/supermimic_manipulation"
  }
 }
