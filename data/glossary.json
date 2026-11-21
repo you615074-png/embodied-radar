@@ -1258,5 +1258,68 @@
   "explain": "直接调整机器人的动作策略，让它拿到更高回报",
   "first_seen": "2026-11-20",
   "source": "gh:emoPointer/supermimic_manipulation"
+ },
+ "mllm": {
+  "term": "MLLM",
+  "zh": "多模态大模型",
+  "explain": "能同时看图、读文字并输出指令的大模型",
+  "first_seen": "2026-11-21",
+  "source": "arxiv:2611.24193"
+ },
+ "panorama state": {
+  "term": "Panorama State",
+  "zh": "全景状态",
+  "explain": "把整个场景存成一张可反复读写、带修订记录的全景图",
+  "first_seen": "2026-11-21",
+  "source": "arxiv:2611.24193"
+ },
+ "goal-conditioned policy": {
+  "term": "goal-conditioned policy",
+  "zh": "目标条件策略",
+  "explain": "给模型一张目标图，让它反推该做什么动作去达成。",
+  "first_seen": "2026-11-21",
+  "source": "hf-dataset:tkb77/oekaki-goal-v1"
+ },
+ "expert demonstration": {
+  "term": "expert demonstration",
+  "zh": "专家演示",
+  "explain": "用脚本或人示范出正确动作序列，供模仿学习训练。",
+  "first_seen": "2026-11-21",
+  "source": "hf-dataset:tkb77/oekaki-goal-v1"
+ },
+ "central pattern generator": {
+  "term": "Central Pattern Generator",
+  "zh": "中枢模式发生器",
+  "explain": "脊髓里产生节律信号的网络，让动物不用大脑想就能迈腿",
+  "first_seen": "2026-11-21",
+  "source": "arxiv:2611.25958"
+ },
+ "cost of transport": {
+  "term": "Cost of Transport",
+  "zh": "运输成本",
+  "explain": "走一米要花多少能量，越低越省力",
+  "first_seen": "2026-11-21",
+  "source": "arxiv:2611.25958"
+ },
+ "zero-shot transfer": {
+  "term": "Zero-shot transfer",
+  "zh": "零样本迁移",
+  "explain": "没训练过的地形或体型也能直接用，不用重新学",
+  "first_seen": "2026-11-21",
+  "source": "arxiv:2611.25958"
+ },
+ "smart primitives": {
+  "term": "Smart Primitives",
+  "zh": "智能动作基元",
+  "explain": "把目标姿势变成可重复使用的小动作块，好拼接",
+  "first_seen": "2026-11-21",
+  "source": "hf-model:nvidia/MotionBricks"
+ },
+ "motion tracking controller": {
+  "term": "Motion Tracking Controller",
+  "zh": "动作跟踪控制器",
+  "explain": "把生成的动作真正驱动到机器人关节上的一套控制程序",
+  "first_seen": "2026-11-21",
+  "source": "hf-model:nvidia/MotionBricks"
  }
 }

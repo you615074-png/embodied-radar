@@ -1,0 +1,277 @@
+{
+ "date": "2026-11-21",
+ "headline": "500条双臂家务遥操作数据开放下载",
+ "title_en": "SE3 Labs open-sources 500 bimanual teleop demos in LeRobot format",
+ "tagline_en": "500 real dual-arm demos across 10 household tasks, 6.3 hours, ready to load in LeRobot.",
+ "summary_md": "SE3 Labs has published `real-robodojo-teleop-500` on Hugging Face: 500 successful teleoperation episodes (about 6.3 hours) covering 10 real-world bimanual manipulation tasks from their RoboDojo benchmark, 50 episodes per task. Tasks range from packing objects into a box and hanging mugs to plugging in a charger and inserting tubes.\n\nWhy it matters: bimanual data from real hardware is still scarce and expensive to collect, and this set follows the LeRobot dataset format (v3.0), so it loads with the standard tooling instead of a custom loader. Everything is recorded on one station — two 6-DoF YAM arms with parallel grippers and three RealSense D405 stereo cameras (top-down, left wrist, right wrist) — at 30 fps, with 14-dim state/action vectors (12 joints + 2 grippers). Full-rate ~500 Hz arm logs are included as raw parquet files, and camera intrinsics live in `meta/cameras.json`. It is licensed CC-BY-4.0.\n\nCan you try it without a robot? Yes, at least partially. The dataset page links LeRobot's browser visualizer, so you can scrub episodes on any machine. On a Mac you can pull the parquet metadata and train a small ACT or Diffusion Policy on a few episodes to practice the imitation-learning loop — you just can't evaluate on hardware.\n\nCaveats: there is no accompanying paper, the README lists the homepage and paper as \"More Information Needed,\" and all episodes are successes, so any policy evaluation will look rosier than reality.",
+ "pick": {
+  "id": "hf-dataset:se3labs/real-robodojo-teleop-500",
+  "kind": "dataset",
+  "title": "se3labs/real-robodojo-teleop-500",
+  "url": "https://huggingface.co/datasets/se3labs/real-robodojo-teleop-500",
+  "authors": [],
+  "license": "cc-by-4.0",
+  "code_url": "",
+  "signals": {
+   "hf_trending": 3,
+   "hf_likes": 5,
+   "downloads": 3271
+  },
+  "topic": "数据集",
+  "one_liner": "双臂机器人遥操作完成10种家务任务的500段示范数据",
+  "one_liner_en": "500 bimanual robot teleoperation demos across 10 real household tasks",
+  "how_to_try": "用 LeRobot 浏览器可视化页看数据，在 Mac 上跑 ACT 或 Diffusion Policy 小样本训练",
+  "how_to_try_en": "Browse episodes on LeRobot's visualizer Space, then train ACT/Diffusion Policy on a few tasks on your Mac.",
+  "reason": "标准 LeRobot 格式的真机双臂数据，开放可下载，适合入门模仿学习，但创新性有限。",
+  "red_flags": [
+   "无配套论文，基准任务设计细节不明",
+   "只有成功示范、无失败数据，策略评估会偏乐观",
+   "作者机构与真实基准来源未说明"
+  ],
+  "final": 6.05,
+  "topic_penalty": 0,
+  "significance": 5,
+  "explainability": 8,
+  "wow": 5,
+  "playable": 7,
+  "openness": 8,
+  "learning_value": 8,
+  "heat": 3.0
+ },
+ "top": [
+  {
+   "id": "hf-dataset:se3labs/real-robodojo-teleop-500",
+   "kind": "dataset",
+   "title": "se3labs/real-robodojo-teleop-500",
+   "url": "https://huggingface.co/datasets/se3labs/real-robodojo-teleop-500",
+   "authors": [],
+   "license": "cc-by-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 3,
+    "hf_likes": 5,
+    "downloads": 3271
+   },
+   "topic": "数据集",
+   "one_liner": "双臂机器人遥操作完成10种家务任务的500段示范数据",
+   "one_liner_en": "500 bimanual robot teleoperation demos across 10 real household tasks",
+   "how_to_try": "用 LeRobot 浏览器可视化页看数据，在 Mac 上跑 ACT 或 Diffusion Policy 小样本训练",
+   "how_to_try_en": "Browse episodes on LeRobot's visualizer Space, then train ACT/Diffusion Policy on a few tasks on your Mac.",
+   "reason": "标准 LeRobot 格式的真机双臂数据，开放可下载，适合入门模仿学习，但创新性有限。",
+   "red_flags": [
+    "无配套论文，基准任务设计细节不明",
+    "只有成功示范、无失败数据，策略评估会偏乐观",
+    "作者机构与真实基准来源未说明"
+   ],
+   "final": 6.05,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 7,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 3.0
+  },
+  {
+   "id": "arxiv:2611.24193",
+   "kind": "paper",
+   "title": "WM^MLLM: Turning MLLMs into World Models",
+   "url": "https://arxiv.org/abs/2611.24193",
+   "authors": [
+    "Baiang Li",
+    "Enze Xie",
+    "Jincheng Yu",
+    "Jin Wang",
+    "Haozhe Liu",
+    "Yitong Li",
+    "Juanxi Tian",
+    "Felix Heide"
+   ],
+   "license": "",
+   "code_url": "https://github.com/ztMotaLee/WM_mllm",
+   "signals": {
+    "hf_upvotes": 15,
+    "github_stars": 11
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "让多模态大模型当世界模型，单张图生成可反复重访、可编辑的持久世界",
+   "one_liner_en": "Turns MLLMs into world models that keep a persistent, editable 3D world state from one image.",
+   "how_to_try": "依赖大型图像/视频生成模型，Mac 16GB 基本跑不动；只能看项目页 demo 视频，或读代码理解状态管理思路",
+   "how_to_try_en": "Needs heavy image/video generators; a 16GB Mac can't run it. Watch the demo and read the code to grasp the state-tracking idea.",
+   "reason": "思路新颖：把世界状态外置成可编辑全景，解决重访漂移问题，概念值得讲；但无硬件几乎玩不了，来源存疑需先核实。",
+   "red_flags": [
+    "arXiv 编号与日期疑似不实，无法核实真伪",
+    "未标注许可证，且无热度支撑，复现性存疑",
+    "生成式世界模型的图像质量与真实物理一致性未验证"
+   ],
+   "final": 5.98,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 6,
+   "wow": 7,
+   "playable": 4,
+   "openness": 5,
+   "learning_value": 7,
+   "heat": 6.01
+  },
+  {
+   "id": "hf-dataset:tkb77/oekaki-goal-v1",
+   "kind": "dataset",
+   "title": "tkb77/oekaki-goal-v1",
+   "url": "https://huggingface.co/datasets/tkb77/oekaki-goal-v1",
+   "authors": [],
+   "license": "cc-by-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 2,
+    "downloads": 1534
+   },
+   "topic": "数据集",
+   "one_liner": "仿真 SO-101 机械臂画简笔画的 999 条专家演示数据集",
+   "one_liner_en": "A 999-episode simulated dataset of an SO-101 arm drawing doodles with a pen.",
+   "how_to_try": "Mac 上用 LeRobot 加载数据看回放；想重跑生成器需装 MuJoCo，CPU 即可但较慢。",
+   "how_to_try_en": "Load it with LeRobot on your Mac to replay episodes; regenerating needs MuJoCo, CPU works but slow.",
+   "reason": "小而完整的仿真数据集，配 SmolVLA 可复现，适合新人在 Mac 上学模仿学习与目标条件策略，但影响力有限。",
+   "red_flags": [
+    "个人小项目，仅 2 个赞、热度低",
+    "纯仿真画简笔画，任务窄、领域推动有限",
+    "发布日期为未来时间，信息可疑"
+   ],
+   "final": 5.86,
+   "topic_penalty": 0,
+   "significance": 4,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 7,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 2.38
+  },
+  {
+   "id": "arxiv:2611.25958",
+   "kind": "paper",
+   "title": "Learning optimal gaits and styles for terrain-adaptive quadruped locomotion",
+   "url": "https://arxiv.org/abs/2611.25958",
+   "authors": [
+    "Guillaume Bellegarda",
+    "Auke Ijspeert"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "人形与足式",
+   "one_liner": "用强化学习让四足机器人在不同地形上自动挑选最省力的步态",
+   "one_liner_en": "RL learns 11 quadruped gaits and picks the best one per terrain and goal.",
+   "how_to_try": "项目页有演示视频；想动手需在 Isaac Gym/MuJoCo 里跑，Mac 上只能看代码和视频，跑训练要云 GPU",
+   "how_to_try_en": "Watch demos on project page; training needs Isaac Gym/MuJoCo on cloud GPU, Mac only for reading code.",
+   "reason": "系统研究地形-指标-速度如何共同决定最优步态，概念清晰、迁移亮眼；但需云 GPU 训练，新人只能看演示。",
+   "red_flags": [
+    "未标注许可证，代码可用性存疑",
+    "热度信号为空，可能是新论文尚无反响"
+   ],
+   "final": 5.79,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 5,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 2.0
+  },
+  {
+   "id": "hf-model:nvidia/MotionBricks",
+   "kind": "model",
+   "title": "nvidia/MotionBricks",
+   "url": "https://huggingface.co/nvidia/MotionBricks",
+   "authors": [],
+   "license": "",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 5,
+    "hf_likes": 143,
+    "downloads": 0
+   },
+   "topic": "人形与足式",
+   "one_liner": "英伟达用近期姿态生成人形机器人实时动作，可插拔组合技能",
+   "one_liner_en": "NVIDIA model generates real-time humanoid motion from recent and target poses",
+   "how_to_try": "官方 demo 需要 NVIDIA GPU 和 TensorRT，Mac 上只能看项目页视频或研究 ONNX 导出，实际跑不动。",
+   "how_to_try_en": "Official demo needs an NVIDIA GPU and TensorRT; on a Mac you can only watch the project page or study ONNX export, not run it.",
+   "reason": "方法清晰、有官方代码，但硬件门槛高，新人只能看不能玩，适合讲概念而非上手。",
+   "red_flags": [
+    "demo 运行时强依赖 NVIDIA GPU，Mac 无法直接跑",
+    "权重用 NVIDIA 自有协议而非标准开源许可证",
+    "不含训练数据，不能从头复现训练"
+   ],
+   "final": 5.77,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 4,
+   "openness": 6,
+   "learning_value": 7,
+   "heat": 3.88
+  }
+ ],
+ "trend": {
+  "name_en": "World Action Models for Robot Policy Learning",
+  "name_zh": "世界动作模型（WAM）",
+  "one_liner": "让机器人先学会预测动作会带来什么后果，再据此选出好动作来执行。",
+  "one_liner_en": "Models that learn how actions change the world, then use that prediction to choose and improve robot actions.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "paper",
+    "title": "HINT-WAM: Hindsight-Informed Training for World Action Models",
+    "url": "https://arxiv.org/abs/2611.24789",
+    "one_liner_en": "A robot policy teaches itself actions by peeking at future video as a teacher."
+   },
+   {
+    "kind": "paper",
+    "title": "WAM-Policy: World Action Models with On-Policy Distillation for Quadrupedal Loco-Manipulation",
+    "url": "https://arxiv.org/abs/2611.24011",
+    "one_liner_en": "Turns an arm robot model into a language-guided quadruped that manipulates with one front leg"
+   },
+   {
+    "kind": "paper",
+    "title": "WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation",
+    "url": "https://arxiv.org/abs/2611.25251",
+    "one_liner_en": "Post-trains a humanoid whole-body VLA with RL inside a video world model instead of a simulator"
+   },
+   {
+    "kind": "paper",
+    "title": "WAMotor: Accelerating World Action Models via Speculative Inference under Dual Nonuniform Denoising Dynamics",
+    "url": "https://arxiv.org/abs/2611.25413",
+    "one_liner_en": "A speculative decoding method that speeds up world-action model denoising by 3-4x without hurting success rates."
+   },
+   {
+    "kind": "model",
+    "title": "bageldotcom/Bagel-Robotics-1",
+    "url": "https://huggingface.co/bageldotcom/Bagel-Robotics-1",
+    "one_liner_en": "A pruned, compact world-action model checkpoint for robot manipulation, released openly"
+   },
+   {
+    "kind": "paper",
+    "title": "PhysVAM: Physics-oriented Future Value Action Model for Dynamic Object Manipulation",
+    "url": "https://arxiv.org/abs/2611.26105",
+    "one_liner_en": "Predicts future task value instead of future frames to help robots handle moving objects"
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "VLA 强化学习后训练",
+    "name_en": "VLA Post-training via Reinforcement Learning",
+    "why": "FPO、WEVO 等多条工作用 RL 微调流匹配 VLA，延续上周主线。"
+   },
+   {
+    "name_zh": "人类第一人称视频预训练",
+    "name_en": "Egocentric Video Pretraining for Robot Policies",
+    "why": "Awaken-HI、HumanCOIN 等大规模人体视频数据持续支撑跨本体预训练。"
+   }
+  ],
+  "streak": 1
+ }
+}
