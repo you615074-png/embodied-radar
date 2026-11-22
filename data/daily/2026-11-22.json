@@ -1,0 +1,247 @@
+{
+ "date": "2026-11-22",
+ "headline": "大模型直接改权重修机器人指令",
+ "title_en": "Can LLMs Debug Robots by Editing Policy Weights?",
+ "tagline_en": "GPT-6 Astra edits 65 embedding rows in a robot policy to fix instruction failures, per a new paper.",
+ "summary_md": "This is the first research release of a paper by Jusheng Zhang (Stanford), Keze Wang and Liang Lin (X-Era AI) asking whether a large language model can debug a robot policy by editing its weights directly. The setup: a pretrained vision-language-action (VLA) policy, π₀.₅, fails on paraphrased instructions. GPT-6 Astra inspects the policy's weights and, using budgeted simulator feedback, edits 65 rows of the token embedding — no gradient updates, no new demonstrations.\n\nThe headline result, per the paper: on 765 held-out LIBERO-Plus paraphrases, the best of three independent editing sessions raises π₀.₅ success from 86.3% to 92.0% (48 repairs, 4 regressions). The gain is concentrated on instructions containing the edited tokens (74.3% → 87.5% on 335 episodes); the other 430 episodes show zero binary outcome changes. The repo includes code, all 16 editing-session transcripts, episode-level records, and the evaluated edit.\n\nWhy it matters: it suggests a cheap repair path for instruction-following failures that doesn't require retraining or collecting data — closer to patching software than training a model. But caveats are real: GPT-6 Astra is closed-source, so the editing process isn't fully reproducible; results are simulation-only; and the authors flag that V2 and real-robot experiments are in progress.\n\nCan you try it without a robot? Not really. It needs LIBERO simulation and π₀.₅, which won't run on a Mac. You can read the transcripts and videos, but redoing the weight edits locally isn't realistic.",
+ "pick": {
+  "id": "gh:jushengzhang/robot-weight-debugging",
+  "kind": "repo",
+  "title": "jushengzhang/robot-weight-debugging",
+  "url": "https://github.com/jushengzhang/robot-weight-debugging",
+  "authors": [],
+  "license": "Apache-2.0",
+  "code_url": "",
+  "signals": {
+   "stars": 349,
+   "daily_rate": 95.0
+  },
+  "topic": "VLA与基础模型",
+  "one_liner": "让大模型直接改机器人策略的权重，修好听不懂的指令",
+  "one_liner_en": "Let an LLM edit a robot policy's weights to fix instructions it mishears",
+  "how_to_try": "需跑LIBERO仿真和π₀.₅策略，Mac跑不动；只能读transcripts和视频，本地试改权重不现实",
+  "how_to_try_en": "Needs LIBERO sim plus the pi-0.5 policy; not runnable on a Mac. Read the transcripts and compare videos instead.",
+  "reason": "思路新颖、证据扎实，但依赖闭源大模型和仿真，Mac新人只能读不能玩",
+  "red_flags": [
+   "GPT-6 Astra 是闭源模型，无法复现编辑过程",
+   "结果仅仿真，选中的单例视频易夸大效果",
+   "作者单位与\"V2进行中\"声明让结论待定"
+  ],
+  "final": 6.17,
+  "topic_penalty": 0.6,
+  "significance": 8,
+  "explainability": 7,
+  "wow": 8,
+  "playable": 3,
+  "openness": 7,
+  "learning_value": 7,
+  "heat": 8.0
+ },
+ "top": [
+  {
+   "id": "gh:jushengzhang/robot-weight-debugging",
+   "kind": "repo",
+   "title": "jushengzhang/robot-weight-debugging",
+   "url": "https://github.com/jushengzhang/robot-weight-debugging",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 349,
+    "daily_rate": 95.0
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "让大模型直接改机器人策略的权重，修好听不懂的指令",
+   "one_liner_en": "Let an LLM edit a robot policy's weights to fix instructions it mishears",
+   "how_to_try": "需跑LIBERO仿真和π₀.₅策略，Mac跑不动；只能读transcripts和视频，本地试改权重不现实",
+   "how_to_try_en": "Needs LIBERO sim plus the pi-0.5 policy; not runnable on a Mac. Read the transcripts and compare videos instead.",
+   "reason": "思路新颖、证据扎实，但依赖闭源大模型和仿真，Mac新人只能读不能玩",
+   "red_flags": [
+    "GPT-6 Astra 是闭源模型，无法复现编辑过程",
+    "结果仅仿真，选中的单例视频易夸大效果",
+    "作者单位与\"V2进行中\"声明让结论待定"
+   ],
+   "final": 6.17,
+   "topic_penalty": 0.6,
+   "significance": 8,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 3,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 8.0
+  },
+  {
+   "id": "gh:Leonhart999/slam-autonav-console",
+   "kind": "repo",
+   "title": "Leonhart999/slam-autonav-console",
+   "url": "https://github.com/Leonhart999/slam-autonav-console",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 62,
+    "daily_rate": 3.6
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "浏览器里跑激光雷达建图与导航仿真的控制台",
+   "one_liner_en": "A browser console that runs LiDAR SLAM mapping and Nav2 navigation in simulation",
+   "how_to_try": "需 Linux 装 ROS 2 Humble 和 Gazebo，Mac 用户只能看 B 站演示或开虚拟机，不能直接在 Apple Silicon 跑",
+   "how_to_try_en": "Needs Linux with ROS 2 Humble and Gazebo; Mac users can only watch the Bilibili demo or use a VM, not run it natively on Apple Silicon.",
+   "reason": "工程完整度高的教学型控制台，适合学 SLAM 和 Nav2，但非前沿突破，且 Mac 新人上手门槛偏高。",
+   "red_flags": [
+    "本科毕设作品，非新颖研究成果",
+    "重度依赖 ROS 2 和 Gazebo 的 Linux 环境，Mac 原生跑不了",
+    "星标数少，社区验证有限"
+   ],
+   "final": 5.81,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 6,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 2.67
+  },
+  {
+   "id": "arxiv:2611.26414",
+   "kind": "paper",
+   "title": "ZeroVLN: Learning to Navigate without Supervised Fine-Tuning of the VLM Brain",
+   "url": "https://arxiv.org/abs/2611.26414",
+   "authors": [
+    "Zixuan Huang",
+    "Yang Zhou",
+    "Guli Zhang",
+    "Sunzhu Li",
+    "Hongyan Xie",
+    "Zehao Chen",
+    "Fuzhen Zhuang",
+    "Kaixuan Wang"
+   ],
+   "license": "",
+   "code_url": "https://github.com/hzx122/ZeroVLN",
+   "signals": {
+    "hf_upvotes": 22,
+    "github_stars": 25
+   },
+   "topic": "导航与自动驾驶",
+   "one_liner": "让视觉语言模型不微调也能指挥机器人在室内导航",
+   "one_liner_en": "A navigation system where the vision-language model gives orders without being fine-tuned.",
+   "how_to_try": "需要在VLN-CE仿真（Habitat）中复现，Mac能跑仿真；论文称有代码但只有2星，先看项目页面是否有推理demo。",
+   "how_to_try_en": "Needs Habitat VLN-CE sim; Mac can run the sim, but check the project page for a release/demo first.",
+   "reason": "想法不错：不破坏VLM通用能力，用工具调用和闭环RL做导航；但热度低、真实性存疑、复现门槛在仿真环境，适合进阶讲概念。",
+   "red_flags": [
+    "arXiv编号2611.26414与2026年11月日期可疑，需核实真实性",
+    "仅19赞2星，热度很低",
+    "许可证未标注，代码可用性不明",
+    "摘要称有代码但未见具体仓库链接"
+   ],
+   "final": 5.67,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 4,
+   "openness": 4,
+   "learning_value": 7,
+   "heat": 6.79
+  },
+  {
+   "id": "arxiv:2611.26239",
+   "kind": "paper",
+   "title": "Teaching Vision-Language-Action Models to Stop Safely",
+   "url": "https://arxiv.org/abs/2611.26239",
+   "authors": [
+    "Zheyuan Liu",
+    "Chuhan Wang",
+    "Jinduo Guo",
+    "Yue Huang",
+    "Xiangchi Yuan",
+    "Ningshan Ma",
+    "Meng Jiang"
+   ],
+   "license": "",
+   "code_url": "https://github.com/franciscoliu/SAFI",
+   "signals": {
+    "hf_upvotes": 8,
+    "github_stars": 1
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "教 VLA 机器人在执行中途被叫停时安全停手，不把东西摔了",
+   "one_liner_en": "Teaches VLA robots to stop safely mid-task instead of dropping objects",
+   "how_to_try": "在 LIBERO 仿真里用 OpenVLA-OFT 复现：Mac 可跑小规模推理，完整训练建议租云 GPU",
+   "how_to_try_en": "Run OpenVLA-OFT on LIBERO sim: small inference on Mac, rent cloud GPU for full training",
+   "reason": "安全问题切口实用、讲得清，仿真可复现；但影响力小、真机未验证，适合当入门安全话题而非今日重磅。",
+   "red_flags": [
+    "只有 3 个 HF 点赞、0 star，影响力证据薄弱",
+    "依赖 LIBERO/BadLIBERO 仿真，真机安全效果未验证",
+    "arXiv 编号 2611 可疑，发布日期可能不真实"
+   ],
+   "final": 5.63,
+   "topic_penalty": 0.6,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 7,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 4.76
+  },
+  {
+   "id": "hf-dataset:KETI-IRRC/keti-humanoid-hri-safety",
+   "kind": "dataset",
+   "title": "KETI-IRRC/keti-humanoid-hri-safety",
+   "url": "https://huggingface.co/datasets/KETI-IRRC/keti-humanoid-hri-safety",
+   "authors": [],
+   "license": "cc-by-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 2,
+    "downloads": 881
+   },
+   "topic": "人形与足式",
+   "one_liner": "人形机器人在仿真仓库里与人相遇的失败与险情数据集，按安全标准自动打标签",
+   "one_liner_en": "A simulated dataset of humanoid robots failing or nearly hitting people in a warehouse, auto-labelled by safety standards",
+   "how_to_try": "装 lerobot[dataset]，用 LeRobotDataset 加载，读 parquet 标签并用 viz 看视频；Isaac Sim 重跑需 NVIDIA 卡，Mac 上不行",
+   "how_to_try_en": "pip install lerobot[dataset], load with LeRobotDataset, inspect parquet labels and viz videos. Re-running Isaac Sim needs an NVIDIA GPU, not possible on Mac.",
+   "reason": "安全评测数据集方向有价值，标签规则透明可解释，Mac 上能读数据看视频，但纯仿真、样本偏小、热度低，不算重大进展",
+   "red_flags": [
+    "发布日期 2026-11-17 像是未来日期，需确认真实性",
+    "纯仿真数据，机器人本身不避让人，只有失败样本没有成功策略",
+    "热度很低（2 likes），影响力存疑"
+   ],
+   "final": 5.61,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 7,
+   "wow": 4,
+   "playable": 7,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 2.38
+  }
+ ],
+ "trend": {
+  "name_en": "Streaming / Speculative World-Model Acceleration",
+  "name_zh": "流式世界模型加速",
+  "one_liner": "用大模型给世界模型纠错或加速，不重训就能更快更准地预测机器人动作后果。",
+  "one_liner_en": "Speeding up and correcting streaming world models with speculative decoding instead of retraining.",
+  "momentum": "新出现",
+  "evidence": [],
+  "runner_ups": [
+   {
+    "name_zh": "流匹配策略强化学习微调",
+    "name_en": "Reinforcement Learning Fine-Tuning of Flow-Matching Policies",
+    "why": "FPO 用 PPO 微调 pi0 流匹配策略，与 VLA 后训练趋势呼应。"
+   },
+   {
+    "name_zh": "第一视角视频预训练策略",
+    "name_en": "Egocentric Video Cross-Embodiment Pretraining",
+    "why": "RoboCap-10k 与 latent action 论文继续支撑，但今日证据偏少。"
+   }
+  ],
+  "streak": 1
+ }
+}

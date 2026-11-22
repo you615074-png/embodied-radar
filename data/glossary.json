@@ -1321,5 +1321,61 @@
   "explain": "把生成的动作真正驱动到机器人关节上的一套控制程序",
   "first_seen": "2026-11-21",
   "source": "hf-model:nvidia/MotionBricks"
+ },
+ "slam": {
+  "term": "SLAM",
+  "zh": "同步定位与建图",
+  "explain": "机器人边走边画地图，同时知道自己在地图哪里",
+  "first_seen": "2026-11-22",
+  "source": "gh:Leonhart999/slam-autonav-console"
+ },
+ "lidar": {
+  "term": "LiDAR",
+  "zh": "激光雷达",
+  "explain": "发射激光测距，扫出一圈点云感知周围形状",
+  "first_seen": "2026-11-22",
+  "source": "gh:Leonhart999/slam-autonav-console"
+ },
+ "nav2": {
+  "term": "Nav2",
+  "zh": "ROS 2 导航栈",
+  "explain": "ROS 2 官方导航框架，负责规划路线和避障",
+  "first_seen": "2026-11-22",
+  "source": "gh:Leonhart999/slam-autonav-console"
+ },
+ "sft": {
+  "term": "SFT",
+  "zh": "监督微调",
+  "explain": "用大量标注数据继续训练模型，让它学会新任务",
+  "first_seen": "2026-11-22",
+  "source": "arxiv:2611.26414"
+ },
+ "slow-fast": {
+  "term": "slow-fast",
+  "zh": "快慢双系统",
+  "explain": "大模型慢想决定去哪，小模型快速执行动作",
+  "first_seen": "2026-11-22",
+  "source": "arxiv:2611.26414"
+ },
+ "fallback policy": {
+  "term": "Fallback policy",
+  "zh": "回退策略",
+  "explain": "任务被叫停时改做的一个安全替代动作，比如原地不动",
+  "first_seen": "2026-11-22",
+  "source": "arxiv:2611.26239"
+ },
+ "iso/ts 15066": {
+  "term": "ISO/TS 15066",
+  "zh": "协作机器人安全标准",
+  "explain": "规定人机接触力上限和最小安全距离的行业标准",
+  "first_seen": "2026-11-22",
+  "source": "hf-dataset:KETI-IRRC/keti-humanoid-hri-safety"
+ },
+ "near-miss": {
+  "term": "near-miss",
+  "zh": "险情/未遂事件",
+  "explain": "差点撞上但没真撞上的情况，是评估安全的关键样本",
+  "first_seen": "2026-11-22",
+  "source": "hf-dataset:KETI-IRRC/keti-humanoid-hri-safety"
  }
 }
