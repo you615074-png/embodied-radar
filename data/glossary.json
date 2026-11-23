@@ -1377,5 +1377,61 @@
   "explain": "差点撞上但没真撞上的情况，是评估安全的关键样本",
   "first_seen": "2026-11-22",
   "source": "hf-dataset:KETI-IRRC/keti-humanoid-hri-safety"
+ },
+ "diffusion transformer (dit)": {
+  "term": "Diffusion Transformer (DiT)",
+  "zh": "扩散Transformer",
+  "explain": "用Transformer做扩散生成的视频/图像骨干网络",
+  "first_seen": "2026-11-23",
+  "source": "arxiv:2611.27963"
+ },
+ "prediction head": {
+  "term": "Prediction Head",
+  "zh": "预测头",
+  "explain": "冻住大模型，只加个小网络读特征输出判断",
+  "first_seen": "2026-11-23",
+  "source": "arxiv:2611.27963"
+ },
+ "open x-embodiment": {
+  "term": "Open X-Embodiment",
+  "zh": "开放跨本体数据集",
+  "explain": "多个实验室机器人操作数据的合集，用来训练通用模型",
+  "first_seen": "2026-11-23",
+  "source": "hf-model:openvla/openvla-7b"
+ },
+ "7-dof end-effector delta": {
+  "term": "7-DoF end-effector delta",
+  "zh": "七自由度末端增量",
+  "explain": "机械臂末端在三维空间中移动、旋转和开合夹爪的变化量",
+  "first_seen": "2026-11-23",
+  "source": "hf-model:openvla/openvla-7b"
+ },
+ "task discovery": {
+  "term": "Task Discovery",
+  "zh": "任务发现",
+  "explain": "没人下指令，机器人自己看出该干什么",
+  "first_seen": "2026-11-23",
+  "source": "gh:AetherLabsAI/RobotAgentBench"
+ },
+ "open-ended evaluation": {
+  "term": "Open-Ended Evaluation",
+  "zh": "开放式评测",
+  "explain": "只给一句模糊请求，比如“准备晚饭”，看它自己规划",
+  "first_seen": "2026-11-23",
+  "source": "gh:AetherLabsAI/RobotAgentBench"
+ },
+ "code as policy": {
+  "term": "Code as Policy",
+  "zh": "代码即策略",
+  "explain": "让模型直接写代码算出夹爪该去哪，再执行",
+  "first_seen": "2026-11-23",
+  "source": "hf-model:sensenova/SenseNova-RoboRSI-27B"
+ },
+ "recursive self-improvement": {
+  "term": "Recursive Self-Improvement",
+  "zh": "递归自我改进",
+  "explain": "用失败轨迹反复微调模型，越用越好",
+  "first_seen": "2026-11-23",
+  "source": "hf-model:sensenova/SenseNova-RoboRSI-27B"
  }
 }

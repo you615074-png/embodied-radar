@@ -1,0 +1,277 @@
+{
+ "date": "2026-11-23",
+ "headline": "给世界模型加个\"防穿墙\"小插件",
+ "title_en": "NoPeWorld: A Small Head That Stops World Models From Walking Through Walls",
+ "tagline_en": "A lightweight prediction head on frozen DiT features cuts object penetration in video world models from 74% to 16%.",
+ "summary_md": "**What it is.** A paper called *Non-penetrating World Models* by Yuhang Dai, Yinwei Wu, Ziyue Lin, Han Ji and Xingyi Yang. The authors first built **NoPeBench**, a benchmark that checks how interactive video world models react to physical obstacles. They found that none of the open-source models they tested could reliably stop objects from passing through walls. Their fix, **NoPeWorld**, trains a small prediction head on top of a frozen diffusion transformer (DiT). The head reads the model's hidden states and predicts whether a proposed action would cause penetration; unsafe actions are swapped for safe ones that keep the original intent as much as possible.\n\n**Why it matters.** Interactive video world models are increasingly used as cheap simulators for robot learning. If a model happily lets an arm glide through a table, any policy trained inside it learns the wrong physics. NoPeWorld is interesting because it does not retrain the big model. It reuses information already present in the DiT's hidden states, which the authors say is enough to detect violations. Per the abstract, the average violation rate over six world models drops from 74% to 16%, and the method generalizes zero-shot to open-domain images, third-person views and moving obstacles.\n\n**Can you try it without a robot?** Partly. The paper says code, the NoPeBench benchmark and model weights are released, and there is a project page with demos. But interactive video generation of this size is not realistic on a Mac with 16GB of unified memory and no NVIDIA GPU. Reading the code and the benchmark is the practical path for now.\n\nNote: the arXiv ID and the listed date should be double-checked before citing this.",
+ "pick": {
+  "id": "arxiv:2611.27963",
+  "kind": "paper",
+  "title": "Non-penetrating World Models",
+  "url": "https://arxiv.org/abs/2611.27963",
+  "authors": [
+   "Yuhang Dai",
+   "Yinwei Wu",
+   "Ziyue Lin",
+   "Han Ji",
+   "Xingyi Yang"
+  ],
+  "license": "",
+  "code_url": "https://github.com/yuhangdai427/NoPeWorld",
+  "signals": {
+   "hf_upvotes": 51,
+   "github_stars": 3
+  },
+  "topic": "世界模型与仿真",
+  "one_liner": "给视频世界模型加个检测头，防止物体穿墙",
+  "one_liner_en": "A small head on frozen video world models stops objects from passing through walls",
+  "how_to_try": "项目页看 demo；私有模型权重要在 Mac 上跑交互视频生成不现实，只能读代码和 benchmark。",
+  "how_to_try_en": "Check the project page demo and benchmark; running the interactive video world model on a 16GB Mac is not realistic.",
+  "reason": "切入物理一致性这个真问题，方法轻巧且开放 benchmark，但属修补型改进，无硬件新人只能看 demo 读代码。",
+  "red_flags": [
+   "arXiv 编号 2611 与发布日期在 2026-11 的条目格式可疑，需核实真伪",
+   "宣称零样本泛化到开放域和移动障碍，但摘要未给定量细节",
+   "交互视频世界模型本身很大，Mac 上基本跑不动"
+  ],
+  "final": 6.64,
+  "topic_penalty": 0,
+  "significance": 6,
+  "explainability": 8,
+  "wow": 5,
+  "playable": 5,
+  "openness": 8,
+  "learning_value": 7,
+  "heat": 8.56
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.27963",
+   "kind": "paper",
+   "title": "Non-penetrating World Models",
+   "url": "https://arxiv.org/abs/2611.27963",
+   "authors": [
+    "Yuhang Dai",
+    "Yinwei Wu",
+    "Ziyue Lin",
+    "Han Ji",
+    "Xingyi Yang"
+   ],
+   "license": "",
+   "code_url": "https://github.com/yuhangdai427/NoPeWorld",
+   "signals": {
+    "hf_upvotes": 51,
+    "github_stars": 3
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "给视频世界模型加个检测头，防止物体穿墙",
+   "one_liner_en": "A small head on frozen video world models stops objects from passing through walls",
+   "how_to_try": "项目页看 demo；私有模型权重要在 Mac 上跑交互视频生成不现实，只能读代码和 benchmark。",
+   "how_to_try_en": "Check the project page demo and benchmark; running the interactive video world model on a 16GB Mac is not realistic.",
+   "reason": "切入物理一致性这个真问题，方法轻巧且开放 benchmark，但属修补型改进，无硬件新人只能看 demo 读代码。",
+   "red_flags": [
+    "arXiv 编号 2611 与发布日期在 2026-11 的条目格式可疑，需核实真伪",
+    "宣称零样本泛化到开放域和移动障碍，但摘要未给定量细节",
+    "交互视频世界模型本身很大，Mac 上基本跑不动"
+   ],
+   "final": 6.64,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 8.56
+  },
+  {
+   "id": "hf-model:openvla/openvla-7b",
+   "kind": "model",
+   "title": "openvla/openvla-7b",
+   "url": "https://huggingface.co/openvla/openvla-7b",
+   "authors": [],
+   "license": "mit",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 2,
+    "hf_likes": 268,
+    "downloads": 64603
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "开源机器人视觉语言动作大模型，看图听指令直接输出机械臂动作",
+   "one_liner_en": "An open 7B model that turns a camera image and a text command into robot arm actions.",
+   "how_to_try": "Mac 跑不动 7B 推理；可在 Colab/云 GPU 加载模型做单帧动作预测，或在 GitHub 看仿真 fine-tune 脚本",
+   "how_to_try_en": "A Mac can't run the 7B model. Use Colab/cloud GPU to load it for single-frame action prediction, or read the repo's fine-tune scripts.",
+   "reason": "里程碑式开源 VLA，影响大、许可宽松、教程价值高，但入门者只能云 GPU 试玩预测，难真正上机",
+   "red_flags": [
+    "7B 模型需 NVIDIA GPU，Mac 无法直接推理",
+    "零样本只对预训练中见过的机器人有效，新平台需采数据微调"
+   ],
+   "final": 6.44,
+   "topic_penalty": 0.6,
+   "significance": 9,
+   "explainability": 8,
+   "wow": 8,
+   "playable": 5,
+   "openness": 9,
+   "learning_value": 9,
+   "heat": 2.38
+  },
+  {
+   "id": "gh:AetherLabsAI/RobotAgentBench",
+   "kind": "repo",
+   "title": "AetherLabsAI/RobotAgentBench",
+   "url": "https://github.com/AetherLabsAI/RobotAgentBench",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 246,
+    "daily_rate": 8.2
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "在家居仿真里评测机器人自主做家务的能力",
+   "one_liner_en": "A simulation benchmark testing how well household robots do chores on their own.",
+   "how_to_try": "核心包可在 Mac 上装好看任务目录；真正跑仿真需 Isaac Sim 和 GPU，Mac 上只能读代码、看案例",
+   "how_to_try_en": "Core package installs on Mac to browse tasks; running the sim needs Isaac Sim + GPU, so Mac users can only read code and demos.",
+   "reason": "基准设计全面、资产开放，适合学习评测思路，但仿真依赖 GPU，选题需以读代码和讲概念为主",
+   "red_flags": [
+    "机构与作者身份不明，仅 246 stars，社区验证不足",
+    "真跑评测依赖 Isaac Sim + NVIDIA GPU，与账号“无显卡”定位冲突"
+   ],
+   "final": 6.15,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 3.89
+  },
+  {
+   "id": "hf-model:sensenova/SenseNova-RoboRSI-27B",
+   "kind": "model",
+   "title": "sensenova/SenseNova-RoboRSI-27B",
+   "url": "https://huggingface.co/sensenova/SenseNova-RoboRSI-27B",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 17,
+    "hf_likes": 17,
+    "downloads": 4
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "一个27B视觉语言模型，能写代码指挥机械臂抓取摆放",
+   "one_liner_en": "A 27B vision-language model that writes code to command robot arms",
+   "how_to_try": "27B模型16GB内存跑不动，只能读论文和README理解Code-as-Policy思路，或在云GPU上试推理",
+   "how_to_try_en": "A 27B model won't fit 16GB; read the README to grasp Code-as-Policy, or rent cloud GPU for inference",
+   "reason": "思路清晰有真机演示，但27B规模对新人不友好，适合学概念而非亲手跑",
+   "red_flags": [
+    "27B参数量对16GB Mac不可行",
+    "真机实验仅各10次试验，样本偏小",
+    "模型卡未给出训练数据与完整代码细节"
+   ],
+   "final": 6.12,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 6,
+   "wow": 8,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 6.26
+  },
+  {
+   "id": "gh:openrobokit/graspkit",
+   "kind": "repo",
+   "title": "openrobokit/graspkit",
+   "url": "https://github.com/openrobokit/graspkit",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 39,
+    "daily_rate": 1.6
+   },
+   "topic": "操作抓取",
+   "one_liner": "一套从抓取优化到真机部署的开源抓取工具包",
+   "one_liner_en": "An open-source toolkit that goes from grasp planning to real-robot deployment.",
+   "how_to_try": "可 pip 装，但完整仿真流程要搭配 ManiSkill 和 spconv，Mac 上部分能跑，先用 gallery 看抓取样例",
+   "how_to_try_en": "pip installable; full pipeline needs ManiSkill+spconv, partly runnable on Mac. Start with the grasp gallery demo.",
+   "reason": "结构清晰的抓取全流程工具包，MIT 开源，学习价值高；但热度低、仿真依赖较重，Mac 上体验受限。",
+   "red_flags": [
+    "star 数很少（39），实际可用性未验证",
+    "作者和机构信息缺失",
+    "日期与 CoRL 2026 论文引用存疑"
+   ],
+   "final": 5.88,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 6,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 1.67
+  }
+ ],
+ "trend": {
+  "name_en": "World Action Models for Robot Policy Learning",
+  "name_zh": "世界动作模型",
+  "one_liner": "让机器人先在世界模型里想象动作后果，再决定怎么做，试错更省更安全",
+  "one_liner_en": "A model that predicts what will happen next, so robots can imagine the outcome before they act.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "model",
+    "title": "bageldotcom/Bagel-Robotics-1",
+    "url": "https://huggingface.co/bageldotcom/Bagel-Robotics-1",
+    "one_liner_en": "A pruned, compact world-action model checkpoint for robot manipulation, released openly"
+   },
+   {
+    "kind": "paper",
+    "title": "Non-penetrating World Models",
+    "url": "https://arxiv.org/abs/2611.27963",
+    "one_liner_en": "A small head on frozen video world models stops objects from passing through walls"
+   },
+   {
+    "kind": "repo",
+    "title": "RoboticsResearchHubVN/InstantAMP",
+    "url": "https://github.com/RoboticsResearchHubVN/InstantAMP",
+    "one_liner_en": "Trains a humanoid walking and get-up policy in 30 minutes via a differentiable world model and AMP."
+   },
+   {
+    "kind": "model",
+    "title": "AutowareFoundation/latent_drive",
+    "url": "https://huggingface.co/AutowareFoundation/latent_drive",
+    "one_liner_en": "An end-to-end driving planner that plans trajectories directly from a video world model's latent features."
+   },
+   {
+    "kind": "paper",
+    "title": "GameWM: Toward Next-Generation Video Games with Interaction-Centric World Models",
+    "url": "https://arxiv.org/abs/2611.19247",
+    "one_liner_en": "A design where a video world model renders look and interaction detail while the game engine keeps rules exact"
+   },
+   {
+    "kind": "paper",
+    "title": "What Must a Model Tell a Planner? Outcome Interfaces for Risk-Aware Planning After Robot Damage",
+    "url": "https://arxiv.org/abs/2611.27939",
+    "one_liner_en": "A study showing outcome-predicting world models beat direct decision policies for planning after robot damage."
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "流匹配策略强化学习微调",
+    "name_en": "RL Fine-tuning of Flow-Matching Policies",
+    "why": "FPO 用 PPO 微调 pi0 流匹配策略，把模仿学习再往上推一档"
+   },
+   {
+    "name_zh": "代码即策略的机器人智能体",
+    "name_en": "Code-as-Policy Robotic Agents",
+    "why": "SenseNova-RoboRSI、HITCH 等多条内容让大模型写代码调用工具控制机械臂"
+   }
+  ],
+  "streak": 1
+ }
+}
