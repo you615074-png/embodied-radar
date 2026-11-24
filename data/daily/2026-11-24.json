@@ -1,0 +1,289 @@
+{
+ "date": "2026-11-24",
+ "headline": "人形机器人长时程动作生成新突破",
+ "title_en": "Motion Mamba 2.0: Long-Horizon Humanoid Control with Mamba",
+ "tagline_en": "A Mamba-based diffusion model for real-time, text-controlled humanoid motion over long horizons.",
+ "summary_md": "Motion Mamba 2.0 is a paper from researchers at AIGeeksGroup (Yue Huang, Tianshan Zhang, Zeyu Zhang, Jayeon Kang, Akide Liu, Sungjoon Choi, Dacheng Tao, Hao Tang) that tackles long-horizon, real-time controllable motion generation for humanoid robots and interactive animation. The core idea is a Mamba-based root-body diffusion architecture that combines local attention, resumable recurrent states, and a persistent content memory (PCM) to keep track of distant history without the bounded caches of autoregressive diffusion. The authors also introduce an execution scheme using CUDA Graph replay and fused kernels to speed up inference.\n\nWhy it matters: long-horizon control is hard—robots need to remember what they did seconds ago while responding to new instructions. Per the paper, the method achieves accurate terminal control over rollouts up to 39.52 seconds on retargeted HiPHI, and reduces median latency from 1685 ms to 276 ms (6.1x speedup) on an RTX 4090, with real-world tests on a Unitree G1 humanoid.\n\nCan you try it without a robot? The code is on GitHub, but it depends on CUDA and an RTX 4090. On a Mac you can't run the full pipeline. You could read the inference code to understand how Mamba states are reused, or watch the project page videos. No lightweight demo is provided.",
+ "pick": {
+  "id": "arxiv:2611.29897",
+  "kind": "paper",
+  "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+  "url": "https://arxiv.org/abs/2611.29897",
+  "authors": [
+   "Yue Huang",
+   "Tianshan Zhang",
+   "Zeyu Zhang",
+   "Jayeon Kang",
+   "Akide Liu",
+   "Sungjoon Choi",
+   "Dacheng Tao",
+   "Hao Tang"
+  ],
+  "license": "",
+  "code_url": "https://github.com/AIGeeksGroup/MotionMamba2.0",
+  "signals": {
+   "hf_upvotes": 131,
+   "github_stars": 3
+  },
+  "topic": "人形与足式",
+  "one_liner": "用 Mamba 加扩散模型做人形机器人长时程动作生成，可实时跟随文字指令操控。",
+  "one_liner_en": "A Mamba-based diffusion model generates long, real-time text-controlled humanoid motion.",
+  "how_to_try": "仓库有代码但依赖 CUDA 和 RTX 4090；Mac 上只能看项目页视频，或读推理代码理解 Mamba 状态复用。",
+  "how_to_try_en": "Code needs CUDA/RTX 4090; on a Mac just watch the demo videos or read the inference code.",
+  "reason": "长时程人形动作生成加 6 倍推理加速，有真机演示，方向扎实；但需高端 GPU，且条目真实性存疑。",
+  "red_flags": [
+   "arXiv 编号和日期都是未来的，真实性存疑",
+   "GitHub 3 星但 HF 131 赞，热度对不上",
+   "核心加速依赖 CUDA Graph 和融合算子，无 NVIDIA 卡跑不动"
+  ],
+  "final": 6.68,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 6,
+  "wow": 7,
+  "playable": 4,
+  "openness": 6,
+  "learning_value": 7,
+  "heat": 10
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.29897",
+   "kind": "paper",
+   "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+   "url": "https://arxiv.org/abs/2611.29897",
+   "authors": [
+    "Yue Huang",
+    "Tianshan Zhang",
+    "Zeyu Zhang",
+    "Jayeon Kang",
+    "Akide Liu",
+    "Sungjoon Choi",
+    "Dacheng Tao",
+    "Hao Tang"
+   ],
+   "license": "",
+   "code_url": "https://github.com/AIGeeksGroup/MotionMamba2.0",
+   "signals": {
+    "hf_upvotes": 131,
+    "github_stars": 3
+   },
+   "topic": "人形与足式",
+   "one_liner": "用 Mamba 加扩散模型做人形机器人长时程动作生成，可实时跟随文字指令操控。",
+   "one_liner_en": "A Mamba-based diffusion model generates long, real-time text-controlled humanoid motion.",
+   "how_to_try": "仓库有代码但依赖 CUDA 和 RTX 4090；Mac 上只能看项目页视频，或读推理代码理解 Mamba 状态复用。",
+   "how_to_try_en": "Code needs CUDA/RTX 4090; on a Mac just watch the demo videos or read the inference code.",
+   "reason": "长时程人形动作生成加 6 倍推理加速，有真机演示，方向扎实；但需高端 GPU，且条目真实性存疑。",
+   "red_flags": [
+    "arXiv 编号和日期都是未来的，真实性存疑",
+    "GitHub 3 星但 HF 131 赞，热度对不上",
+    "核心加速依赖 CUDA Graph 和融合算子，无 NVIDIA 卡跑不动"
+   ],
+   "final": 6.68,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 6,
+   "wow": 7,
+   "playable": 4,
+   "openness": 6,
+   "learning_value": 7,
+   "heat": 10
+  },
+  {
+   "id": "arxiv:2611.30989",
+   "kind": "paper",
+   "title": "WorldLeague: Benchmarking Physical Agency",
+   "url": "https://arxiv.org/abs/2611.30989",
+   "authors": [
+    "Xinyang Zhou",
+    "Qi Li",
+    "Xinchao Wang"
+   ],
+   "license": "",
+   "code_url": "https://github.com/xyangzhou/WorldLeague",
+   "signals": {
+    "hf_upvotes": 37,
+    "github_stars": 5
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "60个仿真机器人任务，给各类AI系统的动手能力打分排名",
+   "one_liner_en": "A 60-task simulated robot benchmark that scores how well AI systems act in the physical world",
+   "how_to_try": "看项目页的任务清单和能力维度；在Mac上跑仿真需自己搭环境，作者未提供一键脚本",
+   "how_to_try_en": "Browse the project page for task list and axes; running it on Mac needs manual sim setup, no one-click scripts provided",
+   "reason": "思路清晰、维度设计有启发性，适合入门理解VLA评测；但真实性存疑、复现门槛偏高，谨慎推荐。",
+   "red_flags": [
+    "论文日期2611与模型名GPT-6.1/Fable 5.2等疑为虚构或未来设定",
+    "代码仅5星，尚未验证可复现",
+    "统一控制接口可能偏向某些模型，比较公平性存疑"
+   ],
+   "final": 6.26,
+   "topic_penalty": 0.6,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 6,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 7.88
+  },
+  {
+   "id": "hf-dataset:Damin3927/SWEEP-Bench",
+   "kind": "dataset",
+   "title": "Damin3927/SWEEP-Bench",
+   "url": "https://huggingface.co/datasets/Damin3927/SWEEP-Bench",
+   "authors": [],
+   "license": "cc-by-nc-4.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 3,
+    "hf_likes": 3,
+    "downloads": 64
+   },
+   "topic": "操作抓取",
+   "one_liner": "传送带上抓取移动物体的仿真基准，含1.6万条专家演示",
+   "one_liner_en": "A simulation benchmark and 16k-expert-demo dataset for picking objects on a moving conveyor belt.",
+   "how_to_try": "有Mac可读Parquet数据做模仿学习可视化；跑仿真评价需装环境，无NVIDIA会慢",
+   "how_to_try_en": "Load the Parquet episodes on Mac to explore data and train a small imitation policy; running the sim eval needs setup and is slow without a GPU.",
+   "reason": "动传送带操作方向有价值，数据规范易读；但来源不明、热度低，仿真评价对无显卡新人偏重。",
+   "red_flags": [
+    "作者机构、论文未知，热度极低（25下载）",
+    "非商用许可证cc-by-nc-4.0",
+    "数据是脚本专家生成，可能过于理想"
+   ],
+   "final": 5.73,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 5,
+   "openness": 6,
+   "learning_value": 7,
+   "heat": 3.0
+  },
+  {
+   "id": "hf-model:nvidia/GR00T-N1.7-3B",
+   "kind": "model",
+   "title": "nvidia/GR00T-N1.7-3B",
+   "url": "https://huggingface.co/nvidia/GR00T-N1.7-3B",
+   "authors": [],
+   "license": "other",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 5,
+    "hf_likes": 199,
+    "downloads": 51715
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "英伟达开源的通用人形机器人基础模型，看图听指令就能干活，可用自己数据微调。",
+   "one_liner_en": "NVIDIA's open humanoid robot brain: sees images, follows language, and can be fine-tuned.",
+   "how_to_try": "",
+   "how_to_try_en": "",
+   "reason": "领域重量级开源 VLA，架构与微调流程都值得学，但本地跑不动是新人最大门槛，只能读文档加云上玩。",
+   "red_flags": [
+    "3B 模型推理基本要 NVIDIA 显卡或云 GPU，16GB Mac 跑不动",
+    "许可证是 NVIDIA Open Model License，非标准宽松开源",
+    "README 有内部核算等模板残留，部分微调数据描述了误"
+   ],
+   "final": 5.63,
+   "topic_penalty": 0.6,
+   "significance": 9,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 3,
+   "openness": 6,
+   "learning_value": 9,
+   "heat": 3.88
+  },
+  {
+   "id": "gh:NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "kind": "repo",
+   "title": "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "url": "https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 111,
+    "daily_rate": 3.7
+   },
+   "topic": "强化学习",
+   "one_liner": "用可求导的世界模型代替仿真器，让 G1 人形机器人学会跳舞。",
+   "one_liner_en": "A differentiable world model replaces the simulator to teach a G1 humanoid to dance.",
+   "how_to_try": "训练需 Linux+NVIDIA 显卡，Mac 跑不动；只能看 Release 视频和 docs 理解方法。",
+   "how_to_try_en": "Training needs Linux + NVIDIA GPU; a Mac can't run it. Just watch the release videos and read the docs.",
+   "reason": "有趣且完整的 sim2real 复现，舞蹈演示亮眼、文档诚实；但需 NVIDIA 显卡，新人只能看不能玩。",
+   "red_flags": [
+    "非官方复现，关键细节自定，数字与论文不一致",
+    "LAFAN1 严格设置下得分 0.56 远低于论文 0.82",
+    "训练强制要求 Linux+NVIDIA，Mac 无法上手"
+   ],
+   "final": 5.54,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 8,
+   "playable": 3,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 2.71
+  }
+ ],
+ "trend": {
+  "name_en": "World Action Models (WAM) for Robot Policy Learning",
+  "name_zh": "世界动作模型（WAM）",
+  "one_liner": "让机器人在脑中预演未来再动手，把预测未来和生成动作合成一个模型。",
+  "one_liner_en": "A model that imagines the near future and turns that prediction directly into robot actions.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "paper",
+    "title": "EgoStudy: How Does Scaling Egocentric Data Affect VLA and WAM Pretraining?",
+    "url": "https://arxiv.org/abs/2611.30490",
+    "one_liner_en": "A controlled study on how much and how to use egocentric human data to pretrain robot policies."
+   },
+   {
+    "kind": "paper",
+    "title": "Innata-0: A Native Embodied World System with Model-Agent Co-Design",
+    "url": "https://arxiv.org/abs/2611.30254",
+    "one_liner_en": "A combined world-action model plus agent system for long-horizon robot tasks."
+   },
+   {
+    "kind": "paper",
+    "title": "Foresight Forcing: Learning Spatial Foresight for Robotic Manipulation",
+    "url": "https://arxiv.org/abs/2611.30963",
+    "one_liner_en": "A robot policy that imagines how objects will move in 3D before acting."
+   },
+   {
+    "kind": "paper",
+    "title": "VITA-WAM: Manifold-Aligned World-Action Modeling for Real-Time Robot Control",
+    "url": "https://arxiv.org/abs/2611.31195",
+    "one_liner_en": "A world-action model that turns observations into robot actions in a single fast step."
+   },
+   {
+    "kind": "repo",
+    "title": "chenyizhi123/Zeta0",
+    "url": "https://github.com/chenyizhi123/Zeta0",
+    "one_liner_en": "Adds a world-model add-on that predicts future views and 29 body joints to layered VLA policies for a Unitree G1 humanoid."
+   },
+   {
+    "kind": "model",
+    "title": "bageldotcom/Bagel-Robotics-1",
+    "url": "https://huggingface.co/bageldotcom/Bagel-Robotics-1",
+    "one_liner_en": "A pruned, compact world-action model checkpoint for robot manipulation, released openly"
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "前沿大模型当机器人策略",
+    "name_en": "Frontier-Model-as-Policy Harness",
+    "why": "Embo-Harness、AgentRoboCritic、RUIBench 多条目都在测大模型直接控机器人。"
+   },
+   {
+    "name_zh": "第一人称视频跨本体预训练",
+    "name_en": "Egocentric Video Cross-Embodiment Pretraining",
+    "why": "EgoStudy、RoboCap-10k、ViDiHand2、EgoDepth-Bench 持续供给数据与结论。"
+   }
+  ],
+  "streak": 1
+ }
+}

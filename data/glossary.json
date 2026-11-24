@@ -1433,5 +1433,33 @@
   "explain": "用失败轨迹反复微调模型，越用越好",
   "first_seen": "2026-11-23",
   "source": "hf-model:sensenova/SenseNova-RoboRSI-27B"
+ },
+ "mamba (state space model)": {
+  "term": "Mamba (State Space Model)",
+  "zh": "状态空间模型",
+  "explain": "一种线性复杂度的序列模型，能用固定大小的状态记住长历史。",
+  "first_seen": "2026-11-24",
+  "source": "arxiv:2611.29897"
+ },
+ "autoregressive diffusion": {
+  "term": "Autoregressive Diffusion",
+  "zh": "自回归扩散",
+  "explain": "一段一段地生成动作，每段用扩散去噪，接成长动作序列。",
+  "first_seen": "2026-11-24",
+  "source": "arxiv:2611.29897"
+ },
+ "physical agency": {
+  "term": "physical agency",
+  "zh": "物理能动性",
+  "explain": "AI能不能自己动手把事情做成，而不只是嘴上说对",
+  "first_seen": "2026-11-24",
+  "source": "arxiv:2611.30989"
+ },
+ "moving-object manipulation": {
+  "term": "Moving-object Manipulation",
+  "zh": "动目标操作",
+  "explain": "抓取正在运动中的物体，比静止抓取难",
+  "first_seen": "2026-11-24",
+  "source": "hf-dataset:Damin3927/SWEEP-Bench"
  }
 }
