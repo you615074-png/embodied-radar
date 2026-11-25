@@ -1461,5 +1461,54 @@
   "explain": "抓取正在运动中的物体，比静止抓取难",
   "first_seen": "2026-11-24",
   "source": "hf-dataset:Damin3927/SWEEP-Bench"
+ },
+ "mirror self-recognition": {
+  "term": "Mirror Self-Recognition",
+  "zh": "镜像自我识别",
+  "explain": "动物能否认出镜中是自己，这里借指机器人能否处理反光。",
+  "first_seen": "2026-11-25",
+  "source": "arxiv:2611.33010"
+ },
+ "whole-body motion tracking": {
+  "term": "Whole-body motion tracking",
+  "zh": "全身动作跟踪",
+  "explain": "让机器人照着人做的动作逐帧模仿，全身关节都要跟上",
+  "first_seen": "2026-11-25",
+  "source": "gh:air23zj/macmimic"
+ },
+ "mano hand model": {
+  "term": "MANO hand model",
+  "zh": "MANO 手部模型",
+  "explain": "用一组参数描述手的形状和姿态的统计模型，可以输出真实尺寸的手",
+  "first_seen": "2026-11-25",
+  "source": "arxiv:2611.30597"
+ },
+ "video diffusion model prior": {
+  "term": "Video Diffusion Model prior",
+  "zh": "视频扩散先验",
+  "explain": "用预训练视频生成模型学到的常识来补全看不清的地方，比如被挡的手",
+  "first_seen": "2026-11-25",
+  "source": "arxiv:2611.30597"
+ },
+ "act (action chunking transformer)": {
+  "term": "ACT (Action Chunking Transformer)",
+  "zh": "动作分块 Transformer",
+  "explain": "一次预测未来一小段动作，比逐帧更稳更顺滑。",
+  "first_seen": "2026-11-25",
+  "source": "hf-dataset:lerobot/aloha_sim_insertion_human"
+ },
+ "task-and-motion planning": {
+  "term": "task-and-motion planning",
+  "zh": "任务与运动规划",
+  "explain": "把大目标拆成抓、放、移动等小步骤再执行",
+  "first_seen": "2026-11-25",
+  "source": "gh:mitos-robotics/MRCF"
+ },
+ "learned policy": {
+  "term": "learned policy",
+  "zh": "学习得到的策略",
+  "explain": "用示范或强化学习训练出的模型，直接输出动作",
+  "first_seen": "2026-11-25",
+  "source": "gh:mitos-robotics/MRCF"
  }
 }

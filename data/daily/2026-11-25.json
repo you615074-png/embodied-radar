@@ -1,0 +1,283 @@
+{
+ "date": "2026-11-25",
+ "headline": "镜子让机器人翻车：新基准揭示视觉策略盲区",
+ "title_en": "RoboDojo-Mirror: How a Simple Mirror Breaks Robot Policies",
+ "tagline_en": "A new benchmark shows that adding a mirror drops success rates of five robot policies by 10.8–62.5 points.",
+ "summary_md": "What it is: A paper by Xuanchen Liu, Hejun Zhang, Boxuan Dong, Ying Wu, Heshuai Li, Wen Gao, Yonghong Tian, and Weihao Yu introduces RoboDojo-Mirror, a benchmark built on the RoboDojo simulation framework. It tests whether robot manipulation policies can handle scenes containing mirrors, which create reflections of objects and the robot itself. The benchmark compares a mirror-free baseline against single-mirror, dual-mirror, and mirrored-tabletop conditions while keeping task objectives, success criteria, and policy checkpoints unchanged.\n\nWhy it matters: Across five policies—including Vision-Language-Action models, World Action Models, and agentic policies—every mirror condition reduced aggregate success rates. Averaged over three mirror conditions, the drop ranged from 10.8 to 56.7 percentage points, reaching 62.5 points on the mirrored tabletop. Because a mirror is also a physical obstacle, the authors compared it with geometrically matched non-reflective panels. They found that 50–88% of mirror-specific failures occurred without recorded robot–panel contact, so collisions alone do not explain the degradation. Trajectory and contact analyses suggest behaviors consistent with phantom targeting of reflected objects and spatial mislocalization of real ones. Real-robot experiments with π₀.₅ and FastWAM also showed lower success rates under mirror conditions.\n\nCan you try it without a robot? Partially. The code is available on GitHub (iPPLab/robodojo-mirror), and you can run the RoboDojo simulation framework on a Mac to test pretrained policies with mirror scenes. However, full evaluation requires an NVIDIA GPU, so a Mac without one may only support limited experiments or demos.",
+ "pick": {
+  "id": "arxiv:2611.33010",
+  "kind": "paper",
+  "title": "Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies",
+  "url": "https://arxiv.org/abs/2611.33010",
+  "authors": [
+   "Xuanchen Liu",
+   "Hejun Zhang",
+   "Boxuan Dong",
+   "Ying Wu",
+   "Heshuai Li",
+   "Wen Gao",
+   "Yonghong Tian",
+   "Weihao Yu"
+  ],
+  "license": "",
+  "code_url": "https://github.com/iPPLab/robodojo-mirror",
+  "signals": {
+   "hf_upvotes": 27,
+   "github_stars": 0
+  },
+  "topic": "操作抓取",
+  "one_liner": "场景里放一面镜子，主流机器人操作策略成功率大幅下降。",
+  "one_liner_en": "A simple mirror in the scene makes mainstream robot manipulation policies fail much more often.",
+  "how_to_try": "在 Mac 上运行 RoboDojo 仿真框架，加入镜像场景测试预训练策略；完整评测需要 NVIDIA 显卡。",
+  "how_to_try_en": "Run the RoboDojo sim on Mac with mirrored scenes to probe pretrained policies; full eval needs an NVIDIA GPU.",
+  "reason": "问题新颖、讲述直观、实验扎实，但需要仿真和显卡，新手可先看 demo 理解反射挑战。",
+  "red_flags": [],
+  "final": 7.05,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 9,
+  "wow": 8,
+  "playable": 5,
+  "openness": 6,
+  "learning_value": 8,
+  "heat": 7.22
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.33010",
+   "kind": "paper",
+   "title": "Embodied AI Fails the Mirror Test: How a Simple Mirror Breaks Robot Policies",
+   "url": "https://arxiv.org/abs/2611.33010",
+   "authors": [
+    "Xuanchen Liu",
+    "Hejun Zhang",
+    "Boxuan Dong",
+    "Ying Wu",
+    "Heshuai Li",
+    "Wen Gao",
+    "Yonghong Tian",
+    "Weihao Yu"
+   ],
+   "license": "",
+   "code_url": "https://github.com/iPPLab/robodojo-mirror",
+   "signals": {
+    "hf_upvotes": 27,
+    "github_stars": 0
+   },
+   "topic": "操作抓取",
+   "one_liner": "场景里放一面镜子，主流机器人操作策略成功率大幅下降。",
+   "one_liner_en": "A simple mirror in the scene makes mainstream robot manipulation policies fail much more often.",
+   "how_to_try": "在 Mac 上运行 RoboDojo 仿真框架，加入镜像场景测试预训练策略；完整评测需要 NVIDIA 显卡。",
+   "how_to_try_en": "Run the RoboDojo sim on Mac with mirrored scenes to probe pretrained policies; full eval needs an NVIDIA GPU.",
+   "reason": "问题新颖、讲述直观、实验扎实，但需要仿真和显卡，新手可先看 demo 理解反射挑战。",
+   "red_flags": [],
+   "final": 7.05,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 9,
+   "wow": 8,
+   "playable": 5,
+   "openness": 6,
+   "learning_value": 8,
+   "heat": 7.22
+  },
+  {
+   "id": "gh:air23zj/macmimic",
+   "kind": "repo",
+   "title": "air23zj/macmimic",
+   "url": "https://github.com/air23zj/macmimic",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 22,
+    "daily_rate": 2.2
+   },
+   "topic": "强化学习",
+   "one_liner": "在 Mac 上用 MLX 训练仿真人形机器人模仿 40 个动作，22 分钟搞定",
+   "one_liner_en": "A simulated humanoid learns 40 motion clips in 22 minutes on a Mac using MLX and MuJoCo, without CUDA or a cloud GPU.",
+   "how_to_try": "git clone 后 uv sync，下载 40 条 LAFAN1 动作数据，按 README 跑 train.sh，M 系列 Mac 约 30 分钟看到人形学会模仿",
+   "how_to_try_en": "Clone, uv sync, download the 40 LAFAN1 clips, run train.sh; on an M-series Mac the humanoid starts imitating in ~30 min.",
+   "reason": "把 CUDA 训练栈完整搬到 Apple Silicon，工程扎实、MIT 开源、可复现，是无显卡新人入门 sim RL 的好材料；但领域新意有限，纯仿真未上真机。",
+   "red_flags": [
+    "算力基准只在 M4 Pro 48GB 上测，16GB Mac 能否跑通未验证",
+    "纯仿真，未上真机",
+    "作者与机构信息不明，22 分钟结论只有一个基线对比"
+   ],
+   "final": 6.52,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 8,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 2.04
+  },
+  {
+   "id": "arxiv:2611.30597",
+   "kind": "paper",
+   "title": "ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild",
+   "url": "https://arxiv.org/abs/2611.30597",
+   "authors": [
+    "Yuxi Wang",
+    "Yufei Liu",
+    "Chengkai Jin",
+    "Qingyue Chen",
+    "Wenqi Ouyang",
+    "Tianyi Wei",
+    "Kerui Ren",
+    "Siyuan Huang"
+   ],
+   "license": "",
+   "code_url": "https://vidihand2.github.io/",
+   "signals": {
+    "hf_upvotes": 20,
+    "github_stars": 0
+   },
+   "topic": "数据集",
+   "one_liner": "用视频扩散模型加手部几何，从普通视频里还原出带真实尺度的 3D 手部动作",
+   "one_liner_en": "Combines video diffusion priors with hand geometry to recover metric 3D hand motion from ordinary videos",
+   "how_to_try": "先在 Mac 上用仓库跑推理：拿手机拍一段自己的手，或用公开视频当输入；只有两阶段推理不一定要 NVIDIA。手部几何部分也能当学习 MANO 数据管线的入口。",
+   "how_to_try_en": "Run the repo's inference on a Mac with a self-shot hand video or public clip; the pipeline is mostly inference, so no NVIDIA card is strictly required. Good entry to MANO.",
+   "reason": "对做第一人称示范数据的人有用，方法扎实但偏数据管线；新人能跑推理来理解 MANO 和扩散先验，惊喜感一般。",
+   "red_flags": [
+    "它做的是从视频里重建手的动作数据，不是机器人控制策略；和‘操作抓取’只是数据上游的关系",
+    "论文写“42% 提升”和“57 FPS”，但没给硬件条件，可能在 GPU 上测的",
+    "arXiv 编号 2611 和 2026-11 的日期看起来像未来时间，需要核对真实性"
+   ],
+   "final": 6.3,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 6,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 6.6
+  },
+  {
+   "id": "hf-dataset:lerobot/aloha_sim_insertion_human",
+   "kind": "dataset",
+   "title": "lerobot/aloha_sim_insertion_human",
+   "url": "https://huggingface.co/datasets/lerobot/aloha_sim_insertion_human",
+   "authors": [],
+   "license": "mit",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 1,
+    "hf_likes": 18,
+    "downloads": 16631
+   },
+   "topic": "数据集",
+   "one_liner": "ACT 论文里的仿真双臂插拔任务人类演示数据，50 条轨迹，可直接在 LeRobot 里训练模仿学习。",
+   "one_liner_en": "50 human demos of a simulated bimanual insertion task from the ACT paper, ready to train imitation learning in LeRobot.",
+   "how_to_try": "用 LeRobot 在 Mac 上跑 ACT 训练脚本，只加载这个 ALOHA 仿真数据集，就能看到 loss 下降并回放预测动作。",
+   "how_to_try_en": "Clone LeRobot on your Mac, run the ACT training script on this ALOHA sim dataset, watch loss drop and visualize predicted actions.",
+   "reason": "价值在于入门：数据小、许可宽松、Mac 可训，适合讲清模仿学习与 ACT；但内容本身是旧论文的仿真子集，惊喜感有限。",
+   "red_flags": [
+    "只是 ACT 论文的配套数据子集，单任务 50 条，本身不构成新进展"
+   ],
+   "final": 6.21,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 4,
+   "playable": 8,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 1.5
+  },
+  {
+   "id": "gh:mitos-robotics/MRCF",
+   "kind": "repo",
+   "title": "mitos-robotics/MRCF",
+   "url": "https://github.com/mitos-robotics/MRCF",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 21,
+    "daily_rate": 5.2
+   },
+   "topic": "操作抓取",
+   "one_liner": "用大白话指挥机械臂的模块化控制框架",
+   "one_liner_en": "A modular framework that lets a local LLM plan and run robot arm tasks from plain English.",
+   "how_to_try": "需真机 SO-101 或 UR5 和摄像头。Mac 只能读代码、跑模板臂的空实现，可看 chess/tabletop 部署示例理解分层设计。",
+   "how_to_try_en": "Needs a real SO-101 or UR5 arm plus cameras. On a Mac you can only read the code and run the in-memory template arm; study the chess/tabletop deployments to learn the layered design.",
+   "reason": "分层设计（LLM 只选动作、策略执行、安全校验）思路清晰，适合学架构；但 alpha 阶段、无演示、必须真机，作为精选说服力不足。",
+   "red_flags": [
+    "项目处于 alpha，尚无真实评测数据或视频演示",
+    "热度很低（21 stars），缺基准对比",
+    "无硬件时几乎跑不起来，只有模板假臂"
+   ],
+   "final": 5.38,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 3,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 3.2
+  }
+ ],
+ "trend": {
+  "name_en": "World Action Models for Robot Policy Learning",
+  "name_zh": "世界动作模型（WAM）",
+  "one_liner": "让机器人在脑内预演『动了会怎样』，再挑最靠谱的动作执行。",
+  "one_liner_en": "Robot policies that imagine the future outcome of an action before acting, by combining a video world model with an action model.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "paper",
+    "title": "Innata-0: A Native Embodied World System with Model-Agent Co-Design",
+    "url": "https://arxiv.org/abs/2611.30254",
+    "one_liner_en": "A combined world-action model plus agent system for long-horizon robot tasks."
+   },
+   {
+    "kind": "paper",
+    "title": "LoopedWAM: Looped World Action Models for Elastic Inference",
+    "url": "https://arxiv.org/abs/2611.25595",
+    "one_liner_en": "A compact world-action model that reuses the same layers to cut memory while predicting robot actions"
+   },
+   {
+    "kind": "model",
+    "title": "bageldotcom/Bagel-Robotics-1",
+    "url": "https://huggingface.co/bageldotcom/Bagel-Robotics-1",
+    "one_liner_en": "A pruned, compact world-action model checkpoint for robot manipulation, released openly"
+   },
+   {
+    "kind": "model",
+    "title": "Jingkuan/WSA-Base",
+    "url": "https://huggingface.co/Jingkuan/WSA-Base",
+    "one_liner_en": "A 3B/6B robot foundation model that jointly learns 3D world modeling and action generation."
+   },
+   {
+    "kind": "model",
+    "title": "Jingkuan/WSA-Large",
+    "url": "https://huggingface.co/Jingkuan/WSA-Large",
+    "one_liner_en": "A 3D world-model robot foundation model that plans actions via spatial prediction; ~99% on LIBERO sim."
+   },
+   {
+    "kind": "repo",
+    "title": "chenyizhi123/Zeta0",
+    "url": "https://github.com/chenyizhi123/Zeta0",
+    "one_liner_en": "Adds a world-model add-on that predicts future views and 29 body joints to layered VLA policies for a Unitree G1 humanoid."
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "前沿大模型直接当机器人策略",
+    "name_en": "Frontier Model-as-Policy Harness",
+    "why": "Embo-Harness、ACAP、AgentRoboCritic 等多条内容同时研究用通用智能体直接控机器人。"
+   },
+   {
+    "name_zh": "视频扩散模型做分步规划",
+    "name_en": "Video Diffusion Models for Step-by-Step Planning",
+    "why": "ViDecide、ViDiHand2、Plan4D 显示视频生成模型正被用来做推理与规划。"
+   }
+  ],
+  "streak": 1
+ }
+}
