@@ -1510,5 +1510,68 @@
   "explain": "用示范或强化学习训练出的模型，直接输出动作",
   "first_seen": "2026-11-25",
   "source": "gh:mitos-robotics/MRCF"
+ },
+ "model-as-policy": {
+  "term": "model-as-policy",
+  "zh": "模型即策略",
+  "explain": "不训练专属小模型，直接让大模型看画面输出机器人动作",
+  "first_seen": "2026-11-26",
+  "source": "arxiv:2611.31201"
+ },
+ "agentic loop": {
+  "term": "agentic loop",
+  "zh": "智能体闭环",
+  "explain": "提示、规划、执行动作、调用工具反复循环的流程",
+  "first_seen": "2026-11-26",
+  "source": "arxiv:2611.31201"
+ },
+ "onnx 部署": {
+  "term": "ONNX 部署",
+  "zh": "模型导出部署",
+  "explain": "把训练好的网络导出成通用格式，在低算力板子上实时推理",
+  "first_seen": "2026-11-26",
+  "source": "gh:AI-FanGe/A-MicroRobot-that-can-Rollerskate"
+ },
+ "robot-use interface (rui)": {
+  "term": "Robot-Use Interface (RUI)",
+  "zh": "机器人使用接口",
+  "explain": "智能体把想法变成具体动作的那套约定，像遥控器按键怎么设计",
+  "first_seen": "2026-11-26",
+  "source": "arxiv:2611.31115"
+ },
+ "action abstraction": {
+  "term": "Action Abstraction",
+  "zh": "动作抽象",
+  "explain": "一次下多少命令：给末端坐标还是给整段轨迹，粗细不同",
+  "first_seen": "2026-11-26",
+  "source": "arxiv:2611.31115"
+ },
+ "verification gap": {
+  "term": "Verification Gap",
+  "zh": "验证鸿沟",
+  "explain": "机器人明明失败了却宣布成功，缺任务级检查",
+  "first_seen": "2026-11-26",
+  "source": "arxiv:2611.31115"
+ },
+ "skill / plugin": {
+  "term": "Skill / Plugin",
+  "zh": "技能插件",
+  "explain": "把一套专用知识和工具打包，让AI助手照着干活",
+  "first_seen": "2026-11-26",
+  "source": "gh:google-deepmind/robotics-antigravity-plugin"
+ },
+ "force/torque sensing": {
+  "term": "Force/Torque Sensing",
+  "zh": "力/力矩传感",
+  "explain": "机械臂手腕感知推、压、擦时用了多大力气。",
+  "first_seen": "2026-11-26",
+  "source": "hf-dataset:NUSMAGIC/Force2Act-Bench-Data"
+ },
+ "lerobot dataset": {
+  "term": "LeRobot Dataset",
+  "zh": "LeRobot 数据集格式",
+  "explain": "Hugging Face 机器人库统一的数据组织格式，方便直接训练。",
+  "first_seen": "2026-11-26",
+  "source": "hf-dataset:NUSMAGIC/Force2Act-Bench-Data"
  }
 }

@@ -1,0 +1,294 @@
+{
+ "date": "2026-11-26",
+ "headline": "前沿大模型怎么做机器人策略：Embo-Harness 系统拆解",
+ "title_en": "Embo-Harness: Using Frontier Multimodal Models Directly as Robot Policies",
+ "tagline_en": "A systematic study of how to wrap a frontier multimodal model into a closed-loop robot policy harness.",
+ "summary_md": "**What it is.** Embo-Harness is a framework from Xiao-Ming Wu, Kang Liao, Yuexiao Ma and colleagues for studying what happens when you use a frontier multimodal model *directly* as a robot policy — no separate trained policy network, just a big model in a closed loop with observations in and actions out. The paper breaks the loop into four parts (prompting, planning, action execution, tool use) and distills six empirical findings into a practical recipe.\n\n**Why it matters.** Most robot learning assumes you train a policy. This line of work asks whether a general model plus the right *interface* (the \"harness\") is enough. The recipe favors interfaces that use the model's native visual reasoning and tool use over handcrafted plans, skills, or action priors, and gives concrete choices for action representation, action chunking, reasoning effort, visual observations, short multi-action sequences, and policy refinement. On the RoboLab-120 benchmark, Embo-Harness reports 83.3% success, 26.2 points above the strongest reported baseline, and 15/20 zero-shot success across four real manipulation tasks. Per the paper, controlled interventions suggest the model relies more on accurate spatial target estimation than on explicit low-level joint or trajectory generation.\n\n**Can you try it without a robot?** Not fully. The project page has demos, but the code and weights are not clearly public; reproducing the prompt harness would need a cloud GPU, and a local closed loop on a Mac is not realistic. Two caveats: the real-world validation is only 20 trials, and I could not independently verify the arXiv listing, so treat the numbers as the paper's own claims.",
+ "pick": {
+  "id": "arxiv:2611.31201",
+  "kind": "paper",
+  "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+  "url": "https://arxiv.org/abs/2611.31201",
+  "authors": [
+   "Xiao-Ming Wu",
+   "Kang Liao",
+   "Yuexiao Ma",
+   "Taolin Zhang",
+   "Mingqian Zhou",
+   "Nuo Chen",
+   "Ziming Li",
+   "Yihang Luo"
+  ],
+  "license": "",
+  "code_url": "https://github.com/DravenALG/Embo-Harness",
+  "signals": {
+   "hf_upvotes": 105,
+   "github_stars": 68
+  },
+  "topic": "VLA与基础模型",
+  "one_liner": "系统研究如何把前沿多模态大模型直接当机器人策略来用",
+  "one_liner_en": "A systematic study of how to harness frontier multimodal models as robot policies.",
+  "how_to_try": "项目页有演示，但代码与权重未完全公开；有云 GPU 时可复现其 harness 提示流程，Mac 本地难跑真机闭环。",
+  "how_to_try_en": "Check the project page demos; full closed-loop needs a cloud GPU, hard to run locally on a Mac.",
+  "reason": "对“大模型直接当策略”的实证拆解很有学习价值，但开放性与真机验证规模有限，实际可玩性中等。",
+  "red_flags": [
+   "代码和模型权重开放程度不明，项目页只给了链接",
+   "仅在20次真机试验上做零样本验证，样本量偏小",
+   "arXiv 编号与日期疑似虚构，需核实来源真实性"
+  ],
+  "final": 6.87,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 7,
+  "wow": 6,
+  "playable": 5,
+  "openness": 5,
+  "learning_value": 8,
+  "heat": 10
+ },
+ "top": [
+  {
+   "id": "arxiv:2611.31201",
+   "kind": "paper",
+   "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+   "url": "https://arxiv.org/abs/2611.31201",
+   "authors": [
+    "Xiao-Ming Wu",
+    "Kang Liao",
+    "Yuexiao Ma",
+    "Taolin Zhang",
+    "Mingqian Zhou",
+    "Nuo Chen",
+    "Ziming Li",
+    "Yihang Luo"
+   ],
+   "license": "",
+   "code_url": "https://github.com/DravenALG/Embo-Harness",
+   "signals": {
+    "hf_upvotes": 105,
+    "github_stars": 68
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "系统研究如何把前沿多模态大模型直接当机器人策略来用",
+   "one_liner_en": "A systematic study of how to harness frontier multimodal models as robot policies.",
+   "how_to_try": "项目页有演示，但代码与权重未完全公开；有云 GPU 时可复现其 harness 提示流程，Mac 本地难跑真机闭环。",
+   "how_to_try_en": "Check the project page demos; full closed-loop needs a cloud GPU, hard to run locally on a Mac.",
+   "reason": "对“大模型直接当策略”的实证拆解很有学习价值，但开放性与真机验证规模有限，实际可玩性中等。",
+   "red_flags": [
+    "代码和模型权重开放程度不明，项目页只给了链接",
+    "仅在20次真机试验上做零样本验证，样本量偏小",
+    "arXiv 编号与日期疑似虚构，需核实来源真实性"
+   ],
+   "final": 6.87,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 5,
+   "learning_value": 8,
+   "heat": 10
+  },
+  {
+   "id": "gh:AI-FanGe/A-MicroRobot-that-can-Rollerskate",
+   "kind": "repo",
+   "title": "AI-FanGe/A-MicroRobot-that-can-Rollerskate",
+   "url": "https://github.com/AI-FanGe/A-MicroRobot-that-can-Rollerskate",
+   "authors": [],
+   "license": "NOASSERTION",
+   "code_url": "",
+   "signals": {
+    "stars": 141,
+    "daily_rate": 141.0
+   },
+   "topic": "人形与足式",
+   "one_liner": "一个30厘米的3D打印开源小人形，会走路、滑板和对话",
+   "one_liner_en": "A 30cm open-source 3D-printed desktop humanoid that walks, skates and chats.",
+   "how_to_try": "无硬件也能在 Mac 上跑 MuJoCo/MjLab 训练环境，看策略仿真；想上身需自己 3D 打印",
+   "how_to_try_en": "No hardware needed to run the MuJoCo/MjLab training env on Mac and watch policies in sim; real robot requires 3D printing.",
+   "reason": "完整开源的小人形，仿真+RL+部署全链路齐全，演示讨喜，适合入门 sim-to-real，但硬件门槛和许可存疑。",
+   "red_flags": [
+    "许可证为 NOASSERTION，实际授权不明",
+    "作者机构与发布日期可疑（2026年），来源需核实",
+    "主控板型号不明，部署依赖特定硬件",
+    "无 NVIDIA 显卡时 RL 训练会很慢，只能看推理"
+   ],
+   "final": 6.83,
+   "topic_penalty": 0.6,
+   "significance": 6,
+   "explainability": 9,
+   "wow": 8,
+   "playable": 6,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 8.68
+  },
+  {
+   "id": "arxiv:2611.31115",
+   "kind": "paper",
+   "title": "RUIBench: What Makes a Good Robot-Use Interface?",
+   "url": "https://arxiv.org/abs/2611.31115",
+   "authors": [
+    "Yanzhe Chen",
+    "Zhijun Cao",
+    "Zechen Bai",
+    "Wenzheng Zeng",
+    "Kevin Yuchen Ma",
+    "Yiqi Lin",
+    "Guoqiang Liang",
+    "Xiaokang Liu"
+   ],
+   "license": "",
+   "code_url": "https://github.com/showlab/RUIBench",
+   "signals": {
+    "hf_upvotes": 22,
+    "github_stars": 18
+   },
+   "topic": "VLA与基础模型",
+   "one_liner": "给机器人换个操作接口，成功率能从45%提到81%",
+   "one_liner_en": "Swapping a robot's action interface alone lifts agent success from 45% to 81%.",
+   "how_to_try": "看项目页的13种接口对照demo；仿真基准本身需GPU跑，Mac只能读代码和结果表",
+   "how_to_try_en": "Browse the project page's 13-interface comparison demos; running the sim benchmark needs a GPU, Mac only for reading code.",
+   "reason": "角度新颖，量化了接口设计对可靠性的巨大影响，适合讲清VLA落地难点，但纯仿真且可玩性有限。",
+   "red_flags": [
+    "arXiv 编号 2611 时间可疑，需核实真伪",
+    "纯仿真基准，无真机验证",
+    "热度较低，代码星标仅2"
+   ],
+   "final": 6.49,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 6,
+   "playable": 5,
+   "openness": 6,
+   "learning_value": 8,
+   "heat": 6.79
+  },
+  {
+   "id": "gh:google-deepmind/robotics-antigravity-plugin",
+   "kind": "repo",
+   "title": "google-deepmind/robotics-antigravity-plugin",
+   "url": "https://github.com/google-deepmind/robotics-antigravity-plugin",
+   "authors": [],
+   "license": "Apache-2.0",
+   "code_url": "",
+   "signals": {
+    "stars": 359,
+    "daily_rate": 83.0
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "给谷歌AI编程助手装上机器人技能包，用一句话生成MuJoCo仿真并控制真机",
+   "one_liner_en": "A Gemini plugin that turns plain prompts into MuJoCo robot simulations and real-arm code.",
+   "how_to_try": "装 Antigravity 加插件，用自然语言让它生成 MuJoCo 抓取仿真，纯 Mac 可行但要 Gemini API key",
+   "how_to_try_en": "Install Antigravity plus this plugin, then prompt it to build a MuJoCo grasping sim on your Mac; needs a Gemini API key.",
+   "reason": "是提示词技能包而非算法突破，价值在于把仿真门槛降到聊天级，适合无硬件新人入门，但重要性别高估。",
+   "red_flags": [
+    "本质是提示词技能包，核心能力依赖闭源 Gemini 和 Antigravity，非模型贡献",
+    "摘要中\"前沿空间推理\"等表述偏宣传",
+    "发布时间 2026-11 存疑，需核实"
+   ],
+   "final": 6.4,
+   "topic_penalty": 0.6,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 7,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 7.76
+  },
+  {
+   "id": "hf-dataset:NUSMAGIC/Force2Act-Bench-Data",
+   "kind": "dataset",
+   "title": "NUSMAGIC/Force2Act-Bench-Data",
+   "url": "https://huggingface.co/datasets/NUSMAGIC/Force2Act-Bench-Data",
+   "authors": [],
+   "license": "mit",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 3,
+    "hf_likes": 3,
+    "downloads": 360
+   },
+   "topic": "数据集",
+   "one_liner": "仿真机械臂做接触任务的力觉遥操作示教数据集",
+   "one_liner_en": "A dataset of teleoperated robot demos with wrist force readings for contact-rich tasks in simulation.",
+   "how_to_try": "Mac 上装 LeRobot，用 Genesis 仿真加载数据回放，再训个模仿学习小模型。",
+   "how_to_try_en": "Install LeRobot on your Mac, replay the data in the Genesis simulator, then train a small imitation-learning policy.",
+   "reason": "带力觉的接触任务仿真示教数据，MIT 许可、LeRobot 格式开箱即用，很适合 Mac 新手入门模仿学习，但规模小、缺真机验证。",
+   "red_flags": [
+    "作者机构未知，发布时间较新，社区验证少",
+    "全部是仿真数据，没有真机，sim-to-real 未验证",
+    "仅五个任务、几百条示教，规模偏小"
+   ],
+   "final": 6.08,
+   "topic_penalty": 0,
+   "significance": 5,
+   "explainability": 7,
+   "wow": 4,
+   "playable": 8,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 3.0
+  }
+ ],
+ "trend": {
+  "name_en": "Coding-Agent Robot Harnesses",
+  "name_zh": "编码智能体机器人调度框架",
+  "one_liner": "让会写代码的 AI 智能体充当机器人大脑，通过调用工具和程序来指挥机器人干活",
+  "one_liner_en": "Use coding agents as the robot's brain: they write and run programs that command real robots.",
+  "momentum": "新出现",
+  "evidence": [
+   {
+    "kind": "paper",
+    "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
+    "url": "https://arxiv.org/abs/2611.31201",
+    "one_liner_en": "A systematic study of how to harness frontier multimodal models as robot policies."
+   },
+   {
+    "kind": "paper",
+    "title": "ACAP: Asynchronous Coding Agents for Efficient Robot Control",
+    "url": "https://arxiv.org/abs/2611.31205",
+    "one_liner_en": "Splits robot control among multiple async coding agents that cooperate to finish tasks faster"
+   },
+   {
+    "kind": "paper",
+    "title": "PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents",
+    "url": "https://arxiv.org/abs/2611.33144",
+    "one_liner_en": "Coding agents write and refine robot hand-control programs by trial and error, no human demos needed."
+   },
+   {
+    "kind": "repo",
+    "title": "google-deepmind/robotics-antigravity-plugin",
+    "url": "https://github.com/google-deepmind/robotics-antigravity-plugin",
+    "one_liner_en": "A Gemini plugin that turns plain prompts into MuJoCo robot simulations and real-arm code."
+   },
+   {
+    "kind": "repo",
+    "title": "eust-w/opengeniemaster",
+    "url": "https://github.com/eust-w/opengeniemaster",
+    "one_liner_en": "A software-only clone of an embodied agent harness where coding agents drive robots in simulation via a protocol."
+   },
+   {
+    "kind": "paper",
+    "title": "Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation",
+    "url": "https://arxiv.org/abs/2611.27689",
+    "one_liner_en": "A dual-agent robot system that gets better at tasks by reflecting on failures, without retraining."
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "程序化策略与自进化智能体",
+    "name_en": "Programmatic Policy Self-Evolution",
+    "why": "PyRUA-Dex、SEEK、RoboEvo^2 等多条工作让智能体靠试错写程序自我改进"
+   },
+   {
+    "name_zh": "世界动作模型轻量化与压缩",
+    "name_en": "Efficient / Pruned World-Action Models",
+    "why": "LoopedWAM、Bagel-Robotics-1、WSA 系列把 WAM 做小做快，延续前几日热度"
+   }
+  ],
+  "streak": 1
+ }
+}
