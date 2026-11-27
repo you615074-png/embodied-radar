@@ -1573,5 +1573,68 @@
   "explain": "Hugging Face 机器人库统一的数据组织格式，方便直接训练。",
   "first_seen": "2026-11-26",
   "source": "hf-dataset:NUSMAGIC/Force2Act-Bench-Data"
+ },
+ "real2sim2real": {
+  "term": "Real2Sim2Real",
+  "zh": "实到仿再到实",
+  "explain": "把真实场景搭成仿真，在仿真里练好再搬回真机",
+  "first_seen": "2026-11-27",
+  "source": "gh:real2worlds2real/real2worlds2real"
+ },
+ "agentic pipeline": {
+  "term": "Agentic Pipeline",
+  "zh": "智能体流水线",
+  "explain": "让大模型自己拆任务、调工具、检查结果再修正",
+  "first_seen": "2026-11-27",
+  "source": "gh:real2worlds2real/real2worlds2real"
+ },
+ "digital twin": {
+  "term": "Digital Twin",
+  "zh": "数字孪生",
+  "explain": "仿真里的一份和真实物体对应的虚拟复制品",
+  "first_seen": "2026-11-27",
+  "source": "gh:real2worlds2real/real2worlds2real"
+ },
+ "graph anchors": {
+  "term": "Graph Anchors",
+  "zh": "图锚点",
+  "explain": "在训练帧上建图，每步先找路上不远的中间目标",
+  "first_seen": "2026-11-27",
+  "source": "arxiv:2611.34509"
+ },
+ "closed-loop planning": {
+  "term": "Closed-loop Planning",
+  "zh": "闭环规划",
+  "explain": "边走边看边改计划，而不是一次算到底",
+  "first_seen": "2026-11-27",
+  "source": "arxiv:2611.34509"
+ },
+ "causal streaming": {
+  "term": "Causal Streaming",
+  "zh": "因果流式",
+  "explain": "只能看已经发生的画面，不能偷看后面的视频",
+  "first_seen": "2026-11-27",
+  "source": "arxiv:2611.34347"
+ },
+ "decision-aware metric": {
+  "term": "Decision-aware Metric",
+  "zh": "决策感知指标",
+  "explain": "奖励该等的时候等、该动手时动手，抢答就扣分",
+  "first_seen": "2026-11-27",
+  "source": "arxiv:2611.34347"
+ },
+ "policy": {
+  "term": "policy",
+  "zh": "策略",
+  "explain": "决定机器人每步做什么的程序，可换不同实现",
+  "first_seen": "2026-11-27",
+  "source": "gh:robodeltas/inspect-robots"
+ },
+ "dual-arm manipulation": {
+  "term": "Dual-arm Manipulation",
+  "zh": "双臂操作",
+  "explain": "两条机械臂配合完成一件任务，比如一只手压布、一只手折。",
+  "first_seen": "2026-11-27",
+  "source": "hf-dataset:lerobot/high_quality_folding"
  }
 }

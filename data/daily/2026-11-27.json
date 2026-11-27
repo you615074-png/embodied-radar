@@ -1,0 +1,279 @@
+{
+ "date": "2026-11-27",
+ "headline": "真实场景→仿真→真实：智能体搭流水线",
+ "title_en": "Real2Worlds2Real: an agent that rebuilds real scenes as simulation",
+ "tagline_en": "An agent pipeline that reconstructs a real scene in simulation, trains there, and hands back to the real robot.",
+ "summary_md": "**What it is:** A code release (MIT license) for the paper *Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation*. The authors — Jinzhong Gu, Jiakai Chen, Xinyi Cao, Yan Shen, Hangke Sui and colleagues, affiliated with UC Berkeley, NVIDIA, UIUC and CMU — describe an agent called ASTRA that takes observations of a real scene and turns them into a simulated version. The agent picks layered skills and tools, inspects the evidence produced at each step, and revises its own results. One `astra-e2e` run can start from calibrated cameras and poses, use per-object workers, check physics, and assemble a scene.\n\n**Why it matters:** Getting a real tabletop scene into a simulator is normally slow manual work — measuring objects, matching textures, tuning physics. If an agent can do most of that and catch its own mistakes, the loop \"scan the real world, practice in sim, deploy back to real\" gets cheaper. That loop is the core idea behind real2sim2real manipulation.\n\n**Can you try it without a robot?** Only partly. The repo is a README with real-robot and simulation demo videos plus workflow docs. There are no visible training hyperparameters, datasets, or result tables, and the full pipeline expects calibrated real cameras and a real robot for validation. On a laptop you can read the agent workflow documentation and watch the demos, but you cannot reproduce the results. Note: the listed date and arXiv number also look questionable, so treat this as a concept read, not a runnable tool.",
+ "pick": {
+  "id": "gh:real2worlds2real/real2worlds2real",
+  "kind": "repo",
+  "title": "real2worlds2real/real2worlds2real",
+  "url": "https://github.com/real2worlds2real/real2worlds2real",
+  "authors": [],
+  "license": "MIT",
+  "code_url": "",
+  "signals": {
+   "stars": 66,
+   "daily_rate": 66.0
+  },
+  "topic": "世界模型与仿真",
+  "one_liner": "用智能体把真实场景自动重建成仿真，在仿真里训练机器人，再回到真实场景验证",
+  "one_liner_en": "An agent turns real scenes into simulations to train robot policies, then validates them on real robots.",
+  "how_to_try": "先看项目页和仿真 demo 视频；仓库的 agent 流程文档可以读，但完整跑通需要真实相机标定和机器人，Mac 上做不到",
+  "how_to_try_en": "Watch the project page and sim demos first; the agent workflow docs are readable, but a full run needs calibrated cameras and a real robot — not on a Mac.",
+  "reason": "思路完整、工程量大，但日期与编号疑似伪造，且强依赖真实硬件，只能当概念读物，不能亲手跑。",
+  "red_flags": [
+   "条目信息可疑：日期 2026-11-26 和 arXiv 编号 2611.31098 都落在未来，机构署名存疑",
+   "README 只是视频和流程说明，没有看到训练超参、数据或结果表格",
+   "完整流程要求真实相机标定和机器人，无硬件者几乎无法复现"
+  ],
+  "final": 6.7,
+  "topic_penalty": 0,
+  "significance": 7,
+  "explainability": 7,
+  "wow": 7,
+  "playable": 5,
+  "openness": 7,
+  "learning_value": 7,
+  "heat": 7.37
+ },
+ "top": [
+  {
+   "id": "gh:real2worlds2real/real2worlds2real",
+   "kind": "repo",
+   "title": "real2worlds2real/real2worlds2real",
+   "url": "https://github.com/real2worlds2real/real2worlds2real",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 66,
+    "daily_rate": 66.0
+   },
+   "topic": "世界模型与仿真",
+   "one_liner": "用智能体把真实场景自动重建成仿真，在仿真里训练机器人，再回到真实场景验证",
+   "one_liner_en": "An agent turns real scenes into simulations to train robot policies, then validates them on real robots.",
+   "how_to_try": "先看项目页和仿真 demo 视频；仓库的 agent 流程文档可以读，但完整跑通需要真实相机标定和机器人，Mac 上做不到",
+   "how_to_try_en": "Watch the project page and sim demos first; the agent workflow docs are readable, but a full run needs calibrated cameras and a real robot — not on a Mac.",
+   "reason": "思路完整、工程量大，但日期与编号疑似伪造，且强依赖真实硬件，只能当概念读物，不能亲手跑。",
+   "red_flags": [
+    "条目信息可疑：日期 2026-11-26 和 arXiv 编号 2611.31098 都落在未来，机构署名存疑",
+    "README 只是视频和流程说明，没有看到训练超参、数据或结果表格",
+    "完整流程要求真实相机标定和机器人，无硬件者几乎无法复现"
+   ],
+   "final": 6.7,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 7,
+   "wow": 7,
+   "playable": 5,
+   "openness": 7,
+   "learning_value": 7,
+   "heat": 7.37
+  },
+  {
+   "id": "arxiv:2611.34509",
+   "kind": "paper",
+   "title": "Long-Horizon Planning with Latent World Models via Graph Anchors",
+   "url": "https://arxiv.org/abs/2611.34509",
+   "authors": [
+    "Syed Nazmus Sakib",
+    "Abdul Monaf Chowdhury",
+    "Peizhen Li",
+    "Nafiul Haque",
+    "Chandak Chakma",
+    "Md Mehedi Hasan",
+    "Zehong Cao",
+    "Shifat E. Arman"
+   ],
+   "license": "",
+   "code_url": "",
+   "signals": {},
+   "topic": "世界模型与仿真",
+   "one_liner": "用训练数据建图，把远目标换成近锚点，让世界模型规划成功率大涨",
+   "one_liner_en": "Build a graph over training frames and aim at nearby anchor nodes to fix latent world-model planning.",
+   "how_to_try": "克隆 GitHub 仓库，在 Mac 上跑 Meta-World/Push-T 仿真，复现 13%→85% 的对比",
+   "how_to_try_en": "Clone the GitHub repo and run the Meta-World/Push-T sims on your Mac to reproduce the 13%->85% jump.",
+   "reason": "抓住隐空间距离失效这一真问题，方法免训练、有代码、Mac 可复现，很适合入门讲清世界模型规划。",
+   "red_flags": [
+    "arXiv 编号与 2026 日期疑点，需核实真伪",
+    "只改规划器，未提升世界模型本身，泛化边界有限"
+   ],
+   "final": 6.64,
+   "topic_penalty": 0,
+   "significance": 7,
+   "explainability": 8,
+   "wow": 6,
+   "playable": 8,
+   "openness": 8,
+   "learning_value": 8,
+   "heat": 2.0
+  },
+  {
+   "id": "arxiv:2611.34347",
+   "kind": "paper",
+   "title": "AIRIS: Benchmarking Social Embodied Intelligence in Egocentric Streaming Videos",
+   "url": "https://arxiv.org/abs/2611.34347",
+   "authors": [
+    "Yuchen Zhou",
+    "Hongsheng Wu",
+    "Jiayu Tang",
+    "Yunxuan Mao",
+    "Hanjing Ye",
+    "Shenghao Zhang",
+    "Jing Tang",
+    "Chun-Kai Fan"
+   ],
+   "license": "",
+   "code_url": "https://github.com/AIRIS-bench/AIRIS",
+   "signals": {
+    "hf_upvotes": 17,
+    "github_stars": 23
+   },
+   "topic": "其他",
+   "one_liner": "用第一人称视频测试AI能否在社交场合判断何时该出手、怎么反应",
+   "one_liner_en": "A benchmark testing whether AI can judge when and how to act socially from first-person video",
+   "how_to_try": "代码放出后可拉下基准，在 Mac 上对开源 VLM 跑离线推理评测；无需机器人",
+   "how_to_try_en": "Once code is released, clone the benchmark and run offline eval of open VLMs on a Mac; no robot needed",
+   "reason": "定位清晰的社交流式基准，难题真实但偏评测、离硬件远，适合作为概念入门而非上手项目。",
+   "red_flags": [
+    "只有论文摘要，无代码链接细节，未标许可证",
+    "社交基准偏认知评测，与真实机器人操作关联弱",
+    "热度和 star 都只有 16，跟进有限"
+   ],
+   "final": 6.46,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 8,
+   "wow": 5,
+   "playable": 7,
+   "openness": 6,
+   "learning_value": 7,
+   "heat": 6.26
+  },
+  {
+   "id": "gh:robodeltas/inspect-robots",
+   "kind": "repo",
+   "title": "robodeltas/inspect-robots",
+   "url": "https://github.com/robodeltas/inspect-robots",
+   "authors": [],
+   "license": "MIT",
+   "code_url": "",
+   "signals": {
+    "stars": 51,
+    "daily_rate": 51.0
+   },
+   "topic": "其他",
+   "one_liner": "给机器人做统一评测的开源框架，换机器人或策略都能跑",
+   "one_liner_en": "An open-source framework that benchmarks any robot policy on any arm or simulator",
+   "how_to_try": "装 pip 包，接仿真插件或自写 mock 策略跑通流程；真机部分无硬件做不了，可先用 Rerun 看日志",
+   "how_to_try_en": "pip install it, run with a mock or sim plugin to see the eval loop and Rerun logs; real-arm control needs hardware.",
+   "reason": "统一评测框架方向有价值，工程较完整但偏基础设施，缺演示亮点；新人只能跑 mock 和看日志。",
+   "red_flags": [
+    "项目早期，API 可能变",
+    "真机控制仅限 Linux，新人无硬件跑不到核心功能",
+    "仅 51 stars，社区验证少"
+   ],
+   "final": 6.15,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 4,
+   "playable": 5,
+   "openness": 8,
+   "learning_value": 7,
+   "heat": 6.92
+  },
+  {
+   "id": "hf-dataset:lerobot/high_quality_folding",
+   "kind": "dataset",
+   "title": "lerobot/high_quality_folding",
+   "url": "https://huggingface.co/datasets/lerobot/high_quality_folding",
+   "authors": [],
+   "license": "apache-2.0",
+   "code_url": "",
+   "signals": {
+    "hf_trending": 1,
+    "hf_likes": 8,
+    "downloads": 33780
+   },
+   "topic": "数据集",
+   "one_liner": "一个1200次双臂机器人叠衣服的示范数据集，用开源格式发布，可直接训练模仿学习策略。",
+   "one_liner_en": "A 1,200-episode dual-arm robot folding-clothes dataset in LeRobot format, ready for imitation learning.",
+   "how_to_try": "Mac装LeRobot，下载数据或小部分，用ACT/SmolVLA在MPS上跑小训练或可视化datasets。",
+   "how_to_try_en": "Install LeRobot on Mac, download (or subset) the data, and train/viz ACT or SmolVLA on MPS.",
+   "reason": "开放格式、规模不错、上手门槛低，适合入门模仿学习；但缺论文与结果，惊喜感一般，属稳健但不惊艳的数据集。",
+   "red_flags": [
+    "README几乎是模板，无论文、无基准结果、无任务描述",
+    "只有单一‘叠衣’任务，且依赖特定openarms机器人"
+   ],
+   "final": 6.01,
+   "topic_penalty": 0,
+   "significance": 6,
+   "explainability": 7,
+   "wow": 5,
+   "playable": 7,
+   "openness": 9,
+   "learning_value": 8,
+   "heat": 1.5
+  }
+ ],
+ "trend": {
+  "name_en": "World Action Models (WAM) for Robot Policy Learning",
+  "name_zh": "世界动作模型（WAM）",
+  "one_liner": "让机器人在动手前先在脑中生成“未来画面”，再预测动作，既省数据又更稳。",
+  "one_liner_en": "Models that imagine future video frames before acting, so robots learn safer, steadier policies with less data.",
+  "momentum": "持续热",
+  "evidence": [
+   {
+    "kind": "paper",
+    "title": "Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts",
+    "url": "https://arxiv.org/abs/2611.28732",
+    "one_liner_en": "A robot watches one human video and performs new tasks without extra training."
+   },
+   {
+    "kind": "paper",
+    "title": "WAtcher: Watching Ahead for Safe Robotic Manipulation with Efficient World-Action Models",
+    "url": "https://arxiv.org/abs/2611.34124",
+    "one_liner_en": "A robot policy imagines each action's outcome before acting and vetoes risky moves."
+   },
+   {
+    "kind": "paper",
+    "title": "LoopedWAM: Looped World Action Models for Elastic Inference",
+    "url": "https://arxiv.org/abs/2611.25595",
+    "one_liner_en": "A compact world-action model that reuses the same layers to cut memory while predicting robot actions"
+   },
+   {
+    "kind": "paper",
+    "title": "HOG-WAM: Improving Visual Robustness through Future Gradient Prediction",
+    "url": "https://arxiv.org/abs/2611.34811",
+    "one_liner_en": "Adds future HOG-feature prediction as auxiliary training-only supervision for robust robot policies."
+   },
+   {
+    "kind": "model",
+    "title": "bageldotcom/Bagel-Robotics-1",
+    "url": "https://huggingface.co/bageldotcom/Bagel-Robotics-1",
+    "one_liner_en": "A pruned, compact world-action model checkpoint for robot manipulation, released openly"
+   },
+   {
+    "kind": "model",
+    "title": "Jingkuan/WSA-Base",
+    "url": "https://huggingface.co/Jingkuan/WSA-Base",
+    "one_liner_en": "A 3B/6B robot foundation model that jointly learns 3D world modeling and action generation."
+   }
+  ],
+  "runner_ups": [
+   {
+    "name_zh": "编码智能体生成机器人策略",
+    "name_en": "Coding Agents for Robot Policy Generation",
+    "why": "PyRUA-Dex、ACAP、DemoFoundry 等多条内容同时用编程 Agent 写策略/造数据。"
+   },
+   {
+    "name_zh": "上下文学习泛化到新任务",
+    "name_en": "In-Context Learning for Robot Generalization",
+    "why": "Entangle、ICLWorld 等用示范让机器人现学没见过的任务。"
+   }
+  ],
+  "streak": 1
+ }
+}
